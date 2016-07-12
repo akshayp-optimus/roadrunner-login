@@ -1,0 +1,18 @@
+// International FAQ
+// --------------
+.t-international-faq-page {
+    padding: 0 $unit;
+
+    a {
+        color: $black;
+        font-weight: bold;
+    }
+
+    table tr {
+        padding-left: $unit;
+    }
+
+    .c-table-rows {
+        background: $neutral-290;
+    }
+}

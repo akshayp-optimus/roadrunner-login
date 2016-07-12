@@ -1,0 +1,21 @@
+.c-review {
+    .c-review-details {
+        position: relative;
+        .c-review__basement {
+            position: absolute; // Relatively positioned to c-review-details
+            top: 2px;
+
+            color: $neutral-60;
+            font-size: $smaller-font-size;
+        }
+    }
+}
+.c-review:first-of-type {
+    padding-top: 0;
+}
+.c-review__product-heading {
+    position: relative;
+}
+.c-review__date-bvrqa {
+    display: block;
+}

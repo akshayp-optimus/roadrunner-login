@@ -1,0 +1,13 @@
+<div class="c-select {class} {?isDisabled}c--is-disabled{/isDisabled}">
+    {select}
+
+    {?createSelect}
+        <select>
+            {#selectItems}
+                <option value="{value}">{text}</option>
+            {/selectItems}
+        </select>
+    {/createSelect}
+
+    {@icon name="chevron-down" title="Arrow down" class="c-select__icon c--large" /}
+</div>

@@ -1,0 +1,7 @@
+<div class="c-number-of-results">
+    {#numberOfResults}
+        <span class="u--bold c-number-of-results-count">{resultsCount}</span>
+        {separatorText}
+        <span class="u--bold c-number-of-results-count js-total-count">{totalCount}</span>
+    {/numberOfResults}
+</div>

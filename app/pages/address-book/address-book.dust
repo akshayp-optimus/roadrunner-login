@@ -1,0 +1,33 @@
+{>"global/base"/}
+
+{<contentBlock}
+    {>"components/breadcrumb/breadcrumb"/}
+    <div class="u-padding u--tight">
+    <h1 class="c-title u-page-title u-no-left-padding"><small>{pageTitle}</small></h1>
+
+    <p>{introText}</p>
+
+    {addressContainer}
+
+    </div>
+
+    {>"components/sheet/sheet" effect="sheetBottom"  duration="400" cssClass="c--dialog" class="js-address-pinny c-address-pinny " bodyClass="js-address-pinny__body" isHeader="true"/}
+    {>"components/sheet/sheet" effect="modalCenter" class="js-remove-address-pinny" bodyClass="js-remove-address-pinny__body" isHeader="true" /}
+
+    <div hidden>
+        {hiddenInputs}
+        {hiddenData}
+    </div>
+{/contentBlock}
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/address-book/ui.js
+    (function(require) {
+        require(["global/ui", "pages/address-book/address-book-ui"], function(globalUI, addressBookUI) {
+            globalUI();
+            addressBookUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

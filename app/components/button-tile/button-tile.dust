@@ -1,0 +1,9 @@
+<div class="c-button-tile {class}">
+    <a href="{href}" {?title}title="{title}{/title}">
+        <div class="c-button-text">{buttonText}</div>
+
+        {?buttonIconName}
+            {>"svg-icon" name=buttonIconName class=buttonIconClass/}
+        {/buttonIconName}
+    </a>
+</div>

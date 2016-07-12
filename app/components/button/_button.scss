@@ -1,0 +1,394 @@
+// Button
+// ===
+//
+// Style an element as a button. Best applied to native interactive elements
+// such as form controls and links.
+//
+// Example Markup:
+//
+// <button class="c-button" type="[button|submit]">{buttonText}</button>
+// <input class="c-button" type="submit" value="{submitText}">
+// <a class="c-button" href="{url}">{linkText}</a>
+//
+
+
+// Button element
+// ---
+//
+// 1. Normalize border-radius across element types in iOS.
+// 2. Inherit font styles from ancestor.
+// 3. Normalize `line-height` (for `input`, it can't be changed from `normal`
+//    in Firefox 4+).
+// 4. Ensure button text can wrap (`input` defaults to `pre`).
+// 5. Prevent button text from being selectable.
+// 6. Corrects inability to style tappable `input` types in iOS.
+// 7. Inherit font color from ancestor for all states
+// 8. Create positioning context for children/generated content.
+//
+// N.B. “Disabled” state for links must be managed in JavaScript.
+
+.c-button,
+%c-button {
+    position: relative; // 8
+
+    display: inline-block;
+    margin: 0;
+    padding: $unit $unit*2;
+    border: 0;
+
+    border-radius: 0; // 1
+    background: $neutral-230;
+
+    color: $white;
+    font-size: $font-size; // 2
+    line-height: $line-height; // 3
+    white-space: normal; // 4
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: 0.1s background ease-out;
+
+    user-select: none; // 5
+
+    -webkit-appearance: none; // 6
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    .c-loading {
+        margin: 1px 0 4px;
+    }
+
+    .c-loading__dot {
+        background-color: $white;
+    }
+
+    .c-loading__dot.c--black-dot {
+        background-color: $black;
+    }
+
+
+    &:focus,
+    &:active {
+        color: $white; // 7
+    }
+
+    .c-icon-svg {
+        fill: currentColor;
+    }
+
+
+    // Disabled
+    // ---
+    //
+    // 1. Add text color to `disabled` attr style
+
+    &:disabled,
+    &.c--is-disabled {
+        background-color: $disabled-color;
+
+        color: $white;
+
+        -webkit-text-fill-color: $white; // 1
+    }
+}
+
+
+// Themes
+// ---
+
+
+// Primary
+// ---
+
+.c-button.c--primary {
+    border-radius: 2px;
+    background: $brand-color;
+
+    color: $white;
+    font-family: $default-sans;
+    font-weight: bold;
+    font-size: $large-font-size;
+    text-transform: lowercase;
+
+    // Disabled
+    // ---
+
+    &:disabled,
+    &.c--is-disabled {
+        background-color: $disabled-color;
+
+        color: $white;
+    }
+
+    .c-icon {
+        width: 10px;
+        height: 10px;
+        margin-left: $sub-unit;
+
+        vertical-align: baseline;
+
+        // TODO: remove
+        polygon {
+            fill: $white;
+        }
+    }
+}
+
+
+// Dark
+// ---
+
+.c-button.c--dark {
+    background: $neutral-80;
+
+    &:active {
+        background: $black;
+    }
+
+    // Disabled
+    // ---
+
+    &:disabled,
+    &.c--is-disabled {
+        background-color: $disabled-color;
+
+        color: $white;
+    }
+}
+
+
+// Link
+// ---
+
+.c-button.c--link {
+    background: transparent;
+
+    color: $link-color;
+
+    &:active {
+        background: $neutral-210;
+    }
+
+    // Disabled
+    // ---
+
+    &:disabled,
+    &.c--is-disabled {
+        color: $disabled-color;
+
+        -webkit-text-fill-color: $disabled-color;
+    }
+}
+
+
+// Outline
+// ---
+
+.c-button.c--outline {
+    border: 1px solid $dark-border-color;
+
+    background: transparent;
+
+    color: $font-color;
+
+    &:active {
+        background: $neutral-210;
+    }
+
+    // Thick borders
+    // ---
+
+    &.c--rounded {
+        border-radius: 2px;
+    }
+
+    // No sides borders
+    // ---
+
+    &.c--no-side-borders {
+        border-right: 0;
+        border-left: 0;
+    }
+
+    // Disabled
+    // ---
+
+    &:disabled,
+    &.c--is-disabled {
+        border-color: $border-color;
+
+        color: $disabled-color;
+
+        -webkit-text-fill-color: $disabled-color;
+    }
+
+    // Success outline
+    // ---
+
+    &.c--success {
+        border-color: $success-color;
+
+        color: $success-color;
+    }
+
+    &.c--light {
+        background-color: $white;
+    }
+}
+
+
+// Disabled
+// ---
+
+&:disabled,
+&.c--is-disabled {
+    pointer-events: none;
+}
+
+
+// Large
+// ---
+//
+
+.c-button.c--large {
+    min-height: 48px;
+
+    font-size: $large-font-size;
+}
+
+.c-backgroung-none {
+    background: none;
+    outline: 0;
+
+    color: $black;
+    font-family: $default-sans;
+    text-transform: capitalize;
+    &:active,
+    &:focus {
+        color: $black;
+    }
+}
+
+
+// Small
+// ---
+//
+// 1. Increase tap size
+
+.c-button.c--small {
+    position: relative; // 1
+
+    min-height: $small-tap-size;
+    padding: $sub-unit+1 $unit;
+
+    font-size: $smaller-font-size;
+
+    &::before {
+        // 1
+        content: '';
+
+        position: absolute;
+        top: -4px;
+        right: 0;
+        bottom: -4px;
+        left: 0;
+    }
+}
+
+
+// Full Width
+// ---
+
+.c-button.c--full-width {
+    width: 100%;
+}
+
+
+// Modifier: image button
+// (originally copied from Eddie Bauer)
+// ---
+//
+// Accomodates client buttons that use <input type="image"> or <img> that function as form submit buttons
+//
+// 1. Some situations, we'll use an icon for an image type button
+//    For example, search bar's search icon
+// 2. [Legacy Android] use translate3d to properly certer position the c-icon-svg
+
+.c-button.c--image-type {
+    position: relative;
+
+    &::before {
+        content: attr(data-button-text);
+    }
+
+    input,
+    img:not(.c-button__image) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        opacity: 0 !important;
+    }
+
+    .c-icon-svg {
+        // 1
+        position: absolute;
+        top: 50%;
+
+        transform: translate3d(0, -50%, 0); // 2
+
+        pointer-events: none;
+    }
+}
+
+
+// No Padding
+// ---
+
+.c-button.c--no-padding {
+    padding: 0;
+}
+
+.c-add-to-cart-button {
+    display: block;
+    width: 84%;
+    margin: 0 auto;
+}
+
+.c-button.c--added-to {
+    color: $black;
+    font-weight: bold;
+    font-size: $large-font-size;
+}
+
+.c-button.c-add-to {
+    border-radius: 2px;
+    background: rgba(118, 189, 29, 0.20) !important;
+
+    text-transform: none !important;
+}
+
+.c-button.c-collection-breadcrumb {
+    padding-left: $unit;
+
+    background: 0;
+
+    color: $neutral-200;
+    font-family: $default-sans;
+    font-size: $font-size;
+    text-align: left;
+    text-transform: none;
+
+    &:active {
+        background: 0;
+    }
+}
+
+.c-button.c-secondary-button {
+    font-size: $large-font-size;
+}

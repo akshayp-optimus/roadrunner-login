@@ -1,0 +1,58 @@
+// Stepper
+// ===
+
+.c-stepper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    align-self: stretch;
+}
+
+// Action
+// ---
+//
+// 1. Increae width of icon
+
+.c-stepper__action-decrease,
+.c-stepper__action-increase {
+    width: $tap-size;
+    padding: 0;
+    border: 0;
+
+    background: transparent;
+    outline: 0;
+
+    &:active {
+        background-color: $neutral-30;
+
+        .c-icon-svg {
+            fill: $black;
+        }
+    }
+
+    .c-icon-svg {
+        display: block;
+        margin: 0 auto;
+
+        width: 16px; // 1
+        height: 20px; // 1
+
+        fill: $black;
+    }
+}
+
+.c-stepper__action-decrease {
+    margin-left: -15px;
+}
+
+// Count
+// ---
+
+.c-stepper__count {
+    flex: 1 1 auto;
+    min-width: $tap-size/2;
+
+    color: $neutral-280;
+    font-weight: bold;
+    text-align: center;
+}

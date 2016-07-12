@@ -1,0 +1,197 @@
+// Country Select
+// ===
+
+$tab-height: 70px;
+
+
+// Root
+// ---
+//
+// 1. Allow c-tabs__body to be positioned within this element
+// 2. Force the list of letters to display within the tab
+
+.c-country-select {
+    .tozee__letter {
+        padding: 0 $unit;
+
+        color: $neutral-200;
+        font-family: $default-sans;
+        font-weight: bold;
+        font-size: $font-size-small-11; // to do var?
+
+        &:active,
+        &:focus {
+            color: $active-link-color;
+        }
+    }
+
+    .tozee__list {
+        margin-right: 0;
+        padding-top: $unit;
+
+        font-size: $large-font-size;
+    }
+
+
+    .c-tabs__controls-item {
+        border-top: 0;
+    }
+}
+
+
+// Hide the flag image in bellows section.
+.c-bellows__list {
+    // scss-lint:disable SelectorFormat
+    .gwt_flag_image_footer {
+        // scss-lint:enable SelectorFormat
+        display: none;
+    }
+}
+
+// Country select sheet
+// ---
+
+.c-country-select__sheet {
+    .c-sheet__title {
+        padding: $unit;
+
+        font-family: $default-sans;
+        font-weight: bold;
+        font-size: $large-font-size;
+        text-align: left;
+        text-transform: none;
+    }
+
+    .pinny__content {
+        position: relative; // 1
+
+        padding-top: 0;
+    }
+
+    .c-sheet__footer {
+        margin-top: $unit;
+        border-bottom: 0;
+
+        span {
+            color: $white;
+            font-family: $default-sans;
+            font-weight: bold;
+            font-size: $large-font-size;
+            text-transform: lowercase;
+        }
+    }
+
+    .c-sheet__footer .c-button {
+        width: 100%;
+        margin: 0;
+
+        border-radius: 0;
+    }
+}
+
+
+// Country select item
+// ---
+
+.c-country-select__item {
+    display: block;
+    padding: $sub-unit $unit $sub-unit 0;
+
+    &.c--active {
+        color: $black;
+        font-weight: bold;
+    }
+
+    .c-flag-icon {
+        width: 22px;
+        height: 17px;
+
+        &:before {
+            margin-top: -4px;
+        }
+    }
+
+    [class*='gwt_flag_name'] {
+        display: inline-block;
+        margin-left: $unit;
+
+        color: $neutral-70;
+        font-family: $default-sans;
+        font-size: $large-font-size;
+        vertical-align: sub;
+    }
+
+    [class*='currentlySelectedCountry'] {
+        color: $brand-color;
+        font-family: $default-sans;
+        font-weight: bold;
+
+        &:active {
+            color: $black;
+        }
+    }
+}
+
+
+// Country Select List
+// ---
+//
+// 1. Fill height (100%) plus an extra 1% to make sure it goes juuuust enough
+//    past the footer button. 66px is the height of the button plus 24px of top
+//    and bottom padding. Calc won't accept variables here...?
+// 2. Fallback for Android.
+//
+// scss-lint:disable DuplicateProperty
+
+.c-country-select__list {
+    position: absolute;
+    top: $tab-height;
+    right: 0;
+    left: $unit;
+
+    overflow: auto;
+    height: 100%; // 2
+    height: calc(101% - 66px); // 1
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+// Country Currency
+// ---
+
+.c-country-select__currency {
+    label {
+        color: $neutral-70;
+    }
+
+    p {
+        color: $neutral-230;
+        font-size: $smaller-font-size;
+    }
+}
+
+
+// Desktop class
+// ---
+//
+// 1. This div is placed in parent div and will need to add style here to hide it.
+
+[class*='gwt-international-country-changer'] {
+    display: none; // 1
+}
+
+.c-country-selections-tabs {
+    margin: 0 (-$unit);
+    padding: $sub-unit $sub-unit 0;
+
+    background: $neutral-30;
+}
+
+.c-button.c--primary {
+    width: 100%;
+
+    &:active {
+        background: $brand-color;
+    }
+}

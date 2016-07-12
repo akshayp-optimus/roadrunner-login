@@ -1,0 +1,68 @@
+// Bleed
+// ---
+
+.u-bleed {
+    margin-right: -$unit*2 !important;
+    margin-left: -$unit*2 !important;
+}
+
+.u-bleed-start {
+    margin-left: -$unit*2 !important;
+}
+
+.u-bleed-end {
+    margin-right: -$unit*2 !important;
+}
+
+
+// Shift
+// ---
+//
+// Shift 1 unit any direction. Useful for icon buttons, which often hang one
+// unit out towards the margins.
+
+.u-shift-end {
+    margin-right: -$unit !important;
+}
+
+.u-shift-start {
+    margin-left: -$unit !important;
+}
+
+.u-shift-top {
+    margin-top: -$unit !important;
+}
+
+.u-shift-bottom {
+    margin-bottom: -$unit !important;
+}
+
+// Centerlly align element
+.u-text-center {
+    display: block;
+
+    text-align: center;
+}
+
+.u-vertical-align-middle {
+    vertical-align: middle;
+}
+
+// Display
+
+.u-display-inline {
+    display: inline-block !important;
+}
+
+// width of element
+.u-less-width {
+    width: 30%;
+}
+
+.u-medium-width {
+    width: 45%;
+}
+
+.u-border-radius {
+    border-radius: $border-radius;
+}

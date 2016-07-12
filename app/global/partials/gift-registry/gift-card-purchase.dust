@@ -1,0 +1,3 @@
+<div class="js-gift-cart-content c-gift-card-content"></div>
+
+<div hidden>{giftCard}</div>

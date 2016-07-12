@@ -1,0 +1,62 @@
+{>"global/checkoutBase"/}
+
+{<contentBlock}
+    <div class="t-shipping-address-wrapper u-padding u--tight">
+        <div class="c-form-group">
+
+            {#form}
+                {?errorContainer}
+                    {errorContainer}
+                {/errorContainer}
+
+                <h3 class="c-heading c-billing-title c--4 u-margin-bottom-md js-billing-title">{billingTitle}</h3>
+
+                <div class="c-checkout-billing-address-panel">
+                    {billingContainer|openTag|s}
+                    {billingContainer|closeTag|s}
+                </div>
+
+                <div class="u-margin-bottom-md">
+                    {emailContainer}
+                </div>
+
+                {confirmEmailContainer}
+
+                {sendEmailsContainer}
+
+                <h3 class="c-heading c--4 u-margin-bottom-md">{shippingTitle}</h3>
+
+                {shippingAddressOptions}
+
+                {shippingContainer|openTag|s}
+                {shippingContainer|closeTag|s}
+
+                {#registrationContainer}
+                    <h3 class="c-heading c--4 u-margin-bottom-md">{title}</h3>
+
+                    <p>{copy}</p>
+
+                    {container}
+                {/registrationContainer}
+
+                {ctaContainer}
+            {/form}
+
+        </div>
+
+        {hiddenLabels}
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/shipping-address/ui.js
+    (function(require) {
+        require(["global/ui", "pages/shipping-address/shipping-address-ui"], function(globalUI, shippingAddressUI) {
+            globalUI();
+            shippingAddressUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

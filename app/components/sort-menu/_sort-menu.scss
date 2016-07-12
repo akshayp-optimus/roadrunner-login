@@ -1,0 +1,26 @@
+
+.c-porta-refine {
+    .c-or-text {
+        font-size: 0;
+    }
+    .c-or-text:nth-of-type(2) {
+        position: relative;
+
+        height: 1px;
+        margin: $unit 0;
+
+        background: $neutral-50;
+
+        font-size: 14px;
+        text-align: center;
+        span {
+            position: absolute;
+            top: -10px;
+
+            display: inline-block;
+            padding: 0 $sub-unit;
+
+            background: $neutral-40;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+// Home page
+// ------
+.t-home {
+    // For removing the occurence of flicker
+    .gwt-gift-registry-delete-confirmation-dialog {
+        overflow: hidden !important;
+        width: 1px;
+        height: 1px;
+    }
+    .c-sheet.c-delete-confirmation-pinny .c-sheet__body {
+        padding-top: $sub-unit;
+    }
+
+    .c-button.c--full-width {
+        width: 100% !important;
+    }
+}

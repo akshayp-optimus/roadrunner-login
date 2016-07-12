@@ -1,0 +1,5 @@
+<div class="c-my-account-options" id="topright">
+    {#myAccountLinks}
+        {.}
+    {/myAccountLinks}
+</div>

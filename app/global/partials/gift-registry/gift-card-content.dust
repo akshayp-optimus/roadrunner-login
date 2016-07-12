@@ -1,0 +1,68 @@
+<div>
+    <div class="c-cart-item js-cart-item {class}">
+        <div class="c-arrange">
+            <div class="c-arrange__item c--shrink">
+                <div class="js-product-image"></div>
+            </div>
+
+            <div class="c-arrange__item u-padding-left u--tight u-padding-bottom-md">
+                <div class="u-margin-bottom-sm c-item-title u--bold">{itemName|s}</div>
+
+                <ul class="c-item-short-title">
+                    <li class="c-item-short-name">{itemShortName}</li>
+                    <li class="c-freeshipping-text">{freeShipping}</li>
+                </ul>
+
+                {>"components/price/price"/}
+
+            </div>
+        </div>
+
+        <div class="c-gift-card-container">
+            <div class="t-product-details__product-option js-require-add-to-cart">
+                <div class="c-arrange c--align-middle">
+                    <div class="t-product-details__product-option-label c-arrange__item c--shrink">
+                        <label>Amount</label>
+                    </div>
+                    {>"components/select/select" class="u-margin-top-md js-colour"/}
+                    <div class="c-arrange__item u-shift-top u-shift-bottom u-shift-end">
+                        {>"components/select/select" class="js-amount"/}
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="js-personalization-container t-product-details__product-option">
+                {>"pages/product-details/partials/personalization-control" /}
+            </div>
+            <div class="t-product-details__quantity t-product-details__product-option js-require-add-to-cart">
+            <div class="c-arrange">
+
+                <div class="t-product-details__product-option-label c-arrange__item c--shrink">
+                    <label>Quantity</label>
+                </div>
+                <div class="c-arrange__item u-shift-top u-shift-bottom u-shift-start">
+                    <div class="c-stepper js-giftcard-stepper u-margin-start-md {class}">
+                        <button type="button" class="js-giftcard-stepper-decrease c-stepper__action-decrease {decreaseClass} {?isMin}c--disabled{/isMin}" {?isMin}disabled{/isMin}>
+                            <svg class="c-icon-svg " title="Reduce Quantitys"><title>Reduce Quantity</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-minus1"></use></svg>
+                        </button>
+
+                        <div class="js-stepper-dropdown"></div>
+
+                        <button type="button" class="c-stepper__action-increase js-giftcard-stepper-increase {increaseClass} {?isMax}c--disabled{/isMax}" {?isMax}disabled{/isMax}>
+                            <svg class="c-icon-svg " title="Increase Quantitys"><title>Increase Quantity</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-plus"></use></svg>
+                        </button>
+                        {container}
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+
+        </div>
+        <div class="js-cta c-cta"><div class="c-arrange__item js-atc-link c-add-to-cart-wrapper"></div></div>
+
+
+    </div>
+</div>

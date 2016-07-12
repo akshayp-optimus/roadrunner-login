@@ -1,0 +1,7 @@
+<div class="c-loading {class}">
+    <p class="u-visually-hidden">Loading...</p>
+
+    <div class="bounce1 c-loading__dot c--1"></div>
+    <div class="bounce2 c-loading__dot c--2"></div>
+    <div class="bounce3 c-loading__dot c--3"></div>
+</div>

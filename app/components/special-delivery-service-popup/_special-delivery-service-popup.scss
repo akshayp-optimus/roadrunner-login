@@ -1,0 +1,105 @@
+// Special delivery service popup
+// ===
+
+.c-service-delivery-option-popup {
+    .c-read-delivery-terms {
+        margin-bottom: $unit;
+
+        color: $black;
+        font-weight: bold;
+        font-size: $font-size;
+    }
+
+    .c-read-delivery-terms-content {
+        display: none;
+        li {
+            margin-bottom: $unit;
+            margin-left: 15px;
+
+            list-style-type: disc;
+        }
+    }
+
+    .c-delivery-phone-number-wrapper {
+        margin-bottom: $unit;
+
+        .c-delevery-phone-message {
+            color: $neutral-60;
+            font-size: $smaller-font-size;
+        }
+
+        input:focus {
+            border-color: $neutral-50;
+        }
+    }
+
+    .c-delivery-phone-number {
+        margin-bottom: $sub-unit;
+        .required {
+            margin: 0 3px 0 0;
+        }
+        svg {
+            width: 12px;
+            height: 12px;
+
+            vertical-align: middle;
+
+            fill: $neutral-70;
+        }
+    }
+
+    .c-cart-item {
+        border-top: 1px solid $neutral-50;
+
+        .moreContentExpander div {
+            display: inline;
+
+            .ois-option-name,
+            .ois-option-colon {
+                display: none;
+            }
+        }
+    }
+
+    .gwt-oid-name {
+        color: $neutral-70 !important;
+        font-weight: bold;
+        font-size: $large-font-size !important;
+        text-decoration: none !important;
+    }
+
+    .c-review-deliver-shipping-method {
+        margin-top: $unit;
+        padding: 0 $unit $unit;
+
+        > div {
+            margin-top: $unit;
+        }
+
+        .promotion-message {
+            margin-top: 0;
+            padding-left: $unit*2+2;
+
+            font-size: $smaller-font-size;
+            line-height: 16px;
+        }
+    }
+
+    .c-options > .moreContentExpander::before {
+        content: none;
+    }
+
+    .moreContentExpander .oios-option-line::before {
+        content: '';
+
+        display: inline-block;
+        width: 3px;
+        height: 3px;
+        margin-right: 6px;
+
+        border-radius: 50%;
+        background: $neutral-200;
+
+        vertical-align: middle;
+    }
+}

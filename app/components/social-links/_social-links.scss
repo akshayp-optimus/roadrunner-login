@@ -1,0 +1,38 @@
+// Social links
+// -------------------------
+
+.c-social-link {
+    padding: $unit;
+
+    text-align: center;
+
+    a {
+        display: inline-block;
+        width: 13%;
+        padding: $sub-unit;
+    }
+
+    .c-icon {
+        width: 16px;
+        height: 21px;
+
+        fill: $neutral-70;
+    }
+}
+
+.c-footer-links {
+    display: flex;
+    justify-content: center;
+
+    color: $neutral-70;
+    font-size: $smaller-font-size;
+
+    li {
+        margin: 0 $sub-unit;
+    }
+
+    a {
+        color: $neutral-70;
+        font-size: $smaller-font-size;
+    }
+}

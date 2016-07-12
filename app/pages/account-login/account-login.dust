@@ -1,0 +1,26 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-account-login u-padding-all">
+        <div class="c-login-heading"><h2>Sign In</h2></div>
+        <div class="c-guest-login">
+            {loginBox}
+        </div>
+        <div class="c-sign-in">
+            {signInModule}
+        </div>
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/account-login/account-login-ui.js
+    (function(require) {
+        require(["global/ui", "pages/account-login/account-login-ui"], function(globalUI, accountLoginUI) {
+            globalUI();
+            accountLoginUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

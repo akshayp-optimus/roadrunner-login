@@ -1,0 +1,55 @@
+{?isManageRegistryPage}
+    {^isView}
+
+        <div class="c-show-registry-details">{@translate key="show_registry_details"/}{>"svg-icon" name="chevron-down"/}</div>
+
+        <div class="c-bellows bellows js-registry-bellows">
+            <div class="c-bellows__content bellows__content">
+                {>"global/partials/gift-registry/registry-details"/}
+            </div>
+        </div>
+    {:else}
+    <button class="c-show-registry-details">{@translate key="show_registry_details"/} <span class="c-arrow"> > </span></button>
+        {>"global/partials/gift-registry/registry-details"/}
+    {/isView}
+{/isManageRegistryPage}
+
+<div class="c-reg-items-and-sort-options u-clear-both">
+    <div class="u-padding-top-md u-padding-bottom-md c-count-registry-items u--bold">
+        {countMessage}
+    </div>
+
+    {#sort}
+        {form|openTag|s}
+            {hiddenInputs}
+            <div class="c-sort-options-menu">{sortDropdown}</div>
+        {form|closeTag|s}
+    {/sort}
+    {^countMessage}
+        <div class="c-view-no-items">{@translate key="no_items_msg"/}</div>
+    {/countMessage}
+</div>
+
+<div class="u-clear-both u-padding u--tight">
+    {#itemsForm}
+        {?isForm}
+            {form|openTag|s}
+                {hiddenInputs}
+
+                {#products}
+                    {>"components/cart-item/cart-item" class="t-gift-registry-view__cart-item" /}
+                {/products}
+            {form|closeTag|s}
+        {:else}
+            {#products}
+                {>"components/cart-item/cart-item" class="t-gift-registry-view__cart-item" /}
+            {/products}
+        {/isForm}
+
+    {/itemsForm}
+
+</div>
+
+{addItemsToCart}
+
+{>"components/sheet/sheet" effect="sheetLeft" bodyContent=sortLinks.links headerContent=sortTitle cssClass="c--dark" class="js-sort-pinny" bodyClass="c-sort-options"/}

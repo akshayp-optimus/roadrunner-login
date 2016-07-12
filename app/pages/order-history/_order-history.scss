@@ -1,0 +1,89 @@
+// Order History page
+// ===
+
+.t-order-history-page {
+    padding: 0 $unit;
+
+    .c-intro-text {
+        margin-top: $sub-unit;
+
+        color: $neutral-110;
+    }
+
+    .c-table {
+        margin: 0;
+        border: 0;
+
+        th,
+        td {
+            padding: $unit;
+            border-bottom: 0;
+        }
+
+        .c-icon {
+            width: 10px;
+            height: 10px;
+            margin-left: $sub-unit;
+
+            vertical-align: baseline;
+
+            fill: $black;
+        }
+    }
+
+    .c-table__header {
+        th {
+            padding: $sub-unit $unit;
+
+            font-weight: 600;
+        }
+
+        .c-table__header-order-num {
+            padding-left: 0;
+        }
+    }
+
+    tbody {
+        border: 1px solid $neutral-50;
+        border-bottom: 0;
+
+        border-radius: 2px;
+
+        tr {
+            border-bottom: 1px solid $neutral-50;
+        }
+
+        .c-order-list__view-link {
+            max-height: 36px;
+            padding: 0;
+
+            text-align: center;
+            text-transform: capitalize;
+
+            &:active {
+                a {
+                    color: $white;
+                }
+            }
+
+            a {
+                display: block;
+                margin-right: 3px;
+                padding: 7px;
+                border: 1px solid $black;
+
+                border-radius: 2px;
+
+                color: $black;
+                font-weight: bold;
+                text-align: center;
+                text-transform: capitalize;
+                &:active {
+                    background: $neutral-230;
+
+                    color: $white;
+                }
+            }
+        }
+    }
+}

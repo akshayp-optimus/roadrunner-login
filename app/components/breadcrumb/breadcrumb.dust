@@ -1,0 +1,8 @@
+{#breadcrumbLink}
+    <a class="c-breadcrumb {class}" href="{href}">
+        <span class="c-breadcrumb__arrow"><</span>
+        <span class="c-breadcrumb__link">
+            {title}
+        </span>
+    </a>
+{/breadcrumbLink}

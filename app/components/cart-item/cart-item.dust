@@ -1,0 +1,152 @@
+<div class="c-cart-item u-margin-bottom-gt-md js-cart-item {cartItemClass}">
+    <div class="c-arrange">
+        <div class="c-arrange__item c--shrink">
+            <div class="js-product-image"></div>
+        </div>
+
+        <div class="c-arrange__item u-padding-left u--tight">
+            <a href="{itemHref}" class="u--bold u-margin-bottom-sm">{itemName|s}</a>
+
+            {>"components/cart-item/partials/product-options" /}
+
+            {! Item not available for international shipping message !}
+            {! Some items in stock and rest will be back ordered message !}
+            {?availableRestrictionMsg}
+                {availableRestrictionMsg}
+            {/availableRestrictionMsg}
+            {?isPerzNotAvailMessage}<div class="js-no-personalization-available u-text-grey c-no-personalization-available">{perzNotAvailMessage}</div>{/isPerzNotAvailMessage}
+            <div class="u-margin-bottom-sm c-cart-item-price-container">
+                {#price}
+                    {>"components/price/price"/}
+                {/price}
+            </div>
+
+            {#shippingSurcharge}
+                <div class="u-text-dark-grey u-small-font-size">
+                    {label}
+                    {value}
+                </div>
+            {/shippingSurcharge}
+
+
+            {?isRegistry}
+            <div class="c-manage-registry-products">
+                <div class="c-top-five">
+
+                    <div class="js-top-five">
+                        <input type="checkbox" />
+                    </div>
+                    {topLabel}
+
+                </div>
+
+                <div class="c-purchase-desired">
+                    {?isManageRegistryPage}
+                        <div>
+                            <span>{@translate key="desired"/}</span>
+                            <span>{@translate key="purchased"/}</span>
+                        </div>
+                        <div class="c-select-quantity">
+                            {quantityDesired}
+                            {quantityPurchased}
+                        </div>
+                    {:else}
+                        <div class="c-view-registry-desired-purchased">
+                            <span class="c-view-registry-desired">{@translate key="desired"/}: <div class="u--display-inline">{quantityDesired}</div></span>
+                            <span class="c-view-registry-purchased">{@translate key="purchased"/}: <div class="u--display-inline">{quantityPurchased}</div></span>
+                        </div>
+                    {/isManageRegistryPage}
+
+                </div>
+            </div>
+
+
+            {/isRegistry}
+
+            <div class="c-qty__wrapper u-margin-bottom-md">
+                {?quantity.container}
+                    <div class="c-qty__item c--shrink">
+                        {#quantity}
+                            {>"components/stepper/stepper" decreaseIcon="minus" decreaseTitle="Reduce Quantity" increaseIcon="plus" increaseTitle="Increase Quantity" decreaseClass="js-stepper js--minus" increaseClass="js-stepper js--add" countClass="js-val" class="t-cart__stepper js-qty"/}
+                        {/quantity}
+                    </div>
+                {/quantity.container}
+
+                {?isWishlist}
+                <div class="js-cta c-cta">
+                    {?addToCartButton}
+                        <div class="u-display-flex c-arrange__item c-add-to-cart-wrapper">{addToCartButton}</div>
+                    {/addToCartButton}
+                </div>
+                {:else}
+                    <div class="c-qty__buttons u-margin-start-md">
+                        {?editButton}
+                            <div class="c-qty__button">{editButton}</div>
+                            <span class="c-separator">|</span>
+                        {/editButton}
+                        <div class="c-qty__button">{removeButton}</div>
+                    </div>
+                {/isWishlist}
+            </div>
+
+            {?giftMessageContent}
+                {>"components/list-tile/list-tile" primaryAction="true" primaryIconName="gift" content=giftMessageContent/}
+            {/giftMessageContent}
+
+            {?giftOptions}
+                <div class="u-margin-top-md">
+                    {>"components/cart-item/partials/gift-options"/}
+                </div>
+            {/giftOptions}
+
+            {#gift}
+                <div class="c-field c-cart-checkbox">
+                    <div class="c-field__checkbox-radio c--has-button">
+                        <label class="c-field__label">
+                            {input}
+                            {labelText}
+                        </label>
+                        <button class="c-button c--link c--info js-tooltip-button" data-target=".js-gift-tooltip">{>"svg-icon" name="question"/}</button>
+                        <div class="js-gift-tooltip" hidden>{tooltipContent}</div>
+                    </div>
+                </div>
+            {/gift}
+
+            {?.isWishlist}
+                <div class="c-arrange dff {wishListClass}">
+                    {^isManageRegistryPage}
+                        <div class="c-arrange__item c-details-link js-details-link"></div>
+                    {/isManageRegistryPage}
+                    {removeButton}
+                    {?complete}<div class="c-arrange__item u-text-success u--bold c-complete-text">{complete}</div>{/complete}
+                </div>
+            {/.isWishlist}
+        </div>
+    </div>
+
+    {?recommendedAccessory}
+        {#recommendedAccessory}
+            <div class="js-recommended-accessory">
+                {>"components/recommended-accessory/recommended-accessory" isExpandButton="true" /}
+            </div>
+        {/recommendedAccessory}
+    {/recommendedAccessory}
+
+    {?giftWrapChoices}
+        {>"components/cart-item/partials/gift-wrap-choices" /}
+    {/giftWrapChoices}
+
+    {?giftMessage}
+        {>"components/cart-item/partials/gift-message" /}
+    {/giftMessage}
+
+    <div class="js-desktop-cart-item u-visually-hidden">
+        {#originalContent}
+            <div class="{class}">
+                {content|s}
+            </div>
+        {/originalContent}
+    </div>
+
+
+</div>

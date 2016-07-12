@@ -1,0 +1,12 @@
+// International Customer Service Page
+// =====
+// 1. To overides desktop behaviour
+
+.t-international-customer-service-wrapper {
+    .c-international-contact-heading {
+        font-size: $larger-font-size;
+    }
+    a:active {
+        color: $black !important; // 1
+    }
+}

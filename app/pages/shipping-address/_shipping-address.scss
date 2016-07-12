@@ -1,0 +1,91 @@
+// Shipping Address Page
+// ===
+
+.t-shipping-address-wrapper {
+    $border: 1px solid $neutral-50;
+
+    .c-billing-title {
+        display: flex;
+        .required {
+            color: $error-color;
+        }
+
+        [id='bill_reqdlabel'] {
+            flex: 1 1 auto;
+
+            text-align: right;
+        }
+    }
+
+    .c-middle-name {
+        width: 44px;
+        margin-left: 0;
+        border-left: $border;
+    }
+
+    .c-box {
+        > .c-box__label {
+            display: flex;
+            width: 88px;
+            margin-left: $unit;
+
+            &[for*=bill_mibox],
+            &[for*=ship_mibox] {
+                display: none;
+            }
+        }
+
+        label[for='bill_fnbox'],
+        label[for='ship_fnbox'] {
+            width: 88px;
+        }
+    }
+
+    .c-form-group .c-box select {
+        color: $black;
+    }
+
+    .c-first-name,
+    .c-middle-name {
+        display: flex;
+        align-items: center;
+    }
+
+    .c-shipping-promotional-emails,
+    div[id='gwt_shippingOption_panel'] {
+        margin-bottom: $sub-unit*3;
+        padding: $unit;
+        border: $border;
+
+        label {
+            width: 83%;
+        }
+
+        input {
+            margin-right: 0;
+
+            vertical-align: top;
+        }
+    }
+
+    h3 {
+        margin-top: $sub-unit*3;
+
+        color: $neutral-220;
+    }
+
+    .c-box-row .required {
+        margin-right: $sub-unit/2;
+        margin-left: -9px;
+
+        color: $error-color;
+    }
+
+    small {
+        display: block;
+        margin-top: -$unit;
+
+        color: $neutral-200;
+        font-size: $smaller-font-size;
+    }
+}

@@ -1,0 +1,202 @@
+// Header
+// ===
+
+
+
+.t-header {
+    // Link
+    // ---
+    .t-header__cart,
+    .t-header__account {
+        position: relative;
+
+        width: 45px;
+        min-width: $tap-size;
+        min-height: $tap-size;
+        padding: $sub-unit;
+        border: 0;
+
+        background: none;
+
+        // font-family: $header-font-family;
+        font-weight: 500;
+        font-size: $small-font-size;
+        line-height: 0;
+        text-align: center;
+
+        &:focus,
+        &:active {
+            color: $black;
+        }
+    }
+
+    .t-header__cart.t--count {
+        .c-icon {
+            fill: $black;
+        }
+    }
+}
+
+// Header: Cart Count
+// --
+//
+// 1. Position cart count in button
+// 2. 11px font size
+// 3. Overwrites Italic
+// 4. Magic number to align to icon, cannot center due to icon shape
+
+.t-header__cart-count {
+    position: absolute; // 1
+    top: $sub-unit;
+    right: $sub-unit;
+    bottom: 0;
+
+    min-width: 15px;
+    height: 15px;
+    padding: 0 4px;
+
+    border-radius: 50px;
+    background: $brand-color;
+
+    color: $white;
+    font-style: normal; // 3
+    font-weight: 600;
+    font-size: $smallest-font-size;
+    line-height: 14px;
+    text-align: center;
+
+    .c-cart-fly & {
+        background: $success-color;
+    }
+}
+
+// Row Item
+// ---
+.t-header__row {
+    display: flex;
+    align-items: center;
+    min-height: 46px;
+
+    .c-icon {
+        width: 23px;
+        height: 23px;
+
+        fill: $neutral-200;
+    }
+}
+
+.t-header__tab {
+    display: flex;
+    align-items: center;
+}
+
+.t-header__row-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+
+    &.c--fluid {
+        flex: 1 1 auto;
+    }
+
+    .c-badge {
+        position: absolute;
+        top: $unit;
+        right: $unit;
+    }
+
+    .c-icon-label__label {
+        // font-family: $header-font-family;
+    }
+}
+
+.t-header__menu {
+    .c-search-suggestions__header {
+        display: none;
+    }
+}
+
+// Search & menu
+.t-header__search-menu {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+
+    background: $white;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+
+    .c-icon {
+        width: $sub-unit * 3;
+        height: $sub-unit * 3;
+        padding: $sub-unit / 2;
+
+        border-radius: 2px;
+        background: $brand-color;
+
+        fill: $white;
+    }
+
+    .c-header-seapartor {
+        width: 1px;
+        height: 20px;
+        margin-top: $sub-unit*2;
+
+        background: $neutral-50;
+
+        font-size: $font-size-large-17;
+    }
+
+    .c-header-category {
+        margin-top: -$sub-unit;
+
+        color: $neutral-70;
+        font-family: $default-sans;
+        font-weight: bold;
+    }
+}
+
+.t-header__search-menu-shop,
+.t-header__search-menu-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    // padding: 9px;
+
+    color: $black;
+    font-size: $large-font-size;
+
+    .c-search .c-icon {
+        padding: 2px;
+    }
+}
+
+.c-logo {
+    flex: 1;
+    width: 100%;
+
+    .c-icon {
+        width: 156px;
+        height: 32px;
+
+        fill: $brand-color;
+    }
+}
+
+
+// Menu Search Open
+// ---
+//
+// 1. Place on top of shade
+
+.t-header__menu-search-open {
+
+    .t-header__account,
+    .c-logo,
+    .t-header__cart {
+        position: relative;
+        z-index: $z3-depth + 1; // 1
+    }
+}

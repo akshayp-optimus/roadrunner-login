@@ -1,0 +1,32 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-signin-register">
+        {errorContainer}
+
+        {#signInTabs}
+            <div class="t-sign-in__tabs">
+                {>"components/tabs/tabs"/}
+            </div>
+        {/signInTabs}
+
+        {! The forgot password modal needs this !}
+    <div id="container"></div>
+
+    {! Including forgot password in pinny !}
+        {>"components/sheet/sheet" class="js-forgot-password-panel"
+            bodyClass="u-padding-none" coverage="70%" cssClass="c--dialog"
+        /}
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    (function(require) {
+        require(["global/ui", "pages/sign-in/sign-in-ui"], function(globalUI, signInUI) {
+            globalUI();
+            signInUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

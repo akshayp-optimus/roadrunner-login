@@ -1,0 +1,24 @@
+<article class="c-secondary-hero-card {class}">
+    {#items}
+        <div class="c-secondary-hero-card__item u-text-align-center u-margin-bottom-lg">
+            <a href="{href}" {?title}title="{title}"{/title} class="c-secondary-hero-card__img-link">
+                <img class="c-secondary-hero-card__image" src="{imgSrc}" />
+            </a>
+            <a href="{href}" {?title}title="{title}"{/title} class="c-secondary-hero-card__content-link">
+                {?secondaryHeroTitle}
+                    <h2 class="c-secondary-hero-card__title">{secondaryHeroTitle}</h2>
+                {/secondaryHeroTitle}
+
+                {?secondaryHeroSubTitle}
+                    <h6 class="c-secondary-hero-card__subtitle u-text-uppercase">{secondaryHeroSubTitle}
+                        {@translate key="arrow-right"/}
+                    </h6>
+
+                    {?secondaryIconName}
+                        {>"svg-icon" name=secondaryIconName class=secondaryIconClass/}
+                    {/secondaryIconName}
+                {/secondaryHeroSubTitle}
+            </a>
+        </div>
+    {/items}
+</article>

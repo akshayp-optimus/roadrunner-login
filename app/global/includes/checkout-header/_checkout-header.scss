@@ -1,0 +1,22 @@
+// Checkout header
+// ====
+
+.t-header__logo {
+    display: flex;
+    padding: $unit $unit 0;
+
+    a {
+        margin-right: $sub-unit;
+        .c-icon {
+            width: 156px;
+            height: 32px;
+
+            fill: $brand-color;
+        }
+    }
+
+    > .c-icon {
+        width: 18px;
+        height: 27px;
+    }
+}

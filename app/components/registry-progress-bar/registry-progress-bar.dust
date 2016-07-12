@@ -1,0 +1,20 @@
+<ol class="c-create-registry-steps {class}">
+    <li class="c-create-registry-steps__item c-step-registry-info js-checkout-step c--active {stepClass} {status}">
+        <div class="c-create-registry-steps__check c--complete">
+            <div class="c-step-heading c--active">REGISTRY INFO</div>
+        </div>
+        <{?href}a href="{href}" class="c-create-registry-steps__circle" {:else}div class="c-create-registry-steps__circle"{/href}>
+    </li>
+    <li class="c-create-registry-steps__item c-step-contact-info js-checkout-step {stepClass} {status}">
+        <div class="c-create-registry-steps__check">
+            <div class="c-step-contact-info-heading">CONTACT INFO</div>
+        </div>
+        <{?href}a href="{href}" class="c-create-registry-steps__circle" {:else}div class="c-create-registry-steps__circle"{/href}>
+    </li>
+    <li class="c-create-registry-steps__item c-step-done js-checkout-step {stepClass} {status}">
+        <div class="c-create-registry-steps__check">
+            DONE
+        </div>
+        <{?href}a href="{href}" class="c-create-registry-steps__circle" {:else}div class="c-create-registry-steps__circle"{/href}>
+    </li>
+</ol>

@@ -1,0 +1,79 @@
+.t-footer {
+    .c-footer-email-subscription {
+        padding: $unit $unit $sub-unit*3;
+
+        background-color: $neutral-30;
+    }
+
+    .c-footer-email-subscription-heading {
+        margin-bottom: $sub-unit;
+
+        color: $neutral-70;
+        font-weight: bold;
+    }
+
+    .c-email-subscription-placeholder {
+        width: 76%;
+        border: 0;
+    }
+
+    .c-footer-email-subscription-fields {
+        position: relative;
+
+        border: 1px solid $neutral-50;
+
+        border-radius: 2px;
+        background: $white;
+    }
+
+    .c-input-field-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        float: right;
+
+        height: 39px;
+        min-height: 39px;
+        margin-top: $sub-unit/2;
+        margin-right: $sub-unit/2;
+        padding-top: $sub-unit+2;
+        border: 1px solid $black;
+
+        border-radius: 2px;
+
+        color: $black;
+        font-family: $default-sans;
+        font-weight: bold;
+
+        &:active {
+            background: $neutral-230;
+
+            color: $white;
+        }
+    }
+
+    .c--is-disabled {
+        border: 1px solid $neutral-50;
+
+        background: $white;
+
+        color: $neutral-50;
+    }
+
+    .c-footer-phone-number {
+        font-weight: bold;
+    }
+
+    // Footer source code
+    .c-footer-source-code {
+        margin-top: $unit;
+
+        color: $neutral-70;
+        font-size: $smaller-font-size;
+        text-align: center;
+
+        code {
+            font-family: $default-sans;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<div class="c-carousel {class}">
+    {?carouselTitle}<h2 class="c-carousel__title js-carousel-title">{carouselTitle}</h2>{/carouselTitle}
+
+    <div class="c-carousel__inner m-scooch-inner js-carousel__items">
+        {>"components/carousel/partials/carousel__products" /}
+    </div>
+
+    {?showControls}
+        <div class="c-carousel__controls-wrapper">
+            <a class="c-carousel__control" href="#" data-m-slide="prev">
+                {>"svg-icon" name="chevron-large-left" title="Previous" /}
+            </a>
+
+            <div class="c-carousel__pips-wrapper">
+                {#items}
+                    <a href="#" class="c-carousel__pip" data-m-slide="{index}">{index}</a>
+                {/items}
+            </div>
+
+            <a class="c-carousel__control" href="#" data-m-slide="next">
+                {>"svg-icon" name="chevron-large-right" title="Next" /}
+            </a>
+        </div>
+    {/showControls}
+</div>

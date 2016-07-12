@@ -1,0 +1,4 @@
+<svg class="c-icon {class}" data-fallback="img/png/{name}.png">
+    <title>{name}</title>
+    <use xlink:href="#icon-{name}"></use>
+</svg>

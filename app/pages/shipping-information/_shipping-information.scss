@@ -1,0 +1,29 @@
+// Shipping Information
+// ===
+
+.t-shipping-information-page {
+    padding: 0  $unit;
+
+    a {
+        color: $black;
+        font-weight: bold;
+    }
+}
+
+
+.t-shipping-information-page__table {
+    border: 1px solid $neutral-50;
+
+    p {
+        margin: 0;
+    }
+
+    tr,
+    td {
+        border: 0;
+    }
+
+    td {
+        padding: $unit;
+    }
+}

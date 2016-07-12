@@ -1,0 +1,106 @@
+//  Tell a friend pop-up
+// ---
+
+.c-taf-content {
+    margin-top: -$unit;
+    .c-button.c--primary.c-taf__send {
+        width: 74.64%;
+    }
+    .c-field.c--error {
+        margin: -1px;
+    }
+
+    .c-box-row {
+        margin-bottom: -1px;
+    }
+
+    .c-button.c--small.c-taf__add-recipient {
+        display: block;
+        padding-bottom: $unit;
+
+        color: $black;
+        font-weight: bold;
+    }
+
+    .c-button.c--outline.c-taf__cancel {
+        margin-top: -$sub-unit;
+        border: 0;
+
+        color: $black;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+    .c-add-another-row {
+        position: relative;
+    }
+
+    .c-taf__remove {
+        position: absolute; // relatively positioned to c-add-another-row
+        top: -35px;
+        right: 0;
+
+        display: block;
+
+        font-weight: bold;
+    }
+
+    .c-taf__add-message.c-field__label {
+        padding-bottom: $sub-unit/2;
+        padding-left: 0;
+    }
+
+    .c-asterix-field {
+        padding-right: 3px;
+    }
+
+
+    .c-taf__message {
+        overflow: hidden;
+        width: 100%;
+        max-height: 44px;
+
+        outline: 0;
+
+        &:focus {
+            border-color: $neutral-50;
+        }
+    }
+
+
+    .c-remove-button {
+        margin-top: $sub-unit*5;
+    }
+
+    .c-field__label {
+        padding-left: $sub-unit;
+
+        font-weight: bold;
+    }
+
+    .c-taf__remaining-label {
+        color: $neutral-70;
+        line-height: 16px;
+    }
+
+    .c-box-row.c-check-me {
+        max-height: 44px;
+        margin: 0;
+    }
+
+    .c-check-box-label {
+        top: 0;
+
+        vertical-align: super;
+    }
+
+    .c-field {
+        input[type="checkbox"] {
+            margin-right: 0;
+            border: 0;
+
+            background: $white;
+            outline: 0;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{#sortOptions}
+    {?selected}
+        <span class="c-sort-options__item js-sort-option" >{text}</span>
+    {:else}
+        <a href="#" class="c-sort-options__item js-sort-option" data-target={sortTarget}>{text}</a>
+    {/selected}
+{/sortOptions}

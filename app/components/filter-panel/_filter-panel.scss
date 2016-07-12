@@ -1,0 +1,43 @@
+.c-filter-panel {
+    .c-filter-panel__list {
+        display: flex;
+        margin-bottom: $sub-unit*3;
+    }
+
+    .c-filter-panel__label {
+        width: 100%;
+        margin-left: $sub-unit;
+
+        &.c--check-active {
+            color: $black;
+        }
+    }
+
+    .c-more-filter {
+        .c-icon {
+            position: relative;
+            top: -2px;
+
+            width: 13px;
+            height: 13px;
+            margin-right: 0;
+
+            color: $black;
+            vertical-align: middle;
+        }
+
+        .c-filter-panel__label {
+            color: $black;
+            font-family: $default-sans;
+            font-weight: bold;
+        }
+    }
+
+    .c-filter-panel-second {
+        padding-left: $unit;
+    }
+
+    .c-filter-panel-third {
+        padding-left: $unit;
+    }
+}

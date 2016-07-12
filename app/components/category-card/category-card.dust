@@ -1,0 +1,19 @@
+<div class="c-category-card {class}">
+    {#items}
+    <div class="c-category-card__item u-text-align-center">
+        <a href="{href}" class="c-category-card__img">
+            {img}
+        </a>
+
+        {?primaryTitle}
+            <a href="{href}" class="c-category-card__content">
+                <div class="c-category-card__title">{primaryTitle}</div>
+
+                {?primaryIconName}
+                    {>"svg-icon" name=primaryIconName class=primaryIconClass/}
+                {/primaryIconName}
+            </a>
+        {/primaryTitle}
+    </div>
+    {/items}
+</div>

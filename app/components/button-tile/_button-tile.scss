@@ -1,0 +1,28 @@
+// Button-Tile
+// ===
+//
+// 1. Giving margin top in negative value in order to match style guide
+
+.c-button-tile {
+    margin: -$sub-unit 0 $sub-unit*5;  // 1
+    .c-button-text {
+        display: inline-block;
+        padding: $sub-unit+1 $unit;
+        border: 1px solid $black;
+
+        border-radius: 2px;
+
+        color: $black;
+        font-family: $default-sans;
+        font-weight: bold;
+
+        &:active {
+            border: 1px solid $neutral-50;
+
+            border-radius: 2px;
+            background: $white;
+
+            color: $neutral-50;
+        }
+    }
+}

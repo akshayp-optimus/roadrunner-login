@@ -1,0 +1,16 @@
+<section class="c-scroller {class}" role="region" aria-label="{label}" data-bind-scope="{bindScope}">
+        <div class="c-scroller__content">
+            {!-- TODO: c-scroller__content should only take one type of content at a time --!}
+            {?genericContent}
+                {scrollerContent}
+            {:else}
+                {#slideshow}
+                    {>"components/slideshow/slideshow"/}
+                {/slideshow}
+
+                {#table}
+                    {>"components/table/table"/}
+                {/table}
+            {/genericContent}
+        </div>
+</section>

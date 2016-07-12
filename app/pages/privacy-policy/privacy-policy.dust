@@ -1,0 +1,34 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="c-service-selection  u-margin-bottom-md">
+        <div class="js-service-select c-service-select">
+            <div class="js-desktop-left-nav" hidden>{leftNav}</div>
+        </div>
+    </div>
+
+    {responsiveContent}
+
+    <div class="t-privacy-policy">
+        <h2 class="c-title u-page-title-color u-padding-top-sm"><small>{pageTitle}</small></h2>
+
+        <div class="u-padding u--tight">{pageDescription}</div>
+
+        <a hidden class="cin cin-sticky"></a>
+    </div>
+
+    {>"components/back-to-top/back-to-top" class="c--sticky" icon="top" /}
+
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    (function(require) {
+        require(["global/ui", "pages/privacy-policy/privacy-policy-ui"], function(globalUI, privacyPolicyUI) {
+            globalUI();
+            privacyPolicyUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

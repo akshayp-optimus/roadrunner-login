@@ -1,0 +1,46 @@
+// TODO: Add comments
+
+.t-my-account-landing {
+    .c-my-account-details {
+        padding: $unit $unit $sub-unit $unit ;
+
+        p.inst-copy {
+            margin-bottom: $sub-unit*3;
+
+            color: $neutral-110;
+            font-size: $font-size;
+            line-height: $line-height;
+        }
+    }
+
+    .c-title {
+        padding: 0 0 $sub-unit 0;
+
+        font-size: $font-size-large-24;
+        line-height: $sub-unit*4;
+    }
+    .c-my-account-landing-items {
+        .myAccount {
+            color: $neutral-220;
+            font-weight: bold;
+            font-size: $large-font-size;
+            line-height: $line-height;
+        }
+
+        a {
+            display: block;
+            padding: $unit 0;
+
+            color: $black;
+            font-weight: bold;
+            font-size: $font-size;
+            line-height: $line-height;
+        }
+
+
+
+        li:last-of-type {
+            margin-bottom: $sub-unit;
+        }
+    }
+}

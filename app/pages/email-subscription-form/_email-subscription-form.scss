@@ -1,0 +1,14 @@
+.t-email-subscription-form {
+
+    td {
+        border-bottom: 0;
+    }
+
+    label.error {
+        color: $error-color;
+    }
+
+    .c-button.c--primary {
+        width: 100%;
+    }
+}

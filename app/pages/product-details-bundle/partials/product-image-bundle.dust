@@ -1,0 +1,14 @@
+{#bundle}
+    <figure class="c-product-image">
+        <a class="{?isInteractive}js-interactive-image{:else}magnifik{/isInteractive}">
+            <img class="c-product-image__image {class}" src="{imgSrc}" alt="{caption}" data-replace-id="{replaceId}">
+        </a>
+
+        <figcaption class="c-product-image__caption js-product-image__caption u-visually-hidden">
+            {caption}
+        </figcaption>
+
+        <span class="c-product-image__zoom-toggle">
+        </span>
+    </figure>
+{/bundle}

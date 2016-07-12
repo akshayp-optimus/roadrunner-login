@@ -1,0 +1,479 @@
+// Write a Review [BazaarVoice]
+// ===
+//
+// Warning: Desktop overriding styles ahead!
+
+
+// Configurable variables
+// ---
+
+$write-a-review__h-space: $unit + 8px;
+
+
+// Root
+// ---
+
+.t-write-a-review .t-main {
+
+    * {
+        font-family: $default-sans !important;
+    }
+
+    // Reset padding and margin
+    .BVRRSectionBodyContainer,
+    .BVRRProductDetailsName,
+    .BVRRSectionSelectTags,
+    .BVRRFieldContainer,
+    .BVRRRatingSubmissionInstructions,
+    .BVRRSectionBody,
+    .BVRRSubmissionFooterLinks,
+    .BVRRButtonContainer,
+    .BVRRPreviewContent,
+    .BVRRSubmitContentHeader,
+    .BVRRSubmittedContent,
+    .BVRRThankYouContent,
+    .BVRRDisplayDuplicateContent,
+    .BVRRButtonContainer,
+    .BVPageQuestion,
+    .BVField,
+    .BVPageEdit {
+        margin: 0;
+        padding: 0;
+    }
+
+    // General text copy styles
+    .BVRRRootElement,
+    .BVRRRatingSubmissionInstructions,
+    .BVRRValue,
+    .BVRRReviewText,
+    .BVRRLabel,
+    .BVSubjectName,
+    .BVSubjectDescription {
+        font-size: $font-size;
+        line-height: $line-height;
+    }
+
+
+    // Page Title
+    // ===
+
+    [id='BVRRSubmissionFormTitle'] {
+        @extend %h2;
+
+        margin-bottom: $unit*2;
+        padding: 0;
+        border-bottom: 0;
+
+        color: $neutral-220;
+        font-family: $default-sans;
+        font-weight: $normal-font-weight;
+
+        .BVRRRequiredFieldIndicator,
+        .BVRRRequiredFieldIndicatorSuffix {
+            display: none;
+        }
+    }
+
+    .BVPageHeader {
+        @extend %h2;
+
+        margin-bottom: $unit;
+        padding: 0;
+        border-bottom: 0;
+
+        font-family: $default-sans;
+        font-weight: $normal-font-weight;
+    }
+
+    .BVRRTitle {
+        &:empty {
+            display: none;
+        }
+    }
+
+
+    // Product Widget (Thumb + title)
+    // ===
+
+    .BVRRProductInformation {
+        display: flex;
+        align-items: flex-start;
+        margin: 0;
+        padding: 0;
+    }
+
+    // Product thumb
+    .BVRRProductDetailsImage {
+        flex: 0 0 auto;
+        max-width: $unit*8;
+        margin: 0;
+    }
+
+    // Product name container
+    .BVRRProductDetailsText {
+        flex: 1 1 auto;
+        margin-left: $unit;
+    }
+
+    .BVRRProductDetailsName {
+        font-family: $default-sans;
+    }
+
+
+    // Product instructions
+    // ===
+
+    .BVRRRatingSubmissionInstructions {
+        margin-bottom: $write-a-review__h-space;
+        padding-bottom: $write-a-review__h-space;
+        border-bottom: $border-light;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .BVFieldCancel .BVButton,
+    .BVFieldPreview .BVButton {
+        @extend %c-button;
+
+        float: none;
+
+        width: 100%;
+        height: auto;
+        margin-bottom: $unit;
+
+        border-radius: 2px;
+        background: $brand-color;
+
+        color: $white;
+        font-family: $default-sans;
+        font-weight: bold;
+        font-size: $large-font-size;
+        text-indent: 0;
+        text-transform: lowercase;
+    }
+
+    .BVFieldCancel .BVButton {
+        border: 1px solid $dark-border-color;
+
+        background: transparent;
+
+        color: $font-color;
+    }
+
+    .BVFieldAnswertext .BVFieldLabel {
+        margin: 0;
+    }
+
+    .BVMERequiredFieldIndicatorSectionHeader {
+        display: none;
+    }
+
+    .BVSectionParentContent {
+        width: auto !important;
+    }
+
+    .BVFieldCheckbox {
+        margin-top: -$unit;
+    }
+
+
+    // Overall Rating Stars
+    // ===
+
+    .star {
+        padding: 0;
+
+        // Star sprite
+        a {
+            transform: scale(0.8);
+        }
+
+        ~ .star {
+            margin-left: $unit;
+        }
+    }
+
+
+    // Field related styles
+    // ===
+    //
+    // 1. Match '.c-field-row' spacing
+
+    .BVRRSectionBody + .BVRRSectionBody,
+    .BVSection + .BVSection,
+    .BVField + .BVField,
+    .BVRROverallRatingSubmissionContainer ~ .BVRRFieldContainer,
+    .BVRRFieldContainer ~ .BVRRFieldContainer {
+        margin-top: $write-a-review__h-space; // 1
+    }
+
+    // Field Label
+    .BVRRFieldLabel:not(.BVRRFieldLabelReviewAgreedtotermsandconditions) {
+        @extend %bv__label-align;
+    }
+
+    .BVRRFieldLabel,
+    .BVFieldLabel {
+        @extend %bv__label-color;
+    }
+
+    // Field caption/help text
+    .BVRRFieldHelper,
+    .BVMEFieldHelper,
+    #BVRRReviewEditEmailDisclaimerID {
+        margin: $sub-unit/2 0 0 0;
+
+        color: $neutral-230;
+        font-size: $smaller-font-size;
+    }
+
+    // Input/textarea element
+    .BVRRField:not([type="checkbox"]),
+    .BVFieldText,
+    .BVFieldTextArea,
+    .BVFieldSelect,
+    .BVRRFieldInput:not([type="checkbox"]),
+    .BVRRFieldValue {
+        width: 100%;
+        height: initial;
+        padding: $input-padding;
+        border: 1px solid $neutral-50;
+
+        font-size: $font-size;
+        line-height: $line-height;
+    }
+
+    // Checkbox inputs
+    .BVRRFieldInput[type="checkbox"] {
+        width: 24px;
+        margin: 0;
+    }
+
+    // Alt Checkbox fields
+    .BVCheckboxField {
+        display: flex;
+        align-items: center;
+
+        input {
+            flex: 0 0 auto;
+        }
+
+        label {
+            @extend %bv__label-color;
+
+            flex: 1 1 auto;
+        }
+    }
+
+
+    // Pros / Cons Sections
+    // ===
+
+    .BVRRSectionSelectTags {
+        margin-top: $write-a-review__h-space;
+    }
+
+    .BVRRProTagSection,
+    .BVRRConTagSection {
+        float: none;
+    }
+
+    .BVRRProTagSection + .BVRRConTagSection {
+        margin-top: $write-a-review__h-space; // 2
+    }
+
+    // Section header
+    .BVRRTagSectionHeader {
+        @extend %bv__label-align;
+        @extend %bv__label-color;
+    }
+
+    // Tag container
+    .BVRRTagsBlock {
+        padding: $unit;
+        border: $border-light;
+
+        border-radius: $border-radius;
+    }
+
+    .BVRRTagRow {
+        display: flex;
+        align-items: center;
+
+        &.BVRRHidden {
+            display: none;
+        }
+
+        + .BVRRTagRow {
+            margin-top: $unit;
+        }
+    }
+
+    .BVRRTagCheckboxContainer {
+        display: block;
+        flex: 0 0 auto;
+        margin-right: $unit;
+    }
+
+    .BVRRTagTextContainer {
+        display: block;
+        flex: 1 1 auto;
+    }
+
+
+    // Submission Button Container
+    // ===
+
+    .BVRRButtonContainer,
+    .BVRRThankYouReturnLinkContainer,
+    .BVRRButtonContainer {
+        padding: $sub-unit;
+
+        text-align: center;
+
+        > input,
+        > a {
+            display: block;
+            margin: 0 auto;
+
+            + input,
+            + a {
+                margin-top: $write-a-review__h-space;
+            }
+        }
+    }
+
+
+    // Footer Links
+    // ===
+
+    .BVRRSubmissionFooterLinks,
+    .BVModuleFooterLinks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: $unit;
+        padding-top: $unit;
+        border-top: $border-light;
+
+        > * {
+            display: block;
+            flex: 0 0 auto;
+            margin: 0 $unit;
+        }
+
+        a {
+            padding: 0;
+
+            color: $neutral-240;
+            font-family: $default-sans;
+            font-weight: bold;
+            font-size: $small-font-size;
+            text-decoration: none;
+        }
+    }
+
+
+    // Preview Review Elements
+    // ===
+
+    .BVRRPreviewContentHeaderSentenceSubmit {
+        margin-bottom: $write-a-review__h-space;
+    }
+
+    // Preview container
+    .BVRRDisplayContentReview {
+        border: 0;
+    }
+
+    // Terms checkbox
+    .BVRRFieldContainerReviewAgreedtotermsandconditions {
+        display: flex;
+        align-items: center;
+        margin: $write-a-review__h-space 0;
+
+        > input {
+            flex: 0 0 auto;
+        }
+
+        > label {
+            display: block;
+            flex: 1 1 auto;
+            margin: 0;
+            margin-left: $unit;
+        }
+
+        .BVRRFieldLabel {
+            color: $font-color;
+            font-weight: bold;
+            font-size: $font-size;
+        }
+
+        .BVRRRequiredFieldIndicator {
+            margin-left: 0;
+        }
+    }
+
+
+    // Errors
+    // ---
+    //
+
+    .BVErrors {
+        padding-left: 0;
+    }
+
+    .BVErrorsBody {
+        margin-left: 0;
+    }
+
+
+
+    .BVFieldError {
+        .BVFieldText {
+            border: 1px solid $error-color;
+        }
+
+        .BVFieldLabel {
+            color: $error-color;
+        }
+    }
+
+    .BVRRFieldError {
+        .BVRRFieldText {
+            border: 1px solid $error-color;
+        }
+
+        .BVRRFieldLabel {
+            color: $error-color;
+        }
+    }
+
+    .BVRRRequiredFieldIndicator {
+        margin: 0 $sub-unit;
+
+        color: $error-color;
+    }
+}
+
+
+// Bazaarvoice styles
+// ---
+//
+// 1. Align asterisk after label and left align the label text
+
+%bv__label-align {
+    display: flex;
+    flex-direction: row-reverse; // 1
+    justify-content: flex-end; // 1
+    margin-bottom: $unit / 2;
+}
+
+%bv__label-color {
+    color: $font-color;
+    font-weight: bold;
+    font-size: $font-size;
+    line-height: $line-height;
+}

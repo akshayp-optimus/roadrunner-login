@@ -1,0 +1,83 @@
+// Refine Button
+// ===
+//
+
+.c-product-list__refine-results {
+    .c-button.c--outline {
+        border: 1px solid $black;
+
+        border-radius: 2px;
+        outline: none;
+
+        color: $black;
+        font-family: $default-sans;
+        font-weight: bold;
+        font-size: $large-font-size;
+        text-transform: lowercase;
+    }
+
+    .c-bellows {
+        border: 0;
+    }
+
+    .c-bellows__item {
+        border: 0;
+    }
+
+    .c-bellows__header {
+        padding: 0 $unit;
+
+        background: none;
+
+        .c-icon.c--small {
+            width: 13px;
+            height: 10px;
+        }
+    }
+
+    .bellows__content-wrapper {
+        background: $neutral-40;
+    }
+
+    .c-bellows__item.bellows--is-opening,
+    .c-bellows__item.bellows--is-open {
+        .c-bellows__header {
+            padding: 0;
+        }
+
+        .c-icon {
+            transform: rotate(-180deg);
+        }
+
+        .c-button {
+            border: 0;
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+            background: $brand-color;
+            outline: none;
+
+            color: $white;
+            text-transform: lowercase;
+
+            &:active {
+                background: $brand-color;
+            }
+        }
+
+        .c--outline {
+            border-radius: 0;
+        }
+
+        .c-icon.c--small {
+            width: 13px;
+            height: 10px;
+
+            color: $white;
+        }
+    }
+
+    .c-bellows__content {
+        margin-bottom: $unit;
+        padding-bottom: $sub-unit*3;
+    }
+}

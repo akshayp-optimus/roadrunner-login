@@ -1,0 +1,233 @@
+// Review Section
+// ===
+//
+// Warning: Desktop overriding styles ahead!
+//
+// Configurable variables
+// ---
+
+$review__h-space: $unit + 8px;
+
+.c-reviews-bellows {
+
+    // Reset elements
+    table,
+    tbody,
+    tr,
+    td,
+    .BVRRWidget,
+    .BVRRContainer,
+    .BVRRDisplayContent,
+    .BVRRRelevancySortHelpContainer,
+    .BVRRDisplayContentHeaderContent,
+    .BVRRQuickTakeSection,
+    .BVRRContentReview,
+    .BVRRReviewDateContainer,
+    .BVRRReviewDisplayStyle5BodyContent,
+    .BVRRReviewDisplayStyle5Text,
+    .BVRRReviewDisplayStyle5Tags,
+    .BVRRPager,
+    .BVQAWidget,
+    .BVQAWidgetWrapper,
+    .BVQAHeader,
+    .BVQAMainContent,
+    .BVQAQuestionAndAnswers,
+    .BVQAPageBasedPager,
+    .c-bellows__list {
+        float: none;
+
+        display: block;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .c-bellows__list {
+        margin: 0 !important;
+    }
+
+    .c-bellows__content {
+        padding: 0 $unit $unit;
+    }
+
+    // General text copy styles
+    .BVRRRootElement,
+    .BVQAWidget,
+    .BVRRReviewDateContainer,
+    .BVRRReviewDisplayStyle5BodyContent,
+    .BVRRReviewDisplayStyle5Tags,
+    .BVQAQuestionAndAnswerCount {
+        font-size: $font-size;
+        line-height: $line-height;
+    }
+
+
+    // Hide elements we don't want
+    // ===
+
+    // BV tab bar
+    .gwt-product-detail-bazaar-voice-tab-panel {
+        > tbody {
+            > tr:first-child {
+                display: none;
+            }
+        }
+    }
+
+    // Overview section (Rating breakdown, Pros, Cons)
+    .gwt-product-detail-bazzar-voice-aa-content-panel,
+    .BVRRQuickTakeSection,
+    .BVQAPager {
+        display: none;
+    }
+
+
+    // Sort Toolbar
+    // ===
+    //
+    // 1. Override desktop specificity
+
+    // Container
+    .BVRRDisplayContentHeader,
+    .BVQAToolbar {
+        margin-bottom: $review__h-space;
+        height: auto;
+
+        background: none;
+    }
+
+    .BVRRSortAndSearch {
+        display: block;
+        margin-top: $unit;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    // Sort select
+    .BVRRDisplayContentSelect {
+        font-size: $font-size !important; // 1
+    }
+
+    // write review link
+    .BVRRDisplayContentSubtitle {
+        position: static;
+
+        display: block;
+
+        a {
+            padding: 0;
+
+            background: none;
+
+            font-size: $small-font-size;
+        }
+    }
+
+    .BVRRDisplayContentLinkWrite {
+        float: none !important; // 1
+    }
+
+
+    // Reviews
+    // ===
+    //
+    // 1. Override our own !important from _desktop.scss
+
+    .BVRRContentReview {
+        + .BVRRContentReview {
+            margin-top: $review__h-space;
+            padding-top: $review__h-space;
+            border-top: $border-light;
+        }
+
+        #BVSubmissionPopupContainer {
+            padding: 0;
+        }
+    }
+
+    .BVRRUserNickname a {
+        display: inline;
+    }
+
+    .BVRRReviewDisplayStyle5BodyContent {
+        margin-top: $review__h-space;
+    }
+
+    .BVDI_BAItem {
+        list-style-type: none;
+
+        .BVDILink {
+            display: block !important; // 1
+            padding: 0;
+
+            background: none;
+        }
+    }
+
+    .BVRRReviewDisplayStyle5Tags {
+        margin-top: $review__h-space;
+    }
+
+
+    // Questions
+    // ===
+
+    .BVQAQuestionAndAnswers {
+        border: $border-light;
+
+        ~ .BVQAQuestionAndAnswers {
+            margin-top: $review__h-space;
+        }
+    }
+
+    .BVQAQuestion {
+        padding: $unit;
+    }
+
+
+    // Pagination
+    // ===
+
+    .BVRRPager {
+        display: flex;
+        align-items: center;
+    }
+
+    .BVRRPageLink {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        min-height: 40px;
+        min-width: 40px;
+        margin: 0;
+
+        text-align: center;
+
+        a {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+
+    // Review Footer
+    // ===
+
+    .BVRRFooter {
+        border-top: $border-light;
+        padding-top: $review__h-space;
+        margin-top: $review__h-space;
+    }
+
+
+    // Questions Footer
+    // ===
+
+    .BVQAFooter {
+        margin-top: $review__h-space
+    }
+}

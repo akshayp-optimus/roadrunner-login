@@ -1,0 +1,12 @@
+<div class="t-pdp__collection">
+    <h4 class="u-padding u--tight u-padding-top-extra-lg">
+        {title}
+    </h4>
+    <h6 class="u-padding u--tight u-margin-top-sm">
+        {subtitle}
+    </h6>
+
+    <ul class="c-product-tile-content">
+        {>"components/product-tile/product-tile" isProductDetailPage="true"/}
+    </ul>
+</div>

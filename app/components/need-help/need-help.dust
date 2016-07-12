@@ -1,0 +1,7 @@
+{#needHelpSection}
+    {?needHelp}
+        <div class="c-need-your-help">
+            {needHelp}
+        </div>
+    {/needHelp}
+{/needHelpSection}

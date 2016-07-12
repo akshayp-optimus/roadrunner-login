@@ -1,0 +1,11 @@
+<div>
+    {title}
+    {subTitle}
+    {salespoint}
+    <button type="button" class="c-button pinny__close c--full-width c--primary">
+        {@translate key="continue_shopping"/}
+    </button>
+    <div class="c-not-shipping">
+        {notshipLink|s}
+    </div>
+</div>

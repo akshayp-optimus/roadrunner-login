@@ -1,0 +1,49 @@
+<div class="c-product-qty-and-price t-product-details__product-options">
+    {#.productOptions}
+        {?.select}
+            <div class="t-product-details__product-option js-require-add-to-cart">
+                <div class="c-arrange c--align-middle">
+                    <div class="t-product-details__product-option-label c-arrange__item c--shrink">
+                        <label class="c-amount-label">{.optionLabel}</label>
+                    </div>
+                    <div class="c-arrange__item u-shift-top u-shift-bottom u-shift-end">
+                        {>"components/select/select":.select/}
+                    </div>
+                </div>
+            </div>
+        {/.select}
+        {?.swatches}
+            <div class="c-swatch-selection-section t-product-details__product-option u-no-bottom-padding js-require-add-to-cart">
+                <div class="c-arrange c--align-baseline js-color-description">
+                    <div class="t-product-details__product-option-label c-arrange__item c--shrink u-margin-end-md">
+                        <label>{.optionLabel}</label>
+                    </div>
+                    <div class="js-color-text c-arrange__item c-swatch-color-text">{swatchChosenText}</div>
+                </div>
+
+                {?showToggle}
+                    {>"components/hide-reveal/hide-reveal":showToggle
+                        hideClass="u-margin-top-sm" /}
+                {:else}
+                    <div class="js-swatches c-color-swatches u-padding-top-md">{swatches}</div>
+                {/showToggle}
+            </div>
+        {/.swatches}
+    {/.productOptions}
+
+    <div class="js-personalization-container t-product-details__product-option" hidden></div>
+
+    <div class="js-qty-container t-product-details__quantity t-product-details__product-option js-require-add-to-cart">
+        <div class="c-arrange">
+            <div class="t-product-details__product-option-label c-arrange__item c--shrink">
+                <label>Quantity</label>
+            </div>
+            <div class="c-arrange__item u-shift-top u-shift-bottom u-shift-start">
+                {>"components/pdp-stepper/pdp-stepper":.quantity/}
+            </div>
+            <div class="c-pdp-price-section u-shift-top u-shift-bottom u-shift-end">
+                <span class="js-pdp-price-total c-pdp-price-total"></span>
+            </div>
+        </div>
+    </div>
+</div>

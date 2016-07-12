@@ -1,0 +1,35 @@
+{
+  "name": "selector-utils",
+  "version": "1.1.0",
+  "homepage": "https://github.com/mobify/adaptivejs-utils",
+  "authors": [
+    "Steve Calvert <scalvert@mobify.com>"
+  ],
+  "description": "Utility functions that can be selectively included in your Adaptive.js builds",
+  "keywords": [
+    "adaptivejs",
+    "selector-utils"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.15",
+    "requirejs-text": "~2.0.12",
+    "mobify-velocity": "~1.1.2"
+  },
+  "_release": "1.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.1.0",
+    "commit": "9442fe7dda3a44392b5a6282502c8ac1de5a211f"
+  },
+  "_source": "git://github.com/mobify/selector-utils.git",
+  "_target": "~1.1.0",
+  "_originalSource": "selector-utils"
+}

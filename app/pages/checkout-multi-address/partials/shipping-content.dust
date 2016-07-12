@@ -1,0 +1,23 @@
+<div class="c-multi-address-content bellows {mainclass}">
+    {#items}
+        {?sectionTitle}
+            <div class="c-multi-address-content__header {multiAddressHeaderClass}">
+                {sectionTitle}
+            </div>
+        {/sectionTitle}
+
+        {?shippingContent}
+            {>"components/divider/divider" dividerClass="u-margin-top-lg u-margin-bottom-sm"/}
+            <div class="c-multi-address-content__detail {multiAddressContentClass}">
+                <h4 class="c-title">{shipToMultipleAddressHeading}</h4>
+                {?content}
+                    <div class="u-margin-bottom-md u-padding-sides-md">
+                        <ul class="c-multi-address__list">
+                            {content}
+                        </ul>
+                    </div>
+                {/content}
+            </div>
+        {/shippingContent}
+    {/items}
+</div>

@@ -1,0 +1,68 @@
+// Gift Card Page
+//===========
+
+.t-gift-services-wrapper {
+    padding: 0 $unit $sub-unit;
+
+    .c-title {
+        small {
+            font-size: $font-size-large-24;
+        }
+    }
+
+    h2,
+    h3 {
+        margin-bottom: $sub-unit;
+
+        font-size: $font-size-large-24;
+        line-height: 28px;
+    }
+
+    > strong {
+        color: $neutral-300;
+    }
+
+    #page-box {
+        h2 {
+            margin-bottom: 0;
+        }
+    }
+
+    p {
+        a {
+            color: $black;
+            font-weight: bold;
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    .c-card-title {
+        font-size: $font-size-large-24;
+    }
+
+    ul {
+        padding-bottom: $unit;
+        li {
+            margin-top: 6px;
+            margin-bottom: 6px;
+            margin-left: $unit + 2;
+
+            list-style-type: disc;
+        }
+    }
+
+    .c--primary {
+        margin-top: $unit;
+        padding: $unit;
+        text-transform: none;
+    }
+}
+
+.t-create-registry {
+    img {
+        width: 100%;
+    }
+}

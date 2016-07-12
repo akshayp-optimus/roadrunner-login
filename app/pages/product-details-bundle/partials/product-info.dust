@@ -1,0 +1,18 @@
+{#productInfo}
+    <div class="c-product-info">
+        {?.title}
+            <h3 class="c-title">
+                {.title|s}
+                {?skuId}
+                    <span class="c-product-part-number u--normal">({skuId})</span>
+                {/skuId}
+            </h3>
+        {/.title}
+        <div class="c--center c-star-ratings-container">
+            <div class="c-star-ratings  c--center js-overview-rating">
+            </div>
+            <span class="c-star-ratings__reviews js-total-reviews js-star-ratings__reviews">
+            </span>
+        </div>
+    </div>
+{/productInfo}

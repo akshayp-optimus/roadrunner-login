@@ -1,0 +1,27 @@
+// Swatches
+// ===
+//
+
+.c-swatches {
+    position: relative; // 1
+
+    max-width: 40px;
+    max-height: 40px;
+    margin: 0 !important;
+}
+
+
+// Swatch Item
+// ---
+.c-product-tile__swatches {
+    position: absolute;
+    bottom: $sub-unit;
+    left: $sub-unit;
+
+    border: 1px solid $white;
+}
+
+.c-swatches__swatche {
+    // 1
+    content: '';
+}

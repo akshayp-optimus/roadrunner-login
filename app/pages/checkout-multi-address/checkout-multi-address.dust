@@ -1,0 +1,33 @@
+{>"global/checkoutBase"/}
+
+{<contentBlock}
+
+    <div class="t-checkout-multi-address-wrapper">
+        <div class="js-desktop u-visually-hidden">
+            {desktopContent}
+        </div>
+
+        <div class="u-margin-bottom-md js-multiple-address-container">
+            {! placeholder, rendered in ui !}
+        </div>
+
+        <div class="u-margin-bottom-md u-padding-sides-md js-cta">
+            {! placeholder, rendered in ui !}
+        </div>
+
+        {>"components/sheet/sheet" effect="sheetBottom" isHeader="true" class="js-address-pinny c-address-pinny" bodyClass="js-address-pinny__body" /}
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/checkout-multi-address/ui.js
+    (function(require) {
+        require(["global/ui", "pages/checkout-multi-address/checkout-multi-address-ui"], function(globalUI, checkoutMultiAddressUI) {
+            globalUI();
+            checkoutMultiAddressUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

@@ -1,0 +1,8 @@
+{?createSelect}
+    <select class="c--select-topic">
+        <option value="" disabled selected="selected">Navigate to...</option>
+           {#selectItems}
+                <option value="{value}">{text}</option>
+            {/selectItems}
+        </select>
+{/createSelect}

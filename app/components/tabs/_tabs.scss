@@ -1,0 +1,176 @@
+// Tabs
+// ====
+//
+// Tabs component with tabs controls and tabs body.
+// Horizontal controls tabs items placed in one line.
+
+
+// Configurable Variables
+// ---
+
+$tabs__padding: $unit 15px;
+$tabs__body-space: $unit;
+$tabs__active-background: $white;
+
+
+// Tabs
+// ---
+//
+
+
+
+
+// Tabs: Controls
+// ---
+//
+// List of tabs buttons
+//
+// Notes:
+//
+// 1. Add overflow scroll to avoid squished tabs
+// 2. Needed for correctly calculating the position to scroll to when the user has selected a tab
+
+.c-tabs__controls {
+    position: relative; // 2
+    z-index: 1;
+
+    display: flex;
+
+    &.c--fade:after {
+        content: "";
+
+        position: absolute;
+        bottom: -$unit;
+        left: 0;
+        // z-index: $z1-depth;
+
+        width: 100%;
+        height: $unit;
+
+        background: linear-gradient($white, rgba($white, 0));
+    }
+}
+
+
+// Tabs: Controls item
+// ---
+//
+// Items inside controls
+//
+// 1. Same width
+
+.c-tabs__controls-item {
+    display: flex;
+    flex: 1 1 auto;
+    flex-grow: 1; // 1
+    flex-basis: 0; // 1
+    margin-left: -1px;
+
+    box-shadow: -1px 0 0 0 $neutral-40;
+
+    text-align: center;
+
+    &.c--current {
+        border-bottom-color: transparent;
+
+        box-shadow: 1px 0 0 0 $neutral-40;
+
+        .c-tabs__button {
+            border: 1px solid $neutral-40;
+            border-bottom: 0;
+
+            border-top-left-radius: 2px;
+            border-top-right-radius: 2px;
+            background: $tabs__active-background;
+        }
+
+        .c-tabs__title {
+            color: $black;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+
+        .c-tabs__subtitle {
+            color: $black;
+            font-family: $default-sans;
+        }
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+
+// Tabs: Tabs button
+// ---
+//
+// Tabs button placed inside controls
+
+.c-tabs__button {
+    width: 100%;
+    padding: $unit;
+    border: 0;
+
+    background: $neutral-30;
+
+    font-family: $default-sans;
+    font-style: normal;
+    text-align: left;
+
+    transition: 0.1s background ease-out;
+
+    &:active {
+        background: $neutral-190;
+    }
+}
+
+
+.c-tabs__title {
+    color: $neutral-70;
+    font-family: $default-sans;
+    font-weight: bold;
+    font-size: $font-size;
+    text-transform: capitalize;
+}
+
+.c-tabs__subtitle {
+    color: $neutral-70;
+    font-family: $default-sans;
+    font-size: $smaller-font-size;
+    text-transform: initial;
+}
+
+
+// Tabs: Tabs body
+// ---
+//
+// Tabs body content
+//
+
+.c-tabs__body {
+    margin-top: $tabs__body-space;
+    margin-bottom: $tabs__body-space*2;
+    padding: 0 $tabs__body-space;
+}
+
+
+// Tabs: Tabs content
+// ---
+//
+// Tabs item inside tabs body, content of tabs
+//
+
+.c-tabs__content {
+    display: none;
+
+    &.c--current {
+        display: block;
+    }
+}
+
+.c-tabs-data-items {
+    padding: $sub-unit $sub-unit 0;
+
+    background: $neutral-210;
+}

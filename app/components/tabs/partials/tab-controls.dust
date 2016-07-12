@@ -1,0 +1,19 @@
+<div class="c-tabs-data-items">
+    <ul id="c-tab-controls" class="c-tabs__controls" role="tablist">
+        {#tabs}
+            <li class="c-tabs__controls-item {.labelClass}" role="presentation">
+                {?.href}
+                    <a href="{href}" id="{.labelId}" class="c-tabs__button {.class}" role="tab" data-target="{.id}" aria-selected="{.hidden}" aria-label="{.title}" tabindex="{.tabindex}">
+                        <div class="c-tabs__title">{.title}</div>
+                        <div class="c-tabs__subtitle">{.subtitle}</div>
+                    </a>
+                {:else}
+                    <button id="{.labelId}" class="c-tabs__button" role="tab" data-target="{.id}" aria-selected="{.hidden}" aria-label="{.title}" tabindex="{.tabindex}" type="button">
+                        <div class="c-tabs__title">{.title}</div>
+                        <div class="c-tabs__subtitle">{.subtitle}</div>
+                    </button>
+                {/href}
+            </li>
+        {/tabs}
+    </ul>
+</div>

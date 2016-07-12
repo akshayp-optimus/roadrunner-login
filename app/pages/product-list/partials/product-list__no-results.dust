@@ -1,0 +1,27 @@
+<div class="t-product-list__no-results u-text-align-center">
+
+    <div class="c-product-list__no-results">
+        <h3 class="c-product-list__no-results-title">{@translate key="no_results_title" /}</h3>
+        {>"svg-icon" name="NoSearchResultIcon"/}
+    </div>
+
+    <div class="t-product-list__no-result-message">
+        {noResultsMessage}
+    </div>
+
+    {#searchForm}
+        {form|openTag|s}
+            <div class="c-input-form__wrapper">
+                {input}
+                {submitBtn}
+            </div>
+        {form|closeTag|s}
+    {/searchForm}
+
+    {#searchTips}
+        {>"components/bellows/bellows" bellowsHeaderClass="js-bellows-header"/}
+    {/searchTips}
+
+    <h4 class="u-margin-start-md u-padding-top-bottom-lg u-text-capitalize">{popularProductsHeading}</h4>
+
+</div>

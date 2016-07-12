@@ -1,0 +1,35 @@
+{#suggestions}
+
+    {?termSuggestions}
+        <li class="c-term-suggestions__header">{termHeading}</li>
+    {/termSuggestions}
+
+    {#termSuggestions}
+        <li class="c-search-suggestions__term u-margin-bottom-tn js-suggestion">{>"svg-icon" name="search" class="needsclick"/}{.}</li>
+    {/termSuggestions}
+
+    {?productSuggestions}
+        <li class="c-search-suggestions__header {relatedSearchesHeadingClass}">{productHeading}</li>
+    {/productSuggestions}
+
+    <div class="{relatedSearchesclass}">
+        {#productSuggestions}
+                <li class="c-search-suggestions__product js-suggestion">
+                    <{?href}a href="{href}"{:else}div{/href} class="c-arrange c--align-middle">
+                        {?img}
+                            <div class="c-arrange__item c--shrink">
+                                {img}
+                            </div>
+                        {/img}
+
+                        <div class="c-arrange__item u-margin-start-md">
+                            <div class="c-search-suggestions__title">{productName|s}</div>
+
+                            {priceContainer}
+                        </div>
+                    </{?href}a{:else}div{/href}>
+                </li>
+        {/productSuggestions}
+    </div>
+
+{/suggestions}

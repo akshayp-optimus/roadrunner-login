@@ -1,0 +1,12 @@
+// Field Row
+// ===
+//
+// 1. 20px - by design
+
+.c-field-row {
+    display: flex;
+
+    + .c-field-row {
+        margin-top: $unit+8px; // 1
+    }
+}

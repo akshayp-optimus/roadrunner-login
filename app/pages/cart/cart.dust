@@ -1,0 +1,86 @@
+{>"global/base"/}
+
+{<contentBlock}
+    {?emptyCart}
+        {#emptyCart}
+            {>"pages/cart/partials/empty-cart"/}
+        {/emptyCart}
+    {:else}
+        <h2 class="c-title c--upright js-page-title">{pageTitle}</h2>
+
+        {?errorMessages}
+            {errorMessages}
+        {/errorMessages}
+
+        {qtyForm}
+
+        {cartForm|openTag|s}
+
+            {hiddenInputs}
+
+            {analyticsData}
+
+
+            {#cartItems}
+                {>"components/cart-item/cart-item" cartItemClass="u-padding u-padding-bottom u--tight c-cart-detail" /}
+            {/cartItems}
+
+            {>"components/cart-order-summary/cart-order-summary" /}
+
+            {#ctas}
+                <div class="c-chechout-button">
+                    {checkoutButton}
+
+                    {continueShoppingButton}
+                </div>
+            {/ctas}
+
+        {cartForm|closeTag|s}
+
+    {/emptyCart}
+
+    {! You May Also Like Products are displayed in carousel components !}
+    {! Refer global/ui/carousel-ui.js !}
+    <div class="js-carousel-container u-padding-top u-padding-bottom u--tight u--hide">
+        <h2 class="c-carousel__title">{@translate key="you_may_also_like"/}</h2>
+
+        {>"components/carousel/carousel" class="u-no-border" /}
+    </div>
+    <div hidden>{mayAlsoLike}</div>
+
+    {#recentlyViewedProducts}
+        <div class="c-products-scroller u-padding-top u-padding-bottom u--tight">
+            <h2 class="c-carousel__title u-margin-bottom-md">{@translate key="recently_viewed"/}</h2>
+            {>"components/scroller/scroller"/}
+        </div>
+    {/recentlyViewedProducts}
+
+    <div class="t-cart__page-loading js-page-loading" hidden>
+        {>"components/loading/loading" /}
+    </div>
+
+
+    {hiddenForms}
+    {requiredLabels}
+    {promoCodeForm}
+    {estimateShippingForm}
+    {giftFlagForm}
+
+    {>"components/sheet/sheet" effect="modalCenter" cssClass="t-cart-tooltip-pinny c--dialog" class="js-tooltip-pinny" bodyClass="js-tooltip-content" headerClass="c-sheet__blank-header" isHeader="true"/}
+
+    {>"components/sheet/sheet" class="js-product-detail-widget-pinny c-product-detail-widget-pinny js-upsell-pinny" bodyClass="js-product-detail-widget-pinny__body c-product-detail-widget__body" coverage="100%" effect="sheetBottom"/}
+
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/cart/ui.js
+    (function(require) {
+        require(["global/ui", "pages/cart/cart-ui"], function(globalUI, cartUI) {
+            globalUI();
+            cartUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

@@ -1,0 +1,26 @@
+.c-secondary-hero-card {
+
+    .c-secondary-hero-card__item {
+        position: relative;
+        margin-right: $unit*3;
+        margin-left: $unit*3;
+    }
+
+    .c-secondary-hero-card__content-link {
+        position: absolute;
+        bottom: 0;
+
+        display: block;
+        width: 100%;
+        padding: $unit 0;
+
+        background: rgba(255, 255, 255, 0.8);
+
+        line-height: 16px;
+        text-align: center;
+    }
+
+    .c-secondary-hero-card__img-link {
+        display: block;
+    }
+}

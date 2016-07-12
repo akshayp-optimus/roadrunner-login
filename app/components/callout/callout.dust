@@ -1,0 +1,5 @@
+<div class="c-callout {cssClass}">
+
+    {calloutText}
+
+</div>

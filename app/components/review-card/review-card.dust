@@ -1,0 +1,73 @@
+<article class="c-review-card {.class}" data-desktop-id="{.desktopId}">
+
+    <header class="c-review-card__header">
+        <div class="c-arrange c--align-middle">
+            <address class="c-review-card__author c-arrange__item">
+                By <strong>{.reviewAuthor}</strong>
+            </address>
+            <time class="c-review-card__date c-arrange__item c--shrink" datetime="{.reviewDate}">
+                {.reviewDate}
+            </time>
+        </div>
+        <div class="c-review-card__reviews">
+            {#starRating}
+                {>"components/star-rating/star-rating" modifierClasses="c--shrink" /}
+            {/starRating}
+        </div>
+    </header>
+
+    <div class="c-review-card__content">
+        <h2 class="c-review-card__title">{.reviewTitle}</h2>
+        <div class="c-review-card__description">
+            {#desc}
+                {?bodyContent}
+                    {>"components/hide-reveal/hide-reveal"/}
+                {/bodyContent}
+            {/desc}
+
+            {?.reviewPros}
+                <p>{.reviewPros}</p>
+            {/.reviewPros}
+            {?.reviewCons}
+                <p>{.reviewCons}</p>
+            {/.reviewCons}
+        </div>
+    </div>
+
+    {?.footer}
+        <footer class="c-review-card__footer">
+            <div class="c-review-card__actions c-arrange">
+                <div class="c-arrange__item">
+                    <button class="c-review-card__action c--helpful js-helpful c--active">
+                        {>"svg-icon" name="check" class="c--small c-review-card__action-icon"/}
+                        <span class="c-review-card__action-label">
+                            Helpful{.numberHelpful}
+                        </span>
+                    </button>
+                </div>
+                <div class="c-arrange__item">
+                    <button class="c-review-card__action c--not-helpful js-not-helpful c--active">
+                        {>"svg-icon" name="expand" class="c--small c-review-card__action-icon"/}
+                        <span class="c-review-card__action-label">
+                            Not Helpful{.numberNotHelpful}
+                        </span>
+                    </button>
+                </div>
+                <div class="c-arrange__item">
+                    <button class="c-review-card__action c--offensive js-offensive c--active">
+                        {>"svg-icon" name="offensive" class="c--small c-review-card__action-icon"/}
+                        <span class="c-review-card__action-label">
+                            Offensive{.numberOffensive}
+                        </span>
+                    </button>
+                </div>
+            </div>
+            {#feedback}
+                <div class="c-review-card__feedback">
+                    {.reviewFeedback}
+                </div>
+            {/feedback}
+        </footer>
+    {/.footer}
+
+</article>

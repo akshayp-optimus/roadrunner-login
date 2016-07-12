@@ -1,0 +1,47 @@
+{>"global/base"/}
+
+{<contentBlock}
+
+    {>"components/hero/hero":heroImg/}
+
+    <div class="u-padding-all u--tight">
+        {#cards}
+            <div class="c-hero u-margin-bottom-md">
+                {.imageLink}
+            </div>
+        {/cards}
+    </div>
+
+    {! Placeholder code initially.. look at carousel-ui.js for details !}
+    {>"components/carousel/carousel" class="u-padding-top u--tight"/}
+
+    <!--<div class="c-just-for-you-section">
+        <div class="c-just-for-you-products__inner">
+            {recommendationTitle}
+            <div class="c-carousel-wrapper js-carousel-wrapper"></div>
+        </div>
+    </div>-->
+
+    <div hidden>
+        {recommendationDiv}
+        {registryDelete}
+    </div>
+
+    {hiddenViewForm}
+
+    {>"components/sheet/sheet" effect="modalCenter" class="js-delete-confirmation-pinny" cssClass="c--dialog c-delete-confirmation-pinny" bodyClass="js-delete-confirmation-pinny__body" isHeader="true" /}
+
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/home/home-ui.js
+    (function(require) {
+        require(["global/ui", "pages/home/home-ui"], function(globalUI, homeUI) {
+            globalUI();
+            homeUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

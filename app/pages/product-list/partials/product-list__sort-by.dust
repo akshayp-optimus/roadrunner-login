@@ -1,0 +1,9 @@
+{#sortBy}
+    <div class="c-select-with-arrow">
+        <select class="js-sort-menu">
+            {#options}
+                <option data-onclick="{value}" {?selected}selected{/selected}>{text}</option>
+            {/options}
+        </select>
+    </div>
+{/sortBy}

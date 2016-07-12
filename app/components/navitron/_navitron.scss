@@ -1,0 +1,151 @@
+// Navitron
+// ===
+//
+// Sliding panes for drilldown navigation
+//scss-lint:disable all
+.c-navitron {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+
+
+    // Navitron Previous Pane Trigger
+    // ---
+
+    .navitron__prev-pane {
+        // margin: $unit*-2; // Bleed c-list-tile__primary's padding
+    }
+
+
+    // Navitron Next Pane Trigger
+    // ---
+
+    .navitron__next-pane {
+        @include ripple;
+    }
+
+
+    // Navitron Sliding Panes
+    // ---
+    //
+    // Note:
+    //
+    // I'm nesting it inside c-navitron for self
+    // documenting selector
+
+    .navitron__pane {
+        background: $neutral-30;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+
+    // Navitron Content
+    // ---
+    //
+    // 1. We need to make this a flex container in order to stretch the "Hot Footer",
+    //    a.k.a. `.c-nav__list.c--hot-footer`
+
+    .navitron__content {
+        display: flex; // 1
+        flex-direction: column; // 1
+
+        &:focus {
+            outline: none;
+        }
+
+        .c-list-tile__primary-tile {
+            padding: $unit $sub-unit*3;
+        }
+
+        .c-list-tile__primary-action {
+            padding: 0;
+
+            line-height: 0;
+        }
+
+        .c-list-tile__primary-content {
+            padding: 0;
+
+            color: $black;
+            font-family: $default-sans;
+            font-size: $large-font-size;
+            line-height: 20px;
+        }
+
+        // scss-lint:disable all
+        a.c-list-tile__primary-tile {
+            padding-left: $sub-unit*7;
+        }
+        // scss-lint:enable all
+    }
+    // Navitron Header
+    // ---
+
+    .navitron__header {
+        // border-bottom: 1px $white solid;
+
+        .c-list-tile__primary-content {
+            padding: 0;
+
+            color: $black;
+            font-family: $default-sans;
+            font-weight: bold;
+            font-size: $large-font-size;
+            line-height: 17px;
+        }
+
+        .c-list-tile__secondary-tile {
+            justify-content: center;
+        }
+
+        .c-list-tile__secondary-action {
+            align-self: auto;
+            margin: 0;
+
+            background: none;
+
+            line-height: 0;
+            text-align: center;
+        }
+        // scss-lint:disable SelectorDepth
+
+        .c-list-tile__secondary-action .c-icon {
+            width: 18px;
+            height: 18px;
+            padding: 4px;
+
+            border-radius: 2px;
+            border-radius: 2px;
+            background: #b2b2b2;
+
+            fill: #f6f6f6;
+        }
+
+        // scss-lint:enable SelectorDepth
+
+        .c-list-tile__primary-tile {
+            padding: $unit $sub-unit*3;
+        }
+
+        .c-list-tile__primary-action {
+            padding: 0;
+
+            line-height: 0;
+        }
+    }
+
+    .c-list-tile__primary-content > div {
+        display: block;
+        overflow: hidden;
+        width: 99%;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}

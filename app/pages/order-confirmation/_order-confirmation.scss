@@ -1,0 +1,91 @@
+// Order Confirmation
+// ===
+
+.t-order-confirmation {
+    .c-box__label {
+        position: relative;
+
+        margin-left: $unit;
+
+        .required {
+            position: absolute;
+            left: 0;
+
+            margin-right: $sub-unit/2;
+            margin-left: -9px;
+
+            color: $error-color;
+        }
+    }
+
+    .c-registration-container {
+        input [type="checkbox"] {
+            margin-top: $sub-unit/2;
+        }
+
+        small {
+            margin-left: -7px;
+            font-size: $smaller-font-size;
+            color: $neutral-200;
+            margin-top: $sub-unit;
+            display: block;
+            line-height: 16px;
+        }
+    }
+
+    .c-order-confirmation-title {
+        margin-top: $sub-unit;
+    }
+
+    a[id='printlink'] {
+        display: block;
+
+        text-transform: lowercase;
+    }
+
+    a[id='printlink']:first-letter {
+        text-transform: uppercase;;
+    }
+
+    .c-field__checkbox-radio {
+        display: flex;
+
+        [type='checkbox'] {
+            margin-right: 0;
+        }
+    }
+
+    .c-faster-checkout-title,
+    .c-order-confirmation-title {
+        color: $neutral-220;
+    }
+
+    a.c--primary {
+        color: $black;
+    }
+
+    .c-button.c--primary {
+        margin-top: $unit*2;
+    }
+
+    .c-carousel {
+        padding-top: $unit;
+    }
+}
+
+.t-order-confirmation__fine-print {
+    margin-top: $sub-unit*3;
+    margin-bottom: $sub-unit*3;
+
+    h2 {
+        margin-bottom: $sub-unit;
+
+        color: $neutral-220;
+        font-size: $largest-font-size;
+    }
+
+    p > a {
+        color: $black;
+        font-weight: bold;
+    }
+}

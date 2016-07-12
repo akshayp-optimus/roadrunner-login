@@ -1,0 +1,20 @@
+// Box Shadow Mixin fix for iOS8
+// ===
+//
+// Without border-radius greater than 0, box-shadows will not be
+// rendered correctly on iOS8. (Tested on iPhone 6Plus [Both on Sim and Device])
+//
+// Reference:
+// http://stackoverflow.com/questions/26407299/ios-8-box-shadow-on-iphone-6-plus
+// https://discussions.apple.com/thread/6647986
+
+@mixin box-shadow(
+    $shadow-level: $z1-shadow,
+    $fallback-border-radius: 0.1px
+) {
+    box-shadow: #{$shadow-level};
+
+    .x-ios8 & {
+        border-radius: $fallback-border-radius;
+    }
+}

@@ -1,0 +1,19 @@
+{>"global/base"/}
+
+{! Empty out the unnecessary blocks !}
+{<header}{/header}
+{<footer}{/footer}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/email-subscription-form/email-subscription-form-ui.js
+    (function(require) {
+        require(["global/ui", "pages/email-subscription-form/email-subscription-form-ui"], function(globalUI, emailSubscriptionFormUI) {
+            globalUI();
+            emailSubscriptionFormUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}
+

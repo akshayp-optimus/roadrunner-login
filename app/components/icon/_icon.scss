@@ -1,0 +1,62 @@
+// SVG Icon Component
+// ===
+
+.c-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+
+    color: inherit;
+
+    fill: currentColor;
+}
+
+// Modifier: size
+// ---
+
+.c-icon.c--small {
+    width: 18px;
+    height: 18px;
+}
+
+.c-icon.c--medium {
+    width: 18px;
+    height: 18px;
+}
+
+.c-icon.c--large {
+    width: 32px;
+    height: 32px;
+}
+
+.c-icon.c--x-large {
+    width: 48px;
+    height: 48px;
+}
+
+
+// Modifier: colors
+// ---
+
+
+.c-icon.c--light-gray {
+    fill: $neutral-230;
+}
+
+.c-icon.c--dark-gray {
+    fill: $neutral-240;
+}
+
+.c-icon.c--error {
+    fill: $error-color;
+}
+
+.c-icon.c--success {
+    fill: $success-color;
+}
+
+.c-icon.c--accent {
+    fill: $accent-color;
+}

@@ -1,0 +1,72 @@
+{#header}
+    <header class="t-header" role="banner">
+        <ul class="t-header__row js-header__top">
+            <li class="t-header__row-item">
+            <button id="x-toggle-account-modal" class="t-header__account">
+                {>"svg-icon" name="account"/}
+            </button>
+            </li>
+
+            <div hidden id="recommendationBox1"></div>
+
+            {#websiteLink}
+                <li class="t-header__row-item c-logo c-header-logo">
+                    <a href="{href}" class="t-header__tab">
+                        <span class="u-visually-hidden">{text}</span>
+                        {>"svg-icon" name="GR-logo"/}
+                    </a>
+                </li>
+            {/websiteLink}
+
+            <li class="t-header__row-item c-cart-container">
+                <button class="t-header__cart js-cart-toggle">
+                    {>"svg-icon" name="cart"/}
+                    <span class="t-header__cart-count js-cart-count u--hide">0</span>
+                </button>
+            </li>
+        </ul>
+        <div class="t-header__my-account">
+
+            {>"components/sheet/sheet"
+            class="js-my-account c-my-account"
+            effect="sheetLeft"
+            isHeader="true"
+
+            bodyContent=myAccountItems
+            headerContent="My account"
+            /}
+        </div>
+        <div class="t-header__search-menu">
+            <a class="t-header__search-menu-shop u-padding-bottom u-padding-top u--tight u--less js-shop-nav">
+                <div class="c-shop u-margin-end-sm u-margin-top-extra-sm">{>"svg-icon" name="menu"/}</div>
+                <span class="c-header-category">{@translate key="shop"/}</span>
+            </a>
+            <a class="c-header-seapartor u-margin-top-md"></a>
+            <a class="t-header__search-menu-search  u-padding-bottom u-padding-top u--tight u--less js-search-box">
+                <div class="c-search u-margin-top-extra-sm u-margin-end-sm">{>"svg-icon" name="search"/}</div>
+                <span class="c-header-category">{@translate key="search"/}</span>
+            </a>
+        </div>
+
+    </header>
+
+    {>"components/sheet/sheet"
+        effect="sheetRight" class="js-cart-pinny" headerClass="js-cart-title"
+        bodyClass="js-cart-contents" footerClass="js-cart-checkout-button"
+        footerContent=" " bodyContent=emptyCartContent isHeader="true"
+    /}
+
+    <div class="t-header__menu js-search" hidden>
+        <div class="c-search-wrapper">
+            <i class="c-search-icon">
+                {>"svg-icon" name="search"/}
+            </i>
+            {searchBox}
+            <button class="pinny__close c-sheet__header-close">
+                {>"svg-icon" name="close"/}
+            </button>
+        </div>
+    </div>
+
+    {shoppingCart}
+{/header}

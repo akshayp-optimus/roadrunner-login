@@ -1,0 +1,468 @@
+//  Order review and payment
+// ===
+//
+// 1. Override iframe style
+
+.t-order-review-and-payment-wrapper {
+    margin-top: $sub-unit;
+    margin-bottom: $sub-unit*3;
+
+    // Promo Code
+    .js-applied-promo {
+        .c-ledger__number {
+            color: $error-color;
+        }
+    }
+
+    #cvv_Tokenizer {
+        width: 100% !important;  // 1
+        height: 100% !important; // 1
+    }
+
+    .js-review-block,
+    .js-payment-block {
+        padding: 0 $unit;
+        padding-top: $sub-unit;
+        padding-bottom: $sub-unit;
+    }
+
+    .c-ship-to-multiple-address {
+        text-align: center;
+        a {
+            display: block;
+            margin-bottom: $unit;
+
+            font-weight: 600;
+            &:before {
+                content: '< ';
+            }
+        }
+    }
+
+    .c-button.c--primary {
+        margin-bottom: $sub-unit;
+    }
+
+    .c--is-disabled {
+        border: 1px solid $neutral-50;
+
+        background: $white;
+
+        &:before span {
+            color: $neutral-50;
+        }
+    }
+
+    .c-cart-sub-total button[type="submit"] {
+        border: 1px solid;
+
+        border-radius: 2px;
+        background: none;
+
+        color: #000;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+    .c-title {
+        padding: $sub-unit $unit 0;
+    }
+
+
+    .t-payment-and-review__items {
+        margin-bottom: -$sub-unit;
+    }
+
+    // Edit & select button with title
+    .c-button-title-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: $sub-unit/2;
+    }
+
+    label[id='plcc_account_label'] {
+        position: absolute;
+
+        padding-top: $unit;
+        padding-left: $sub-unit;
+    }
+
+    label[id='expire_month_label'] + .c-arrange {
+        flex: 1;
+    }
+
+    .errortxt {
+        width: 88px;
+        margin-left: $unit;
+    }
+
+    .c-cart-item-price-container {
+        position: relative;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .c-button-wrap {
+        display: flex;
+        align-items: center;
+
+        color: $black;
+
+        li {
+            margin: 0 $sub-unit/2;
+
+            text-transform: capitalize;
+
+            button {
+                text-transform: capitalize;
+            }
+        }
+
+        a:active,
+        a:focus {
+            color: $black;
+        }
+
+        .c-saparator {
+            color: $neutral-200;
+        }
+    }
+
+    .c-box .c-box__label {
+        display: flex;
+        width: 88px;
+        margin-left: $unit;
+    }
+
+    .c-payment__gr-credit {
+        margin-top: -1px;
+        margin-bottom: -1px;
+        padding-top: $unit;
+        padding-left: $unit;
+        border: 1px solid $neutral-50;
+    }
+
+    .c-box-row .required {
+        margin-right: $sub-unit/2;
+        margin-left: -9px;
+
+        color: $error-color;
+    }
+
+    // Payment option
+    .c-box-row:first-child {
+        border-radius: 0;
+    }
+
+    .js-cc-payment-card-type {
+        &.c--jcb {
+            div[id='payment-type-holder'] {
+                &::after {
+                    height: 21px;
+
+                    background-position: 0 0;
+                }
+            }
+        }
+
+        &.c--discover {
+            div[id='payment-type-holder'] {
+                &::after {
+                    height: 20px;
+
+                    background-position: 0 -22px;
+                }
+            }
+        }
+
+        &.c--mastercard {
+            div[id='payment-type-holder'] {
+                &::after {
+                    height: 17px;
+
+                    background-position: 0 -42px;
+                }
+            }
+        }
+
+        &.c--visa {
+            div[id='payment-type-holder'] {
+                &::after {
+                    height: 10px;
+
+                    background-position: 0 -59px;
+                }
+            }
+        }
+
+        &.c--amex {
+            div[id='payment-type-holder'] {
+                &::after {
+                    height: 23px;
+
+                    background-position: 0 -70px;
+                }
+            }
+        }
+        &[class*=' c--'] {
+            div[id='payment-type-holder'] .c-icon {
+                display: none; // 1
+            }
+        }
+        div[id='payment-type-holder'] {
+            position: relative;
+
+            &::after {
+                content: '';
+
+                position: absolute;
+                top: 50%;
+                right: 12px;
+
+                display: block;
+                width: 29px;
+
+                background: url('../img/credit-card-sprite.png') no-repeat;
+                background-position: 0 0;
+                background-size: cover;
+
+                transform: translateY(-50%);
+
+                pointer-events: none;
+            }
+        }
+    }
+
+    div[id='payment-type-holder'] {
+        position: relative;
+
+        display: flex;
+        min-height: 34px;
+        margin-bottom: -1px;
+        padding: $unit $unit;
+        border: 1px solid $neutral-50;
+
+        border-radius: 2px 2px 0 0;
+        background: $neutral-40;
+
+        [type="radio"]:before {
+            background: $white;
+        }
+
+        [type="radio"]:checked:before {
+            background: $brand-color;
+        }
+
+        &.c-payment-active {
+            background: $white;
+        }
+
+        .c-icon {
+            position: absolute;
+            right: 12px;
+        }
+    }
+
+    // CVV input section
+    // GRRD-474 CVV section needs to be aligned, but iframe needs to have mobify tag first
+    // 1. Magic number to match other input fields - Remove static height once iframe has mobify tag.
+
+    .c-field__info-button {
+        position: absolute;
+        top: 50%;
+        left: 50px;
+
+        transform: translateY(-50%);
+    }
+
+    div[id='cvv-container'] {
+        height: 44px; // 1
+    }
+
+    .js-tooltip-button,
+    .js-pinny-button,
+    .js-review-delivery-options-link {
+        min-height: 30px;
+        padding: 0 $sub-unit/2;
+
+        .c-icon {
+            width: 12px;
+            height: 12px;
+
+            vertical-align: middle;
+
+            fill: $neutral-70;
+        }
+    }
+
+    .cc-plcc-save-holder {
+        margin: $unit 0;
+        padding: $unit;
+        border: 1px solid $neutral-50;
+
+        border-radius: 2px;
+    }
+
+    .cc-plcc-save-holder,
+    .PLCCOptions {
+        input {
+            margin-right: 0;
+
+            vertical-align: top;
+        }
+    }
+
+    .t-payment-and-review__order-item {
+        margin-right: -$unit;
+        margin-bottom: $unit;
+        margin-left: -$unit;
+        padding-bottom: $unit;
+        border-bottom: 1px solid $neutral-50;
+
+        &:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+        .c-qty__wrapper {
+            position: absolute;
+            right: $sub-unit;
+
+            margin-top: -28px;
+
+            a {
+                color: $black;
+                font-weight: bold;
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .c-billing-address-text {
+        a {
+            color: $neutral-70;
+        }
+    }
+
+    .c-payment-cancel-button {
+        width: 84%;
+
+        color: $black;
+        font-weight: bold;
+        text-transform: lowercase;
+    }
+
+    // Standard Delivery option
+    .c-field__delivery-option {
+        position: relative;
+
+        border: $border;
+
+        .c-field__info {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    [id='pleaseWait'] {
+        display: none;
+    }
+
+    // GRRD-564: Show inline finance option descriptions
+    // While keeping tooltip functionality
+    .c-payment__gr-credit-heading {
+        div[class^="option_desc"] {
+            overflow: hidden;
+            max-height: 0;
+
+            font-weight: normal;
+            font-size: $smaller-font-size;
+
+            transition: max-height 0.2s ease-out;
+        }
+
+        .option_radio:checked + label {
+            div[class^="option_desc"] {
+                max-height: 500px;
+            }
+        }
+    }
+}
+
+// Order review & payment
+.t-order-review-and-payment {
+    .gwt-csb-error-panel-popup {
+        visibility: hidden !important;
+    }
+
+    .cc-plcc-save-holder,
+    .c-payment__gr-credit {
+        label {
+            width: 83%;
+        }
+    }
+
+    input[id='plcc_account'] {
+        padding-left: 112px;
+    }
+
+    input[type="radio"] {
+        margin-right: $sub-unit;
+    }
+
+    .gwt-PopupPanelGlass {
+        position: absolute !important;
+
+        overflow: hidden !important;
+        clip: rect(1px, 1px, 1px, 1px) !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        border: 0 !important;
+    }
+
+    .termsCondModal .c-sheet__header-close {
+        display: none;
+    }
+
+    .c-service-delivery-option-pinny {
+        .c-service-delivery-options-content {
+            padding-top: 0;
+
+            li {
+                text-indent: 0;
+            }
+        }
+        .js-close-pinny.secondary {
+            width: 84%;
+            margin: 0 auto;
+            margin-top: -$unit;
+            border: 0;
+
+            background: transparent;
+
+            color: $black;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+    }
+
+    // scss-lint:disable SelectorFormat
+    .gwt-DecoratedPopupPanel {
+        display: block !important;
+    }
+    // scss-lint:enable SelectorFormat
+}
+
+// Offer code pinny
+.t-cart-tooltip-pinny {
+    li {
+        margin-bottom: $unit;
+        margin-left: 15px;
+
+        text-indent: -$sub-unit;
+        list-style-type: disc;
+    }
+}

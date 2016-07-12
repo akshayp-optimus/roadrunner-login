@@ -1,0 +1,28 @@
+// Filter Stack
+// ===
+
+.c-filter-stack {
+    .c-filter-stack__title {
+        padding: $unit 0 $sub-unit/2;
+
+        font-family: $default-sans;
+        font-weight: bold;
+    }
+
+    .c-box-row {
+        background: $white;
+    }
+
+    .c-custom-select {
+        width: 60%;
+
+        white-space: nowrap;
+    }
+
+    .c-custom-select__inner {
+        overflow: hidden;
+        width: 86%;
+
+        text-overflow: ellipsis;
+    }
+}

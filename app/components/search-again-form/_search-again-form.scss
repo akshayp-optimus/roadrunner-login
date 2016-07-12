@@ -1,0 +1,33 @@
+.c-input-form-wrapper__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 39px;
+    min-height: 39px;
+    margin-top: 3px;
+    margin-right: 3px;
+    padding-top: 8px;
+    border: 1px solid $neutral-40;
+
+    border-radius: 2px;
+    background: $white;
+
+    color: $neutral-50;
+    font-family: $default-sans;
+    font-weight: bold;
+}
+
+.c-input-form-wrapper__input-text {
+    border: 0;
+}
+
+.c-input-form__wrapper {
+    position: relative;
+
+    margin: $sub-unit*3 $unit $unit*2;
+    border: 1px solid $neutral-50;
+
+    border-radius: 2px;
+    background: $white;
+}

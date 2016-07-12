@@ -1,0 +1,14 @@
+<div class="c-stepper u-margin-start-md {class}">
+    <button type="button" class="js-stepper-decrease c-stepper__action-decrease {decreaseClass} {?isMin}c--disabled{/isMin}" {?isMin}disabled{/isMin}>
+        <svg class="c-icon-svg " title="Reduce Quantitys"><title>Reduce Quantity</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-minus1"></use></svg>
+    </button>
+
+    <!--  <div class="c-stepper__count {countClass}">{count}</div>  -->
+        {>"components/sort-menu/sort-menu"/}
+
+
+    <button type="button" class="c-stepper__action-increase js-stepper-increase {increaseClass} {?isMax}c--disabled{/isMax}" {?isMax}disabled{/isMax}>
+        <svg class="c-icon-svg " title="Increase Quantitys"><title>Increase Quantity</title><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-plus"></use></svg>
+    </button>
+    {container}
+</div>

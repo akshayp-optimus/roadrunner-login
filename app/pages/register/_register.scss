@@ -1,0 +1,85 @@
+// Register Page
+// ===
+// scss-lint:disable all
+
+.t-register-page {
+    > div {
+        color: $neutral-110;
+    }
+
+    h2 {
+        line-height: 1;
+    }
+}
+
+.c-register-content {
+    padding: $unit $unit 0;
+
+    .c-form-group {
+        margin-top: $sub-unit;
+
+        label {
+            margin-bottom: 0;
+        }
+    }
+
+    .c-box__label {
+        margin-bottom: 0;
+    }
+
+    .c-arrange__item {
+        margin-right: 0;
+    }
+
+    input[type="checkbox"] {
+        top: 3px;
+
+        margin-right: 0;
+    }
+
+    .c-register-page-title {
+        color: $neutral-220;
+        font-weight: normal;
+        font-size: $font-size-large-28;
+        line-height: 32px;
+    }
+
+    input {
+        color: $black;
+    }
+}
+
+.c-button.c--primary {
+    display: block;
+    width: 84%;
+    margin: 0 auto;
+    margin-bottom: $unit;
+}
+
+[type="checkbox"] {
+    &:before {
+        border: 1px solid  $neutral-50;
+    }
+}
+
+#continue {
+    display: block;
+    width: 84%;
+    margin: 0 auto;
+    margin-top: $unit + $sub-unit;
+    margin-bottom: $unit;
+    border: 0;
+
+    border-radius: 2px;
+    background: $brand-color;
+
+    color: $white;
+    font-family: $default-sans;
+    font-weight: bold;
+    font-size: $large-font-size;
+    text-transform: lowercase;
+}
+
+#sendMeEmails {
+    background: $white;
+}

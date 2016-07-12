@@ -1,0 +1,18 @@
+.c-breadcrumb {
+    display: block;
+    padding: $unit $unit 0;
+
+    .c-icon {
+        width: $unit;
+        height: $sub-unit + 3px;
+
+        color: $neutral-200;
+    }
+
+    .c-breadcrumb__arrow,
+    .c-breadcrumb__link {
+        color: $neutral-200;
+        font-family: $default-sans;
+        font-size: $font-size;
+    }
+}

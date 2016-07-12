@@ -1,0 +1,87 @@
+{>"global/base"/}
+
+{<contentBlock}
+    {>"components/breadcrumb/breadcrumb"/}
+    <div class="t-account-cc-edit-section">
+        <div class="u-padding u--tight">
+            <h1 class="c-title u-page-title u-no-left-padding"><small>Change Credit Card Information</small></h1>
+            <p>{introText}</p>
+            {errorContainer}
+            {formWrapper|openTag|s}
+                {#form}
+                    <div hidden>
+                        {formInputs}
+                    </div>
+                    <div class="u-margin-bottom-md">
+                        {!
+                            TODO: The credit card type (`method`) and credit card number
+                            (`number`) fields need to be combined into one field, as per
+                            the design mock. It also needs to display the the proper
+                            card type modifier (e.g. c--visa). See GH-309.
+                        !}
+                        {#ccNumber}
+                            <div class="js-card-type" hidden>
+                                {cardTypeLabel}
+                                {select}
+                            </div>
+
+                        <div class="c-form-group c-change-card-box">
+
+                                <div class="c-box-row">
+                                    <div class="c-box c-arrange {?cardType}c--{cardType}{/cardType} c--align-middle">
+                                        {label}
+                                        <div class="c-field__credit-card js-cc-input-container c-input c-arrange__item ">
+                                            <div class="js-cc-input">
+                                                {input}
+                                            </div>
+                                            {>"svg-icon" name="Card Disable icon" class=""/}
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {/ccNumber}
+                            <div class="c-box-row">
+                                <div class="c-box c-arrange c--align-middle">
+
+                                    {dateLabel}
+
+                                    <div class="c-arrange c--gutters">
+                                        <div class="c-arrange__item">
+                                            {>"components/select/select" select=month/}
+                                        </div>
+
+                                        <div class="c-arrange__item">
+                                            {>"components/select/select" select=year/}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-field-row">
+                            {button}
+                        </div>
+                    </div>
+                {/form}
+            {formWrapper|closeTag|s}
+
+        </div>
+
+        <div hidden>
+            {hiddenInputs}
+        </div>
+
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/account-cc-edit/ui.js
+    (function(require) {
+        require(["global/ui", "pages/account-cc-edit/account-cc-edit-ui"], function(globalUI, accountCreditCardEditUI) {
+            globalUI();
+            accountCreditCardEditUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

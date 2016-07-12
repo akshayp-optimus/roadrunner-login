@@ -1,0 +1,374 @@
+// Gift Registry Creation Flow
+// ===
+.t-gift-registry-create {
+    h1 small {
+        display: block;
+
+        font-size: $font-size-large-24;
+        line-height: 24px;
+    }
+    .c-title {
+        padding-top: $unit;
+    }
+}
+
+.t-gift-registry-create-page {
+    padding: $unit $unit 0;
+    border-bottom: 1px solid $neutral-50;
+
+    .c-button.c--link {
+        padding-left: 0;
+    }
+
+    .c-visit-my-account {
+        margin-top: $unit;
+
+        color: $neutral-70;
+        font-size: $smaller-font-size;
+        a {
+            color: $black;
+            font-weight: bold;
+        }
+    }
+
+    .GR_coRegistrant_midName_panel {
+        display: none;
+    }
+
+    .GR_shippingChoices_panel {
+        label {
+            position: relative;
+            top: 1px;
+        }
+        input[type="radio"] {
+            position: relative;
+            top: -1px;
+        }
+    }
+
+    .GR_create_guestOptions_panel {
+        flex-direction: column;
+        margin-bottom: $sub-unit;
+        padding: $unit;
+
+        border-radius: 2px;
+
+        span {
+            display: block;
+
+            font-weight: normal;
+            font-size: $smaller-font-size;
+        }
+
+        [for="gwt-uid-3"] {
+            margin-bottom: $unit;
+        }
+    }
+
+    .GR_message_ForGuest_flag {
+        display: none;
+    }
+
+    #gift_registry_create_content1,
+    #gift_registry_create_content2,
+    .GR_create_registry_info_label {
+        // Not required in dom
+        display: none;
+    }
+
+
+    .GR_create_guestOptions_panel .c-box > label.c-box__label {
+        flex: 1;
+
+        white-space: inherit;
+    }
+
+    .GR_create_event_date_panel.c-box-row {
+        margin-bottom: $unit;
+
+        border-radius: 2px;
+    }
+
+    .GR_create_event_date_panel {
+        position: relative;
+
+        .c-arrange__item {
+            position: relative;
+            &:not(:last-child):after {
+                content: '';
+
+                position: absolute;
+                top: 31%;
+                right: 0;
+
+                width: 1px;
+                height: 19px;
+
+                background: $neutral-40;
+            }
+        }
+    }
+
+    #country-name-label {
+        margin-top: $unit;
+        margin-bottom: $sub-unit/2;
+    }
+
+    .c-form-group .c-box .c-box__label:first-child {
+        overflow: inherit;
+        padding-left: $unit;
+    }
+
+    .GR_customMessage_Label {
+        margin-bottom: $sub-unit/2 !important;
+        padding-top: $sub-unit;
+
+        font-weight: bold;
+        font-size: $font-size;
+        span {
+            font-weight: normal;
+        }
+    }
+
+    .GR_coRegistrant_sameContant_flag + .GR_create_coRegistrantAddressPanel {
+        margin-top: $unit;
+    }
+
+    .GR_coRegistrant_sameContant_flag + .GR_create_coRegistrantAddressPanel .address-widget-wwcm-wrapper #country-name-label {
+        margin: 0 !important;
+    }
+
+    .GR_acceptgiftCardFlag_Panel {
+        margin-top: $sub-unit;
+        padding: $unit;
+
+        .c-box > label.c-box__label {
+            flex: 1;
+
+            white-space: inherit;
+        }
+
+        .line2 {
+            font-weight: normal;
+            font-size: $smaller-font-size;
+        }
+    }
+
+    .c-backgroung-none {
+        font-style: normal;
+        font-weight: bold;
+        font-size: $font-size;
+    }
+
+    .GR_create_coRegistrantAddressPanel {
+        margin-bottom: $unit;
+        label {
+            margin: 0 !important;
+        }
+        .GR_promotional_email_flag {
+            display: none;
+        }
+    }
+
+    .GR_create_postEventAddressPanel,
+    .GR_create_otherAddressPanel {
+        margin-top: $unit;
+        label {
+            margin: 0 !important;
+        }
+    }
+
+    .c-field__caption {
+        margin-bottom: $sub-unit;
+
+        color: $neutral-60;
+    }
+
+    .GR_description_length_label {
+        margin-top: $sub-unit;
+
+        color: $neutral-60;
+        font-size: $smaller-font-size;
+    }
+
+    .GR_promotional_email_flag .c-box > label.c-box__label {
+        flex: 1;
+
+        white-space: inherit;
+    }
+
+    .AddrMNameSpot.miLabel {
+        display: none;
+    }
+
+    .c-button.c-backgroung-none {
+        margin-top: -$unit;
+        margin-bottom: $sub-unit/2;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        position: relative;
+        top: 1px;
+
+        margin-right: $sub-unit/2;
+    }
+
+    .required {
+        position: absolute;
+
+        margin: 2px 0 0 -8px;
+
+        color: $error-color;
+    }
+
+    .GR_description_length_label + .gwt-RealLabel {
+        .required {
+            position: static;
+            float: right;
+
+            margin-top: 0;
+            margin-left: -$sub-unit/2;
+        }
+    }
+
+    .GR_coRegistrant_sameContant_flag {
+        .c-box > .c-box__label {
+            overflow: inherit;
+        }
+        label {
+            margin-left: $sub-unit;
+        }
+    }
+
+    label.errortxt {
+        color: $error-color;
+    }
+
+    .c-form-group .c-box select.errortxt,
+    .c-form-group .c-box input.errortxt {
+        color: $black;
+    }
+
+    .GR_creat_step3 {
+        table {
+            border-spacing: 12px 6px;
+            border-collapse: separate;
+            margin: 0;
+            padding: $sub-unit;
+            border: 1px solid $neutral-50;
+
+            border-radius: 2px;
+        }
+
+        .GR_shipping_address_label {
+            margin-bottom: $unit;
+
+            font-weight: bold;
+            font-size: $font-size;
+        }
+
+        tr:empty {
+            display: none;
+        }
+
+        td {
+            padding: 0;
+            border: 0;
+        }
+    }
+
+    .GR_create_buttons_step3 {
+        .c-button.c-back-to-registry-button {
+            display: block;
+            width: 84%;
+            margin: 0 auto;
+            margin-top: $unit;
+            margin-bottom: $unit;
+            padding: $unit;
+            border: 1px solid $black;
+
+            border-radius: 2px;
+
+            font-weight: bold;
+            font-size: 16px;
+            text-transform: lowercase;
+        }
+    }
+
+    .GR_creat_step2 {
+        .GR_promotional_email_flag {
+            padding: $unit;
+        }
+
+        #country-name-label {
+            margin: 0;
+        }
+
+        .GR-Reg-form-address {
+            display: none;
+        }
+
+        .GR_create_co-registrantForm_panel {
+            #country-name-label {
+                margin-top: $unit !important;
+            }
+        }
+
+        .gwt-CheckBox.gwt-GR-Co-Registrant-Flag {
+            label {
+                margin-left: 18px;
+            }
+        }
+
+        .GR_create_co-registrantForm_panel_container {
+            label span {
+                display: block;
+
+                font-weight: normal;
+                font-size: $smaller-font-size;
+            }
+        }
+
+        .GR_create_co-registrantForm_panel_container {
+            > .c-box__label {
+                flex: 1;
+                width: 30%;
+
+                span {
+                    display: block;
+
+                    font-weight: normal;
+                    font-size: $smaller-font-size;
+                }
+            }
+        }
+
+        .GR_coRegistrant_sameContant_flag {
+            margin-top: $unit;
+        }
+
+        .GR-Co-Reg-form-address {
+            margin: $unit 0;
+
+            font-weight: bold;
+            font-size: $font-size;
+        }
+
+        .gwt-GR-Co-Registrant-Flag {
+            padding: $unit;
+        }
+    }
+}
+.c--error-row.c--remove-error-row.c-box-row {
+    border: 1px solid $neutral-50 !important;
+
+    background: 0 !important;
+    label {
+        color: $black;
+    }
+
+    input {
+        background: 0 !important;
+    }
+}

@@ -1,0 +1,17 @@
+.c-button-tile-variation {
+    margin: 0 0 $sub-unit*4;
+
+    .c-shop-now-button-text {
+        width: 33%;
+        margin-left: $unit;
+        padding: 11px $unit;
+
+        border-radius: 2px;
+        background: $neutral-130;
+
+        color: $white;
+        font-family: $default-sans;
+        font-weight: bold;
+        font-size: $large-font-size;
+    }
+}

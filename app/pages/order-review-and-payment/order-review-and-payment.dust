@@ -1,0 +1,68 @@
+{>"global/checkoutBase"/}
+
+{<contentBlock}
+    <div class="t-order-review-and-payment-wrapper">
+        <h3 class="c-title">{@translate key="review_your_order"/}</h3>
+
+        <div class="js-review-block">
+            {>"pages/order-review-and-payment/partials/review"/}
+        </div>
+
+        {?shipToMultipleAddressLink}
+            <div class="c-ship-to-multiple-address">
+                {shipToMultipleAddressLink}
+            </div>
+        {/shipToMultipleAddressLink}
+
+        {>"components/cart-order-summary/cart-order-summary" /}
+
+        <div class="js-payment-block ">
+            {>"pages/order-review-and-payment/partials/payment"/}
+        </div>
+
+        {notifyStop}
+
+        {hiddenInputs}
+        {hiddenForms}
+        {requiredForms}
+        {pleaseWaitContainer}
+        {requiredLabels}
+        {giftMessages}
+        {modalLabels}
+        {modalContainer}
+
+        <div hidden>
+            {errorContainer}
+        </div>
+
+        {>"components/sheet/sheet" effect="modalCenter" cssClass="c--dialog c--no-header-text" class="js-tooltip-pinny" headerClass="c-sheet__blank-header" bodyClass="t-cart-tooltip-pinny js-tooltip-content" isHeader="true"/}
+
+        {>"components/sheet/sheet" effect="modalCenter" cssClass="c--dialog c--no-header-text" class="js-gift-pinny" bodyClass="t-cart-tooltip-pinny js-gift-content" isHeader="true"/}
+
+        {>"components/sheet/sheet" effect="modalCenter" cssClass="c--dialog c--no-header-text" class="t-tender-type-pinny js-tender-type-pinny" /}
+
+        {>"components/sheet/sheet" effect="modalCenter" cssClass="c--dialog c--no-header-text" class="js-service-delivery-option-pinny c-service-delivery-option-pinny" bodyClass="t-cart-tooltip-pinny c-service-delivery-options-content js-service-delivery-options-content" isHeader="true"/}
+
+        {>"components/sheet/sheet" effect="modalCenter" cssClass="c--dialog" class="js-change-address-pinny" bodyClass="js-change-address-content" isHeader="true"/}
+
+        {>"components/sheet/sheet" effect="sheetBottom" class="c-edit-address-pinny js-address-pinny" bodyClass="js-address-pinny__body" isHeader="true"/}
+
+        {>"components/sheet/sheet" effect="sheetBottom" isHeader="true" coverage="100%" class="js-review-delivery-options" bodyClass="js-review-delivery-options-content" bodyContent=reviewDeliveryContent headerContent=reviewDeliveryTitle /}
+
+        {>"components/sheet/sheet" effect="modalCenter" cssClass="c--dialog c--no-header-text" class="js-review-delivery-what-this-pinny c-review-delivery-what-this-pinny" headerClass="c-sheet__blank-header" bodyClass="c-review-delivery-what-this-content js-review-delivery-what-this-content" isHeader="true"/}
+
+        {>"components/loading-overlay/loading-overlay" loaderOverlayClass="js-filter-loader u--hide"/}
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    (function(require) {
+        require(["global/ui", "pages/order-review-and-payment/order-review-and-payment-ui"], function(globalUI, orderReviewAndPaymentUI) {
+            globalUI();
+            orderReviewAndPaymentUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

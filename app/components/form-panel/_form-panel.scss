@@ -1,0 +1,10 @@
+// Form Panel
+// ===
+
+.c-form-panel {
+    display: none;
+
+    &.c--active {
+        display: block;
+    }
+}

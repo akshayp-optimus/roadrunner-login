@@ -1,0 +1,9 @@
+<div class="u-border-grey u-border-radius u-padding-all u--tight {additionalClass}" {?editClickHandler}onclick="{editClickHandler}" {/editClickHandler}>
+    <div>{name}</div>
+    {?company}<div>{company}</div>{/company}
+    <div>{street}, {city}, {state}</div>
+    <div>{postalCode}, {country}, {phoneNumber}</div>
+    {?isButton}
+        {@icon name="chevron-right" title="Arrow right" class="c--large" /}
+    {/isButton}
+</div>

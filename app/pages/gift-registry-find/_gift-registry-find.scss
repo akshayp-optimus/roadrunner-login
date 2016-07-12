@@ -1,0 +1,130 @@
+// Gift Registry Find
+// ===
+//
+// 1. Fix layout to match design requirement
+
+.t-gift-registry-find-page {
+    padding: 0 $unit;
+
+    h1 small {
+        display: block;
+
+        font-size: $font-size-large-24;
+        line-height: 24px;
+    }
+
+    .c-table {
+        table-layout: fixed; // 1
+
+        th,
+        td {
+            width: 110px; // 1
+        }
+    }
+
+    .c-title {
+        padding-top: $unit;
+        padding-bottom: $unit;
+    }
+
+    .c-box {
+        position: relative;
+    }
+
+
+    .c-search-by-title {
+        margin-top: $unit;
+        margin-bottom: $sub-unit+3;
+
+        color: $neutral-220;
+        font-size: $largest-font-size;
+    }
+
+    .gwt-reg-id-panel .gwt-Label {
+        position: absolute !important;
+
+        overflow: hidden !important;
+        clip: rect(1px, 1px, 1px, 1px) !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        border: 0 !important;
+    }
+
+    .c-search-by-name-title {
+        margin-top: -$sub-unit;
+
+        color: $neutral-220;
+        font-size: $largest-font-size;
+    }
+
+    .gwt-search-by-name-panel .gwt-Label {
+        margin-bottom: $unit;
+    }
+
+    .c-box__label:first-child {
+        overflow: inherit;
+        padding-left: $unit;
+    }
+
+    .required {
+        position: absolute;
+
+        margin: 2px 0 0 -8px;
+
+        color: $error-color;
+    }
+
+    #giftRegSearchFormPanel table {
+        position: absolute !important;
+
+        overflow: hidden !important;
+        clip: rect(1px, 1px, 1px, 1px) !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        border: 0 !important;
+    }
+}
+
+.js-gift-registry-results-pinny {
+    .GR-no-results-found {
+        margin-top: -$unit;
+    }
+
+    .c-button.c-view-registry.c--primary {
+        width: 100%;
+    }
+}
+
+.c-find-registry-results-container {
+    margin-top: -$sub-unit;
+
+    .c-find-registry-results {
+        display: flex;
+    }
+
+    .c-find-registry-results__label {
+        width: 50%;
+
+        font-weight: bold;
+    }
+
+    .c-find-registry-results__field {
+        flex: 1;
+        width: 50%;
+    }
+
+
+    a {
+        color: $neutral-70;
+    }
+
+    .GR-no-results-found {
+        margin-top: -$unit;
+    }
+
+    .c-view-registry {
+        margin-top: $unit;
+    }
+}

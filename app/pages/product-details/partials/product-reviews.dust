@@ -1,0 +1,69 @@
+<div class="c-arrange c--align-middle u-margin-bottom-md js-overall-rating">
+    <div class="c-arrange__item">
+        <div class="c-arrange c--align-middle">
+            <div class="u-padding-right-extra-tight">Overall </div>
+            {#overallRating}
+                {>"components/star-rating/star-rating"/}
+            {/overallRating}
+        </div>
+    </div>
+    <div class="js-write-review c-arrange__item c--shrink needsclick">
+        <strong class="needsclick">write a review ></strong>
+    </div>
+</div>
+
+{?.filters}
+    {#refineFilters}
+        {>"components/bellows/bellows"/}
+    {/refineFilters}
+
+    {?.selectOptions}
+        <select class="js-product-reviews-select">
+            {#.selectOptions}
+                <option value={.optVal} {?selected}selected{/selected}>{.text}</option>
+            {/.selectOptions}
+        </select>
+    {/.selectOptions}
+{/.filters}
+
+{?.hr}
+    <hr class="c-divider c--full-width u-margin-bottom-md">
+{/.hr}
+
+{?.ratingsBreakdown}
+    {#.ratingsBreakdown}
+        {>"pages/product-details/partials/ratings-breakdown"/}
+    {/.ratingsBreakdown}
+{/.ratingsBreakdown}
+
+<div class="js-product-reviews">
+    {#.reviews}
+        {>"components/review-card/review-card"/}
+    {/.reviews}
+</div>
+
+{?.pagination}
+    <div class="c-arrange c--align-middle u-margin-top-md u-text-align-center">
+        <div class="c-arrange__item">
+            <button class="c-button c--outline c--rounded c--small u-text-capitalize u--bold js-product-reviews-prev needsclick {?disablePrev}c--is-disabled{/disablePrev}" {?disablePrev}disabled{/disablePrev}>
+                Prev
+            </button>
+        </div>
+
+        <div class="c-arrange__item">
+            {.currPage} of {.numPages}
+        </div>
+
+        <div class="c-arrange__item">
+            <button class="c-button c--outline c--rounded c--small u-text-capitalize u--bold js-product-reviews-next needsclick {?disableNext}c--is-disabled{/disableNext}" {?disableNext}disabled{/disableNext}>
+                Next
+            </button>
+        </div>
+    </div>
+{/.pagination}
+
+{?.showModalBtn}
+    <div class="u-margin-top-md u-margin-bottom-md u-text-align-center">
+        <button class="c-button c--outline c--rounded c--small u-text-capitalize u--bold js-see-all-reviews">See All Reviews</button>
+    </div>
+{/.showModalBtn}

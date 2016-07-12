@@ -1,0 +1,21 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-write-a-review u-padding-all u--tight">
+        {writeAReviewContainer}
+        <div hidden id="BVSubmissionContainer"></div>
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/write-a-review/ui.js
+    (function(require) {
+        require(["global/ui", "pages/write-a-review-ui"], function(globalUI, writeReviewUI) {
+            globalUI();
+            writeReviewUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

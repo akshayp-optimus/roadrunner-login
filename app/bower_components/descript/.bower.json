@@ -1,0 +1,32 @@
+{
+  "name": "descript",
+  "version": "1.0.0",
+  "authors": [
+    "Steve Calvert <scalvert@mobify.com>"
+  ],
+  "description": "Utility for managing and prioritizing scripts",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.15"
+  },
+  "devDependencies": {
+    "requirejs-text": "~2.0.14"
+  },
+  "homepage": "https://github.com/mobify/descript",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.0",
+    "commit": "54963fe0dac345f33ab9007410bcc4226f33aaf8"
+  },
+  "_source": "git://github.com/mobify/descript.git",
+  "_target": "~1.0.0",
+  "_originalSource": "descript"
+}

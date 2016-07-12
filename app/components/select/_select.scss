@@ -1,0 +1,155 @@
+// Select
+// ===
+//
+// 1. Absolutely position select element and triangle relative to the parent .c-select
+// 2. Vertical center the triangle
+// 3. Align the border just a bit beneath the select text
+// 4. Position icon
+// 5. Increase tap height
+// 6. Center text again after increasing the tap height size of the parent
+
+
+$tap-size-increase: 4px;
+
+.c-select {
+    position: relative; // 4
+
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: $small-tap-size;
+    padding: 0;
+    border: $border;
+
+    user-select: none;
+
+    select {
+        position: relative;
+        top: 0; // 6
+
+        box-sizing: content-box;  // 5
+        width: calc(100% - #{$horizontal-input-padding*2}); // 5
+        height: $small-tap-size;  // 5
+        padding: 0 $horizontal-input-padding;
+        border: 0 solid $border-color;
+        border-top: $tap-size-increase solid transparent;  // 5
+        border-right: 0;
+        border-bottom: $tap-size-increase solid transparent;  // 5
+        border-left: 0;
+
+        background: $neutral-210;
+
+        -webkit-appearance: none;
+
+        &:focus,
+        &:active {
+            border-color: transparent; // 1
+        }
+    }
+
+
+    // Focus style
+    // ---
+    &.c--is-focus {
+        border-color: $focus-color;
+    }
+
+
+    // Inline
+    // ---
+
+    &.c--inline {
+        display: inline-flex;
+    }
+
+
+    // Full Width
+    // ---
+
+    &.c--full-width {
+        width: 100%;
+    }
+
+
+    // Disabled
+    // ---
+
+    &.c--is-disabled {
+        opacity: 0.6;
+
+        pointer-events: none;
+    }
+
+
+    // Fade
+    // ---
+    //
+    // 1. Position on z-axis above the select. c-select__icon has z-index of one
+    //    more ($z1-depth+1) to bring over top.
+    // 2. 32px is the width of the `select` icon (chevron svg). The gradient [3]
+    //    must begin at the edge of the icon, so doubling the width then having
+    //    the neutral-30 gradient begin halfway is gives us perfect values.
+    // 3. 250 = neutral-30. Fade from transparent to grey.
+
+    &.c--fade {
+        &:after {
+            content: '';
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: $z1-depth; // 1
+
+            display: block;
+            width: 32px*2; // 2
+
+            background: linear-gradient(to right, rgba(250, 250, 250, 0), $neutral-210, $neutral-210); // 3
+        }
+    }
+}
+
+
+// Select Icon
+// ---
+//
+// 1. Position icon inside select
+// 2. Add pointer event to tap on icon to open select
+
+.c-select__icon {
+    position: absolute; // 1
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $z1-depth+1;
+
+    pointer-events: none; // 2
+
+    fill: $neutral-230;
+}
+
+
+// Platform Fixes
+// ---
+//
+// Fix for Firefox
+// Attribution: http://filamentgroup.github.io/select-css/
+//
+// Hide the native select arrow by clipping it with overflow: hidden
+
+@-moz-document url-prefix() {
+    .c-select {
+        overflow: hidden;
+
+        select {
+            width: calc(100% + 3em);
+
+            &:-moz-focusring {
+                color: transparent;
+                text-shadow: 0 0 0 $black;
+            }
+        }
+    }
+}

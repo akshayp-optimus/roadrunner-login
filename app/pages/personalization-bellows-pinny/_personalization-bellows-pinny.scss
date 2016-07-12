@@ -1,0 +1,47 @@
+// Personalization Bellows Pinny
+// ===
+//
+// Personalization Bellows pinny in PDP
+
+.t-personalization-bellows-pinny {
+
+    .gwt-image-picker-option img {
+        float: none;
+
+        vertical-align: top;
+    }
+
+    .gwt-image-picker-option {
+        float: left;
+
+        max-width: $unit*3;
+        max-height: $unit*3;
+        margin-top: $sub-unit*1.5;
+        margin-right: $sub-unit*1.5;
+    }
+
+    .gwt-image-picker {
+        text-align: left;
+    }
+
+    .gwt-image-picker-with-dialog-option-holder {
+        @include clearfix;
+    }
+
+    .c-personalization-content .c-bellows__header-selected-option {
+        right: 36px;
+    }
+
+    .image-picker-show-dialog-btn {
+        padding: 0;
+        border: 0;
+
+        background: none;
+
+        font-weight: bold;
+    }
+
+    .gwt-tab-header-selected-option .gwt-image-picker-option-fill-selected {
+        display: none !important;
+    }
+}

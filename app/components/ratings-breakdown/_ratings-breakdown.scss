@@ -1,0 +1,14 @@
+// Ratings Breakdown
+// ===
+
+.ratings-breakdown {
+
+}
+
+.c-ratings-breakdown__item:nth-child(1) {
+    min-width: $unit*3;
+}
+
+.c-ratings-breakdown__item:nth-child(2) {
+    min-width: $unit*5;
+}

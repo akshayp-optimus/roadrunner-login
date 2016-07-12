@@ -1,0 +1,11 @@
+{#searchResultFields}
+    <div class="c-find-registry-results-container">
+        {#fields}
+            <div class="c-find-registry-results">
+                <div class="c-find-registry-results__label">{label}</div>
+                <div class="c-find-registry-results__field">{field}</div>
+            </div>
+        {/fields}
+        <a href="{href}">{button}</a>
+    </div>
+{/searchResultFields}

@@ -1,0 +1,8 @@
+{form|openTag|s}
+    {welcomeMsg}
+    {hiddenFields}
+    {#registerButton}
+        {>"components/button/button" class="c--primary c--full-width c-register-button"/}
+    {/registerButton}
+    {registerContent}
+{form|closeTag|s}

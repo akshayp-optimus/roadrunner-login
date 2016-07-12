@@ -1,0 +1,39 @@
+// Address Pinny
+// ===
+
+.c-address-pinny {
+    .c-box {
+        > .c-box__label {
+            display: flex;
+            width: 88px;
+            margin-left: $unit;
+        }
+
+        label[for*=addr_mibox] {
+            display: none;
+        }
+
+        label[for='addr_fnbox'] {
+            width: 88px;
+        }
+    }
+
+    .c-middle-name {
+        width: 44px;
+        margin-left: 0;
+        border-left: 1px solid $neutral-50;
+    }
+
+    .required {
+        margin-right: $sub-unit/2;
+        margin-left: -9px;
+
+        color: $error-color;
+    }
+
+    .c-form-group .c-box select {
+        padding-left: $sub-unit;
+
+        color: $black;
+    }
+}

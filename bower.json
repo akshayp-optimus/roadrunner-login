@@ -1,0 +1,22 @@
+{
+  "name": "grandin-road",
+  "version": "1.0.0",
+  "dependencies": {
+    "imageresize": "git://github.com/mobify/imageresize-client.git#1.0.2",
+    "fastclick": "git://github.com/mobify/fastclick.git#1.0.7",
+    "descript": "~1.0.0",
+    "deckard": "~1.0.0",
+    "dustjs-linkedin": "2.3.3",
+    "spline": "~1.0",
+    "level": "~0.1.0",
+    "tozee": "git://github.com/mobify/tozee#1.1.3",
+    "jquery-creditcardvalidator": "^1.0.0"
+  },
+  "resolutions": {
+    "deckard": "~1.0.0",
+    "requirejs": "~2.1.14"
+  },
+  "devDependencies": {
+    "jquery-creditcardvalidator": "https://github.com/PawelDecowski/jquery-creditcardvalidator.git#^1.0.0"
+  }
+}

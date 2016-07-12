@@ -1,0 +1,17 @@
+{#items}
+    {?options}
+        {?isOrRequired}
+            <div class="c-or-text">
+                <span>{title}or</span>
+            </div>
+        {/isOrRequired}
+        <select class="js-dropdown {selectClass}">
+            {?defaultOptions}
+                <option>{defaultOptions}</option>
+            {/defaultOptions}
+            {#options}
+                    <option {?selected}selected{/selected} value="{value}" data-href="{value}" data-id="{dataId}">{text}</option>
+            {/options}
+        </select>
+    {/options}
+{/items}

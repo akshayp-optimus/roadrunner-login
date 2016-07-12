@@ -1,0 +1,276 @@
+// Forms
+// ===
+
+
+// General Form Elements
+// ---
+
+fieldset {
+    min-width: 0;
+    margin: 0 0 $unit;
+    padding: 0;
+    border: 0;
+}
+
+input,
+label,
+textarea,
+select {
+    color: $black;
+    font-family: $default-sans;
+    font-size: $font-size;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: $unit / 2;
+
+    font-weight: bold;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &:active {
+        color: $active-link-color;
+    }
+}
+
+select,
+textarea,
+[type="text"],
+[type="search"],
+[type="password"],
+[type="tel"],
+[type="url"],
+[type="number"],
+[type="email"] {
+    width: 100%;
+    min-height: $small-tap-size;
+    padding: $input-padding;
+    border: 1px solid $neutral-50;
+
+    border-radius: 2px;
+    background-color: $input-background-color;
+
+    line-height: $line-height;
+
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &::-webkit-input-placeholder {
+        color: $neutral-50;
+    }
+
+    &:active {
+        border-color: darken($border-color, 10%);
+    }
+
+    &:focus {
+        border-color: $focus-color;
+    }
+}
+
+
+// Search input
+// ---
+//
+// These properties must be set with a slightly higher specificity for search
+// inputs because Normalize's defaults are a bit too specific
+
+input[type="search"] {
+    box-sizing: border-box;
+
+    -webkit-appearance: none;
+}
+
+
+// Select
+// ---
+//
+// 1. Offset background arrow sprite
+
+select {
+    padding-right: $unit*2; // 1
+
+    background: url(../icons/svg/selectbox-arrow.svg) no-repeat;
+    background-position: 96% center;
+    background-position: right $unit center;
+
+    white-space: normal;
+
+    -webkit-appearance: none;
+}
+
+
+// Checkbox and Radios
+// ---
+//
+// 1. Aligns them with any inline content that follows
+// 2. GRRD-530: Fix background issue on iOS
+
+[type="checkbox"],
+[type="radio"] {
+    position: relative;
+    top: -2px; // 1
+
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: $unit;
+    border: 0;
+
+    background-color: transparent; // 2
+
+    vertical-align: middle;
+
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &:before {
+        content: '';
+
+        position: absolute;
+        top: 50%;
+
+        display: block;
+        box-sizing: border-box;
+        width: $unit + 4;
+        height: $unit + 4;
+        border: 1px solid $neutral-50;
+
+        border-radius: $border-radius;
+
+        transform: translateY(-50%);
+    }
+
+    &::after {
+        content: url('../icons/svg/check-white.svg');
+
+        position: absolute;
+        top: -7px;
+        left: -9px;
+
+        display: block;
+        width: 35px;
+        height: 35px;
+
+        opacity: 0;
+    }
+
+    &:checked {
+        background: rgba(0, 0, 0, 0);
+
+        &:before {
+            border: 0;
+
+            background-color: $brand-color;
+        }
+
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+[type="radio"] {
+    top: 0;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    &:after {
+        content: '';
+
+        top: 20%;
+        right: 20%;
+        bottom: 20%;
+        left: 20%;
+
+        width: 15px;
+        height: 15px;
+
+        border-radius: 50%;
+        background: $white;
+    }
+
+    &:before {
+        width: $unit + 3;
+        height: $unit + 3;
+
+        border-radius: 50%;
+    }
+
+    &:checked {
+        &::after {
+            content: '';
+
+            top: 8px;
+            left: 5px;
+
+            display: block;
+            width: 5px;
+            height: 5px;
+        }
+    }
+}
+
+
+// Buttons
+// ---
+
+button,
+[type="submit"] {
+    display: block;
+    min-height: $tap-size;
+    padding: $input-padding;
+    border: 1px solid darken($border-color, 0.25);
+
+    background: $neutral-210 $neutral-gradient;
+
+    line-height: $line-height;
+
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &:active {
+        background: $neutral-40 reverse-gradient($neutral-gradient);
+    }
+}
+
+
+// Disabled
+// ---
+//
+// 1. web-kit default disabled style
+// 2. Disabled style for button, checkbox, radio, input and select
+// 3. Checkbox and Radio style
+
+[disabled] {
+    opacity: 1;
+    background: $disabled-input-background-color;
+
+    color: $disabled-input-color;
+
+    -webkit-text-fill-color: $disabled-input-color; // 1
+
+    // 2
+    &:active,
+    &:checked {
+        border-color: $disabled-input-color;
+
+        background: $disabled-input-background-color;
+    }
+
+    // 3
+    &:active,
+    &:checked {
+        &::after {
+            color: $disabled-input-color;
+        }
+    }
+
+    &[type="radio"]:after {
+        background-color: $disabled-input-color;
+    }
+}

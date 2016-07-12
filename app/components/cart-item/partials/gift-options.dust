@@ -1,0 +1,14 @@
+{?giftOptions}
+    {#giftOptions}
+        <div>
+            {#optionDetails}
+                <div>
+                    {content} {price}
+                </div>
+            {/optionDetails}
+            {#editGiftOptionsLink}
+                <a href="{href}">{text}</a>
+            {/editGiftOptionsLink}
+        </div>
+    {/giftOptions}
+{/giftOptions}

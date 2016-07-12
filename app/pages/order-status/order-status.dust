@@ -1,0 +1,56 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-order-status-wrapper">
+
+    <h2 class="c-title u-no-left-padding u-padding-top-sm"><small>{pageTitle}</small></h2>
+        {introText}
+        {formGuideline}
+        {errorContainer}
+        {error}
+        {form|openTag|s}
+            {hiddenInputs}
+        <div class="c-form-group">
+            {#formRows}
+                <div class="c-box-row">
+                    <div class="c-box c-arrange c--align-middle">
+                        <div class="c-box__label c-arrange__item c--shrink">
+                            <div class="c-arrange c--align-middle">
+                                {required}
+                                {label}
+                            </div>
+                        </div>
+
+                        <div class="c-input js-update-input c-arrange__item">
+                            {inputScript}
+
+                            {input}
+                        </div>
+                    </div>
+                </div>
+            {/formRows}
+        </div>
+
+        {#continueButton}
+            {>"components/button/button" class="c--primary c--full-width .c-button. c--primary c-check-order-status-button .u-margin-start-0 .u-margin-end-0 "
+                id=buttonId type=buttonType buttonText=buttonText
+            /}
+        {/continueButton}
+
+        {forgotYourOrderLink}
+
+        {form|closeTag|s}
+    </div>
+
+{/contentBlock}
+
+
+{<uiScripts}
+    <script>
+    (function(require) {
+        require(["global/ui"], function(globalUI) {
+            globalUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

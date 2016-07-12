@@ -1,0 +1,3 @@
+<ins class="c-price__discounted">{priceNew} {eachText}</ins>
+{?priceWas}<del class="c-price__original">{priceWas}</del>{/priceWas}
+{?priceOld}<del class="c-price__original">{priceOld}</del>{/priceOld}

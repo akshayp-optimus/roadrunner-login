@@ -1,0 +1,29 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-gift-card-page">
+        <h2 class="c-title u-no-left-padding u-padding-top-sm"><small>{pageTitle}</small></h2>
+        <p>{pageSubTitle}</p>
+        {giftCardIntroduction}
+        {pageData}
+        {#giftCards}
+            {cardImage}
+            <p class="u-margin-top-md c-card-title">{cardTitle}</p>
+            {orderButton}
+            {cardIntro}
+            {cardDesc}
+        {/giftCards}
+        {giftcardGuideline}
+    </div>
+    {>"components/back-to-top/back-to-top" class="c--sticky" icon="top" /}
+{/contentBlock}
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    (function(require) {
+        require(["global/ui"], function(globalUI) {
+            globalUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

@@ -1,0 +1,40 @@
+// Select with top bottom arrow on the left
+// ===
+
+.c-select-with-arrow {
+    position: relative;
+
+    display: inline-block;
+
+    select {
+        width: auto;
+        padding: $sub-unit $unit $sub-unit $sub-unit*3;
+        border: 0;
+
+        background: none;
+        outline: none;
+
+        font-family: $default-sans;
+        font-weight: bold;
+    }
+
+    .c-icon-bottom {
+        transform: rotate(180deg);
+    }
+
+    .c-icon {
+        width: 13px;
+
+        fill: $black;
+    }
+
+    .c-icon-top-bottom {
+        position: absolute;
+        top: 12px;
+        z-index: -1;
+    }
+
+    &.c-custom-select.c--sort-arrow select {
+        padding: $sub-unit 17px $sub-unit $sub-unit*3;
+    }
+}

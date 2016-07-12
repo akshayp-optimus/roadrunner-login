@@ -1,0 +1,35 @@
+{#totals}
+    <div class="c-cart-sub-total u-margin-bottom-md">
+        <div class="c-ledger c--bordered u-margin-bottom-sm">
+            {#additionalTotals}
+                {?.label}
+                    <div class="c-ledger__entry {additionalTotalsClass}">
+                        <div class="c-ledger__description">
+                            {label}
+                            {?changeZip}
+                                <span class="u-display-inline">{changeZip}</span>
+                            {/changeZip}
+                        </div>
+
+                        <div class="c-ledger__number">
+                            {value}
+                        </div>
+                    </div>
+                    {moreContent}
+                {/.label}
+            {/additionalTotals}
+
+            {#grandTotal}
+                <div class="c-ledger__entry c--total">
+                    <div class="c-ledger__description">
+                        {label}
+                    </div>
+
+                    <div class="c-ledger__number">
+                        {value}
+                    </div>
+                </div>
+            {/grandTotal}
+        </div>
+    </div>
+{/totals}

@@ -1,0 +1,24 @@
+// Returns and Exchanges
+// ===
+//
+// 1. Needs to be 16px to align to body padding
+
+.t-returns-exchanges-page {
+    padding: 0 $unit;
+
+    .c-return-and-exchanges-list-items {
+        margin-left: $unit + 4; // 1
+
+        list-style-type: decimal;
+    }
+
+    ol {
+        display: block;
+        padding-top: $unit;
+    }
+
+    .c-option {
+        display: block;
+        margin-top: -23px;
+    }
+}

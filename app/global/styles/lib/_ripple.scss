@@ -1,0 +1,26 @@
+// Ripple mixin
+// ===
+//
+// A very lightweight active state effect meant to emulate the Material Design
+// ripple effect.
+//
+// @param $background-color [String]: The ripple color
+
+// Configurable variables
+// ---
+
+$ripple__initial: hsla(0, 0%, 0%, 0) !default;
+$ripple__active: hsla(0, 0%, 0%, 0.1) !default;
+
+@mixin ripple($ripple__initial: $ripple__initial, $ripple__active: $ripple__active) {
+    background: $ripple__initial;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    // Active state
+    &:active {
+        background: $ripple__active;
+    }
+}

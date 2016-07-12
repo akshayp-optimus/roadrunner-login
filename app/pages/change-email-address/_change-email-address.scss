@@ -1,0 +1,28 @@
+// change email address
+// =================
+
+//  TODO: Below line should be removed 
+//scss-lint:disable all
+
+.t-change-email-address-section {
+    padding: 0 $unit;
+
+    // TODO: Check from where the id is getting styling, may be getting this from other page
+    .c-form-group .c-box-row:first-of-type,
+    .c-form-group .c-box-row:first-of-type input {
+        background: $neutral-40 !important;
+    }
+
+    .c-continue-button:after {
+        content: '>';
+    }
+
+    // TODO: Check from where the id is getting styling, may be getting this from other page
+    #gwt-error-placement-div {
+        padding-bottom: 0;
+    }
+
+    label {
+        padding-left: 0;
+    }
+}

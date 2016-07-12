@@ -1,0 +1,170 @@
+// Carousal
+// ===
+// Styling for Carousal Component
+// ----
+
+.c-carousel {
+    border-top: 1px solid $neutral-120;
+}
+
+.c-carousel__inner {
+    text-align: left;
+}
+
+.c-carousel__title {
+    margin-left: $unit;
+    padding-bottom: $unit;
+
+    color: $neutral-70;
+    font-family: $default-sans;
+    font-weight: normal;
+    font-size: $largest-font-size;
+}
+
+.c-carousel__item {
+    display: inline-block;
+    width: 132px;
+    height: auto;
+    margin-right: $sub-unit;
+
+    vertical-align: text-top;
+}
+// Using first child to reslove the scrolling issue on devices
+.c-carousel__item:first-child {
+    margin-left: $unit;
+}
+
+.c-carousel__heading-link {
+    font-weight: bold;
+}
+
+.c-carousel__image-link {
+    display: block;
+    min-height: 132px;
+    margin-bottom: $sub-unit;
+
+    text-align: center; // centers the image
+}
+
+.c-carousel__item:last-child {
+    margin-right: 0;
+}
+
+.c-carousel-item__heading {
+    color: $neutral-70;
+    font-family: $default-sans;
+    white-space: initial;
+}
+
+
+// Carousel Controls
+// ---
+
+.c-carousel__control {
+    position: absolute;
+    top: 50%;
+
+    display: block;
+    padding: 10px 3px;
+
+    background-color: rgba(0,0,0,0.4);
+
+    color: $white;
+
+    transform: translateY(-50%);
+
+    &.m-inactive {
+        display: none;
+    }
+
+    &[data-m-slide="prev"] {
+        left: 0;
+    }
+
+    &[data-m-slide="next"] {
+        right: 0;
+    }
+
+    .c-icon {
+        display: flex;
+        width: 20px;
+        height: 30px;
+        fill: #fff;
+    }
+}
+
+
+// Carousel Pips Container
+// ---
+
+.c-carousel__pips-wrapper {
+    position: absolute;
+    bottom: $sub-unit;
+    right: 0;
+    left: 0;
+
+    padding: 0 $unit;
+}
+
+
+// Carousel Pip
+// ---
+//
+// 1. Magic number to match mocks
+
+.c-carousel__pip {
+    @include hide-text();
+
+    display: inline-block;
+    width: 7px; // 1
+    height: 7px; // 1
+    border: 1px solid $neutral-240;
+
+    border-radius: 7px; // 1
+
+    pointer-events: none;
+
+    &.m-active {
+        background: $neutral-240;
+    }
+
+    + .c-carousel__pip {
+        margin-left: 4px;
+    }
+}
+
+
+// Modifier: Full width items
+// ---
+
+.c-carousel.m-fluid {
+    .c-carousel__inner {
+        display: flex;
+    }
+
+    .c-carousel__item {
+        display: block;
+        width: 100%;
+        flex: 0 0 auto;
+        margin: 0;
+    }
+}
+
+
+// NON SCOOCH "CAROUSEL"!!
+// ---
+//
+// This is just a basic scroller so lets add some styles for that
+
+.c-carousel:not(.m-scooch) {
+    .c-carousel__inner {
+        overflow-x: scroll; // 1
+        overflow-y: hidden; // 1
+        width: 100%;
+        padding-right: $unit;
+
+        white-space: nowrap; // 1
+
+        -webkit-overflow-scrolling: touch;
+    }
+}

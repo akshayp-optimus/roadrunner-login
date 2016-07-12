@@ -1,0 +1,38 @@
+{>"global/base"/}
+
+{<contentBlock}
+
+    <div class="u-padding-sides-md t-wishlist-page">
+
+        <h1 class="c-title c--upright js-page-title"><small>{pageTitle}</small></h1>
+
+        <div class="t-wishlist__no-wishlist-message">
+            {>"svg-icon" name="wishlist"/}
+            <p>{@translate key="empty_wishlist_message"/}</p>
+            <p>{createWishList.text}...</p>
+        </div>
+        {createWishList.button|openTag|s}
+            {>"components/icon/icon" name="expand" class="c--large" /}
+        {createWishList.button|closeTag|s}
+
+        <div hidden>
+            {wishlistForm}
+
+            {hiddenForms}
+        </div>
+    </div>
+    {>"components/sheet/sheet" effect="modalCenter"  cssClass="c--dialog" class="js-wishlist-pinny" bodyClass="js-wishlist-pinny__body" isHeader="true" /}
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/wishlist-landing/ui.js
+    (function(require) {
+        require(["global/ui", "pages/wishlist/wishlist-ui"], function(globalUI, wishlistUI) {
+            globalUI();
+            wishlistUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

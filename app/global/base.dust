@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{html|openTag|s}
+{head|openTag|s}
+    {config.adaptiveBuildScript}{! Re-inserts Adaptive.js into page. Do not modify or remove!}
+    {+head}
+        {head|innerHTML|s}
+
+        {+style}
+            {?config.isLocal}
+                <link rel="stylesheet" type="text/css" href="{@getUrl path="css/stylesheet.css" /}" />
+            {:else}
+                <link rel="stylesheet" type="text/css" href="{@getUrl path="css/stylesheet.min.css" /}" />
+            {/config.isLocal}
+
+            {! GRRD-466: Grandin Road's stylesheets added as per their request !}
+            <link rel="stylesheet" type="text/css" href="/wcsstore/images/Cinmar/_wcm/css/fonts_gr.css" />
+            <link rel="stylesheet" type="text/css" href="/wcsstore/images/Cinmar/_wcm/css/framework.css" />
+
+            {mobileTemplateStyles}
+        {/style}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        {! GRRD-471: Add JS variable for client !}
+        <script type="text/javascript">
+            var isMobify = true;
+        </script>
+
+        {! Do not modify or remove the following Mobify Analytics script tags: !}
+        {config.ajs|s}
+        <script>
+            var analytics = Mobify.analytics = Mobify.analytics || {};
+            analytics.ga = analytics.ga || [];
+            analytics.ua = analytics.ua || function() {
+                (analytics.ua.q = analytics.ua.q || []).push(arguments);
+            };
+        </script>
+    {/head}
+</head>
+{body|openTag|s}
+    {+bodyBlock}
+        <div id="x-root">
+            {! Holds the definitions for SVG icons. These are referenced elswehere with fragment links and the `use` tag !}
+            <div hidden="true">{iconSprite|s}</div>
+
+            {! Including the global header template here !}
+            {+header}
+                {>"global/includes/header/header"/}
+
+                {! Including the global left-sidebar that contains nav template here !}
+                {>"global/includes/left-sidebar/left-sidebar"/}
+            {/header}
+
+            <main class="t-main" role="main">
+                {+contentBlock}
+                    {body|innerHTML|s}
+                {/contentBlock}
+            </main>
+
+            {! Including the global footer template here !}
+            {+footer}
+                {>"global/includes/footer/footer"/}
+            {/footer}
+
+            <div hidden>
+                {! including hidden forms as they are required to maintain the desktop functionality!}
+                {hiddenForms}
+                {hiddenViewForm}
+                {waterMark}
+                {sourceCode}
+            </div>
+
+            {perzContentBoxg1}
+            {perzContentBoxg2}
+
+            {! Including Welcome popup in pinny !}
+            {>"components/sheet/sheet" class="c-welcome-panel js-welcome-panel" isHeader="true"
+                bodyClass="u-padding-all-0" coverage="70%" cssClass="c--dialog"
+            /}
+
+            {! Including Special delivery popup in pinny !}
+            {>"components/sheet/sheet" class="c-special-delivery-options-panel js-special-delivery-options-panel" isHeader="true"
+                bodyClass="u-padding-all-0" coverage="70%" cssClass="c--dialog"
+            /}
+
+            {! Including notifications (error messages, success messages) in pinny  !}
+            {>"components/notification/notification" /}
+
+            {! Including content popup in pinny !}
+            {>"components/sheet/sheet"
+                class="js-content-popup c-content-pop-up"
+                cssClass="c--dialog"
+                coverage="100%"
+                isHeader="true"
+                bodyContent=popupBody
+            /}
+        </div>
+        <div class="js-refine-scripts"></div>
+        <div class="c-loading c--overlay js-loading-overlay">
+            <p class="u-visually-hidden">Loading...</p>
+
+            <div class="bounce1 c-loading__dot c--1"></div>
+            <div class="bounce2 c-loading__dot c--2"></div>
+            <div class="bounce3 c-loading__dot c--3"></div>
+        </div>
+    {/bodyBlock}
+    {+scripts}
+        {desktopScripts}
+        {deferredScripts}
+
+        {#desktopMobileScripts}
+            <script type="text/javascript" src="{.}"></script>
+        {/desktopMobileScripts}
+
+        {! Site UI scripts !}
+        {?config.isLocal}
+            <script src="{@getUrl path="js/ui.js" /}"></script>
+        {:else}
+            <script src="{@getUrl path="js/ui.min.js" /}"></script>
+        {/config.isLocal}
+
+        {+uiScripts}{/uiScripts}
+    {/scripts}
+</body>
+</html>

@@ -1,0 +1,9 @@
+{#leftSidebar}
+    {>"components/sheet/sheet"
+        class="js-left-nav"
+        effect="sheetLeft"
+        coverage="100%"
+        bodyContent=navItems
+        cssClass="c-navigation-sheet js-header-pinny"
+    /}
+{/leftSidebar}

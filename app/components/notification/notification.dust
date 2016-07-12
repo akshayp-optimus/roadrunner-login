@@ -1,0 +1,24 @@
+<div class="c-notification js-notification-pinny" hidden>
+    <button class="c-notification-close pinny__close">
+        {>"svg-icon" name="close" title="Close" class="c--large c--close" /}
+    </button>
+
+    <div class="c-list-tile c-notification-preview js-notification-preview c--active">
+        <div class="c-list-tile__primary-tile">
+            <div class="c-list-tile__primary-action u-padding-all-0 u-padding-start-tn">
+                {>"svg-icon" name="error" class="c--large c--error" /}
+            </div>
+
+            <div class="c-list-tile__primary-content">
+                <div class="js-notification">
+                    {@translate key="error_notification_text" /}
+                    <span class="js-notification__show-hide-text">{@translate key="show" /}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="js-full-notification">
+
+    </div>
+</div>

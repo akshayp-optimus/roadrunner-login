@@ -1,0 +1,3 @@
+<div class="c-loader-overlay {loaderOverlayClass}">
+    {>"components/loading/loading"/}
+</div>

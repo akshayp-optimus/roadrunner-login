@@ -1,0 +1,143 @@
+// Multiple Addresses in Checkout
+// ===
+
+.t-checkout-multi-address-wrapper {
+    padding: $sub-unit $unit $unit;
+
+    .c-multi-address-edit-addnew {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: $sub-unit/2;
+    }
+
+    .c-multi-address-product-options {
+        [id='perz_label'] {
+            display: inline-block;
+        }
+    }
+
+    .c-multi-address__edit {
+        display: flex;
+
+        li {
+            margin: 0 $sub-unit/2;
+
+            text-transform: capitalize;
+        }
+
+        a:active,
+        a:focus {
+            color: $black;
+        }
+
+        .c-saparator {
+            color: $neutral-200;
+        }
+    }
+
+    .c-multi-address-content__header {
+        position: relative;
+
+        margin-bottom: $sub-unit;
+        padding: $unit $unit $unit $sub-unit*7;
+        border: 1px solid $neutral-50;
+
+        border-radius: $border-radius;
+
+        font-weight: bold;
+
+        &.c--checked + .c-divider {
+            display: none;
+        }
+
+        &.c--checked {
+            margin-bottom: -$sub-unit;
+        }
+
+        &:before {
+            top: 15px;
+            left: $unit;
+
+            width: 15px;
+            height: 15px;
+            border: 1px solid $disabled-color;
+
+            border-radius: $border-radius;
+            background-color: $white;
+        }
+    }
+
+    .c-multi-address-content__header:before,
+    .c-multi-address-content__header:after {
+        content: '';
+
+        position: absolute;
+
+        display: block;
+    }
+
+    .c-multi-address-content__header.c--checked:before {
+        border-color: $brand-color;
+
+        background: $brand-color;
+    }
+
+    .c-multi-address-content__header.c--checked:after {
+        content: url("../icons/svg/check-white.svg");
+
+        position: absolute;
+        top: 5px;
+        left: 4px;
+
+        display: block;
+        width: 35px;
+        height: 35px;
+    }
+
+    .c-title {
+        padding: $sub-unit 0 $unit;
+    }
+
+    select {
+        padding-right: $unit*2;
+    }
+
+    .js-shipping-item {
+        &:not(:nth-last-of-type(1)) {
+            margin-bottom: $unit;
+            padding-bottom: $unit;
+            border-bottom: 1px solid $neutral-40;
+        }
+    }
+}
+
+.c-select-close-button {
+    width: 84%;
+    margin: 0 auto;
+    margin-top: -$unit;
+    border: 0;
+
+    background: $white;
+
+    color: $black;
+    font-weight: bold;
+}
+
+div[id='editAddressModal'],
+div[id='addAddressModal'] {
+    .js-close-modal {
+        width: 84%;
+        margin: 0 auto;
+        margin-top: -$unit;
+        border: 0;
+
+        background: transparent;
+
+        color: $black;
+        font-weight: bold;
+    }
+
+    .pinny__content {
+        padding-top: $sub-unit;
+    }
+}

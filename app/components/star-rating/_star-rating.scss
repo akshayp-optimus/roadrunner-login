@@ -1,0 +1,63 @@
+// Star Rating
+// ===
+
+.c-star-ratings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.c--shrink {
+        display: block;
+        flex: initial;
+        width: auto;
+    }
+}
+
+
+// Star Rating: Star Container
+// ---
+
+.c-star-ratings__container {
+    overflow: hidden;
+}
+
+
+// Star Rating: Individual Star
+// ---
+//
+// 1. Unicode star shape
+// 2. Overlay a second star shape on top
+
+.c-star-ratings__item {
+    float: left;
+
+    display: block;
+
+    color: $neutral-50;
+    font-size: $larger-font-size;
+
+    &:before {
+        content: '\2605'; // 1
+    }
+
+    &.c--filled {
+        color: $black;
+    }
+
+    &.c--filled-half {
+        position: relative;
+
+        &:after {
+            content: '\2605'; // 1
+
+            position: absolute; // 2
+            top: 0; // 2
+            left: 0; // 2
+
+            overflow: hidden; //
+            width: $larger-font-size/2;
+
+            color: $black;
+        }
+    }
+}

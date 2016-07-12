@@ -1,0 +1,136 @@
+// Review Card
+// ===
+
+$review-card-vertical-padding: $unit;
+$review-card-horizontal-padding: 16px;
+
+
+// Review Card root
+// ---
+
+.c-review-card {
+    border: $border;
+
+    font-size: $font-size;
+
+    * {
+        margin: 0;
+    }
+}
+
+.c-review-card__content,
+.c-review-card__header,
+.c-review-card__footer {
+    padding: $review-card-vertical-padding $review-card-horizontal-padding;
+}
+
+
+// Review Card Header Elements
+// ---
+//
+// 1. Align the start ratings to the neighbouring elements
+
+.c-review-card__header {
+    border-bottom: $border;
+
+    background: $neutral-30;
+}
+
+.c-review-card__author {
+    font-style: normal;
+}
+
+.c-review-card__date {
+    font-size: $smaller-font-size;
+}
+
+.c-review-card__reviews {
+    margin-bottom: -4px; // 1
+    margin-left: -1px; // 1
+}
+
+
+// Review Card Content Elements
+// ---
+//
+// 1. Override the efault line-height of h1, h2, etc elements.
+
+.c-review-card__title {
+    margin-bottom: $sub-unit;
+
+    font-weight: bold;
+    font-size: $large-font-size;
+    line-height: 1.25; // 1
+}
+
+.c-review-card__description {
+    p + p {
+        margin-top: $unit;
+    }
+}
+
+
+// Review Card Footer Elements
+// ---
+
+.c-review-card__footer {
+    padding-top: 0;
+}
+
+.c-review-card__actions {
+    margin: 0 (-($review-card-horizontal-padding));
+}
+
+.c-review-card__action {
+    width: 100%;
+    padding: 0;
+    border: 0;
+
+    background: none;
+
+    color: $neutral-60;
+
+    &:not(.c--helpful) {
+        border-left: $border-light;
+    }
+
+    &.c--active {
+        &.c--helpful {
+            color: $success-color;
+        }
+
+        &.c--not-helpful {
+            color: $error-color;
+        }
+
+        &.c--offensive {
+            color: $black;
+        }
+    }
+}
+
+.c-review-card__action-icon {
+    .c--not-helpful & {
+        transform: rotate(90deg) scale(1.2);
+    }
+
+    .c--offensive & {
+        transform: scale(1.2);
+    }
+}
+
+.c-review-card__action-label {
+    display: block;
+    margin-top: $sub-unit;
+
+    font-size: $smaller-font-size;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.c-review-card__feedback {
+    padding-top: $review-card-horizontal-padding;
+    padding-bottom: $sub-unit;
+
+    text-align: center;
+}

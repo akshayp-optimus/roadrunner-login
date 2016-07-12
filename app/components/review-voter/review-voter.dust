@@ -1,0 +1,28 @@
+{#voter}
+	<div class="c-review-voter c-arrange">
+		{#votes}
+			<button class="c-review-voter__vote c--{.type} c-arrange__item">
+				{#icon}
+					{>"svg-icon" /}
+				{/icon}
+				<div class="c-review-voter__vote-label">
+					{.label}
+					<span class="js-vote-count">
+						{?.count}({.count}){/.count}
+					</span>
+				</div>
+			</button>
+		{/votes}
+	</div>
+
+	<div class="c-review-voter__form js-offensive-form" hidden>
+		<label class="js-offensive-label"></label>
+		<textarea class="c-review-voter__input js-offensive-input"></textarea>
+		<div class="c-arrange c--justify-between">
+			<button class="c-button c--outline c--light js-cancel-button"></button>
+			<button class="c-button c--outline c--light js-submit-button"></button>
+		</div>
+	</div>
+
+	<div class="js-vote-message u-text-align-center u-margin-top-md"></div>
+{/voter}

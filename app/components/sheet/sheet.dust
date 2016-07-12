@@ -1,0 +1,35 @@
+<div class="pinny__wrapper {class}" {?id}id="{id}"{/id} {?role}role="{role}"{/role} hidden
+    data-adaptivejs-component="sheet"
+    data-effect="{effect}"
+    data-coverage="{coverage}"
+    data-duration="{duration}"
+    data-passive="{passive}"
+    data-css-class="c-sheet {cssClass}">
+
+    {?isHeader}
+        <div class="pinny__header c-sheet__header {?theme}c--{theme}{/theme} {headerClass}" {?headerStyle}style="{headerStyle}"{/headerStyle}>
+            <h2 class="pinny__title c-sheet__title">{headerContent}</h2>
+
+            {?closeButtonText}
+                <button class="pinny__close">{closeButtonText}</button>
+            {:else}
+                <button class="pinny__close c-sheet__header-close">
+                    <svg class="c-icon" data-fallback="img/png/close.png">
+                        <title>close</title>
+                        <use xlink:href="#icon-close"></use>
+                    </svg>
+                </button>
+            {/closeButtonText}
+        </div>
+    {/isHeader}
+
+    <div class="pinny__content pinny--is-scrollable c-sheet__body needsclick {?theme}c--{theme}{/theme} {?hasIframe}c--iframe{/hasIframe} {bodyClass}" {?bodyStyle}style="{bodyStyle}"{/bodyStyle}>
+        {bodyContent}
+    </div>
+
+    {?footerContent}
+        <div class="pinny__footer c-sheet__footer {?theme}c--{theme}{/theme} {footerClass}" {?footerStyle}style="{footerStyle}"{/footerStyle}>
+            {footerContent}
+        </div>
+    {/footerContent}
+</div>

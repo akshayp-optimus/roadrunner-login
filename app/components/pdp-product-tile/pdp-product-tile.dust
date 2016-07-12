@@ -1,0 +1,15 @@
+<article class="c-product-pdp-tile js-product-tile {?productHorizontal}c--horizontal{/productHorizontal} {?productVertical}c--vertical{/productVertical} {class}">
+    <a href="{productHref}" class="c-product-tile__image">
+        <div class="c-ratio c--4by5">
+            <img class="c-ratio__item js-product-img" src="{productImage}">
+        </div>
+    </a>
+
+    <div class="c-product-tile__description {descriptionClass}">
+        <a href="{productHref}" class="c-product-tile__link js-product-info">
+            <div class="c-product-tile__description-inside">
+                <h3 class="c-product-tile__title">{productTitle|s}</h3>
+            </div>
+        </a>
+    </div>
+</article>

@@ -1,0 +1,27 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-my-account-information">
+        <h2 class="c-account-heading">{accountHeading}</h2>
+        <div class="c-page-hint">{pageHint}</div>
+    </div>
+    <div class="c-profile">
+        <div class="c-email">{unsubscribeEmail}</div>
+        {#editProfile}
+            {fitness}
+        {/editProfile}
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/my-account-information/my-account-information-ui.js
+    (function(require) {
+        require(["global/ui", "pages/my-account-information/my-account-information-ui"], function(globalUI, myAccountInformationUI) {
+            globalUI();
+            myAccountInformationUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

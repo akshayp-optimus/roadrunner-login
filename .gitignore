@@ -1,0 +1,13 @@
+node_modules
+localSettings.json
+/build
+.sass-cache/
+tmp/
+.idea/
+.DS_Store
+reports
+build.tar
+.bundle
+${CIRCLE_TEST_REPORTS}/
+tests/screenshots
+sprite.svg

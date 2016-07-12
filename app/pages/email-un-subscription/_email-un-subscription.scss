@@ -1,0 +1,55 @@
+// Email Subscription page
+// ------
+
+.t-email-un-subscription-page {
+    margin: $unit $unit 0;
+
+    h1 {
+        padding-bottom: $unit;
+
+        color: $neutral-220;
+        font-weight: normal;
+        font-size: $font-size-large-28;
+        line-height: 32px;
+    }
+
+    .c-subscription-content {
+        color: $neutral-110;
+        font-size: $font-size;
+
+        ul {
+            padding-left: $sub-unit*3;
+        }
+
+        li {
+            padding-bottom: $sub-unit;
+
+            list-style-type: disc;
+        }
+    }
+
+    a {
+        color: $black;
+        font-family: $default-sans;
+        font-weight: bold;
+
+        u {
+            text-decoration: none;
+        }
+    }
+
+    .c-disclaimer-info {
+        color: $neutral-110;
+        font-size: $smaller-font-size;
+        line-height: 16px;
+    }
+
+    .c-subscription-form {
+        margin-top: $sub-unit;
+        padding-bottom: $unit;
+    }
+
+    iframe {
+        width: 100%;
+    }
+}

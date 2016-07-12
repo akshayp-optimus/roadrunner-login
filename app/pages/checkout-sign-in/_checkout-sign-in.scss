@@ -1,0 +1,38 @@
+// Checkout Sign In Page
+// ===
+
+.t-checkout-sign-in-wrapper {
+    padding: 0 0 $unit;
+    .c-arrange__item input[type="checkbox"] {
+        margin-top: 0;
+        margin-right: 0;
+    }
+
+    div[id='forgotpw'] {
+        font-family: $default-sans;
+        font-weight: bold;
+        text-align: center;
+
+        a {
+            color: $black;
+            font-family: $default-sans;
+            font-weight: bold;
+        }
+    }
+
+    .c-guest-checkout-heading {
+        color: $neutral-220;
+        font-size: $largest-font-size;
+    }
+
+    .u--tight.c-box-row.c-check-me {
+        max-height: 44px;
+        margin: 0;
+    }
+}
+
+.t-checkout-sign-in {
+    .t-header__bottom {
+        display: none;
+    }
+}

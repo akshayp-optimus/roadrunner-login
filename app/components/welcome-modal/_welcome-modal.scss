@@ -1,0 +1,177 @@
+// Welcome Modal component
+// ===
+
+// 1. Hide welcome dialogbox but retain animationStart event.
+
+// scss-lint:disable SelectorFormat
+#tinymask,
+#tinybox {
+    visibility: hidden !important; // 1
+
+    pointer-events: none !important;
+}
+
+#gwt_welcome_window {
+    // scss-lint:enable SelectorFormat
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 1000;
+
+    display: block;
+    width: auto;
+    height: auto;
+
+    background: rgba($black, 0.25);
+
+    transform: scale(1);
+
+    .c-welcome-subscribe {
+        position: absolute;
+        top: 50%;
+        right: $unit;
+        left: $unit;
+
+        width: auto;
+        height: auto;
+        max-height: 100%;
+        padding: $unit;
+
+        background: $white;
+
+        transform: translateY(-50%);
+
+        pointer-events: auto;
+
+        ul {
+            margin: 0 0 $sub-unit*3 $sub-unit*3;
+
+            color: $neutral-70;
+            font-family: $default-sans;
+            font-size: $font-size;
+        }
+
+        li {
+            margin-bottom: $sub-unit;
+
+            list-style-type: disc;
+        }
+
+        .c-button.c--primary {
+            width: 100%;
+        }
+
+        a {
+            color: $black;
+            font-family: $default-sans;
+            font-weight: bold;
+            font-size: $font-size;
+            text-transform: capitalize;
+        }
+
+        .c-welcome-window-sub-heading {
+            margin-bottom: $sub-unit*3;
+            padding-top: $sub-unit*3;
+
+            color: $neutral-70;
+            font-family: $default-sans;
+            font-size: $largest-font-size;
+            line-height: 24px;
+        }
+
+        .c-welcome-window-placeholder {
+            text-transform: capitalize;
+        }
+
+        [class="gwt-csb-error-panel"] {
+            margin-bottom: $sub-unit;
+        }
+    }
+
+    [class="gwt_content_spot_2"] {
+        margin-top: $sub-unit;
+        margin-bottom: $sub-unit;
+
+        text-align: center;
+    }
+
+    .c-sheet__header-close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+
+        .c-icon {
+            margin: 0;
+        }
+    }
+}
+
+.c-welcome-panel {
+    color: $neutral-70;
+    font-family: $default-sans;
+    font-size: $font-size;
+
+
+    .c-button.c--primary {
+        width: 100%;
+        margin-top: $sub-unit;
+    }
+
+    .c-shipping-content {
+        padding-top: $unit;
+
+        color: $neutral-70;
+        font-family: $default-sans;
+        font-size: $font-size;
+    }
+
+    .c-privacy-link {
+        margin-bottom: $sub-unit;
+    }
+
+    div[id='headline'] {
+        margin-top: -$sub-unit*3;
+        margin-bottom: $sub-unit;
+
+        color: $neutral-70;
+        font-size: $largest-font-size;
+    }
+
+    div[id='subheadline'] {
+        margin-bottom: $sub-unit;
+
+        font-family: $default-sans;
+    }
+
+    .c-sales-point {
+        margin: 0 0 0 $sub-unit*3;
+
+        li {
+            margin-bottom: $sub-unit;
+
+            list-style-type: disc;
+        }
+    }
+
+    .c-grandin-logo {
+        width: 156px;
+        height: 32px;
+
+        fill: $brand-color;
+    }
+}
+
+
+.c-not-shipping {
+    margin-bottom: $sub-unit;
+
+    a {
+        color: $black;
+        font-family: $default-sans;
+        font-weight: bold;
+    }
+}

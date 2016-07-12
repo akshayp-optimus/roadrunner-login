@@ -1,0 +1,79 @@
+// Hero
+// ===
+//
+// Hero image and there can be links on bottom of image
+
+
+// Root
+// ---
+//
+// 1. Position group links
+
+.c-hero {
+    position: relative; // 1
+}
+
+
+// Hero Image
+// ---
+//
+// 1. Remove empty white space
+
+.c-hero__img {
+    display: block;
+    text-align: center;
+
+    img {
+        vertical-align: top; // 1
+    }
+}
+
+
+// Hero Group links
+// ---
+
+.c-hero__group-links {
+    position: absolute;
+    right: 0;
+    bottom: $unit;
+    left: 0;
+}
+
+
+// Hero Link
+// ---
+
+.c-hero__link {
+    display: block;
+    margin-bottom: $sub-unit;
+    padding: ($unit)-3 $unit;
+
+    opacity: 0.8;
+    background-color: $white;
+
+    color: $black;
+    font-style: italic;
+    text-transform: uppercase;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &:active,
+    &:focus {
+        background-color: darken($white, 10%);
+
+        color: $black;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+// Hero double right unicode
+// ---
+
+.c-hero__double-right-unicode {
+    font-size: $font-size-large-22;
+    line-height: $line-height;
+}

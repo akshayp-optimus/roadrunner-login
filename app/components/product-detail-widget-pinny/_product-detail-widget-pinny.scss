@@ -1,0 +1,92 @@
+.c-product-detail-widget-pinny {
+    padding-top: 0;
+
+    .c-sheet__header  .c-sheet__title {
+        min-height: 38px;
+        padding: $unit 0 0 $unit;
+
+        color: $neutral-200;
+        font-weight: normal;
+        font-size: $font-size;
+    }
+
+    .c-sheet__body {
+        padding: 0;
+        border-bottom: 1px solid $neutral-40;
+    }
+
+    .c-title {
+        padding-top: 0;
+        padding-bottom: $sub-unit !important;
+    }
+
+    .c-bellows li {
+        margin-left: $unit;
+
+        list-style-type: disc;
+    }
+
+    //TODO: Remove the desktop classes styling
+    .gwt-accordion-tab-content {
+        overflow: inherit !important;
+    }
+
+    .c-product-part-number {
+        position: relative;
+        top: -2px;
+
+        color: $neutral-200;
+        font-family: $default-sans;
+        font-weight: bold;
+        font-size: $font-size;
+    }
+
+    .c-product-detail-widget__body .c-product-info {
+        //Specific to pinny
+        display: block;
+        .c-product-image img {
+            width: 100%;
+        }
+
+        .c-price__original {
+            font-weight: normal;
+        }
+
+        .js-pdp-price {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .c-carousel {
+        border: 0;
+    }
+}
+
+.c-product-detail-widget__header {
+    position: relative;
+    .c-collection-header {
+        position: absolute;
+        right: 12px;
+        bottom: 0;
+
+        width: 100%;
+
+        text-align: right;
+
+        &:active {
+            background: 0;
+        }
+
+        .c-icon {
+            width: 18px;
+            height: 18px;
+            padding: 4px;
+
+            border-radius: 2px;
+            background: $neutral-200;
+
+            fill: $neutral-30;
+        }
+    }
+}
+

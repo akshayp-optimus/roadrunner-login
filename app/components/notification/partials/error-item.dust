@@ -1,0 +1,12 @@
+<div class="c-list-tile c-notification-contents c--error">
+    <div class="c-list-tile__primary-tile">
+        <div class="c-list-tile__primary-action u-padding-all-0 u-padding-start-tn">
+        {>"svg-icon" name="error" class="c--large c--error" /}
+
+        </div>
+
+        <div class="c-list-tile__primary-content">
+            <div class="js-notification">{errors}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="c-bellows__item bellows__item {bellowsItemClass} {?isOpen}bellows--is-open{/isOpen}">
+    <div class="c-bellows__header {bellowsHeaderClass} bellows__header">
+        {?bellowsHeader}
+            {bellowsHeader}
+        {:else}
+            {sectionTitle}
+            {?addtionalTitleInfo}
+                {addtionalTitleInfo}
+            {/addtionalTitleInfo}
+            <span class="c-bellows__icon c-bellows__chevron u-margin-end-md">
+                {?noContent}
+                    {>"svg-icon" name="chevron-right"/}
+                {:else}
+                    {?.isOpen}
+                        {>"svg-icon" name="collapse"/}
+                    {:else}
+                        {>"svg-icon" name="expand"/}
+                    {/.isOpen}
+                {/noContent}
+            </span>
+        {/bellowsHeader}
+    </div>
+
+    <div class="c-bellows__content bellows__content">
+        {?bellowsContent}
+            {bellowsContent}
+        {:else}
+            {?content}
+                <div class="u-padding-sides-md">
+                    <ul class="c-bellows__list">
+                        {content}
+                        {>"components/social-links/social-links"/}
+                    </ul>
+                </div>
+            {/content}
+        {/bellowsContent}
+    </div>
+</div>

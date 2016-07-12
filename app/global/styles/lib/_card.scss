@@ -1,0 +1,90 @@
+// Card
+// ===
+//
+// The 'c-card' component is unique in that it isn't so much a component, but
+// rather a container or wrapper for other content to fit in nicely. Since there
+// are a number of components using the this 'card' mix, let's keep the general
+// styling here for consistency.
+
+
+// Configurable variables
+// ---
+
+$card--padding: $unit !default;
+
+$card--light-color: $white !default;
+$card--medium-color: abcd !default;
+$card--dark-color: $black !default;
+
+
+// Determine the card text color
+// ---
+//
+// 1. Lighter background, return dark color
+// 2. Darker background, return light color
+//
+// scss-lint:disable SpaceAroundOperator
+
+@function set-card-text-color($color) {
+    @if (lightness($color) > 50) {
+        @return $card--dark-color; // 1
+    } @else {
+        @return $card--light-color; // 2
+    }
+}
+
+
+// Determine the card text color
+// ---
+//
+// scss-lint:disable VariableForProperty
+
+@mixin card-color($color) {
+    background: $color;
+
+    color: set-card-text-color($color);
+}
+
+
+// The infamous card itself
+// ---
+//
+// 1. Contain contents to card boundary.
+// 2. Push e'rthang in. Create your own modifiers for other sizes.
+
+@mixin card($card--padding: $card--padding) {
+    overflow: hidden; // 1
+    padding: $card--padding; // 2
+
+
+    // Colors
+    // ---
+
+    &.c--light {
+        @include card-color($card--light-color);
+    }
+
+    &.c--grey {
+        @include card-color($card--medium-color);
+    }
+
+    &.c--dark {
+        @include card-color($card--dark-color);
+    }
+
+
+    // Sizing
+    // ---
+
+    &.c--small {
+        padding: $sub-unit;
+    }
+
+    &.c--large {
+        padding: $unit*3;
+    }
+
+    &.c--no-padding {
+        padding: 0;
+    }
+}

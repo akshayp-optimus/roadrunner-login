@@ -1,0 +1,42 @@
+// Order Status page
+// ------
+
+.t-order-status-wrapper {
+    padding: $unit $unit 0 $unit;
+
+    label {
+        padding: 0;
+    }
+
+    .c-form-group .c-box > .c-box__label {
+        width: 32%;
+    }
+
+    a {
+        font-weight: bold;
+    }
+
+
+    .c-forgot-your-order-link {
+        display: block;
+        margin: 0 $unit $unit;
+
+        text-align: center;
+
+        &:active {
+            color: $black;
+        }
+    }
+
+    .c-check-order-status-button span:after {
+        content: ' >';
+    }
+}
+
+// Some desktop scrpits were generating this.
+// TODO: check how this could be resolved
+.t-order-status {
+    iframe {
+        display: none !important;
+    }
+}

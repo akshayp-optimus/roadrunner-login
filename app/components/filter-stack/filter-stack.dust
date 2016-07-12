@@ -1,0 +1,27 @@
+{#filterStackItems}
+    {#filterStack}
+        <div class="c-filter-stack {class}">
+            <div class="c-filter-stack__heading {filterStackHeading}">
+                <div class="c-filter-stack__title">
+                    {title}
+                </div>
+
+                {?filterStackClearAll}
+                    <div class="c-filter-stack__clear-all {clearFilterClass}">
+                        {clearAll}
+                    </div>
+                {/filterStackClearAll}
+            </div>
+
+            {#filterStackfilters}
+                <div class="c-filter-stack__filters {filterStackfiltersClass}">
+                    {>"components/box-row/box-row" /}
+
+                    {?isFilterPanelPinny}
+                        {>"components/filter-panel-pinny/filter-panel-pinny" /}
+                    {/isFilterPanelPinny}
+                </div>
+            {/filterStackfilters}
+        </div>
+    {/filterStack}
+{/filterStackItems}

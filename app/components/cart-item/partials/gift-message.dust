@@ -1,0 +1,7 @@
+{#giftMessage}
+    <div class="c-gift-message">
+        <h6 class="u--bold u-margin-bottom-sm">{label}</h6>
+        {input}
+        <div class="u-text-light-grey u-small-font-size u-margin-top-tn">{characterLimitMessage}</div>
+    </div>
+{/giftMessage}

@@ -1,0 +1,17 @@
+{#address}
+    <h3 class="u-margin-bottom-sm">{sectionTitle}:</h3>
+
+    <div class="u-margin-bottom-md">
+        {>"components/address-button/address-button" additionalClass="js-change-dropdown"/}
+
+        <div class="js-change-menu" hidden>{menuBar}</div>
+    </div>
+
+    <h5 class="u-margin-bottom-sm u-text-blue u--bold">{@translate key="being_shipped" /}</h5>
+{/address}
+
+<div class="t-payment-and-review__items">
+    {#items}
+        {>"components/cart-item/cart-item" /}
+    {/items}
+</div>

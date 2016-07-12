@@ -1,0 +1,44 @@
+// Password Reset Modal
+// ===
+//
+// Found in sign in page
+//
+// 1. Add !important to override inline style
+
+.c-pagination {
+    font-family: $default-sans;
+    font-weight: bold;
+    text-align: center;
+
+    .c--current {
+        padding: 7px 10px;
+
+        color: $neutral-60;
+    }
+}
+
+.c-pagination__item {
+    display: inline-block;
+}
+
+.c-pagination-prev-next {
+    margin: 0 $sub-unit;
+    border: 1px solid $black;
+
+    border-radius: 2px;
+}
+
+.c-pagination__item a {
+    display: inline-block;
+    padding: 7px 16px;
+
+
+    &:active,
+    &:focus {
+        color: $black;
+    }
+}
+
+.c-pagination__count {
+    padding: 0 $unit;
+}

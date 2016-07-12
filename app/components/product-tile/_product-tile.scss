@@ -1,0 +1,74 @@
+// Product Tile component
+// ===
+//
+// 1. Select images that are currently loading
+
+
+.c-product-tile {
+    margin-top: $unit*2;
+
+    &.c--lazy-loading img:not(.lazy-loaded) {
+        // 1
+        position: relative;
+        top: 50%;
+
+        display: inline-block;
+        width: auto;
+
+        transform: translateY(-50%);
+    }
+}
+
+.c-product-tile__more-colors {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.c-product-tile__more-colors-banner {
+    position: relative;
+    right: 0;
+    bottom: 0;
+
+    display: block;
+    padding: 2px $sub-unit;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    font-family: $default-sans;
+    font-weight: bold;
+    font-size: $smaller-font-size;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+
+    a {
+        color: $neutral-70;
+    }
+}
+
+.c-product-tile__title {
+    margin-top: $sub-unit;
+    padding: 0 $unit;
+
+    font-family: $default-sans;
+    font-weight: bold;
+}
+
+.c-product-link {
+    position: relative;
+
+    display: inline-block;
+
+    text-align: center;
+
+    &.c--large {
+        width: 80%;
+    }
+}
+
+.c-product-tile__rating-callout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

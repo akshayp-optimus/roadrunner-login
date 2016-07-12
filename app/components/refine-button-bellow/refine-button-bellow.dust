@@ -1,0 +1,9 @@
+<div class="c-product-list__refine-results">
+    {#items}
+        {>"components/bellows/bellows"
+            bellowsHeader=refineButton
+            bellowsContent=refineContent
+            class="c-refine-filter"
+        /}
+    {/items}
+</div>

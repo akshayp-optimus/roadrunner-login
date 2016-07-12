@@ -1,0 +1,113 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <img class="c-loading-gif" src="{@getUrl path="img/loading.gif"/}" hidden />
+    <div class="t-product-list js-product-list" id="content">
+        {^isSearchPage}
+            {>"components/breadcrumb/breadcrumb" iconName="chevron-left" /}
+        {/isSearchPage}
+
+        {?pageTitle}
+            <h2 class="c-title js-page-title">
+                {pageTitle}
+            </h2>
+        {/pageTitle}
+
+        {responsiveContent}
+
+        {! Shipping Restriction Message !}
+        {>"components/shipping-restriction/shipping-restriction"/}
+
+        <div class="js-no-results" hidden="true"></div>
+
+        <div class="t-product-list__search-suggestion js-search-suggestion"></div>
+
+        {^isNoSearchResultPage}
+            {#refineResult}
+                <div class="t-product-list__refine-results js-refine-results {?isSearchPage}c--search-page{/isSearchPage}">
+                    {>"components/refine-button-bellow/refine-button-bellow"/}
+                </div>
+            {/refineResult}
+        {/isNoSearchResultPage}
+
+        <div class="t-product-list__results-sort">
+            <span class="t-product-list__sort-by js-product-list__sort-by">
+                {>"pages/product-list/partials/product-list__sort-by"/}
+            </span>
+
+            <div class="t-product-list__number-of-results js-number-of-results">
+                {>"components/number-of-results/number-of-results"/}
+            </div>
+        </div>
+
+        {! Product Card Component !}
+        <div class="js-product-tile-container u-margin-top-sm c-product-tile-content">
+            <ul class="t-product-list__product-tile u-text-align-center" id="sli_products">
+                {>"components/product-tile/product-tile"/}
+            </ul>
+        </div>
+
+        <div class="js-you-may-also-like c-products-scroller u-margin-bottom-md">
+            {! Will be populated later on ajax !}
+        </div>
+        <div hidden>
+            {! Needed for desktop script !}
+            {youMayAlsoLikeContainer}
+        </div>
+
+        <div class="js-pagination">
+            {>"components/pagination/pagination"/}
+        </div>
+
+        {! Related products section !}
+        {#relatedProductsSection}
+            <div class="t-product-list__related-product">
+                {#relatedProducts}
+                    {>"components/carousel/carousel" /}
+                {/relatedProducts}
+            </div>
+        {/relatedProductsSection}
+
+        {#relatedSearches}
+            <div class="c-related-search-wrapper t-product-list__related-searches">
+                <h4 class="u-margin-bottom-md">{relatedSearchHeader}</h4>
+                <ul class="c-related-search">
+                    {>"components/search-suggestions/search-suggestions"/}
+                </ul>
+            </div>
+        {/relatedSearches}
+
+        {! Sheet for Tooltip !}
+        {>"components/sheet/sheet" effect="modalCenter" isHeader="true"
+            cssClass="c-shopping-popup c--no-header-text c--dialog" class="js-tooltip-pinny"
+            bodyClass="js-tooltip-content"
+        /}
+
+        {>"components/back-to-top/back-to-top" class="c--sticky" icon="top" /}
+
+        {>"components/loading-overlay/loading-overlay" loaderOverlayClass="js-filter-loader u--hide"/}
+
+    </div>
+
+    {! ID is used for desktop functionality !}
+    <div id="sli_leftNav" class="u-visually-hidden"></div>
+
+    {?desktopBreadcrumbContainers}
+        <div hidden>
+            {desktopBreadcrumbContainers}
+        </div>
+    {/desktopBreadcrumbContainers}
+
+    <fieldset id="sli_head" hidden></fieldset>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    (function(require) {
+        require(["global/ui", "pages/product-list/product-list-ui"], function(globalUI, productListUI) {
+            globalUI();
+            productListUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

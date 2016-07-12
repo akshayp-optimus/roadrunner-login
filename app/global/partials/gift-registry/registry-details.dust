@@ -1,0 +1,90 @@
+{?isView}
+    <div class="u-margin-bottom-md u-padding-all-md u-border c-details-container js-details-container">
+        {#details}
+            <div>{.privacy}</div>
+        {/details}
+        {#shipTo}
+            <div> <span class="u-text-uppercase">{.title}</span> {.name}</div>
+        {/shipTo}
+    </div>
+
+    {#message}
+        <div class="u-background-light-grey u-padding-all-lg u-bleed u-text-align-center js-message">
+            <span class="title">{.title}</span>
+            {.content}
+        </div>
+    {/message}
+{:else}
+    {#details}
+        <div class="u-margin-bottom-md c-details-container js-details-container">
+            <div class="">
+                <div class="c-registry-information-container">
+                    <div class="c-registry-information">Registry Information</div>
+                    {registryDetailEditLink}
+                </div>
+                <div class="u-border-grey u-overflow-hidden c-details-content c-co-reg-details">
+                    {registryDetail}
+                </div>
+            </div>
+        </div>
+    {/details}
+
+
+    {#registrant}
+        <div class="u-margin-bottom-md js-registrant-info c-details-container">
+            <div class="">
+                <div class="c-registry-information-container">
+                    <div class="c-registry-information">Registrant's Information</div>
+                        {registrantEditLink}
+                </div>
+                <div class="u-border-grey u-overflow-hidden c-details-content">
+                    {.content}
+                </div>
+            </div>
+        </div>
+    {/registrant}
+
+    {#shipTo}
+        <div class="u-margin-bottom-md js-shipping-to c-details-container">
+            <div class="">
+                <div class="c-registry-information-container c-ship-to">
+                    <div class="c-registry-information">Shipping Address</div>
+                    {.href}
+                </div>
+                <div class="u-border-grey u-overflow-hidden c-details-content c-shipping-details-content">
+
+                    <span class="title c-shipping-address">{.title}</span>
+                    <span class="c-shipping-address c-shipping-address-name">
+                        {.name}
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    {/shipTo}
+
+    {#coregistrant}
+        <div class="u-margin-bottom-md js-registrant-info c-details-container">
+            <div class="">
+                <div class="c-registry-information-container c-co-registrant">
+
+                    <div class="c-registry-information">Co-registrant's Information</div>
+                    {coregistrantEditLink}
+                </div>
+                <div class="u-border-grey u-overflow-hidden c-details-content c-co-reg-details">
+                    {.content}
+                </div>
+            </div>
+        </div>
+    {/coregistrant}
+
+    {#message}
+        <div class="u-margin-bottom-md js-message">
+            <h4>{.title}</h4>
+            <a href="{.href}" class="c-button c--outline c--fletch c--full-width">
+                {.content}
+                {@icon name="chevron-right" title="Arrow right" class="c-icon-svg c--large" /}
+            </a>
+        </div>
+    {/message}
+{/isView}

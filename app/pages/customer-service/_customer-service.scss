@@ -1,0 +1,49 @@
+// Customer Service Page
+// =====
+
+.t-customer-service-wrapper {
+    .c-bellows__item {
+        border-right: 1px solid $neutral-120;
+        border-left: 1px solid $neutral-120;
+    }
+
+    .c-breadcrumb {
+        font-weight: normal;
+    }
+
+    .c-bellows__list {
+        a {
+            display: inline;
+            padding: 0;
+
+            color: $black;
+            font-weight: bold;
+        }
+    }
+
+    .c-bellows__header {
+        background: $white;
+    }
+
+    li {
+        margin-left: $sub-unit*3;
+
+        list-style-type: disc;
+    }
+
+    .c-service-selection {
+        padding: $unit;
+
+        background: $neutral-40;
+    }
+
+    .c-service-select {
+        background: $white;
+    }
+
+    p {
+        a {
+            font-weight: bold;
+        }
+    }
+}

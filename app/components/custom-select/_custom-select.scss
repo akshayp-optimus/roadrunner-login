@@ -1,0 +1,22 @@
+// Custom Select
+// ===
+
+.c-custom-select {
+    height: $tap-size;
+    padding: $unit;
+
+    background: url('../icons/svg/selectbox-arrow.svg') no-repeat;
+    // background-position: 96% center;
+    background-position: right $unit center;
+
+    color: $brand-color;
+    font-family: $default-sans;
+    font-weight: bold;
+
+    -webkit-appearance: none;
+
+    &.c--sort-arrow {
+        background: url('../icons/svg/sort.svg') no-repeat;
+        background-size: 13px;
+    }
+}

@@ -1,0 +1,110 @@
+// Confirmation details Page
+// ===
+
+.t-confirmation-details {
+    .t-header__row-item {
+        display: none;
+    }
+}
+
+.t-confirmation-details__button {
+    min-height: initial;
+}
+
+.t-confirmation-details-wrapper {
+    .c-title {
+        padding: $sub-unit 0 $unit;
+    }
+
+    .c-carousel__inner {
+        margin-top: $sub-unit;
+    }
+
+    .c-price__discounted {
+        font-weight: normal;
+    }
+
+    .c-cart-item {
+        padding-top: $sub-unit;
+        + .c-cart-item {
+            border-top: 1px solid $neutral-40;
+        }
+    }
+
+    .c-billing-address-text {
+        font-size: $large-font-size;
+
+        a {
+            color: $neutral-70;
+        }
+    }
+
+    .c-price__original {
+        padding-left: 0;
+    }
+
+    .c-ledger {
+        margin: $unit (-$unit) 0;
+        padding: 0 $unit;
+        padding-bottom: 0;
+
+        background: $neutral-40;
+    }
+
+    h3 {
+        margin-top: $unit;
+
+        font-weight: bold;
+        font-size: $font-size;
+    }
+
+    .c-cart-item {
+        margin-bottom: 0;
+    }
+
+    .c-qty__wrapper {
+        display: none;
+    }
+
+    .c-order-summary {
+        border-radius: 2px 2px 0 0;
+    }
+}
+
+.t-confirmation-details__billing-address {
+    padding: $unit;
+    border: 1px solid $neutral-50;
+    border-top: 0;
+
+    .u-border-grey {
+        padding: 0 !important;
+        border: 0;
+
+        border-radius: 0;
+
+        font-weight: bold;
+    }
+}
+
+.t-confirmation-details__payment {
+    padding: $unit;
+    border: 1px solid $neutral-50;
+    border-top: 0;
+
+    border-radius: 0 0 2px 2px;
+
+    .t-card__confirmation {
+        display: inline-block;
+        width: 17%;
+    }
+
+    span {
+        font-weight: bold;
+    }
+}
+
+.t-confirmation-details {
+    .t-header__bottom {
+        display: none;
+    }
+}

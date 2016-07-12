@@ -1,0 +1,166 @@
+// List Tile
+// ===
+
+$list-tile__tap-size: 44px;
+$list-tile__padding-size: ($sub-unit)-1;
+
+.c-list-tile {
+    display: flex;
+    align-items: center;
+    min-height: $list-tile__tap-size;
+}
+
+
+// Primary Tile
+// ---
+
+.c-list-tile__primary-tile {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    align-self: stretch;
+}
+
+// scss-lint:disable QualifyingElement
+a.c-list-tile__primary-tile,
+button.c-list-tile__primary-tile {
+    background-color: rgba(0, 0, 0, 0);
+
+    font-weight: $medium-font-weight;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &:active {
+        background-color: $neutral-210;
+    }
+}
+
+
+// Secondary Tile
+// ---
+
+.c-list-tile__secondary-tile {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    align-self: stretch;
+
+    font-style: italic;
+    font-size: $smaller-font-size;
+    text-transform: uppercase;
+}
+
+
+// Content
+// ---
+
+.c-list-tile__primary-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 auto;
+    align-self: stretch;
+    margin: 0;
+    padding: $sub-unit $unit;
+
+
+    &:only-child {
+        padding-left: $unit;
+    }
+}
+
+
+// Subtext
+// ---
+
+.c-list-tile__primary-subtext {
+    display: block;
+    margin-top: $sub-unit/2;
+    // color: $light-font-color;
+
+    font-size: $smaller-font-size;
+}
+
+
+// Primary Action
+// ---
+
+.c-list-tile__primary-action {
+    flex: 0 0 auto;
+    padding: $list-tile__padding-size $unit;
+
+    img {
+        max-height: $list-tile__tap-size;
+    }
+
+    .c-icon.c--small {
+        width: 12px;
+        height: 12px;
+        margin-right: $unit;
+    }
+}
+
+
+// Secondary Action
+// ---
+
+.c-list-tile__secondary-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    min-width: $list-tile__tap-size;
+    min-height: $list-tile__tap-size;
+    padding: $list-tile__padding-size $unit;
+    border: 0;
+
+    background: none;
+
+    color: $link-color;
+    text-align: center;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &:active {
+        background-color: $neutral-210;
+    }
+}
+
+
+// Override link colors
+// ---
+
+.c-list-tile__primary-tile,
+.c-list-tile__secondary-action {
+    color: inherit;
+
+    &:focus,
+    &:active {
+        color: inherit;
+    }
+}
+
+
+// Modifier: Border
+// ---
+
+.c-list-tile.c--border + .c-list-tile.c--border {
+    .c-list-tile__primary-content,
+    .c-list-tile__secondary-tile {
+        border-top: $border;
+    }
+}
+
+
+// Modifier: Align Top
+// ---
+//
+// Align icon and text to the top
+
+.c-list-tile.c--align-top {
+    align-items: flex-start;
+
+    .c-list-tile__primary-tile {
+        align-items: flex-start;
+    }
+}

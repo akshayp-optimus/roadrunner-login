@@ -1,0 +1,93 @@
+.t-pdp__collection {
+    margin-bottom: $unit;
+
+    box-shadow: inset 0 2px 0 0 $neutral-70;
+
+    .c-product-tile {
+        position: relative;
+
+        float: left;
+
+        width: 50%;
+        margin-top: $unit;
+
+        &:nth-child(odd) {
+            clear: left;
+        }
+    }
+
+    .c-product-tile:nth-child(odd) {
+        padding-right: $sub-unit;
+
+        .c-expand-svg {
+            right: 6px;
+        }
+    }
+
+    .c-product-tile:nth-child(even) {
+        padding-left: $sub-unit;
+
+        .c-expand-svg {
+            margin-right: -9px;
+        }
+    }
+
+    .c-product-tile__title {
+        padding-left: 0;
+
+        font-weight: normal;
+    }
+
+    .c-product-tile__description  .c-price {
+        padding-bottom: $sub-unit;
+        padding-left: 0;
+    }
+
+    .c-product-tile-content {
+        overflow: hidden;
+        margin-right: $unit;
+        margin-left: $unit;
+    }
+
+    .c-expand-svg {
+        position: absolute;
+        right: 15px;
+        bottom: 0;
+        z-index: 1;
+
+        width: 38px;
+        height: 38px;
+        padding: 11px;
+
+        border-radius: 38px;
+        background: $brand-color;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.20);
+
+        color: $white;
+
+        &:active {
+            background: $neutral-230;
+        }
+    }
+
+    .c-product-link {
+        position: inherit;
+    }
+
+    // Specific to wodget component.
+    .c-price__discounted {
+        color: $brand-color;
+    }
+
+    .c-price {
+        padding-top: $sub-unit;
+    }
+
+    .c-product-tile__image-container {
+        position: relative;
+    }
+}
+
+.c-price__discounted {
+    font-weight: bold;
+}

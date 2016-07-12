@@ -1,0 +1,38 @@
+{>"global/base"/}
+
+{<contentBlock}
+
+    {>"components/breadcrumb/breadcrumb"/}
+
+    <div class="t-order-history-page">
+
+        <h2 class="c-title u-no-bottom-padding u-no-left-padding u-page-title-color u-padding-top-sm"><small>{pageTitle}</small></h2>
+
+        {introText}
+
+        {#orderHistory}
+            {>"components/loading/loading" class="js-loader"/}
+            <div class="u-margin-bottom-md js-order-history c-order-history">
+                <div class="u-visually-hidden">
+                    {orderHistoryContainer}
+                </div>
+                {! placeholder for ui !}
+            </div>
+            {fallbackMessage}
+        {/orderHistory}
+
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/account/ui.js
+    (function(require) {
+        require(["global/ui", "pages/order-history/order-history-ui"], function(globalUI, orderHistoryUI) {
+            globalUI();
+            orderHistoryUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

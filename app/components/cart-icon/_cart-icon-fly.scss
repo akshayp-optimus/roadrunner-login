@@ -1,0 +1,26 @@
+// Cart Icon
+// ===
+// Styling for Cart Icon
+// ----
+//
+// 1. Needed to override the pinny z-index is causing it to not show up when we are viewing an item from a bundle PDP
+
+.c-add-to-cart-wrapper {
+    position: relative;
+}
+
+.js-cart-toggle.c-cart-fly {
+    position: fixed;
+    right: $sub-unit*3;
+    z-index: 1001; // 1
+
+    border: 0;
+
+    border-radius: 50%;
+    background: $brand-color;
+    box-shadow: 0 1px 2px $neutral-70;
+
+    .c-icon {
+        fill: $white !important;
+    }
+}

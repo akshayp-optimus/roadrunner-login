@@ -1,0 +1,5 @@
+<div class="c-custom-select c-arrange__item {customSelectClass}">
+    <div class="c-custom-select__inner">
+        {customSelectText}
+    </div>
+</div>

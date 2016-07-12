@@ -1,0 +1,88 @@
+<div class="c-product-detail-widget__header">
+    <button class="c-button c-collection-breadcrumb c-breadcrumb__link c--full-width pinny__close"> < Cart</button>
+    <button class="pinny__close c-collection-header">
+        {>"components/icon/icon" name="close"/}
+    </button>
+</div>
+<div class="c-product-info">
+    <h3 class="c-title">
+        {.productName|s}
+        <span class="c-product-part-number u--normal">(#{itemNumber})</span>
+    </h3>
+    <div class="c-pdp-price-star-description u-margin-start-md c-pdp-price">
+        <div class="js-pdp-price u-margin-bottom-sm">
+            {#price}
+                {>"components/price/price" priceClass="c--large"/}
+            {/price}
+        </div>
+    </div>
+
+    <div class="js-product-image c-main-image u-text-align-center u-margin-top-md">
+    </div>
+
+</div>
+
+
+
+<div class="c-product-qty-and-price">
+    <div class="t-product-details__product-optionsjs-product-options">
+        {?hasSwatches}
+            <div class="t-product-details__product-option">
+                <div class="c-arrange c--align-baseline js-color-description">
+                    <div class="t-product-details__product-option-label c-arrange__item c--shrink u-margin-end-md">
+                        <label>Color</label>
+                    </div>
+
+                    <div class="js-color-text c-arrange__item c-swatch-color-text">
+                        Select...
+                    </div>
+                </div>
+                <div class="u-padding-top-md js-swatches">
+                    {#swatches}
+                        {>"components/scroller/scroller"/}
+                    {/swatches}
+                </div>
+            </div>
+        {/hasSwatches}
+        {?hasOption}
+            {#optionLabels}
+                <div class="t-product-details__product-option">
+                    <div class="c-arrange c--align-middle">
+                        <div class="t-product-details__product-option-label c-arrange__item c--shrink">
+                            <label class="c-amount-label">{.}</label>
+                        </div>
+                        <div class="c-arrange__item u-shift-top u-shift-bottom u-shift-end">
+                            {>"components/select/select" class="js-option"/}
+                        </div>
+                    </div>
+                </div>
+            {/optionLabels}
+        {/hasOption}
+
+        <div class="t-product-details__quantity t-product-details__product-option" data-bind-qty="quantity_802027">
+            <div class="c-arrange">
+                <div class="t-product-details__product-option-label c-arrange__item c--shrink">
+                    <label>Quantity</label>
+                </div>
+                <div class="c-arrange__item c--shrink u-shift-top u-shift-bottom u-shift-start">
+                    {#quantity}
+                        {>"components/stepper/stepper"/}
+                    {/quantity}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="u-margin-top-lg u-margin-bottom-lg">
+    <div class="js-error"></div>
+    <div class="js-availability"></div>
+</div>
+
+<div class="u-margin-top-md u-padding-sides-md u-padding-bottom-lg">
+    <div class="c-cta">
+        <div class="c-add-to-cart-wrapper js-cta"></div>
+    </div>
+</div>
+
+

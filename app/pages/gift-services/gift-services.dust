@@ -1,0 +1,32 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="c-service-selection  u-margin-bottom-md">
+        <div class="js-service-select c-service-select">
+            <div class="js-desktop-left-nav" hidden>{leftNav}</div>
+        </div>
+    </div>
+    {responsiveContent}
+    <div class="t-gift-services-wrapper">
+        <h2 class="c-title u-no-left-padding u-padding-bottom-sm"><small>{pageTitle}</small></h2>
+        {giftCardIntroduction}
+        {giftCardDetails}
+        {reedemGiftCardHeading}
+        {giftServicesDetail}
+    </div>
+    <div class="t-create-registry">
+        {>"components/hero/hero" /}
+    </div>
+    {>"components/back-to-top/back-to-top" class="c--sticky" icon="top" /}
+{/contentBlock}
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    (function(require) {
+        require(["global/ui", "pages/gift-services/gift-services-ui"], function(globalUI, giftServicesUI) {
+            globalUI();
+            giftServicesUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

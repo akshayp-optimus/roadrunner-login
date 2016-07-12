@@ -1,0 +1,17 @@
+<ol class="c-checkout-steps {class}">
+    {#steps}
+        <li class="c-checkout-steps__item js-checkout-step {stepClass} {status}">
+            <div class="c-checkout-steps__check">
+                {stepTitle}
+            </div>
+
+            <{?href}a href="{href}" class="c-checkout-steps__circle" {:else}div class="c-checkout-steps__circle"{/href}>
+                <span class="u-visually-hidden js-status">{statusText}</span>
+
+                <span class="u-visually-hidden">Step {stepCurrent} of {stepCount}: {stepTitle}</span>
+
+                {@icon name="{stepIcon}" title="{stepIconText}" /}
+            </{?href}a{:else}div{/href}>
+        </li>
+    {/steps}
+</ol>

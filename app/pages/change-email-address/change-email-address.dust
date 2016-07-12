@@ -1,0 +1,63 @@
+{>"global/base"/}
+
+{<contentBlock}
+
+    {>"components/breadcrumb/breadcrumb"/}
+
+    <div class="t-change-email-address-section">
+        <h1 class="c-title u-page-title u-no-left-padding"><small>Change Email Address</small></h1>
+        {updateEmailMessage}
+        {form|openTag|s}
+            {hiddenInputs}
+
+            <div hidden>{userState}</div>
+
+            {errorContainer}
+
+            {?confirmationText}
+                <p class="u-text-success">{confirmationText}</p>
+            {/confirmationText}
+
+            <div class="c-form-group">
+                {#formRows}
+                    <div class="c-box-row">
+                        <div class="c-box c-arrange c--align-middle">
+                            <div class="c-box__label c-arrange__item c--shrink">
+                                <div class="c-arrange c--align-middle">
+                                    {required}
+                                    {label}
+                                </div>
+                            </div>
+
+                            <div class="c-input js-update-input c-arrange__item">
+                                {inputScript}
+
+                                {input}
+                            </div>
+                        </div>
+                    </div>
+                {/formRows}
+            </div>
+
+            {#continueButton}
+                {>"components/button/button" class="c--primary c--full-width .c-button. c--primary c-continue-button .u-margin-start-0 .u-margin-end-0 "
+                    id=buttonId type=buttonType buttonText=buttonText
+                /}
+            {/continueButton}
+
+        {form|closeTag|s}
+    </div>
+
+{/contentBlock}
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/change-email-address/ui.js
+    (function(require) {
+        require(["global/ui", "pages/change-email-address/change-email-address-ui"], function(globalUI, changeEmailAddressUI) {
+            globalUI();
+            changeEmailAddressUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

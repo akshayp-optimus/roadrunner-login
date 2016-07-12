@@ -1,0 +1,76 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-order-detail u-padding-all u--tight ">
+
+    <h2 class="c-title u-no-left-padding u-padding-top-sm"><small>{pageTitle}</small></h2>
+
+        {#orderInfo}
+            <div class="t-order-detail__order-info u-margin-top-ex-md">
+                <div class="c-arrange c-order-number-date">
+                    {#orderNumberAndDate}
+                        <div class="u-order-detail-border c-arrange__item u-padding-all u--tight">
+                            <div class="u-text-capitalize u-margin-bottom-md">{label}</div>
+                            <h5 class="u--bold">{value}</h5>
+                        </div>
+                    {/orderNumberAndDate}
+                </div>
+                {#shippingInfo}
+                    <div class="c-shipping-info u-order-detail-border u-padding-all u--tight u-border-top-none">
+                        <div class="u-text-capitalize u-margin-bottom-md">{label}</div>
+                        <h5 class="u-text-capitalize u--bold c-shipping-name">{name}</h5>
+                        <h5 class="u-text-capitalize u--bold">{address}</h5>
+                    </div>
+                {/shippingInfo}
+            </div>
+        {/orderInfo}
+
+        <div class="c-ordered-items">
+            {#orderedItems}
+                <div class="c-ordered-item u-padding-bottom u--tight u-margin-top-md ">
+                    <div class="u--bold u-margin-bottom-sm u-text-large">{productName}</div>
+                    <ul class="c-ordered-item__selected-options u-margin-bottom-sm">
+                        <li>
+                            {@translate key="qty_label"/}
+                            {quantity}
+                        </li>
+                        <li>
+                            {@translate key="status_tracking"/}:
+                            <span class="{trackingClass}">{tracking}</span>
+                        </li>
+                        <li>
+                            {@translate key="shipping_method_order_label"/}:
+                            {shippingMethod}
+                        </li>
+                    </ul>
+                    <div class="c-order-detail-price">{price}</div>
+                </div>
+            {/orderedItems}
+        </div>
+
+        <div class="c-ledger">
+            {#orderSummary}
+                <div class="c-ledger__entry">
+                    <span class="c-ledger__description">{label}</span>
+                    <span class="u--bold u-text-align-end c-ledger__number">{value}</span>
+                </div>
+            {/orderSummary}
+        </div>
+
+
+        <div class="t-order-detail__total-message u-margin-top-md">
+            {priceDislaimer|s}
+        </div>
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    (function(require) {
+        require(["global/ui","pages/order-detail/order-detail-ui"], function(globalUI, orderDetailUI) {
+            globalUI();
+            orderDetailUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

@@ -1,0 +1,163 @@
+// PDP
+// ===
+//
+// 1. GH-212
+// 2. By design GRRD-494
+
+.t-product-details {
+    .c-product-image {
+        margin: 0;
+    }
+
+    // Hiding wishlist until Phase 2
+    // ---
+    //
+    // .c-add-to-wishlist {
+    //     display: none !important;
+    // }
+
+    .c-bellows__list {
+        margin-left: 8px; // 2
+    }
+
+    .c-back-to-top.c--in-active {
+        display: none !important;
+    }
+
+    .c-title {
+        padding-bottom: $unit !important;
+    }
+
+    .c-product-image-wrapper {
+        .c--height-modifier {
+            height: 937px !important;
+        }
+
+        .c-hide-reveal__hide-link {
+            display: none;
+        }
+
+        .c-hide-reveal {
+            position: relative;
+
+            padding: 0;
+        }
+
+        .c-hide-reveal__content:not(.c--restricted-content) {
+            height: auto !important;
+        }
+
+        .c-hide-reveal__content.c--restricted-content {
+            height: auto;
+        }
+
+        .c-hide-reveal__reveal-link {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+
+            padding: 0 $unit;
+
+            background: rgba(0, 0, 0, 0.3);
+
+            transform: translateX(-50%);
+
+            .c-icon {
+                width: 30px; // 2
+                height: 23px; // 2
+
+                fill: $white;
+            }
+        }
+
+        .c-read-more-text {
+            display: none;
+        }
+    }
+}
+
+.c-button.c--outline.c-return-to-collection {
+    border: 0;
+
+    color: $black;
+    font-weight: bold;
+    text-transform: none;
+
+    &:active {
+        background: none;
+    }
+}
+
+// Bundles Section
+// ---
+//
+// 1. GRRD-273: Black and bold text links
+
+.t-product-details-bundle {
+    @include clearfix;
+
+    .c-product-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .c-hide-reveal__content,
+    .c-list-bullets,
+    .c-bellows__list {
+        li {
+            margin-left: $unit;
+            padding-bottom: $unit;
+
+            list-style-type: disc;
+        }
+    }
+
+    .moreinfo-tab {
+        li,
+        a {
+            color: $black; // 1
+            font-weight: bold;
+        }
+    }
+
+    .c-back-to-top.c--in-active {
+        display: none !important;
+    }
+
+    .c-product-part-number {
+        &:before {
+            content: '';
+        }
+
+        &:after {
+            content: '';
+        }
+    }
+
+    img.c-product-image__image {
+        margin-bottom: -1px;
+    }
+}
+
+.c-price-short-description {
+    float: right;
+
+    margin-bottom: $unit;
+    margin-left: $sub-unit/2;
+    padding: $sub-unit/2 $sub-unit;
+
+    background: $neutral-40;
+
+    color: $neutral-70;
+    font-weight: bold;
+    font-size: $smaller-font-size;
+}
+
+.c-list-bullets {
+    li {
+        margin-left: $unit;
+        padding-bottom: $unit;
+
+        list-style-type: disc;
+    }
+}

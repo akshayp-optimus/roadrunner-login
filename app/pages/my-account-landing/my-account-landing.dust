@@ -1,0 +1,26 @@
+{>"global/base"/}
+
+{<contentBlock}
+    {>"components/hero/hero" /}
+     <div class="c-my-account-details">
+        {! Move My Account in translator !}
+        <h1 class="c-title u-no-left-padding"><small>My Account</small></h1>
+        {welcomeMessage}
+        {changepasswordMessage}
+        <div>{WelcomeHeadiing}</div>
+        {myAcountLandingItems}
+    </div>
+
+{/contentBlock}
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/product-details/ui.js
+    (function(require) {
+        require(["global/ui", "pages/my-account-landing/my-account-landing-ui"], function(globalUI, accountLandingUI) {
+            globalUI();
+            accountLandingUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

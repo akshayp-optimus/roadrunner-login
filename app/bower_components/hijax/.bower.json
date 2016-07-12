@@ -1,0 +1,22 @@
+{
+  "name": "hijax",
+  "version": "0.2.0",
+  "dependencies": {
+    "requirejs": "2.1.14"
+  },
+  "devDependencies": {
+    "jquery211": "jquery#2.1.1",
+    "jquery132": "jquery#1.3.2"
+  },
+  "homepage": "https://github.com/mobify/hijax",
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.0",
+    "commit": "112f5af84c6e8b9e71703e85cca5acf89356ba36"
+  },
+  "_source": "git://github.com/mobify/hijax.git",
+  "_target": "^0.2.0",
+  "_originalSource": "hijax",
+  "_direct": true
+}

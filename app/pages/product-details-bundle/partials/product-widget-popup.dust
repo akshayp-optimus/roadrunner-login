@@ -1,0 +1,20 @@
+{#widgetContent}
+    <div class="c-product-detail-widget__header">
+        <button class="c-button c-collection-breadcrumb c-breadcrumb__link c--full-width pinny__close"> < Collection</button>
+            <button class="pinny__close c-collection-header">
+                <svg class="c-icon" data-fallback="img/png/close.png">
+                    <title>close</title>
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close"></use>
+                </svg>
+            </button>
+    </div>
+    {>"global/includes/pdp-sections/product-information-and-actions" /}
+    <div class="js-product-detail-bellow c-product-detail-bellow">
+        {#productTabs}
+            {>"components/bellows/bellows":.bellows/}
+        {/productTabs}
+    </div>
+
+    <button class="c-button c--outline c-return-to-collection c--full-width pinny__close">Return to collection</button>
+
+{/widgetContent}

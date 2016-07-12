@@ -1,0 +1,40 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-gift-registry-landing">
+        <div class="t-gift-registry">
+            {>"components/hero/hero" /}
+        </div>
+        <div class="c-gift-registry">
+            {registryButtons}
+        </div>
+
+        <div class="c-separator-gift-registry c-full-width"></div>
+        <div class="c-gift-registry-options">
+            <div class="c-category-options-heading">
+                {categoryOptionsHeading}
+            </div>
+            <ul class="c-product-tile-content">
+                {>"components/product-tile/product-tile"/}
+            </ul>
+        </div>
+        <div hidden>{hiddenData}</div>
+
+        <div class="c-hero c-hero-image u-margin-bottom-md">
+            <a href="{giftCardHref}" class="c-hero__img">
+                <img src="{@getUrl path="img/landing_giftcards-mobile.gif" /}">
+            </a>
+        </div>
+        {>"components/need-help/need-help"/}
+
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    (function(require) {
+        require(["global/ui"], function(globalUI) {
+            globalUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

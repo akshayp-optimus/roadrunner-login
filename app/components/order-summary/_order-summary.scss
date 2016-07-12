@@ -1,0 +1,23 @@
+// Order summary compenent
+// =========
+
+.c-order-summary {
+    display: flex;
+    border: 1px solid $neutral-50;
+}
+
+.c-order-summary__entry {
+    width: 50%;
+    padding: $sub-unit $unit;
+}
+
+.c-order-summary__entry:last-child {
+    border-left: 1px solid $neutral-50;
+}
+
+.c-order-summary__number {
+    width: 50%;
+
+    font-weight: bold;
+    font-size: $large-font-size;
+}

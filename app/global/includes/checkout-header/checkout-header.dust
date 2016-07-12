@@ -1,0 +1,29 @@
+{#header}
+    <header class="t-header" role="banner">
+        <div class="t-header__top c-arrange c--justify-between u-margin-top-tn">
+            <div class="t-header__logo">
+                <a href="/">
+                    <h1 class="u-visually-hidden">{text}</h1>
+                    {>"svg-icon" name="GR-logo"/}
+                </a>
+
+                {>"svg-icon" name="lock"/}
+            </div>
+
+            <div class="t-header__row-item c-cart-container">
+                <a href="#" class="t-header__cart js-checkout-cart-link">
+                    {>"svg-icon" name="cart"/}
+                    <span class="t-header__cart-count js-cart-count u--hide">0</span>
+                </a>
+            </div>
+        </div>
+
+        {#progressBar}
+            <div class="t-header__bottom u-margin-top-lg u-margin-bottom-md">
+                {>"components/checkout-steps/checkout-steps"/}
+            </div>
+        {/progressBar}
+    </header>
+
+    {shoppingCart}
+{/header}

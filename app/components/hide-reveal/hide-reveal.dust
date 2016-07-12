@@ -1,0 +1,44 @@
+<div class="c-hide-reveal {hideClass} {class}">
+
+    {! Content !}
+    <div class="c-hide-reveal__content js-content c--restricted-content">
+        {bodyContent}
+
+        {?isTermSuggestions}
+            <ul class="{termSuggestionsClass}">
+                {#termSuggestions}
+                    <li class="c-search-suggestions__term u-margin-bottom-tn js-suggestion">
+                        <a href="{href}">
+                            {>"svg-icon" name="search" class="needsclick"/}
+                            <span class="c-search-suggestions__text">{text}</span>
+                        </a>
+                    </li>
+                {/termSuggestions}
+            </ul>
+        {/isTermSuggestions}
+    </div>
+
+    {! Reveal Link !}
+    <div class="c-hide-reveal__reveal-link js-reveal-link">
+        {?revealIconName}
+            {>"svg-icon" name=revealIconName class=revealIconClass/}
+        {/revealIconName}
+        {?revealText}
+            {revealText}
+        {:else}
+            <span class="c-read-more-text {revealTextClass}">{@translate key="read_more"/}<span>
+        {/revealText}
+    </div>
+
+    {! Hide Link !}
+    <div class="c-hide-reveal__hide-link js-hide-link u--hide">
+        {?hideIconName}
+            {>"svg-icon" name=hideIconName class=hideIconClass/}
+        {/hideIconName}
+        {?hideText}
+            {hideText}
+        {:else}
+            {@translate key="hide"/}
+        {/hideText}
+    </div>
+</div>

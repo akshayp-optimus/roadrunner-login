@@ -1,0 +1,47 @@
+<h5 class="u-margin-bottom u-text-blue u--bold">Payment Information</h5>
+
+{#billingAddress}
+    <div hidden>{container}</div>
+    <div class="c-button-title-container">
+        <div class="u--bold">{sectionTitle}</div>
+        <ul class="c-button-wrap u-small-font-size">
+            <li>{edit}</li>
+            <li>|</li>
+            <li>{select}</li>
+        </ul>
+    </div>
+
+    <div class="u-margin-bottom-md">
+        {>"components/address-button/address-button"/}
+    </div>
+{/billingAddress}
+
+<div class="c-form-group">
+    {#paymentForm}
+        {form|openTag|s}
+            {hiddenInputs}
+
+            {>"pages/order-review-and-payment/partials/payment__gr-credit-card" /}
+
+            {>"pages/order-review-and-payment/partials/payment__credit-card" /}
+
+            {saveCC}
+
+            {#ctas}
+                {container|openTag|s}
+                    <div class="t-payment-and-review__review-only js-place-order u-text-center js-review-only">
+                        {#finalTotal}
+                            <div class="u-margin-bottom-md u-padding-top-md">
+                                <span class="u-text-larger u--bold">{label} {price}</span>
+                            </div>
+                        {/finalTotal}
+
+                        {placeOrder}
+
+                        {cancel}
+                    </div>
+                {container|closeTag|s}
+            {/ctas}
+        {form|closeTag|s}
+    {/paymentForm}
+</div>

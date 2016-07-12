@@ -1,0 +1,128 @@
+// Change Credit Card Information
+//
+
+.t-account-cc-edit-section {
+    .c-box label {
+        display: flex;
+        width: 88px;
+    }
+    .c-select select {
+        width: 102px;
+        border: 0;
+    }
+
+    .c-box-row {
+        margin-bottom: -1px;
+    }
+
+    .c-change-card-box {
+        .c-box-row {
+            position: relative;
+        }
+
+        .c-icon {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+
+            transform: translateY(-50%);
+        }
+
+        .c-arrange__item {
+            width: 100%;
+        }
+    }
+
+    .c-box-row.c--error-row,
+    .c-box-row.c--error-row input {
+        background: $red-20;
+    }
+
+    .c-box-row.c--error-row {
+        border: 1px solid $red-10;
+    }
+
+    .c-save-button span:after {
+        content: ' >';
+    }
+
+    p {
+        color: $neutral-110;
+    }
+
+    .c--error-row label {
+        color: $error-color;
+    }
+
+    .c--visa,
+    .c--jcb,
+    .c--discover,
+    .c--mastercard,
+    .c--amex {
+        width: 58%;
+
+        .c-icon {
+            display: none;
+        }
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            top: 50%;
+            right: 12px;
+
+            display: block;
+            width: 29px;
+            height: 10px;
+
+            background: url('../img/credit-card-sprite.png') no-repeat;
+            background-position: 0 -59px;
+            background-position: 0 0;
+            background-size: cover;
+
+            transform: translateY(-50%);
+
+            pointer-events: none;
+        }
+        &.c--visa {
+            &::after {
+                height: 10px;
+
+                background-position: 0 -59px;
+            }
+        }
+
+        &.c--jcb {
+            &::after {
+                height: 21px;
+
+                background-position: 0 0;
+            }
+        }
+
+        &.c--discover {
+            &::after {
+                height: 20px;
+
+                background-position: 0 -22px;
+            }
+        }
+
+        &.c--mastercard {
+            &::after {
+                height: 17px;
+
+                background-position: 0 -42px;
+            }
+        }
+
+        &.c--amex {
+            &::after {
+                height: 23px;
+
+                background-position: 0 -70px;
+            }
+        }
+    }
+}

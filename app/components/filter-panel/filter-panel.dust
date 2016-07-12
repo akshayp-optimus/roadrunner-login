@@ -1,0 +1,83 @@
+{#filterPanel}
+    <div class="c-filter-panel {class}">
+        {#filterPanelList}
+            <div class="c-filter-pannel__content">
+                <label class="c-filter-panel__list {filterListClass}">
+                    {?isCheckbox}
+                        <div class="c-filter-panel__checkbox {filterCheckboxClass}">
+                            {checkbox}
+                        </div>
+                    {/isCheckbox}
+
+                    <div class="c-filter-panel__label needsclick {filterLabelClass}">
+                        {label}
+                        {?labelCount}
+                            <span>{labelCount}</span>
+                        {/labelCount}
+                    </div>
+                </label>
+
+                {! Filter panel second level !}
+                {?filterPanelSecond}
+                    {#filterPanelSecond}
+                        <div class="c-filter-panel-second {secondPanelClass}">
+                            {#secondPanelFilterPanelList}
+                                <div class="c-filter-pannel__content">
+                                    <label class="c-filter-panel__list {secondPanelfilterListClass}">
+                                        {?isSecondPanelCheckbox}
+                                            <div class="c-filter-panel__checkbox {secondPanelfilterCheckboxClass}">
+                                                {secondPanelCheckbox}
+                                            </div>
+                                        {/isSecondPanelCheckbox}
+
+                                        <div class="c-filter-panel__label needsclick {secondPanelfilterLabelClass}">
+                                            {secondPanelLabel}
+                                            {?secondPanelLabelCount}
+                                                <span>{secondPanelLabelCount}</span>
+                                            {/secondPanelLabelCount}
+                                        </div>
+                                    </label>
+
+                                    {! Filter panel third level !}
+                                    {?filterPanelThird}
+                                        {#filterPanelThird}
+                                            <div class="c-filter-panel-third {thirdPanelClass}">
+                                                {#thirdPanelFilterPanelList}
+                                                    <div class="c-filter-pannel__content">
+                                                        <label class="c-filter-panel__list {thirdPanelfilterListClass}">
+                                                            {?isThirdPanelCheckbox}
+                                                                <div class="c-filter-panel__checkbox {thirdPanelfilterCheckboxClass}">
+                                                                    {thirdPanelCheckbox}
+                                                                </div>
+                                                            {/isThirdPanelCheckbox}
+
+                                                            <div class="c-filter-panel__label needsclick {thirdPanelfilterLabelClass}">
+                                                                {thirdPanelLabel}
+                                                                {?thirdPanelLabelCount}
+                                                                    <span>{thirdPanelLabelCount}</span>
+                                                                {/thirdPanelLabelCount}
+                                                            </div>
+                                                        </label>
+                                                    </div>
+                                                {/thirdPanelFilterPanelList}
+                                            </div>
+                                        {/filterPanelThird}
+                                    {/filterPanelThird}
+
+                                </div>
+                            {/secondPanelFilterPanelList}
+                        </div>
+                    {/filterPanelSecond}
+                {/filterPanelSecond}
+
+            </div>
+        {/filterPanelList}
+    </div>
+
+    {?moreLink}
+        {#moreLink}
+            {inputField}
+            {moreLinkText}
+        {/moreLink}
+    {/moreLink}
+{/filterPanel}

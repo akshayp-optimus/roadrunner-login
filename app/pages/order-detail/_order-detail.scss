@@ -1,0 +1,94 @@
+// Order Detail Page
+// ===
+
+.t-order-detail {
+    .c-ordered-item:last-of-type {
+        border-bottom: none;
+    }
+    .c-ordered-item__selected-options {
+        // color: $nuetral-60;
+        font-size: $smaller-font-size;
+    }
+
+    .c-shipping-info p {
+        margin-bottom: 0;
+    }
+
+    .c-order-number-date {
+        margin-bottom: -1px;
+    }
+
+    .c-ordered-item {
+        padding-top: $sub-unit;
+        + .c-ordered-item {
+            border-top: 1px solid $neutral-40;
+        }
+    }
+
+    .c-ledger__entry:last-child {
+        padding-bottom: $unit;
+        border-top: 1px solid $neutral-50;
+    }
+
+    .c-ledger .c-ledger__entry:first-child {
+        padding: $sub-unit/2;
+    }
+
+    .c-ledger {
+        padding: 0 $unit;
+        padding-bottom: 0;
+
+        background: $neutral-40;
+    }
+
+    .c-order-detail-price {
+        color: $black;
+    }
+
+    .c-ledger__number {
+        font-size: $font-size;
+    }
+
+    .c-shipping-name {
+        margin-top: -6px;
+    }
+
+    .c-ordered-item__selected-options {
+        li {
+            display: inline;
+
+            color: $neutral-200;
+            font-size: $smaller-font-size;
+        }
+
+        li:not(:first-child):before {
+            content: '';
+
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            margin: $sub-unit/2;
+
+            border-radius: 50%;
+            background: $neutral-200;
+
+            vertical-align: middle;
+        }
+    }
+}
+
+
+// Total message below Order Summary
+.t-order-detail__total-message {
+    margin-left: $unit;
+
+    color: $neutral-200;
+    font-size: $smaller-font-size;
+}
+
+//  Order Info -
+.t-order-detail__order-info {
+    .c-arrange__item:first-of-type {
+        border-right: none;
+    }
+}

@@ -1,0 +1,33 @@
+{>"global/base"/}
+
+{<contentBlock}
+    {responsiveContent}
+
+    <div class="c-service-selection  u-margin-bottom-md">
+        <div class="js-service-select c-service-select">
+            <div class="js-desktop-left-nav" hidden>{leftNav}</div>
+        </div>
+    </div>
+
+    <div class="t-shipping-information-page">
+        <h2 class="c-title u-no-left-padding u-page-title-color u-padding-top-sm"><small>{pageTitle}</small></h2>
+
+        {pageContainer}
+
+    </div>
+
+    {>"components/back-to-top/back-to-top" class="c--sticky" icon="top" /}
+
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    (function(require) {
+        require(["global/ui", "pages/shipping-information/shipping-information-ui"], function(globalUI, shippingInformationUI) {
+            globalUI();
+            shippingInformationUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

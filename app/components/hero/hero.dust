@@ -1,0 +1,25 @@
+<div class="c-hero {class}">
+    {?link}
+        <a href="{link}" class="c-hero__img" {?title}title="{title}"{/title}>
+    {:else}
+        <div class="c-hero__img">
+    {/link}
+
+        {img}
+
+    {?link}
+        </a>
+    {:else}
+        </div>
+    {/link}
+
+    {?heroLink}
+        <div class="c-hero__group-links">
+            {#heroLink}
+                <a class="c-hero__link" href="{link}">
+                    <span class="c-hero__double-right-unicode">&#187;</span> {text}
+                </a>
+            {/heroLink}
+        </div>
+    {/heroLink}
+</div>

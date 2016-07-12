@@ -1,0 +1,55 @@
+body {
+    font-family: Helvetica, arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+}
+
+.playground {
+    /* For float clearfix */
+    overflow: hidden;
+}
+.ajax-container {
+    width: 30%;
+    margin: 20px 20px 0 0;
+    padding: 20px;
+    float: left;
+    border: 1px solid #eaeaea;
+}
+.log {
+    width: 40%;
+    margin: 20px 0 0 0;
+    padding: 10px;
+    float: left;
+    border: 1px solid #eaeaea;
+    height: 200px;
+    overflow: scroll
+}
+
+/* Smaller devices */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    .ajax-container, .log {
+        width: auto;
+        float: none;
+    }
+}
+
+.desktop {
+    color: #7abfcf;
+}
+
+.timestamp {
+    font-size: 0.9em;
+    float: right;
+}
+
+h3 {
+
+    display: block;
+    margin: 10px 0 5px 0;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 0.9em;
+    font-weight: normal;
+}

@@ -1,0 +1,24 @@
+{>"global/base"/}
+
+{<contentBlock}
+<div class="t-contact-us-confirmation-page">
+    <h2 class="c-title u-page-title-color u-padding-top-sm"><small>{pageTitle}</small></h2>
+    {form|openTag|s}
+        {hiddenInputs}
+        {confirmationMsg}
+        {continueBtn}
+    {form|closeTag|s}
+</div>
+{>"components/back-to-top/back-to-top" class="c--sticky" icon="top" /}
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    (function(require) {
+        require(["global/ui"], function(globalUI) {
+            globalUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

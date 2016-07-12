@@ -1,0 +1,25 @@
+// Gift Card Page
+//===========
+.t-gift-card-page {
+    padding: $sub-unit $unit 0  $unit;
+    img {
+        width: 100%;
+    }
+
+    .c-card-title {
+        font-size: $font-size-large-24;
+    }
+
+    ul {
+        padding-bottom: $unit;
+        li {
+            margin-left: $unit + 2;
+
+            list-style-type: disc;
+        }
+    }
+
+    .c-button.c--primary {
+        text-transform: none;
+    }
+}

@@ -1,0 +1,43 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-customer-service-wrapper u-margin-top-sm">
+        {! {>"components/breadcrumb/breadcrumb"/} !}
+
+        <div class="c-service-selection  u-margin-bottom-md">
+            <div class="js-service-select c-service-select">
+                <div class="js-desktop-left-nav" hidden>{leftNav}</div>
+            </div>
+        </div>
+
+        <h2 class="c-title u-page-title-color u-padding-top-sm"><small>{pageTitle}</small></h2>
+
+        {responsiveContent}
+
+        <div class="u-padding u--tight u-margin-bottom-md">
+            {#pageContent}
+                {?.title}
+                    <h3 class="u-margin-top-sm u-margin-bottom-md">{.title}</h3>
+                {/.title}
+                {.details}
+            {/pageContent}
+
+            {#contactInfoSection}
+                {>"components/bellows/bellows" bellowsHeaderClass="js-bellows-header"/}
+            {/contactInfoSection}
+
+        </div>
+        {>"components/back-to-top/back-to-top" class="c--sticky" icon="top" /}
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    (function(require) {
+        require(["global/ui", "pages/customer-service/customer-service-ui"], function(globalUI, customerServiceUI) {
+            globalUI();
+            customerServiceUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

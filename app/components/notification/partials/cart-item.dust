@@ -1,0 +1,45 @@
+{#items}
+    <div class="c-list-tile c-notification-contents">
+        <div class="c-list-tile__primary-tile">
+            <div class="c-list-tile__primary-action u-padding-all-0 u-padding-start-tn">
+                {qtyValue}x
+            </div>
+
+            <div class="c-list-tile__primary-content">
+                {name}
+
+                {#options}
+                    {label} {value}
+                {/options}
+
+                {#price}
+                    {label} {value}
+                {/price}
+            </div>
+        </div>
+    </div>
+{/items}
+
+
+<div class="c-list-tile c-notification-contents">
+    <div class="c-list-tile__primary-tile">
+        <!-- note: leave empty here to give some white space   -->
+        <div class="c-list-tile__primary-action u-padding-all-0 u-padding-start-tn"></div>
+
+        <!-- note: move buttons here    -->
+        <div class="c-list-tile__primary-content u-padding-top-0">
+
+            <div class="c-arrange c--gutters js-notification-buttons">
+                {#checkoutButton}
+                    <a href="{href}" class="c-button c--link c--dark c--small c--no-padding c-arrange__item c--shrink"><span class="c-notification-contents__action-button-icon">&#187;</span> {text}</a>
+                {/checkoutButton}
+
+                {#viewListButton}
+                    <a href="{href}" class="c-button c--link c--dark c--small c--no-padding c-arrange__item c--shrink js-view-list">{addedToList}<span class="c-notification-contents__action-button-icon">&#187;</span> {text}</a>
+                {/viewListButton}
+
+                <button type="button" class="c-button c--link c--dark c--small c--no-padding c-arrange__item c--shrink js-notification-close">{@translate key="dismiss_button" /}</button>
+            </div>
+        </div>
+    </div>
+</div>

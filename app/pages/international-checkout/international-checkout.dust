@@ -1,0 +1,23 @@
+{>"global/checkoutBase"/}
+
+{<contentBlock}
+    {#hiddenData}
+        {.inputs}
+        {.paymentIframe}
+    {/hiddenData}
+
+    {checkoutIframe}
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/international-checkout/ui.js
+    (function(require) {
+        require(["global/ui", "pages/international-checkout/international-checkout-ui"], function(globalUI, internationalCheckoutUI) {
+            globalUI();
+            internationalCheckoutUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

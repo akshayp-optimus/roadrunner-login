@@ -1,0 +1,49 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="c-service-selection  u-margin-bottom-md">
+        <div class="js-service-select c-service-select">
+            <div class="js-desktop-left-nav" hidden>{leftNav}</div>
+        </div>
+    </div>
+    <div class="t-retail-stores-wrapper u-margin-bottom-md">
+    {responsiveContent}
+
+
+    <h2 class="c-title u-no-bottom-padding u-no-left-padding u-padding-top-sm"><small>{pageTitle}</small></h2>
+
+    <div class="u-margin-bottom-md">{description|s}</div>
+
+    <h3 class="u-margin-bottom-md">{grOutletStoresHeading|s}</h3>
+
+        {#stores}
+            {heading}
+            {image}
+            <div class="c-store-address">{address|s}</div>
+            {contactNumber}
+            <div class="u-clear-both"></div>
+            {#hoursInfo}
+                <div class="c-hours-of-operation u-margin-top-sm">
+                    <div class="c-days-open">{daysOpen}</div>
+                    <div class="c-hours-open u--bold">{hoursOpen}</div>
+                </div>
+            {/hoursInfo}
+
+            {directionsBtn}
+            <div class="c-contact-link-button">{contactBtn}</div>
+            {description}
+        {/stores}
+    </div>
+    {>"components/back-to-top/back-to-top" class="c--sticky" icon="top" /}
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    (function(require) {
+        require(["global/ui", "pages/retail-stores/retail-stores-ui"], function(globalUI, retailStoresUI) {
+            globalUI();
+            retailStoresUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

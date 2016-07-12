@@ -1,0 +1,56 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="js-loader">
+        {>"components/loading/loading"/}
+    </div>
+
+    <div class="t-gift-registry-find-page">
+
+        <div class="js-page u-padding-sides-md" hidden>
+
+            <h1 class="c-title u-no-left-padding u-margin-bottom-md"><small>{pageTitle}</small></h1>
+
+            <h6 class="c-page-subtitle">{pageSubTitle}</h6>
+
+            <div class="c-search-by-title">{@translate key="search_by_registry"/}</div>
+
+
+            <div class="js-registry-by-number">
+                {.findRegistryByNumber}
+            </div>
+
+            <div class="c-divider c--full-width c--text u-margin-top-gt-md u-margin-bottom-gt-md">
+                <span class="c-divider__text">or</span>
+            </div>
+
+            <div class="c-search-by-name-title">{@translate key="search_by_name"/}</div>
+
+
+            <div class="js-registry-by-name">
+                {.findRegistryByName}
+            </div>
+
+            <div class="u-margin-top-md js-registry-results" hidden>
+
+                <div class="c-field c--error js-no-results-message">
+                    <label class="c-field__label u-margin-top-md u-margin-bottom-md"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    {>"components/sheet/sheet" effect="modalCenter" class="js-gift-registry-results-pinny" cssClass="c--dialog" bodyClass="js-gift-registry-results-pinny__body" isHeader="true" /}
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/gift-registry-find/ui.js
+    (function(require) {
+        require(["global/ui", "pages/gift-registry-find/gift-registry-find-ui"], function(globalUI, giftRegistryFindUI) {
+            globalUI();
+            giftRegistryFindUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

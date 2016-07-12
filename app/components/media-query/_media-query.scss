@@ -1,0 +1,72 @@
+// Media querys component
+// ---------
+// Styling for Media querys component
+//
+
+@media (min-width: $media-width) {
+    .c-secondary-hero-card,
+    .c-product-tile-content,
+    .c-category-card {
+        overflow: hidden;
+        padding: 0 $unit;
+
+        .c-product-link.c--large {
+            width: 100%;
+        }
+    }
+
+    .c-secondary-hero-card__item,
+    .c-product-tile,
+    .c-category-card__item {
+        width: 50%;
+        padding: 0 $sub-unit $unit;
+
+        &:nth-child(2n+1) {
+            clear: both;
+        }
+    }
+
+    .c-secondary-hero-card__item:nth-child(odd),
+    .c-product-tile:nth-child(odd),
+    .c-category-card__item:nth-child(odd) {
+        float: left;
+
+        margin-right: 0;
+        margin-left: 0;
+        padding: 0 $sub-unit+3 $unit 0;
+    }
+
+    .c-secondary-hero-card__item:nth-child(even),
+    .c-product-tile:nth-child(even),
+    .c-category-card__item:nth-child(even) {
+        float: right;
+
+        margin-right: 0;
+        margin-left: 0;
+        padding: 0 0 $unit $sub-unit+3;
+    }
+
+    // For CLP Page
+    // ---
+    .c-secondary-hero-card .c-secondary-hero-card__content-link {
+        bottom: 16px;
+    }
+
+    // For PLP2 Page
+    // ---
+    .t-product-list-2 .c-product-tile {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    .t-product-list-2 .c-product-tile:first-of-type + .c-product-tile {
+        margin-top: $sub-unit;
+    }
+
+    // For CLP2 Page
+    // ---
+    .c-category-card__item {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+}

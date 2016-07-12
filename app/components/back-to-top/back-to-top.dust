@@ -1,0 +1,3 @@
+<button class="c-back-to-top js-to-top {class}">
+    {>"svg-icon" name="{icon}" title="Back to top" class="{iconSize}" /}
+</button>

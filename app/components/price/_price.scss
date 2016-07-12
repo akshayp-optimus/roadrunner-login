@@ -1,0 +1,34 @@
+// Product Price component
+// ===
+
+.c-price {
+    margin: $sub-unit 0 0;
+
+    color: $black;
+    font-family: $default-sans;
+    font-weight: $normal-font-weight;
+
+    a {
+        color: $neutral-70;
+    }
+}
+
+.c-price__discounted {
+    display: inline-block;
+    margin-right: $sub-unit;
+
+    color: $error-color;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.c-price__original {
+    display: block;
+
+    color: $neutral-200;
+}
+
+.c-price-line > span {
+    color: $neutral-200;
+    text-decoration: line-through;
+}

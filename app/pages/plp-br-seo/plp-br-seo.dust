@@ -1,0 +1,38 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-plp-br-seo-wrapper" id="content">
+        {?pageTitle}
+            <h2 class="c-title js-page-title">
+                {pageTitle}
+            </h2>
+        {/pageTitle}
+
+        {#refineResult}
+            <div class="t-product-list__refine-results js-refine-results">
+                {>"components/refine-button-bellow/refine-button-bellow"/}
+            </div>
+        {/refineResult}
+
+        <div class="js-product-tile-container u-margin-top-sm c-product-tile-content">
+            <ul class="t-product-list__product-tile u-text-align-center">
+                {>"components/product-tile/product-tile"/}
+            </ul>
+        </div>
+    </div>
+
+    {! ID is used for desktop functionality !}
+    <div id="sli_leftNav" class="u-visually-hidden"></div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    (function(require) {
+        require(["global/ui", "pages/plp-br-seo/plp-br-seo-ui"], function(globalUI, plpBrSeoUI) {
+            globalUI();
+            plpBrSeoUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

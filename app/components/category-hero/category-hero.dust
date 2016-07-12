@@ -1,0 +1,5 @@
+<div class="c-category-hero {class}">
+    <{?href}a href="{href}"{:else}div{/href} class="c-category-hero__img" {?title}title="{title}"{/title}>
+        {img}
+    </{?href}a{:else}div{/href}>
+</div>

@@ -1,0 +1,39 @@
+<h5 class="u-margin-bottom-sm u-text-blue u--bold">{@translate key="being_shipped" /}</h5>
+
+<div class="t-payment-and-review__items">
+    {#items}
+        {>"components/cart-item/cart-item" /}
+
+        {#shippingInfo}
+            <div class="c-field-row u-margin-bottom-md">
+                <div class="c-field">
+                    <div class="c-field__top c-field__delivery-option">
+                        <div class="u-padding-all u--tight js-option-container">
+                            {#shippingOptions}
+                                <div class="u-margin-bottom-sm js-shipping-option" data-value="{value}">
+                                    <input  type={.type} name={.name} {?.checked}checked{/.checked} data-value="{.value}"/>
+                                    <label for="{.name}">{text}</label>
+                                </div>
+                            {/shippingOptions}
+
+                            {shippingSelect}
+                        </div>
+                        {?isReviewDeliveryOptions}
+                            <a href="{reviewDeliveryOptionsLink}" class="c-field__info js-review-delivery-options-link">
+                                {>"svg-icon" name="question"/}
+                            </a>
+                        {:else}
+                            <div class="c-field__info js-pinny-button" data-target=".{pinnyTargetClass}">
+                                {>"svg-icon" name="question"/}
+                            </div>
+                        {/isReviewDeliveryOptions}
+                    </div>
+                </div>
+            </div>
+        {/shippingInfo}
+
+        {#shippingDetails}
+            {>"components/sheet/sheet" effect="sheetBottom" isHeader="true" coverage="100%" class=pinnyClass bodyClass="t-cart-tooltip-pinny t--shipping-details" bodyContent=content headerContent=title isHeader="true"/}
+        {/shippingDetails}
+    {/items}
+</div>

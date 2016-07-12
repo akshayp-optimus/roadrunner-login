@@ -1,0 +1,44 @@
+// Hide Reveal Component
+// ----
+// Styling for hide reveal component
+//
+
+.c-hide-reveal {
+    padding: 0 $unit $unit;
+
+    .c-hide-reveal__hide-link,
+    .c-hide-reveal__reveal-link {
+        margin-top: $unit;
+
+        color: $black;
+        font-family: $default-sans;
+        font-weight: bold;
+    }
+
+    .c-hide-reveal__hide-link {
+        text-transform: capitalize;
+    }
+
+    .c-hide-reveal__detail-list {
+        padding: 0 $unit;
+    }
+
+    .c-icon {
+        width: 10px;
+        height: 20px;
+
+        vertical-align: middle;
+    }
+
+    p:empty {
+        display: none;
+    }
+}
+
+.c-hide-reveal__content {
+
+    &.c--restricted-content {
+        overflow: hidden;
+        height: 56px;
+    }
+}

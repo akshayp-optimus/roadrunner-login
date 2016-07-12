@@ -1,0 +1,90 @@
+{>"global/base"/}
+
+{<contentBlock}
+<div class="t-product-list-2">
+
+    {>"components/breadcrumb/breadcrumb" iconName="chevron-left" /}
+
+    <h2 class="c-title">
+        {pageTitle}
+    </h2>
+
+    {! Shipping Restriction Message !}
+    {>"components/shipping-restriction/shipping-restriction"/}
+
+    {form|openTag|s}
+        {formHiddenInputs}
+
+        <div class="t-product-list-2__sort-by">
+            <div class="c-select-with-arrow c-sort-by-with-arrow">
+                {?sortBy}
+                    <div class="c-icon-top-bottom">
+                        {>"svg-icon" name="sort" class="c-sort"/}
+
+
+                    </div>
+                    <div class="c-sort-by-with-arrow__dropdown">
+                        {sortBy}
+                    </div>
+                {/sortBy}
+            </div>
+
+            <div class="c-select-with-arrow c-custom-select c--sort-arrow">
+                {?itemsPerPage}
+                    {itemsPerPage}
+                {/itemsPerPage}
+            </div>
+        </div>
+
+        <ul class="u-text-align-center c-product-tile-content">
+            {>"components/product-tile/product-tile"/}
+        </ul>
+
+        {! TODO: Implement pagination !}
+        {>"components/pagination/pagination"/}
+
+        {productContainer}
+
+    {form|closeTag|s}
+
+    {hiddenInputs}
+
+    {showReviews}
+
+    {?suggestions}
+        <ul class="t-product-list-2__related-searches">
+            {>"components/search-suggestions/search-suggestions" /}
+        </ul>
+    {/suggestions}
+
+    {! Related Products are displayed in carousel components !}
+    {! Refer global/ui/carousel-ui.js !}
+    {#relatedProducts}
+        {>"components/carousel/carousel" /}
+    {/relatedProducts}
+
+    <div hidden>{bottomItemsPerPage}</div>
+
+    {! Sheet for Tooltip !}
+    {>"components/sheet/sheet" effect="modalCenter" isHeader="true"
+        cssClass="c-shopping-popup c--no-header-text c--dialog" class="js-tooltip-pinny"
+        bodyClass="js-tooltip-content"
+    /}
+
+    {>"components/back-to-top/back-to-top" class="c--sticky" icon="arrow-up" iconSize="c--large" /}
+
+</div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/product-list-2/ui.js
+    (function(require) {
+        require(["global/ui", "pages/product-list-2/product-list-2-ui"], function(globalUI, productList2UI) {
+            globalUI();
+            productList2UI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

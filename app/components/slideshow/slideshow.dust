@@ -1,0 +1,13 @@
+<ul class="c-slideshow {class}">
+    {#.productTiles}
+        <li class="c-slideshow__slide {class}" data-bind-click="{bindId}">
+            {>"components/pdp-product-tile/pdp-product-tile"/}
+        </li>
+    {/.productTiles}
+
+    {#.slides}
+        <li class="c-slideshow__slide {class}" data-bind-click="{bindId}" style="{style}">
+            {slideContent}
+        </li>
+    {/.slides}
+</ul>

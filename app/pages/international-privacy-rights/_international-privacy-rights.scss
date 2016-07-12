@@ -1,0 +1,32 @@
+// Privacy & Security
+// --------------
+.t-international-privacy-rights-wrapper {
+    padding-top: $sub-unit;
+
+    .c-international-privacy-right-heading {
+        font-size: $larger-font-size;
+    }
+
+    em {
+        font-style: normal;
+    }
+
+    ul {
+        margin: $unit 0;
+        padding: 0 $unit;
+        li {
+            margin-left: $unit;
+            padding-bottom: $unit;
+
+            list-style-type: disc;
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+
+        li:last-of-type {
+            padding-bottom: 0;
+        }
+    }
+}

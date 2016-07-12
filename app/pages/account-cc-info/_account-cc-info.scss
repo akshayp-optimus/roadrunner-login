@@ -1,0 +1,14 @@
+.t-account-cc-info-section {
+    padding: 0 $unit;
+    .c-credit-card-info {
+        label {
+            width: 51.55%;;
+        }
+    }
+    .c-button-links {
+        clear: both;
+        a:after {
+            content: ' >';
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{#items}
+    <div class="c-carousel__item m-item">
+        {?href}<a href="{href}" class="c-carousel__image-link">{/href}
+            {img}
+        {?href}</a>{/href}
+        {?heading}
+            <a href="{href}" class="c-carousel__heading-link">
+                <span class="c-carousel-item__heading">{heading}</span>
+            </a>
+        {/heading}
+    </div>
+{/items}

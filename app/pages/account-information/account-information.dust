@@ -1,0 +1,32 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="u-padding u-padding-top u--tight" id="mainContent">
+        <div class="u-visually-hidden">
+            {! Labels needed for desktop JS DO NOT REMOVE. !}
+            {hiddenLabels}
+        </div>
+        <h2 class="u-margin-bottom-sm c-account-title">{@translate key="my_account"/}</h2>
+
+        {pageInfo}
+
+        <div class="c-form-group">
+            {accountInfoContainer}
+        </div>
+
+        {hiddenForm}
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/account-information/ui.js
+    (function(require) {
+        require(["global/ui", "pages/account-information/account-information-ui"], function(globalUI, accountInformationUI) {
+            globalUI();
+            accountInformationUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

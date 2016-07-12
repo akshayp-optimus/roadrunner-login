@@ -1,0 +1,37 @@
+{>"global/base"/}
+
+{<contentBlock}
+
+    <div class="c-service-selection u-margin-top-md">
+        <div class="js-service-select c-service-select">
+            <div class="js-desktop-left-nav" hidden>{leftNav}</div>
+        </div>
+    </div>
+
+    <div class="t-international-customer-service-wrapper">
+
+        <h2 class="u-padding u--tight u-page-title-color u-margin-top-md"><small>{pageTitle}</small></h2>
+
+        {responsiveContent}
+
+        <div class="c-image">{img}</div>
+
+        <div class="u-padding u--tight u-margin-bottom-md u-margin-top-md">
+            {pageData}
+        </div>
+
+        {>"components/back-to-top/back-to-top" class="c--sticky" icon="top" /}
+
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    (function(require) {
+        require(["global/ui", "pages/international-customer-service/international-customer-service-ui"], function(globalUI, internationalCustomerServiceUI) {
+            globalUI();
+            internationalCustomerServiceUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

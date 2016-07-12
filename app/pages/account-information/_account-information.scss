@@ -1,0 +1,149 @@
+// Account Information Page
+// ===
+//
+// scss-lint:disable all
+.t-account-information {
+    .c-account-title {
+        color: $neutral-220;
+        font-weight: normal;
+        font-size: $font-size-large-28;
+    }
+
+
+    .c-box {
+        > .c-box__label {
+            display: flex;
+            width: 88px;
+            margin-left: $unit;
+
+            &[for*=bill_mibox],
+            &[for*=ship_mibox] {
+                display: none;
+            }
+        }
+
+        label[for='bill_fnbox'],
+        label[for='ship_fnbox'] {
+            width: 88px;
+        }
+    }
+
+    .c-form-group .c-box select {
+        padding-left: $sub-unit;
+
+        color: $black;
+    }
+
+    .c-form-group {
+        .required {
+            margin-right: $sub-unit - 3;
+            margin-left: -9px;
+
+            color: $error-color;
+        }
+    }
+
+    .AddrFNameSpot,
+    .AddrMNameSpot {
+        display: flex;
+        align-items: center;
+    }
+
+    .AddrMNameSpot {
+        width: 44px;
+        margin-left: 0;
+        border-left: 1px solid $neutral-230;
+    }
+
+    .accountInfoBillingForm {
+        > .c-box-row {
+            margin-bottom: $unit;
+            border: 0;
+
+            .c-required-label {
+                flex: 1 1 auto;
+
+                text-align: right;
+            }
+
+            label {
+                font-weight: normal;
+                font-size: $font-size;
+            }
+
+            .required {
+                margin: 0;
+            }
+        }
+
+        h3 {
+            flex: 0 0 auto;
+
+            font-size: $largest-font-size;
+            line-height: 16px;
+        }
+    }
+
+    .accountInfoShippingForm {
+        margin-top: $sub-unit * 3;
+        h3 {
+            padding-bottom: $sub-unit;
+
+            font-size: $largest-font-size;
+            line-height: 20px;
+        }
+
+        .gwt-addr-dlog {
+            > div:first-child {
+                border: 0;
+                label {
+                    font-size: $smaller-font-size;
+                }
+
+                div[id='ship_reqdlabel'] {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .inst-copy {
+        margin-bottom: $unit;
+
+        color: $neutral-110;
+    }
+
+    div[id='gwt_sameasbilling_cb'] {
+        margin-bottom: $sub-unit*3;
+        padding: $unit;
+        border: 1px solid $neutral-50;
+
+        font-family: $default-sans;
+        font-weight: bold;
+    }
+
+    .gwt-CheckBox label {
+        font-family: $default-sans;
+        font-weight: bold;
+    }
+
+    .c-button.c--primary {
+        margin: $unit auto;
+    }
+
+    .gwt-CheckBox input {
+        margin-right: 0;
+        border: 0;
+
+        background: $white;
+    }
+}
+
+label:active {
+    color: $neutral-70;
+}
+
+#sendMeEmails {
+    background: $white;
+}
+// scss-lint:enable all

@@ -1,0 +1,23 @@
+{#footer}
+    <footer class="t-footer" role="contentinfo">
+
+        {#footerLinksSection}
+            {>"components/bellows/bellows" bellowsHeaderClass="js-bellows-header"/}
+        {/footerLinksSection}
+
+        <div class="t-footer__checkout u-padding-top-lg u-padding-sides-md u-margin-bottom-lg">
+
+            <div class="c-footer-credentials u-padding-top">
+                {footerCredentials}
+            </div>
+
+            <ul class="c-footer-links">
+                <li class="c-footer-copyright">{footerCopyRightText}</li>
+                <li class="c-footer-separator">|</li>
+                <span>Source Code: </span><code>{sourceCode}</code>
+            </ul>
+
+
+        </div>
+    </footer>
+{/footer}

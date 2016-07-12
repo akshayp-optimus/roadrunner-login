@@ -1,0 +1,8 @@
+{>"components/sheet/sheet"
+    class=filterPanelClass
+    effect="sheetBottom"
+    coverage="96%"
+    headerContent=pinnyTitle
+    bodyContent=filterPanelContent
+    cssClass="c-filter-pinny js-filter-pinny"
+/}

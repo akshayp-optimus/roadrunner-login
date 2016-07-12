@@ -1,0 +1,59 @@
+{#products}
+    <li class="c-product-tile {class} js-product-tile" {?widgetId}data-widget-id="{widgetId}"{/widgetId}>
+        {! Product Image and Product Swatches !}
+
+        <div class="c-product-tile__image-container js-product-tile-image-container">
+            {?isProductDetailPage}
+                {>"svg-icon" name="expand" class="c-expand-svg"/}
+            {/isProductDetailPage}
+            <div class="c-product-link {productLinkClass} ">
+                <a href="{productHref}">
+                    {?productImg}
+                        {productImg}
+                    {:else}
+                        <img src="{productImageSrc}" />
+                    {/productImg}
+                </a>
+
+                {#productSwatches}
+                    <div class="c-product-tile__swatches">
+                        {>"components/swatches/swatches" /}
+                    </div>
+                {/productSwatches}
+
+                {?moreColors}
+                <div class="c-product-tile__more-colors">
+                    <div class="c-product-tile__more-colors-banner">
+                        <a href="{productHref}">
+                            {@translate key="more_colors"/}
+                        </a>
+                    </div>
+                </div>
+                {/moreColors}
+            </div>
+        </div>
+
+        {! Product title, price and ratings !}
+        <div class="c-product-tile__description {descriptionClass}">
+            <a href="{productHref}" class="js-product-info">
+                <div class="c-product-tile__description-inside">
+                    <h5 class="c-product-tile__title">{productTitle}</h5>
+
+                    {#productPrice}
+                        {>"components/price/price" /}
+                    {/productPrice}
+
+                    <div class="c-product-tile__rating-callout">
+                        {#productRating}
+                            {>"components/star-rating/star-rating" /}
+                        {/productRating}
+
+                        {?calloutText}
+                            {>"components/callout/callout" cssClass="c-special-message"/}
+                        {/calloutText}
+                    </div>
+                </div>
+            </a>
+        </div>
+    </li>
+{/products}

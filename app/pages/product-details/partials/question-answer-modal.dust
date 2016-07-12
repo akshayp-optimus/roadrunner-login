@@ -1,0 +1,66 @@
+<div class="c-arrange c--row-reverse c--justify-between">
+    <button class="js-ask-question c-button c--link c--no-padding u-text-black u-text-initial u--bold u-shift-top">
+        {askQuestionText} >
+    </button>
+
+    {?isModal}
+        <button class="js-close-search c-button c--link c--no-padding u-text-black u-text-initial u--bold u-shift-top">
+            {search.back}
+        </button>
+    {/isModal}
+</div>
+
+{?isModal}
+    <hr class="c-divider c--full-width u-margin-bottom-md">
+
+    {#search}
+        <form class="js-questions-search-form">
+            <label class="u-margin-bottom-sm">Search all questions and answers</label>
+
+            <div class="c-questions-search">
+                <input class="js-questions-search" type="text" placeholder="Question or answer" value="{value}" />
+                <button class="js-questions-search-submit c-button c--outline c--rounded c--small">Search</button>
+            </div>
+
+            <div {?isError}class="u-margin-top-lg u-text-error u-text-align-center"{/isError}>
+                {resultCount}
+            </div>
+        </form>
+    {/search}
+
+    {?selectOptions}
+        <div class="u-margin-top-md">
+            <select class="js-product-questions-select u-margin-bottom-md">
+                {#selectOptions}
+                    <option value={.optVal} {?selected}selected{/selected}>{.text}</option>
+                {/selectOptions}
+            </select>
+        </div>
+    {/selectOptions}
+{/isModal}
+
+<div class="js-qa-questions">
+    {questions}
+</div>
+
+{^isModal}
+    <div class="u-margin-top-md u-margin-bottom-md u-text-align-center">
+        <button class="c-button c--outline c--rounded c--small u-text-capitalize u--bold js-see-all-questions">See All Questions</button>
+    </div>
+{/isModal}
+
+{?isModal}
+    {?numPages}
+        <div class="c-arrange c--align-middle u-margin-top-md">
+            <button class="needsclick c-arrange__item c-button c--shrink c--outline c--rounded c--small js-product-questions-prev {?disablePrev}c--is-disabled{/disablePrev}" {?disablePrev}disabled{/disablePrev}>
+                Prev
+            </button>
+            <div class="c-arrange__item u-text-align-center">
+                {.currPage} of {.numPages}
+            </div>
+            <button class="needsclick c-arrange__item c-button c--shrink c--outline c--rounded c--small js-product-questions-next {?disableNext}c--is-disabled{/disableNext}" {?disableNext}disabled{/disableNext}>
+                Next
+            </button>
+        </div>
+    {/numPages}
+{/isModal}

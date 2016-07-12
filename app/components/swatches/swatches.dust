@@ -1,0 +1,8 @@
+<ul class="c-swatches {class}">
+    {#swatches}
+        <li class="c-swatches__swatche">
+            {! NOTE: this relies on lazy-loading !}
+            <img data-src="{swatcheSrc}" alt="{altSrc}" class="js-swatche-image" />
+        </li>
+    {/swatches}
+</ul>

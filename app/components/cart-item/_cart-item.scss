@@ -1,0 +1,97 @@
+// Cart item style
+// ===
+// 1. Override component default marging
+
+.c-cart-item {
+    padding-top: $unit;
+
+    .js-product-image {
+        width: 66px;
+    }
+
+    + .c-cart-item {
+        border-top: 1px solid $neutral-40;
+    }
+
+    .c-arrange__item {
+        > a {
+            color: $neutral-70;
+            font-size: $large-font-size;
+        }
+    }
+}
+
+.c-options {
+    overflow: hidden;
+    margin-bottom: $sub-unit;
+    li,
+    > div {
+        display: inline;
+
+        margin-right: $sub-unit;
+
+        font-size: $smaller-font-size;
+    }
+
+    li:not(:first-child):before,
+    > div:not(:first-child):before {
+        content: '';
+
+        display: inline-block;
+        width: 3px;
+        height: 3px;
+        margin-right: $sub-unit;
+
+        border-radius: 50%;
+        background: $neutral-200;
+
+        vertical-align: middle;
+    }
+}
+
+.c-qty__wrapper {
+    display: flex;
+
+    .c-stepper {
+        margin-left: 0 !important; // 1
+    }
+
+    .c-qty__item {
+        width: 108px;
+        border: 1px solid $neutral-50;
+
+        border-radius: 2px;
+
+        button {
+            flex: 0 0 30px;
+            min-height: 36px;
+        }
+
+        .c-stepper__count {
+            color: $neutral-200;
+        }
+    }
+
+    .c-qty__buttons {
+        display: flex;
+        align-items: center;
+        height: 36px;
+
+        border-radius: 2px;
+    }
+
+    .c-qty__button {
+        padding: 0 $sub-unit;
+
+        button {
+            color: $black;
+            font-weight: bold;
+            font-size: $smaller-font-size;
+            text-transform: capitalize;
+        }
+    }
+
+    .c-separator {
+        color: $neutral-50;
+    }
+}

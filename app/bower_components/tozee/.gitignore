@@ -1,0 +1,11 @@
+node_modules/
+
+npm-debug.log
+
+localConfig.json
+
+/build/scooch.zip
+
+.DS_Store
+
+.sass-cache/

@@ -1,0 +1,41 @@
+{form|openTag|s}
+    {welcomeMsg}
+
+    {hiddenFields}
+
+    <div class="c-form-group">
+        {#formField}
+            <div class="c-box-row">
+                <div class="c-box c-arrange c--align-middle">
+                    <div class="c-box__label c-arrange__item c--shrink">
+                        {label}
+                    </div>
+                    {formScript}
+                    {input}
+                </div>
+            </div>
+        {/formField}
+    </div>
+    {#rememberMe}
+        <div class="c-box-row u-margin-top-md u-margin-bottom-md c-check-me u-padding-all u--tight">
+            <div class="c-arrange c--align-middle">
+                <div class="c-arrange__item c--shrink">{checkbox}</div>
+                <div class="c-arrange__item">
+                    <div class="c-box c-arrange">
+                        <label class="c-box__label c-arrange__item" for="rememberMe">
+                            {rememberMeText}
+                        </label>
+                        <div class="c-arrange__item c--shrink">
+                            {rememberMeLink|openTag|s}
+                                {>"svg-icon" name="question"/}
+                            {rememberMeLink|closeTag|s}
+                        </div>
+                    </div>
+                </div>
+                {hiddenDiv}
+            </div>
+        </div>
+    {/rememberMe}
+    {signInButton}
+    {forgotPassword}
+{form|closeTag|s}

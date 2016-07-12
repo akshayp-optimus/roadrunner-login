@@ -1,0 +1,36 @@
+<ul class="js-options u-text-grey c-options u-margin-top-sm">
+
+    {^.isWishlist}
+        <li class="js-item-number-option">{@translate key="cart_item_text" /}{itemNumber}</li>
+    {/.isWishlist}
+
+    {?specialDeliveryLink}
+        {specialDeliveryLink}
+    {/specialDeliveryLink}
+
+    <li class="js-availability u--hide"></li>
+
+    <li class="js-item-color-option u--hide"></li>
+
+    <li class="js-gift-wrap-personalize-option u--hide"></li>
+
+    {^quantity.container}
+        {?quantity.count}<li class="c-quantity-container">{@translate key="qty_label" /}{quantity.count}</li>{/quantity.count}
+    {/quantity.container}
+
+    {?personalizationPrice}
+        <li class="{personalizationContentClass} js-personalize-list">{@translate key="personalization"/}{?isPersonalizationPrice}(+{personalizationPriceText}){/isPersonalizationPrice}</li>
+        <li class="js-tooltip-button u-text-black u--bold {personalizationContentClass} js-personalize-list" data-target=".js-personalization-content">{@translate key="view"/}</li>
+        {>"components/cart-item/partials/personalization-popup" /}
+    {/personalizationPrice}
+
+    {?shippingDate}
+        <li>{@translate key="ships" /}{shippingDate}</li>
+    {/shippingDate}
+
+    {?availabilityContainer}
+        <li class="{?isStockLow}u-text-error{/isStockLow}">{availabilityContainer}</li>
+    {/availabilityContainer}
+
+
+</ul>

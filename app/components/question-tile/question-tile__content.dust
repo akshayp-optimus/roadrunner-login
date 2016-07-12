@@ -1,0 +1,29 @@
+<article class="c-question-tile {.class}" data-target="{.originalSelector}">
+    <div class="c-question-tile__content">
+
+        {#answers}
+            <div class="c-question-tile__answer" data-target="{.originalSelector}">
+
+                <div class="c-question-tile__answer-text">
+                    {answer}
+                </div>
+
+                <div class="c-question-tile__date">
+                    {.date} {.by} {.author}
+                </div>
+
+                {?.inModal}
+                    {>"components/review-voter/review-voter" /}
+                {/.inModal}
+
+            </div>
+        {/answers}
+
+    <div class="c-arrange c--justify-end">
+        <button class="c-button c--no-padding c--link u-text-black u-text-initial u--bold js-answer-question-button {^canAnswerQuestions}c--is-disabled{/canAnswerQuestions}">
+            {answerQuestionText} {?canAnswerQuestions}>{/canAnswerQuestions}
+        </button>
+    </div>
+
+    </div>
+</article>

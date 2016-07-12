@@ -1,0 +1,1035 @@
+// // Gift Registry Manage
+// // ===
+// //
+.t-gift-registry-manage {
+    .c-sheet__body {
+        padding-top: $sub-unit;
+    }
+}
+.t-gift-registry-manage-page {
+    h1 small {
+        display: block;
+
+        font-size: $font-size-large-24;
+        line-height: 24px;
+    }
+
+    .c-add-to-cart-wrapper {
+        position: inherit;
+    }
+
+
+    .c-view-no-items {
+        padding: $unit*2;
+
+        color: $neutral-60;
+        text-align: center;
+    }
+
+    .c-need-your-help {
+        margin: $unit 0;
+        padding: $unit;
+        padding-bottom: 0;
+        border-top: 1px solid $neutral-50;
+    }
+    .c-registry-truck-delivery a {
+        padding-left: $sub-unit/2;
+
+        color: $black;
+    }
+
+    .c-service-selection {
+        padding-bottom: $sub-unit*3;
+        .c-field label span {
+            display: none;
+        }
+    }
+
+    .js-details-link div:first-of-type::first-letter {
+        text-transform: uppercase;
+    }
+
+    .c-top-five {
+        input[type="checkbox"] {
+            float: left;
+
+            margin-right: $sub-unit;
+        }
+
+        .gr-top5-header {
+            float: left;
+            .c-icon {
+                position: relative;
+                top: -1px;
+
+                display: inline-block;
+                width: 13px;
+                height: 13px;
+                margin-left: $sub-unit;
+
+                color: $neutral-70;
+                vertical-align: middle;
+            }
+            span {
+                font-weight: bold;
+            }
+        }
+        .gwt_gr_top5_panel {
+            display: none;
+        }
+    }
+
+    .js-giftcard-stepper-decrease {
+        .c-icon-svg {
+            fill: $neutral-70;
+        }
+    }
+
+    .c-add-personalization-label {
+        border: 1px solid $black;
+
+        color: $black;
+    }
+
+    .c-complete-text {
+        color: $neutral-310 !important;
+    }
+
+    .c-time-remaining {
+        margin: 0 $unit;
+        padding: $sub-unit;
+        border-top: 1px solid $neutral-50;
+        border-bottom: 1px solid $neutral-50;
+    }
+
+    .c-gift-card-content {
+        padding: $unit;
+        padding-top: $sub-unit;
+        padding-bottom: $sub-unit;
+        .c-item-title {
+            font-size: $large-font-size;
+        }
+
+        .gwt-product-detail-widget-title.gwt-product-detail-widget-title-bold {
+            display: none;
+        }
+        .c-freeshipping-text {
+            color: $brand-color;
+            font-size: $smaller-font-size;
+            &:before {
+                content: '';
+
+                display: inline-block;
+                width: 3px;
+                height: 3px;
+                margin-right: $sub-unit;
+
+                border-radius: 50%;
+                background: $neutral-200;
+
+                vertical-align: middle;
+            }
+        }
+
+        .c-item-short-name {
+            margin-right: $sub-unit/2;
+
+            color: $neutral-60;
+            font-size: $smaller-font-size;
+        }
+
+        .c-separator-title {
+            color: $neutral-60;
+        }
+
+        .c-gift-card-container {
+            margin-top: $unit;
+            margin-bottom: $sub-unit*3;
+            border: 1px solid $neutral-50;
+
+            border-radius: 2px;
+        }
+
+        .js-amount select {
+            border: 0;
+
+            outline: 0;
+
+            color: $brand-color;
+            font-weight: bold;
+        }
+
+        .js-stepper-dropdown {
+            flex: 0 0 auto;
+            width: auto;
+            padding: 0;
+
+            background: none;
+
+            text-align-last: center;
+            select {
+                padding: 0;
+                border: 0;
+
+                background: none;
+                outline: 0;
+
+                color: $brand-color;
+                font-weight: bold;
+            }
+        }
+
+        .c-price {
+            .gwt-product-detail-widget-short-desc-lbl {
+                display: none;
+            }
+        }
+
+        .c-item-short-title {
+            .gwt-product-detail-widget-short-desc-lbl {
+                display: inline;
+            }
+            li {
+                display: inline;
+            }
+        }
+    }
+
+    .c-button.c--primary.c-add-all-items {
+        padding: $unit;
+    }
+
+    .c-tabs__body {
+        padding: 0;
+    }
+
+
+    .c-begin-adding-items-button {
+        position: relative;
+
+        width: 100%;
+        margin: 0 -18px;
+        margin-bottom: $sub-unit*5;
+        border: 0;
+
+        background: $white;
+        outline: 0;
+        .c-icon {
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+
+            width: 38px;
+            height: 38px;
+            padding: 11px;
+
+            border-radius: 38px;
+            background: $brand-color;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+            color: $white;
+        }
+    }
+
+    .c-empty-manage-registry-msg {
+        margin-top: -$unit;
+        padding: 0 $unit*2;
+
+        color: $neutral-60;
+    }
+
+    .u-text-success span {
+        float: right;
+    }
+
+    .c-remove-wishlist-button {
+        color: $black !important;
+        font-weight: bold;
+        font-size: $smaller-font-size !important;
+    }
+
+    .c-qty__wrapper {
+        position: relative;
+
+        margin-top: $unit;
+
+        .gr_add_to_cart_btn,
+        .js-add-to-cart button {
+            position: absolute;
+            top: $sub-unit+3;
+            right: 0;
+
+            color: $black;
+            font-weight: bold;
+            font-size: $large-font-size;
+            text-transform: lowercase;
+        }
+    }
+
+    .c-purchase-desired {
+        clear: both;
+
+        overflow: hidden;
+
+        span {
+            float: left;
+
+            width: 50%;
+            margin-bottom: $sub-unit/2;
+
+            font-weight: bold;
+        }
+        select {
+            border: 0;
+        }
+        .c-select-quantity {
+            overflow: hidden;
+            border: 1px solid $neutral-50;
+
+            border-radius: 2px;
+            > div,
+            > p {
+                float: left;
+
+                width: 50%;
+            }
+        }
+
+
+        [id$="_req"] {
+            position: relative;
+            &::after {
+                content: '';
+
+                position: absolute;
+                top: 31%;
+                right: 0;
+
+                width: 1px;
+                height: 19px;
+
+                background: $neutral-40;
+            }
+        }
+    }
+    .t-cart__stepper {
+        justify-content: space-between;
+        .c-icon-svg {
+            position: relative;
+            top: 2px;
+
+            fill: $neutral-70;
+        }
+        .c-stepper__count.js-val {
+            display: none;
+        }
+
+
+        .c-qty {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            align-self: stretch;
+
+            color: $neutral-200;
+            font-weight: bold;
+            font-size: $smaller-font-size;
+            select {
+                position: absolute;
+                top: 0;
+
+                height: auto;
+                padding: 0;
+
+                opacity: 0;
+            }
+        }
+    }
+
+    .c-stepper__action-decrease {
+        margin-left: 0;
+    }
+
+    .c--disabled {
+        opacity: 0.2;
+    }
+
+    .c-add-all-items-to-cart-btn {
+        margin: 0 $unit;
+
+        button {
+            width: 100%;
+        }
+    }
+}
+
+
+.registrant_co_reg table {
+    display: block !important;
+}
+
+.js-confirmation-pinny {
+    .c-not-required-fields {
+        display: none;
+    }
+
+    td {
+        padding: 0;
+        border-bottom: none;
+    }
+
+    table {
+        margin: 0;
+    }
+
+    .c-button.c--primary {
+        width: 100%;
+        margin-top: $sub-unit*3;
+    }
+
+    .gwt-new-gr-confirm-message {
+        margin-top: -$unit;
+    }
+
+    .c-button.c--secondary {
+        margin-top: -$sub-unit;
+        margin-bottom: $sub-unit;
+        padding: 0;
+        border: 1px solid $black;
+
+        border-radius: 2px;
+        background: transparent;
+
+        color: $black;
+        font-weight: bold;
+        font-size: $large-font-size;
+        text-transform: lowercase;
+    }
+}
+
+.js-service-select select {
+    background-color: $white;
+    .required {
+        display: none;
+    }
+}
+
+.js-registry-bellows.c-bellows {
+    display: none;
+    border-top: 0 !important;
+}
+
+
+.c-edit-co-reg-pinny {
+    table {
+        margin: 0;
+        td {
+            padding: 0;
+        }
+    }
+
+    .gwt-GR-Co-Registrant-Flag {
+        padding: $unit;
+    }
+
+    .gwt-CheckBox.gwt-GR-Co-Registrant-Flag label {
+        margin-left: $sub-unit*3;
+    }
+
+    .GR_create_co-registrantForm_panel_container label span {
+        display: block;
+
+        font-weight: normal;
+        font-size: $smaller-font-size;
+    }
+
+    .GR-Co-Reg-form-address {
+        margin: $unit 0;
+
+        font-weight: bold;
+        font-size: $font-size;
+    }
+
+    .GR_coRegistrant_sameContant_flag {
+        margin-top: $unit;
+    }
+
+    .GR-Reg-form-address {
+        display: none;
+    }
+
+    .GR_coRegistrant_sameContant_flag + .GR_create_coRegistrantAddressPanel {
+        margin-top: $unit;
+    }
+
+    .GR_promotional_email_flag {
+        padding: 12px;
+        input[type="checkbox"] {
+            position: relative;
+            top: 3px;
+
+            margin-right: $sub-unit+3;
+        }
+    }
+
+    input[type="checkbox"] {
+        position: relative;
+        top: 1px;
+
+        margin-right: $sub-unit/2;
+    }
+
+    .GR_coRegistrant_sameContant_flag label {
+        margin-left: $sub-unit;
+    }
+    .GR_coRegistrant_midName_panel {
+        display: none;
+    }
+
+    .c-form-group .c-box .c-box__label:first-child {
+        overflow: inherit;
+        padding-left: $unit;
+    }
+
+    .c-box > .c-box__label {
+        width: 33%;
+        margin-top: $sub-unit;
+        margin-bottom: $sub-unit/2;
+    }
+
+
+    .required {
+        position: absolute;
+
+        margin: 2px 0 0 -8px;
+
+        color: $error-color;
+    }
+}
+
+.registrant_co_reg {
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    table {
+        display: none;
+    }
+}
+
+.c-show-registry-details {
+    display: block;
+    width: 92.4%;
+    max-height: 45px;
+    margin: 0 auto;
+    margin-top: $sub-unit;
+    margin-bottom: $unit;
+    padding: $unit $unit*2;
+    border: 1px solid $black;
+
+    border-radius: 2px;
+
+    color: $black;
+    font-weight: bold;
+    font-size: $large-font-size;
+    text-align: center;
+    text-transform: lowercase;
+    &:active {
+        color: $black;
+    }
+
+    .c-icon {
+        width: 13px;
+        height: 10px;
+        margin-left: $sub-unit;
+
+        vertical-align: middle;
+    }
+}
+
+.c-show-registry-details-active {
+    width: 100%;
+    max-height: 36px;
+    margin: 0;
+    padding: 7px;
+    border: 0;
+
+    border-radius: 0;
+    background: $brand-color;
+
+    color: $white;
+    .c-icon {
+        width: 13px;
+        height: 10px;
+        margin-left: $sub-unit;
+
+        vertical-align: middle;
+    }
+}
+.c-show-registry-details-active + .c-bellows {
+    padding-top: $unit;
+
+    background: $neutral-40;
+}
+
+.c-bellows + .c-reg-items-and-sort-options {
+    overflow: hidden;
+    margin-top: $unit;
+}
+
+
+
+.c-reg-items-and-sort-options {
+    padding: 0 $unit;
+    select {
+        width: auto;
+        margin-top: -$unit;
+        margin-right: -$unit;
+        border: 0 !important;
+
+        font-weight: bold;
+        direction: rtl;
+    }
+
+    .c-count-registry-items {
+        float: left;
+
+        width: 30%;
+    }
+
+    .c-sort-options-menu {
+        float: right;
+    }
+}
+
+.js-delete-registry-confirmation-pinny {
+    td {
+        padding: 0;
+
+        text-align: left;
+    }
+    .c-button.c--primary {
+        width: 100%;
+    }
+    table {
+        margin: 0;
+    }
+    .c-cancel-button {
+        width: 100%;
+        margin-bottom: $sub-unit !important;
+
+        color: $black;
+        font-weight: bold;
+        text-transform: lowercase;
+    }
+}
+
+.js-edit-reg-pinny__body {
+    .GR_create_event_date_panel {
+        position: relative;
+
+        .c-arrange__item {
+            position: relative;
+            &:not(:last-child):after {
+                content: '';
+
+                position: absolute;
+                top: 31%;
+                right: 0;
+
+                width: 1px;
+                height: 19px;
+
+                background: $neutral-40;
+            }
+        }
+    }
+
+    .GR_message_ForGuest_flag {
+        display: none;
+    }
+
+    .c-maximum-characters {
+        margin-top: $sub-unit;
+
+        color: $neutral-60;
+        font-size: $smaller-font-size;
+    }
+
+    .c-backgroung-none {
+        margin-top: -$unit;
+
+        color: $black;
+        font-weight: bold;
+        text-transform: lowercase;
+    }
+
+    .GR_create_guestOptions_panel {
+        flex-direction: column;
+        margin-top: $unit;
+        margin-bottom: $sub-unit;
+        padding: $unit;
+
+        border-radius: 2px;
+
+        span {
+            display: block;
+
+            font-weight: normal;
+            font-size: $smaller-font-size;
+        }
+
+        label {
+            margin-bottom: $unit;
+        }
+    }
+
+    .GR_create_guestOptions_panel .c-box > label.c-box__label {
+        flex: 1;
+
+        white-space: inherit;
+    }
+
+    .GR_acceptgiftCardFlag_Panel {
+        margin-top: $sub-unit;
+        padding: $unit;
+
+        .c-box > label.c-box__label {
+            flex: 1;
+
+            white-space: inherit;
+        }
+
+        .line2 {
+            font-weight: normal;
+            font-size: $smaller-font-size;
+        }
+    }
+
+    .c-field__caption {
+        margin-bottom: $sub-unit;
+
+        color: $neutral-60;
+    }
+
+    // .GR_message_ForGuest_flag {
+    //     display: none;
+    // }
+
+    .GR_customMessage_Label {
+        margin-bottom: $sub-unit/2 !important;
+        padding-top: $sub-unit;
+
+        font-weight: bold;
+        font-size: $font-size;
+        span {
+            font-weight: normal;
+        }
+    }
+
+    #country-name-label {
+        margin-top: $unit;
+        margin-bottom: $sub-unit/2;
+    }
+
+    .c-form-group .c-box .c-box__label:first-child {
+        overflow: inherit;
+        padding-left: $unit;
+    }
+
+
+    .required {
+        position: absolute;
+
+        margin: 2px 0 0 -8px;
+
+        color: $error-color;
+    }
+
+    td {
+        padding: 0;
+        border-bottom: none;
+    }
+
+    table {
+        margin: 0;
+    }
+
+    .GR_description_length_label + .gwt-RealLabel {
+        .required {
+            position: static;
+            float: right;
+
+            margin-top: 0;
+            margin-left: -$sub-unit/2;
+        }
+    }
+
+    .c-backgroung-none span {
+        font-style: normal;
+        font-weight: bold;
+        font-size: $font-size;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        position: relative;
+        top: 1px;
+
+        margin-right: $sub-unit/2;
+    }
+
+    .error_Mesaage_validation {
+        margin-bottom: $unit;
+
+        color: $error-color;
+        text-align: left;
+    }
+}
+.c-button.c--primary.c-add-items-to-cart {
+    width: 100% !important;
+}
+// Styling of Edit Co-Registrant Pinny
+.c-edit-co-reg-pinny {
+    .AddrMNameSpot,
+    .GR_visit_myAccount_section {
+        display: none;
+    }
+
+    .GR_promotional_email_flag .c-box > .c-box__label {
+        width: auto;
+    }
+
+    .GR_create_registrantAddressPanel {
+        .c-box > .c-box__label {
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+    }
+
+    .GR_coRegistrant_sameContant_flag + .GR_create_coRegistrantAddressPanel {
+        margin-top: $unit;
+    }
+
+    .GR_coRegistrant_sameContant_flag + .GR_create_coRegistrantAddressPanel .address-widget-wwcm-wrapper #country-name-label {
+        margin: 0 !important;
+    }
+
+    .GR_create_coRegistrantAddressPanel {
+        margin-bottom: $unit;
+        label {
+            margin: 0 !important;
+        }
+        .GR_promotional_email_flag {
+            display: none;
+        }
+    }
+
+    .GR_create_co-registrantForm_panel {
+        #country-name-label {
+            margin-top: $unit !important;
+        }
+    }
+
+    .c-sheet__title {
+        text-transform: none;
+    }
+
+    .c-cancel-button {
+        margin-top: -$unit;
+        border: 0;
+
+        color: $black;
+        font-weight: bold;
+        text-transform: lowercase;
+    }
+}
+
+// Styling of Edit Selected Address Pinny
+
+.c-edit-selected-address-pinny {
+    td {
+        padding: 0;
+        border: 0;
+    }
+
+    table {
+        margin: 0;
+    }
+
+    .c-field__caption {
+        margin-bottom: $sub-unit;
+
+        color: #555;
+    }
+
+    .GR_create_otherAddressPanel,
+    .GR_create_postEventAddressPanel {
+        margin-top: $unit;
+    }
+
+    .c-form-group .c-box .c-box__label:first-child {
+        overflow: inherit;
+        padding-left: $unit;
+    }
+
+    .GR_creat_step3 table {
+        border-spacing: 12px 6px;
+        border-collapse: separate;
+        margin: 0;
+        padding: $sub-unit;
+        border: 1px solid $neutral-50;
+
+        border-radius: 2px;
+    }
+
+    .c-box > .c-box__label {
+        width: 32%;
+    }
+
+    .GR_shippingChoices_panel input[type="radio"] {
+        position: relative;
+        top: -1px;
+
+        margin-right: $sub-unit/2;
+    }
+
+    .c-backgroung-none {
+        margin-top: -$unit;
+        border: 0;
+
+        color: $black;
+        text-transform: lowercase;
+    }
+
+    .required {
+        position: absolute;
+
+        margin: 2px 0 0 -8px;
+
+        color: $error-color;
+    }
+}
+
+.c-details-container {
+    span.title {
+        width: 56%;
+
+        font-weight: bold;
+    }
+
+    .c-shipping-details-content {
+        display: flex;
+    }
+
+    .c-registry-content {
+        width: 50%;
+    }
+
+    .c-co-registrant,
+    .c-ship-to {
+        margin-bottom: $sub-unit/2;
+    }
+
+    .c-shipping-address {
+        text-transform: capitalize;
+    }
+
+    .c-shipping-address-name {
+        width: 50%;
+    }
+
+    .c-details-content {
+        padding: $unit;
+
+        border-radius: 2px;
+        background: $white;
+        p.note,
+        div.note {
+            display: flex;
+            margin-bottom: $sub-unit/2;
+        }
+
+        .adr p {
+            margin-bottom: $sub-unit/2;
+        }
+        a {
+            font-size: $font-size;
+            text-align: initial;
+        }
+    }
+
+    .c-co-reg-details .gr_info_edit_link {
+        display: none;
+    }
+
+    a {
+        display: block;
+
+        font-size: $smaller-font-size;
+        text-align: right;
+    }
+
+    p.note.editGiftRegLink {
+        float: right;
+
+        display: block;
+        width: 12%;
+        margin-bottom: $sub-unit;
+
+        font-size: $smaller-font-size;
+    }
+
+    .c-registry-information-container {
+        overflow: hidden;
+    }
+
+    .c-registry-information {
+        float: left;
+
+        font-weight: bold;
+    }
+}
+
+.c-tool-tip-pinny {
+    p {
+        margin-top: -$unit;
+    }
+}
+
+.pinny__wrapper.js-edit-reg-pinny {
+    top: 0 !important;
+    bottom: 0;
+
+    transform: initial !important;
+}
+
+.c-sheet.c--dialog.c-edit-reg-pinny {
+    right: 0 !important;
+    left: 0 !important;
+}
+
+.t-view-registry {
+    .c-purchase-desired .c-view-registry-desired-purchased {
+        .c-view-registry-desired {
+            width: auto;
+            margin-bottom: -$unit;
+            padding-right: $unit;
+        }
+        .c-view-registry-purchased {
+            width: auto;
+            height: 19px;
+            margin-bottom: -$unit;
+            padding-left: $unit;
+            border-left: 1px solid $neutral-50;
+        }
+    }
+
+    .c-top-five .gr-top5-header .c-icon {
+        display: none;
+    }
+
+    .c-title p {
+        margin-bottom: 0;
+    }
+}

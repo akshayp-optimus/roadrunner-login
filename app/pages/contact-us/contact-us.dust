@@ -1,0 +1,44 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-contact-us-wrapper">
+        {! {>"components/breadcrumb/breadcrumb"/} !}
+
+        <div class="c-service-selection  u-margin-bottom-md">
+            <div class="js-service-select c-service-select">
+                <div class="js-desktop-left-nav" hidden>{leftNav}</div>
+            </div>
+        </div>
+
+        <h2 class="c-title u-page-title-color u-padding-top-sm"><small>{pageTitle}</small></h2>
+
+        {responsiveContent}
+
+        <div class="u-padding u--tight">
+
+            {pageIntroduction}
+
+            <h3>{contactInfoHeading}</h3>
+
+            <div class="u-text-black u-margin-bottom-md">{pageTitleAndMessage.message}</div>
+
+            {#contactInfoSection}
+                {>"components/bellows/bellows" bellowsHeaderClass="js-bellows-header"/}
+            {/contactInfoSection}
+
+            {pageData}
+
+        </div>
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    (function(require) {
+        require(["global/ui", "pages/contact-us/contact-us-ui"], function(globalUI, contactUsUI) {
+            globalUI();
+            contactUsUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

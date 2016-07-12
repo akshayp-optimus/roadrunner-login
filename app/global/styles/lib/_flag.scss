@@ -1,0 +1,11 @@
+@mixin flag-icon-background {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+}
+
+@mixin flag-icon($country) {
+    .c--#{$country} {
+        background-image: url(#{$flag-icon-css-path}/#{$country}.svg);
+    }
+}

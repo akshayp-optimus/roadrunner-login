@@ -1,0 +1,14 @@
+<div class="u-text-align-center u-padding-top-lg u-padding-sides u-text-gray">
+    <div class="c-icon-label c--large c--gray u-margin-bottom-sm">
+        <span class="c-icon-label__label">
+            <span>{@translate key="empty_cart_title"/}</span>
+            <div class="c-empty-cart-title">{@translate key="empty_cart_title_empty_text"/}</div>
+        </span>
+
+        {>"svg-icon" name="cart-empty"/}
+    </div>
+
+    <div class="c-empty-cart-text">
+        {@translate key="empty_cart_text"/}
+    </div>
+</div>

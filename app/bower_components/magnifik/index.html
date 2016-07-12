@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Examples of the Mobify.js Magnifik in action</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <style>
+            .corner.m-close { 
+                color: white; 
+                background: black; 
+                position: absolute; 
+                right: 0; 
+                top: 0;
+                font-weight: bold; 
+                font-size: 18px; 
+                padding: 10px;
+            }
+            .magnifik-notice {
+                position: absolute; 
+                left: 50%; 
+                top: 50%;
+                width: 300px; 
+                height: 36px; 
+                margin-left: -160px; 
+                margin-top: -28px; 
+                padding: 10px;
+                vertical-align: middle; 
+                text-align: center; 
+                font-weight: bold; 
+                font-size: 16px; 
+                line-height: 18px;
+                background: rgba(0,0,192,0.5); 
+                color: white; 
+                opacity: 1;
+            }
+            .magnifik-notice-fade {
+                -webkit-transition: opacity 4s ease-in; 
+                -o-transition: opacity 4s ease-in; 
+                -moz-transition: opacity 4s ease-in; 
+                -ms-transition: opacity 4s ease-in; 
+                transition: opacity 4s ease-in;
+                opacity: 0;
+             }
+            a img { width: 100%; }
+            .z4-wrap { 
+                height: 300px; 
+                border: 3px solid black; 
+            }
+        </style>
+        <!-- <script src="//zeptojs.com/zepto.js"></script> -->
+        <script src="//code.jquery.com/jquery-1.10.1.js"></script>
+        <script src="src/magnifik.js"></script>
+
+    </head>
+    <body>
+
+        <div class="magnifik-example basic">
+            <h2>Basic magnifik</h2>
+            <a class="z1" href="//www.fillmurray.com/g/601/901">
+                <img src="//www.fillmurray.com/g/601/901">
+            </a>
+            <script>$('a.z1').magnifik();</script>
+        </div>
+
+    </body>
+</html>

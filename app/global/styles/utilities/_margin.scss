@@ -1,0 +1,195 @@
+// Vertical Margins
+//
+// Granular control over vertical spacing independent of a component.
+//
+// Suffixes:
+// 0:  none
+// sm: small
+// md: medium
+// lg: large
+// gt: gretaer-than
+
+
+.u-margin-top-0 {
+    margin-top: 0 !important;
+}
+
+.u-margin-top-sm {
+    margin-top: $sub-unit !important;
+}
+
+.u-margin-top-extra-sm {
+    margin-top: $sub-unit/2 !important;
+}
+
+.u-margin-top-md {
+    margin-top: $unit !important;
+}
+
+.u-margin-top-sm.u--tight {
+    margin-top: $sub-unit;
+}
+
+.u-margin-top-md.u--tight {
+    margin-top: $sub-unit !important;
+}
+
+
+.u-margin-top-lg {
+    margin-top: $unit * 2 !important;
+}
+
+.u-margin-bottom-0 {
+    margin-bottom: 0 !important;
+}
+
+.u-margin-bottom-sm {
+    margin-bottom: $sub-unit !important;
+}
+
+.u-margin-bottom-extra-sm {
+    margin-top: $sub-unit/2 !important;
+}
+
+.u-margin-bottom-md {
+    margin-bottom: $unit !important;
+}
+
+.u-margin-bottom-lg {
+    margin-bottom: $unit * 2 !important;
+}
+
+
+// Horizontal Margins
+//
+// Granular control over horizontal spacing independent of a component.
+//
+// `start` and `end` are writing-direction independent forms for `left` and
+// `right`. For right-to-left localizations, create an alternate version of this
+// stylesheet with the property directions reversed, e.g.
+//
+// .u-margin-start-0  {
+//     margin-right: 0 !important;
+// }
+//
+// Suffixes:
+//
+// 0:  none
+// sm: small
+// md: medium
+// lg: large
+
+.u-margin-start-0 {
+    margin-left: 0 !important;
+}
+
+.u-margin-start-sm {
+    margin-left: $sub-unit !important;
+}
+
+.u-margin-start-md {
+    margin-left: $unit !important;
+}
+
+.u-margin-start-ng-md {
+    margin-left: -$unit !important;
+}
+
+.u-margin-start-lg {
+    margin-left: $unit * 2 !important;
+}
+
+.u-margin-end-0 {
+    margin-right: 0 !important;
+}
+
+.u-margin-end-sm {
+    margin-right: $sub-unit !important;
+}
+
+.u-margin-end-extra-sm {
+    margin-right: $sub-unit \ 2 !important;
+}
+
+.u-margin-end-md {
+    margin-right: $unit !important;
+}
+
+.u-margin-end-lg {
+    margin-right: $unit * 2 !important;
+}
+
+.u-margin-left-right-extra-lg {
+    margin-right: $unit*3 !important;
+    margin-left: $unit*3 !important;
+}
+
+.u-margin-top-extra-lg {
+    margin-top: $unit * 3 !important;
+}
+
+.u-margin-top-negative-extra-lg {
+    margin-top: -$sub-unit*5 !important;
+}
+
+.u-margin-top-tn {
+    margin-top: 3px !important;
+}
+
+// Margin from all sides
+
+.u-margin-all-sm {
+    margin: $unit !important;
+}
+
+.u-margin-bottom-ng-sm {
+    margin-bottom: -$sub-unit;
+}
+
+.u-margin-bottom-ng-md {
+    margin-bottom: -$unit;
+}
+
+.u-margin-top-sm.u--tight {
+    margin-top: $sub-unit/2 !important;
+}
+
+.u-margin-top-ng-sm {
+    margin-top: -$sub-unit;
+}
+
+.u-margin-top-ng-md {
+    margin-top: -$unit;
+}
+
+.u-margin-top-gt-md {
+    margin-top: $sub-unit*3 !important;
+}
+
+.u-margin-top-ng-gt-md {
+    margin-top: -$unit+2 !important;
+}
+
+.u-margin-bottom-ng-lg {
+    margin-bottom: -$unit * 2 !important;
+}
+
+.u-margin-top-ng-extra-gt-md {
+    margin-top: $unit + 8px !important;
+}
+
+.u-margin-bottom-xs-sm {
+    margin-bottom: $sub-unit / 2 !important;
+}
+
+.u-margin-bottom-ng-extra-lg {
+    margin-bottom: -18px !important;
+}
+
+.u-margin-bottom-gt-md {
+    margin-bottom: $sub-unit*3 !important;
+}
+
+.u-margin-bottom {
+    margin-bottom: $unit !important;
+}

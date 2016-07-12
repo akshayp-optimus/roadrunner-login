@@ -1,0 +1,10 @@
+<div class="c-empty-cart u-text-align-center u-padding u-text-grey">
+
+    <div class="c-icon-label c--large c--grey u-margin-bottom-lg">
+        {>"svg-icon" name="cart-empty" title="Cart" class="u-margin-bottom-md c-empty-cart-icon" /}
+        <span class="c-icon-label__label">{@translate key="shopping_cart_empty"/}</span>
+    </div>
+
+    {continueShoppingButton}
+
+</div>

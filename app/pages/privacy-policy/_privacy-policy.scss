@@ -1,0 +1,26 @@
+// Privacy & Security
+// --------------
+.t-privacy-policy {
+    padding-top: $sub-unit;
+
+    a {
+        u {
+            color: $black;
+            text-decoration: none;
+        }
+    }
+
+    ul {
+        margin-bottom: $unit;
+        padding: 0 $unit;
+        li {
+            margin-left: $unit;
+
+            list-style-type: disc;
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

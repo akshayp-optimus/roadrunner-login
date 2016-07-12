@@ -1,0 +1,231 @@
+// Search Sugggestions
+// ===
+//
+// Search suggestions found in search results in header
+
+
+// Root
+// ---
+//
+// 1. Override inline style
+
+.c-search-suggestions {
+    width: auto !important; // 1
+    padding: 8px 12px;
+
+
+    // GH-54 Search - Auto-complete - Search/Product suggestion list cannot be scrolled
+    // 1. Add permanent spacer to fill space under software keyboard
+    .ios & {
+        padding-bottom: 280px;
+    }
+}
+
+
+// Search Suggestions: Header
+// ---
+
+.c-search-suggestions__header {
+    padding: $unit $unit $sub-unit;
+
+    background-color: $neutral-30;
+
+    h2 {
+        color: $neutral-70;
+        font-size: $smaller-font-size;
+        text-transform: uppercase;
+    }
+}
+
+// Search Suggestions: Product
+// ---
+//
+// scss-lint:disable SelectorFormat
+
+.c-search-suggestions__product {
+    padding: $sub-unit 0;
+
+    &:active {
+        background-color: $neutral-30; // check with Mitch
+    }
+
+    img {
+        width: 66px;
+        min-height: 66px;
+
+        vertical-align: top;
+    }
+
+    .priceWas {
+        // No lint reported
+        color: $neutral-50;
+        text-decoration: line-through;
+    }
+
+    .priceNow {
+        // No lint reported
+        color: $error-color;
+    }
+}
+
+
+// Search Suggestions: Title
+// ---
+
+.c-search-suggestions__title {
+    padding-top: $sub-unit;
+
+    color: $neutral-70;
+    font-size: $font-size;
+
+    b {
+        color: $black;
+        font-weight: 400;
+    }
+}
+
+// Search Suggestions: Term
+// ---
+
+.c-search-suggestions__term {
+    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    margin: 0 1px $sub-unit;
+    padding: $sub-unit $unit $sub-unit 8px;
+
+    border-radius: 2px;
+    background: $neutral-260;
+
+    color: $neutral-70;
+
+    &:active {
+        background-color: $neutral-30;
+    }
+
+    b {
+        color: $black;
+        font-weight: 400;
+    }
+
+    a {
+        color: $neutral-70;
+
+        &:active {
+            color: $black;
+        }
+
+        &:focus {
+            color: $black;
+        }
+    }
+
+    a {
+        text-transform: capitalize;
+    }
+
+    .c-icon {
+        width: 10px;
+        height: 10px;
+        margin-right: $sub-unit;
+    }
+}
+
+.c-search-suggestions__text {
+    color: $black;
+}
+
+
+// Search Pinny
+// ===
+//
+// 1. Absolute position bg image
+
+.c-search-pinny {
+    top: 47px !important;
+
+    box-shadow: none;
+
+    .pinny__content {
+        padding: 0;
+
+        &.c--no-result {
+            position: relative; // 1
+
+            &::after {
+                content: '';
+
+                position: absolute; // 1
+                top: 0;
+                bottom: 0;
+                left: 50%;
+
+                display: block;
+                max-width: 290px;
+                width: 60%;
+
+                background-image: url("../img/empty-search@2x.png");
+                background-repeat: no-repeat;
+                background-position: center 80px;
+                background-size: contain;
+
+                transform: translateX(-50%);
+
+                pointer-events: none;
+            }
+        }
+    }
+
+    [id="accountMenu"] {
+        display: none;
+    }
+}
+
+// Global Search Wrapper
+// ----
+
+.c-search-wrapper {
+    position: relative;
+
+    .c-search-icon svg {
+        position: absolute;
+        top: 15px;
+        left: 12px;
+
+        width: $unit+2;
+        height: $unit+2;
+    }
+}
+
+input[id="headerBox"] {
+    padding: $unit $sub-unit*7 0;
+    border: 0;
+
+    border-radius: 0;
+    outline: none;
+
+    font-family: $default-sans;
+    font-weight: bold;
+    font-size: $large-font-size;
+
+    &:focus {
+        border-color: $neutral-50;
+    }
+
+    &::-webkit-input-placeholder {
+        font-family: $default-sans;
+    }
+}
+
+// Term suggestion: Heading
+// ---
+
+.c-term-suggestions__header {
+    padding-bottom: $unit;
+
+    background: none;
+
+    font-family: $default-sans;
+    font-size: $largest-font-size;
+    text-transform: capitalize;
+}

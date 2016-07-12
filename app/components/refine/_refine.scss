@@ -1,0 +1,18 @@
+// Refine Filters
+// ===
+
+.c-refine__items {
+    margin-bottom: $sub-unit;
+    padding: $unit;
+    border: $border-light;
+
+    border-radius: 4px;
+}
+
+.c-refine__item {
+    display: block;
+
+    & + & {
+        margin-top: $unit;
+    }
+}

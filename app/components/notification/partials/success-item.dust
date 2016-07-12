@@ -1,0 +1,11 @@
+<div class="c-list-tile c-notification-contents">
+    <div class="c-list-tile__primary-tile">
+        <div class="c-list-tile__primary-action u-padding-all-0 u-padding-start-tn">
+            {@icon name="check" class="c--large" /}
+        </div>
+
+        <div class="c-list-tile__primary-content">
+            <div class="js-notification">{message}</div>
+        </div>
+    </div>
+</div>

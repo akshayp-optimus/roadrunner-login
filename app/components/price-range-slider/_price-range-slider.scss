@@ -1,0 +1,71 @@
+// Price Range Slider
+// ===
+
+.c-price-range-slider {
+    [id='slider-raprislider-label'],
+    [id='slider-raoveslider-label'],
+    .sli-range-slider-track-start,
+    .sli-range-slider-track-end,
+    .sli-range-slider-tick {
+        display: none;
+    }
+
+    // scss-lint:disable SelectorFormat
+    &.sli_facets_slider {
+        margin-right: $sub-unit*3;
+        padding: 0 $unit*2 0 20px;
+    }
+    // scss-lint:enable SelectorFormat
+
+    .sli-range-slider {
+        position: relative;
+    }
+
+    .sli-range-slider-track {
+        position: relative;
+    }
+
+    .sli-range-slider-thumb {
+        position: absolute;
+        z-index: 10;
+
+        display: flex;
+        justify-content: center;
+        width: 15px;
+        height: 36px;
+        border: 1px solid $black;
+
+        background: $white;
+
+        &:active {
+            color: $black;
+        }
+
+        span {
+            position: relative;
+            top: 35px;
+
+            max-width: 120px;
+            color: $black;
+            font-size: $font-size;
+            text-align: center;
+        }
+    }
+
+    .sli-range-slider-thumb-label {
+        margin-top: $sub-unit;
+    }
+
+    .sli-range-slider-selection {
+        position: absolute;
+        top: 18px;
+        z-index: 5;
+
+        height: 0;
+        border-top: 1px solid $black;
+
+        > span {
+            display: none;
+        }
+    }
+}

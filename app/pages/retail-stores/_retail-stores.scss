@@ -1,0 +1,81 @@
+// Retail stotres page
+// ============
+.t-retail-stores-wrapper {
+    padding: 0 $unit;
+
+    .c-grandin-outlet-heading,
+    .c-hours-open {
+        font-size: $large-font-size;
+    }
+
+    .c-store-image {
+        float: left;
+
+        max-width: 139px;
+    }
+
+    .c-direction-button {
+        clear: both;
+    }
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+
+
+    .c-contact-link-button {
+        a {
+            display: block;
+            width: 84%;
+            max-height: 45px;
+            max-height: 45px;
+            margin: 0 auto;
+            margin-top: $sub-unit;
+            margin-bottom: $unit;
+            padding: $unit $unit*2;
+            border: 1px solid $neutral-240;
+
+            border-radius: 2px;
+
+            color: $neutral-240;
+            font-weight: bold;
+            font-size: $large-font-size;
+            text-align: center;
+            text-transform: lowercase;
+            &:active {
+                color: $black;
+            }
+        }
+    }
+
+    .c-hours-of-operation {
+        float: left;
+
+        width: 50%;
+        margin-bottom: $unit;
+        padding: $unit;
+        border: 1px solid $neutral-50;
+    }
+
+    .c-breadcrumb {
+        padding-left: 0;
+    }
+
+    .c-hours-of-operation:nth-child(odd) {
+        border-left: 0;
+    }
+
+    a {
+        color: $neutral-70;
+    }
+
+    h4.c-grandin-outlet-heading.u-margin-bottom-md:last-of-type {
+        margin-top: $unit * 2;
+        padding-top: $sub-unit * 3;
+        border-top: 1px solid $neutral-50;
+    }
+
+    .col-xs-12 {
+        float: none;
+    }
+}

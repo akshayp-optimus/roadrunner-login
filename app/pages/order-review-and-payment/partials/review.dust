@@ -1,0 +1,23 @@
+<div class="t-payment-and-review__order-items">
+    {#orderItems}
+
+        {#address}
+            <div hidden>{container}</div>
+            <div class="c-button-title-container">
+                <div class="u--bold">{sectionTitle}:</div>
+                <ul class="c-button-wrap u-small-font-size">
+                    <li>{edit}</li>
+                    <li>|</li>
+                    <li>{select}</li>
+                </ul>
+            </div>
+            <div class="u-margin-bottom-md">
+                {>"components/address-button/address-button"/}
+            </div>
+        {/address}
+
+        <div class="t-payment-and-review__order-item u-padding u--tight">
+            {>"components/items-shipping/items-shipping"/}
+        </div>
+    {/orderItems}
+</div>

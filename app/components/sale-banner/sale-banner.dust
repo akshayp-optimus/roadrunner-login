@@ -1,0 +1,5 @@
+<div class="c-hero u-margin-bottom-md">
+    <a href="#" class="c-hero__img">
+        <img src="{@getUrl path="img/homepage_2.png" /}">
+    </a>
+</div>

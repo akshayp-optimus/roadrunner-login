@@ -1,0 +1,25 @@
+// Unstyle
+// ===
+//
+// The purpose of this utility class is to make something render like a div. No
+// styles, no dimensions, just blank.
+//
+// Example usecase: make a standard <button> look like a <div>
+//
+// ```
+// <button class="u-unstyle"></button>
+// ```
+
+.u-unstyle {
+    display: block;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+
+    background: none;
+}
+
+.u-unstyle-min-height {
+    min-height: initial;
+}

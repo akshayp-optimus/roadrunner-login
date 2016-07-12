@@ -1,0 +1,25 @@
+<div class="">
+
+    <h5 class="u-margin-bottom-md">
+        <strong>Ratings Breakdown</strong>
+    </h5>
+
+    <div class="c-ratings-breakdown">
+        {#info}
+            <div class="c-arrange c--align-middle">
+                <div class="c-ratings-breakdown__item c-arrange__item c--shrink u-text-align-end">
+                    {percentage}
+                </div>
+                <div class="c-ratings-breakdown__item c-arrange__item c--shrink u-padding-left u--tight">
+                    {numStars}
+                </div>
+                <div class="c-ratings-breakdown__item c-arrange__item">
+                    {#stars}
+                        {>"components/star-rating/star-rating" modifierClasses="c--shrink" /}
+                    {/stars}
+                </div>
+            </div>
+        {/info}
+    </div>
+
+</div>

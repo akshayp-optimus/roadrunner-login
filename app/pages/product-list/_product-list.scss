@@ -1,0 +1,223 @@
+// Product List Page
+// ===
+
+.t-product-list {
+
+    [class*='cin-type-products'] {
+        // display: none;
+    }
+
+    .c-shipping-restriction {
+        margin-bottom: $unit;
+    }
+
+    .c-product-tile {
+        margin-top: 0;
+        margin-bottom: $unit*2;
+    }
+
+    .c-form-group .c-box > .c-refine-category {
+        width: 100%;
+    }
+
+    .c-bellows__item {
+        .c-filter-applied:after {
+            content: '';
+
+            position: absolute;
+            top: -5px;
+            right: -5px;
+
+            width: 12px;
+            height: 12px;
+
+            border-radius: 50%;
+            background: $brand-color;
+        }
+    }
+
+    .c-bellows__item.bellows--is-open,
+    .c-bellows__item.bellows--is-opening {
+        .c-filter-applied:after {
+            content: initial;
+        }
+    }
+
+    .c-filter-panel__checkbox {
+        [class*="sli_checkbox"] {
+            margin-right: 0;
+            border: 0;
+
+            background: $white;
+            outline: 0;
+        }
+    }
+
+    .c-filter-panel__checkbox input[value="More"] {
+        display: none;
+    }
+
+    .c--search-page {
+        padding-top: $unit;
+    }
+
+    .js-price-range-slider .c-filter-panel__label {
+        min-height: 100px;
+        margin-left: 0;
+    }
+
+    // Price filter clear section
+    // ---
+    .c-price-filter-clear {
+        display: flex;
+        padding: $unit;
+
+        color: $brand-color;
+        font-family: $default-sans;
+        font-weight: bold;
+
+        .c-icon {
+            width: 16px;
+            height: 16px;
+            margin-left: $sub-unit;
+
+            border-radius: 50%;
+            background: $brand-color;
+        }
+    }
+
+    .c-suggested-products-title {
+        font-size: 20px;
+    }
+}
+
+.t-product-list__sort-menu {
+    position: relative;
+
+    display: inline-block;
+
+    select {
+        width: auto;
+        padding-left: $unit*2;
+        border: 0;
+
+        background: none;
+        outline: none;
+
+        font-family: $default-sans;
+        font-weight: bold;
+    }
+
+    .c-icon-bottom {
+        transform: rotate(180deg);
+    }
+
+    .c-icon {
+        width: 10px;
+        height: 12px;
+
+        fill: $black;
+    }
+
+    .c-icon-top-bottom {
+        position: absolute;
+        top: $unit;
+        z-index: -1;
+    }
+}
+
+.t-product-list__results-sort {
+    display: flex;
+    align-items: center;
+    margin-top: $sub-unit;
+    padding: 0 $unit;
+
+    font-family: $default-sans;
+    font-weight: bold;
+    text-align: center;
+
+    .c-number-of-results {
+        font-weight: 400;
+    }
+}
+
+.t-product-list__sort-by {
+    flex: 1 1 auto;
+
+    text-align: left;
+
+    select {
+        width: 100%;
+
+        background: url('../icons/svg/sort.svg') no-repeat;
+        background-position: left center;
+        background-size: $unit;
+
+        // direction: rtl;
+    }
+}
+
+.t-product-list__related-product {
+    margin-bottom: $sub-unit;
+    padding: $unit*2 0 0;
+    border-bottom: 1px solid $neutral-120;
+}
+
+.t-product-list__no-results {
+    .c-bellows__header.bellows__header {
+        text-align: left;
+    }
+
+    .c-bellows__content.bellows__content {
+        margin-top: $sub-unit;
+
+        text-align: left;
+    }
+
+    .c-product-list__no-results-title {
+        margin-top: $unit*2;
+
+        color: $neutral-200;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    h4 {
+        text-align: left;
+    }
+
+    .c-product-list__no-results {
+        .c-icon {
+            width: 57px;
+            height: 57px;
+            margin-top: $unit;
+        }
+    }
+}
+
+.t-product-list__no-result-message {
+    margin-top: $unit;
+    padding: 0 $unit*3;
+
+    color: $neutral-200;
+}
+
+.t-product-list__search-suggestion {
+    .c--restricted-content {
+        display: none;
+    }
+
+    .c-hide-reveal {
+        padding-bottom: 0;
+    }
+}
+
+.t-product-list__related-searches .c-term-suggestions__header {
+    display: none;
+}
+
+.c-related-search-wrapper {
+    padding-left: $unit;
+}

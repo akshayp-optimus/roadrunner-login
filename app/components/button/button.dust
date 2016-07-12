@@ -1,0 +1,6 @@
+<button class="c-button {class}" {?id}id="{id}"{/id} {?type}type="{type}"{/type}>
+    <span>{buttonText}</span>
+    {?buttonIcon}
+        {>"svg-icon" name="{buttonIcon}"/}
+    {/buttonIcon}
+</button>

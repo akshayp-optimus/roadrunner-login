@@ -1,0 +1,37 @@
+{?personalizationText}
+    <div class="c-arrange c--align-middle">
+        <div class="c-arrange__item u-margin-end-md">
+            <label>{personalizationText}</label>
+        </div>
+        <div class="c-arrange__item c--shrink">
+            <div class="js-add-personalization-label c--is-disabled c-add-personalization-label c-button c--outline">
+                Add
+            </div>
+        </div>
+        <div class="js-personalize-link"></div>
+    </div>
+{:else}
+	<div class="c-arrange u-margin-bottom-md">
+        <div class="c-arrange__item">
+            <label>Personalize: {additionalCost}</label>
+        </div>
+
+        <div class="c-arrange__item c--shrink u-margin-start-md">
+            <div class="c-arrange">
+                <div class="c-arrange__item c--shrink">
+                    <div class="js-personalization-edit"><strong>Edit</strong></div>
+                </div>
+                <div class="c-arrange__item c--shrink u-margin-start-md u-margin-end-md">
+                    |
+                </div>
+                <div class="c-arrange__item c--shrink">
+                    <div class="js-personalization-remove"><strong>Remove</strong></div>
+                </div>
+            </div>
+        </div>
+	</div>
+
+	<div>
+		{personalizationDetail}
+	</div>
+{/personalizationText}

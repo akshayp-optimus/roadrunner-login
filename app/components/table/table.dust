@@ -1,0 +1,27 @@
+<table class="c-table {modifierClass}">
+    {?header}
+        <thead class="c-table__header">
+            {#.headerRows}
+                <tr {?.rowDescription}id="{.rowDescription}"{/rowDescription}>
+                    {#.rowData}
+                        <th>
+                            {.|s}
+                        </th>
+                    {/.rowData}
+                </tr>
+            {/.headerRows}
+        </thead>
+    {/header}
+
+    <tbody>
+        {#.tableRows}
+            <tr {?.rowDescription}aria-describedby="{.rowDescription}"{/rowDescription}>
+                {#.rowData}
+                    <td>
+                        {.|s}
+                    </td>
+                {/.rowData}
+            </tr>
+        {/.tableRows}
+    </tbody>
+</table>

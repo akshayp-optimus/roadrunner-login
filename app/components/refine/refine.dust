@@ -1,0 +1,18 @@
+{#refine}
+<div class="c-refine">
+
+    <div class="c-refine__title u-padding-top-sm u-margin-bottom-sm">
+        <strong>{title}</strong>
+    </div>
+
+    <div class="c-refine__items {.class}" data-desktopclass="{.desktopClass}">
+        {#refineOptions}
+        <label class="c-refine__item">
+            <input class="c-input u-margin-end-0 js-refine-option" type="checkbox" {?.checked}checked{/.checked} />
+            {.refineText} <span class="u-text-grey u--normal">{.refineNumber}</span>
+        </label>
+        {/refineOptions}
+    </div>
+
+</div>
+{/refine}

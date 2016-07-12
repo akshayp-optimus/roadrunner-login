@@ -1,0 +1,78 @@
+// Product Image
+// ===
+//
+// Variables
+// ---
+$product-image__padding: 8px;
+
+
+// Root
+// ---
+//
+// 1. Reset <figure> margins to defaults
+
+.c-product-image {
+    position: relative;
+
+    margin: $unit 0; // 1
+}
+
+
+// Image
+// ---
+//
+// 1. Hax to get rid of the ~3px of empty space below the <img>
+
+.c-product-image__image {
+    display: block; // 1
+    width: 100%;
+}
+
+
+// Image Caption
+// ---
+//
+// 1. Avoid overlap Magnifik button
+
+.c-product-image__caption {
+    position: absolute;
+    bottom: $unit;
+    left: 0;
+
+    margin-right: 55px; // 1
+    padding: $product-image__padding;
+
+    background: $white;
+
+    font-family: $light-font-weight;
+    font-size: $smaller-font-size;
+    text-transform: uppercase;
+}
+
+
+// Image Zoom Toggle
+// ---
+//
+// 1. By design
+// 2. Should visually match the height of the caption
+
+// .c-product-image__zoom-toggle {
+//     position: absolute;
+//     right: $product-image__padding;
+//     bottom: $unit;
+//
+//     background-color: rgba(255, 2255, 255, 0.5); // 1
+//
+//     transition: 0.1s background ease-out;
+//
+//     &:active {
+//         background-color: $white;
+//     }
+// }
+
+.c-product-image__zoom-icon {
+    width: $unit*3;
+    height: $unit*3; // 1,2
+
+    fill: $neutral-70;
+}

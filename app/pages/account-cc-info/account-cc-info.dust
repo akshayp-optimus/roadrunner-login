@@ -1,0 +1,29 @@
+{>"global/base"/}
+
+{<contentBlock}
+    {>"components/breadcrumb/breadcrumb"/}
+    <div class="t-account-cc-info-section u-padding-sides-md">
+        <h1 class="c-title u-page-title  u-no-left-padding"><small>{pageTitle}</small></h1>
+        {#creditCard}
+            <div class="u-border-grey u-no-bottom-padding c-credit-card-info u-margin-bottom-md u-padding-all u--tight">
+                <div class="u-padding-bottom-sm">{methodLabel} {method}</div>
+                <div class="u-padding-bottom-sm">{cardNumberLabel} {number}</div>
+                <div>{expLabel} {expDate}</div>
+            </div>
+            <div class="c-button-links">{links}</div>
+        {/creditCard}
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/account-cc-info/ui.js
+    (function(require) {
+        require(["global/ui", "pages/account-cc-info/account-cc-info-ui"], function(globalUI, accountCreditCardInfoUI) {
+            globalUI();
+            accountCreditCardInfoUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

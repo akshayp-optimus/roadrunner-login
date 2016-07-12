@@ -1,0 +1,81 @@
+// Typography
+// ===
+
+// Headers
+// ---
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+%headings {
+    display: block;
+    margin: 0;
+
+    color: $neutral-70;
+    font-family: $default-sans;
+    font-weight: $normal-font-weight;
+    line-height: 1;
+    text-transform: initial;
+}
+
+h1,
+%h1 {
+    font-size: $font-size-large-32;
+}
+
+h2,
+%h2 {
+    font-size: $font-size-large-28;
+}
+
+h3,
+%h3 {
+    font-size: $font-size-large-24;
+}
+
+h4,
+%h4 {
+    font-size: $largest-font-size;
+    line-height: 1.2;
+}
+
+h5,
+%h5 {
+    font-size: $large-font-size;
+    line-height: 1.25;
+}
+
+h6,
+%h6 {
+    font-size: $font-size;
+    line-height: 1.29;
+}
+
+
+// Text Elements
+// ---
+
+p {
+    margin: 0 0 $unit;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:active,
+    &:focus {
+        color: $active-link-color;
+    }
+}
+
+blockquote {
+    margin: ($unit*2) 0;
+    padding-left: $unit;
+    border-left: 2px solid $border-color;
+
+    color: lighten($font-color, 15);
+}

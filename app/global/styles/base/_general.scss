@@ -1,0 +1,72 @@
+// General
+// ===
+
+// Document
+// ---
+//
+// 1. Provide default line-height as a ratio rather than a fixed value.
+//    http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/
+// 2. Applying styles to *::before or *::after is a performance issue on some
+//    legacy Android devices (4.1.x). As such, these are disabled by default.
+
+// *::before, // 2
+// *::after, // 2
+// 3. Might be temporary, issue with pinny will add pos fixed and top, when
+//    Pinny is open and it will shift body to left.
+* {
+    box-sizing: border-box;
+
+    outline: 0;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+html {
+    right: 0; // 3
+    left: 0; // 3
+
+    color: $font-color;
+    font-family: $default-sans;
+    font-size: $font-size;
+    line-height: $line-height/$font-size; // 1
+}
+
+// Hidden
+// ---
+//
+// Hide visually and from screen readers. The html5 `hidden` attribute is
+// preferred to a `u-hidden` class because it exactly matches our intent and
+// has machine-readable semantics.
+
+[hidden] {
+    display: none !important;
+}
+
+
+// Miscellaneous Elements
+// ---
+
+hr {
+    margin: ($unit * 2) 0;
+    border: 1px solid $border-color;
+    border-width: 0 0 1px;
+}
+
+img {
+    max-width: 100%;
+    margin: 0;
+}
+
+
+// / Global error style
+// ---
+
+.gwt-csb-error-panel {
+    margin-bottom: $unit;
+
+    color: $error-color;
+}
+
+iframe {
+    width: 100%;
+}

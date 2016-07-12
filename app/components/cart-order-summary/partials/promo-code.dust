@@ -1,0 +1,20 @@
+<div id="{id}" class="{promoCodeClass}" {^showPromo}hidden{/showPromo}>
+    {form|openTag|s}
+        {hiddenInputs}
+        <div class="c-box-row">
+            <div class="c-sub-total__label">{label}</div>
+
+            {?tooltip}
+                <button class="c-button c--link c--info js-tooltip-button" data-target=".{tooltipClass}">{>"svg-icon" name="question"/}</button>
+                <div class="{tooltipClass}" hidden>{tooltip}</div>
+            {/tooltip}
+
+            {input}
+            {applyButton}
+            <div class="t-cart__applied-promo u-margin-top-sm js-applied-promo"></div>
+
+            <!--{pleaseWait}-->
+        </div>
+        {errorContainer}
+    {form|closeTag|s}
+</div>

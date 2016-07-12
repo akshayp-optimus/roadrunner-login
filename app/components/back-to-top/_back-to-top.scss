@@ -1,0 +1,58 @@
+// Back To Top Button
+// ===
+
+.c-back-to-top {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+
+    opacity: 0;
+    background: $neutral-30;
+
+    transition: 0.1s opacity ease-out;
+
+
+    // Sticky
+    // ---
+
+    &.c--sticky {
+        position: fixed;
+        right: $unit;
+        bottom: $unit*4;
+        z-index: 1;
+    }
+
+
+    // Active
+    // ---
+
+    &.c--active {
+        opacity: 0.8;
+
+        &:active {
+            opacity: 1;
+            background: $neutral-30;
+        }
+    }
+
+
+    // Scrolling
+    // ---
+    //
+    // Remove back to top button when its scrolling
+
+    &.c--scrolling {
+        opacity: 0;
+    }
+
+
+    .c-icon {
+        width: 17px;
+        height: 22px;
+
+        vertical-align: middle;
+
+        fill: $neutral-70;
+    }
+}

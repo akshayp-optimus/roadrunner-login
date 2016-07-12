@@ -1,0 +1,72 @@
+// shipping detail popup
+// ===========
+
+.shipping-details-pinny {
+    .c-sheet__title {
+        padding-bottom: $sub-unit*3;
+
+        line-height: $line-height;
+    }
+
+    .needsclick {
+        padding-top: 0;
+    }
+}
+
+
+.detailed_shipping_info {
+    p {
+        color: $neutral-70;
+        font-size: $font-size;
+        line-height: $line-height;
+    }
+
+    p:empty {
+        display: none;
+    }
+
+    table {
+        margin: 0 0 $sub-unit*3;
+        border: 1px solid $neutral-50;
+
+        background: $white;
+    }
+
+    table:nth-of-type(2) {
+        margin-bottom: $unit;
+        border: none;
+
+        td {
+            padding: 0;
+        }
+
+        h5 {
+            color: $neutral-70;
+            font-weight: bold;
+            font-size: $large-font-size;
+            line-height: $line-height;
+        }
+    }
+
+    table:nth-of-type(8) {
+        margin-top: $sub-unit*3;
+    }
+
+    tr:nth-child(even) {
+        background: $neutral-260;
+    }
+
+    td {
+        padding: $sub-unit $sub-unit*2;
+        border: none;
+
+        color: $neutral-70;
+        font-size: $font-size;
+        line-height: $line-height;
+        text-align: left;
+    }
+
+    br {
+        display: none;
+    }
+}

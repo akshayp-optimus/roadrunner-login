@@ -1,0 +1,23 @@
+{#gRCreditCardPaymentOption}
+    {grCreditCardOption|openTag|s}
+        {paymentType}
+        {grCreditCardContainer|openTag|s}
+            {gRCreditCardLabel}
+            {gRCreditCardInput}
+            {#installmentOptions}
+
+                <div class="c-payment__gr-credit">
+                    <div class="c-payment__gr-credit-heading">
+                    {heading}
+                    {#options}
+                        <div class="u-padding-bottom u--tight">
+                            {radioBtn}
+                            {label}
+                        </div>
+                    {/options}
+                    </div>
+                </div>
+            {/installmentOptions}
+        {grCreditCardContainer|closeTag|s}
+    {grCreditCardOption|closeTag|s}
+{/gRCreditCardPaymentOption}

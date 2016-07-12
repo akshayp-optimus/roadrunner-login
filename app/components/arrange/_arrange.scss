@@ -1,0 +1,105 @@
+// Arrange
+// ===
+//
+// Arrange and align a row of items with a lot of control. Provides a
+// declarative, robust cross-browser way of using flexbox.
+
+
+// Arrange root
+// ---
+//
+// 1. Remove default styles present on common root elements.
+// 2. Ensure in iOS 5 and 6 that flex-direction isn't inherited from
+//    any flexbox parents that has flex-direction set to row-reverse
+
+.c-arrange {
+    display: flex;
+    flex-direction: row; // 2
+    margin: 0; // 1
+    padding: 0; // 1
+
+    list-style: none; // 1
+}
+
+
+// Arrange modifiers: Vertical alignment
+// ---
+
+.c-arrange.c--align-top {
+    align-items: flex-start;
+}
+
+.c-arrange.c--align-middle {
+    align-items: center;
+}
+
+.c-arrange.c--align-bottom {
+    align-items: flex-end;
+}
+
+
+// Arrange modifiers: Horizontal alignment
+// ---
+
+.c-arrange.c--justify-start {
+    justify-content: flex-start;
+}
+
+.c-arrange.c--justify-end {
+    justify-content: flex-end;
+}
+
+.c-arrange.c--justify-between {
+    justify-content: space-between;
+}
+
+.c-arrange.c--justify-center {
+    justify-content: center;
+}
+
+.c-arrange.c--justify-around {
+    justify-content: space-around;
+}
+
+
+// Arrange modifier: Flex direction
+// ---
+
+.c-arrange.c--row-reverse {
+    flex-direction: row-reverse;
+}
+
+.c-arrange.c--column {
+    flex-direction: column;
+}
+
+
+// Arrange Item
+// ---
+//
+// 1. Ensure inline elements are treated as block-level.
+// 2. Prevent width collapsing in old implementations.
+// 3. See here for details: http://codepen.io/aj-foster/pen/emBYPW?editors=110
+
+.c-arrange__item {
+    display: block; // 1
+    flex: 1;
+    width: 100%; // 2
+
+    &.c--truncation-fix {
+        min-width: 0; // 3
+    }
+}
+
+
+// Arrange Item modifier: Shrink
+// ---
+//
+// Shrink Arrange items to a minimum size.
+//
+// 1. Ensure width collapses in old implementations.
+
+.c-arrange__item.c--shrink {
+    flex: initial;
+    width: auto; // 1
+}

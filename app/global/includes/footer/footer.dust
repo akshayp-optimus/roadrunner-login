@@ -1,0 +1,59 @@
+{#footer}
+    <footer class="t-footer u-padding-top u--tight" role="contentinfo">
+
+        {#footerLinksSection}
+            {>"components/bellows/bellows" bellowsHeaderClass="js-bellows-header"/}
+        {/footerLinksSection}
+
+        <div class="c-footer-email-subscription">
+
+            <div class="c-footer-email-subscription-heading">
+                {emailSubscriptionHeading}
+            </div>
+
+            {#emailSubscriptionFields}
+                {form|openTag|s}
+                    <div class="c-footer-email-subscription-fields">
+                        <span class="c-email-section">
+                            {hiddenFields}
+                            {emailFieldLabel}
+                            {emailFieldInput}
+                            <div class="c-subscription-label" hidden>
+                                {label}
+                            </div>
+                        </span>
+                    </div>
+                    {form|closeTag|s}
+            {/emailSubscriptionFields}
+
+        </div>
+
+        <div class="c-social-link">
+            {#socialLinks}
+                {>"components/social-links/social-links"/}
+            {/socialLinks}
+        </div>
+
+        <ul class="c-footer-links">
+            <li class="c-footer-copyright">{footerCopyRightText}</li>
+            <li>|</li>
+            <li class="c-footer-sitemap">{footerSiteMap}</li>
+        </ul>
+
+        <div class="c-footer-source-code u-margin-bottom-lg">
+            <span>Source Code: </span><code>{sourceCode}</code>
+        </div>
+
+        {>"components/sheet/sheet" isHeader="true" class="c-country-select__sheet js-country-select"
+            footerClass="u-padding-all-md" footerContent="<button></button>"
+            bodyClass="u-padding-all-0" coverage="100%"
+        /}
+
+        {! Needed for Country change functionality !}
+        {hiddenCountryFields}
+
+        {! This div is needed for the email sign up errors !}
+        <div id="mainContent"></div>
+
+    </footer>
+{/footer}

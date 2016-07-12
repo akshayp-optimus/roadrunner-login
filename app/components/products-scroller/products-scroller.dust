@@ -1,0 +1,6 @@
+<div class="c-products-scroller u-margin-top-md">
+    {?title}
+        <h2 class="c-title c--small u-margin-bottom-md">{title}</h2>
+    {/title}
+    {>"components/scroller/scroller"/}
+</div>

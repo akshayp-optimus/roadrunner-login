@@ -1,0 +1,6 @@
+{#toolTipData}
+    {?tooltip}
+        <button class="c-button c--link c--info js-tooltip-button" data-target=".{tooltipClass}">{>"svg-icon" name="question"/}</button>
+        <div class="{tooltipClass}" hidden>{tooltip}</div>
+    {/tooltip}
+{/toolTipData}

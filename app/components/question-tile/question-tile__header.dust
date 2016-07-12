@@ -1,0 +1,11 @@
+<div class="c-question-tile__question">
+    {question}
+</div>
+
+<div class="c-question-tile__answer-count">
+    {answerCount}
+</div>
+
+<div class="c-question-tile__date" hidden>
+    {date} {by} {author}
+</div>

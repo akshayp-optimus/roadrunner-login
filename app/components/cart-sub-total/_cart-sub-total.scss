@@ -1,0 +1,88 @@
+// Cart sub total style
+// =======
+
+.c-cart-sub-total {
+    padding: $sub-unit $unit;
+
+    background: $neutral-40;
+
+    .c-sub-total__label {
+        width: 102px;
+    }
+
+    .js-tooltip-button {
+        position: relative;
+        left: -30px;
+        &:active {
+            background: $white;
+        }
+    }
+
+    .js-gift-card-container {
+        .js-tooltip-button {
+            left: 0;
+
+            width: 30px;
+        }
+    }
+
+    button[type="button"] {
+        margin: 0;
+        border: 1px solid;
+
+        border-radius: 2px;
+        background: none;
+
+        color: $black;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+    button[type="button"],
+    button[type='submit'] {
+        width: 100px;
+    }
+
+    .c-ledger__description {
+        #ApplyEstimateShipping {
+            width: auto;
+            margin-left: $sub-unit/3 !important;
+        }
+
+        .promoColor {
+            a {
+                color: $neutral-70;
+                text-transform: lowercase;
+            }
+        }
+
+        .edit-promo-link {
+            color: #0f888b;
+        }
+    }
+
+    .c-ledger__number {
+        text-align: right;
+    }
+
+    .c-box-row {
+        position: relative;
+
+        align-items: center;
+        height: 44px;
+        padding: $sub-unit/2 $sub-unit/2 $sub-unit/2 $unit;
+        border: 1px solid $neutral-50;
+
+        border-radius: 2px;
+        background: $white;
+
+        input {
+            height: 30px;
+            padding: 0 0 0 $unit;
+        }
+    }
+
+    .js-gift-card-container + .c--total,
+    .js-promo-container + .c--total {
+        margin-top: $unit;
+    }
+}

@@ -1,0 +1,55 @@
+<div class="c-review">
+        <div class="c-review__roof u-padding-all-md">
+            <div class="c-arrange c--gutters">
+                <div class="c-review__ratings c-arrange__item">
+                    {#ratings}
+                        <div class="c-arrange">
+                            <div class="c-review__rating-title c-arrange__item c--shrink u-text-smaller u-text-weight-bold">{.ratingTitle}</div>
+
+                            {#.ratingStars}
+                                {>"components/star-rating/star-rating" modifierClasses="c-arrange__item" /}
+                            {/.ratingStars}
+                        </div>
+                    {/ratings}
+
+    {#reviewAdditional}
+        <div class="c-review__attic">
+            {#reviewTag}
+                <span class="c-review__tag c-tag c--dark-gray c--large">{.}</span>
+            {/reviewTag}
+
+            {#reviewTitle}
+                <h5 class="u-text-black">{.}</h5>
+            {/reviewTitle}
+
+            <div class="c-review-details u-margin-top-md">
+                {#reviewRating}
+                    {>"components/star-rating/star-rating"/}
+                    <span class="c-review__basement">
+                        By <span class="c-review__person">{reviewPerson}</span>,
+                        <time class="c-review__date">{reviewDate}</time>
+                    </span>
+                {/reviewRating}
+            </div>
+
+            {#reviewNoteworthy}
+                <div class="c-review__noteworthy">
+                    {@icon name="star" class="c--large"/}
+                    {.}
+                </div>
+            {/reviewNoteworthy}
+
+        </div>
+    {/reviewAdditional}
+
+    <div class="c-review__main">
+        {numberOfReviews}
+        <span class="c-review__product-heading">
+            <time class="c-review__date-bvrqa">{reviewDate}</time>
+        </span>
+        {reviewContent}
+        <div class="u-margin-top-md u-margin-bottom-md u--tight">{prosReviewContent}</div>
+        {consReviewContent}
+    </div>
+
+</div>

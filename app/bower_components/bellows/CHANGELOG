@@ -1,0 +1,33 @@
+5.1.2
+  - Ensuring disabled items don't close on close
+5.0.1
+  - Reworked test infrastructure to use more robust setup and teardown using iframes
+5.0.0
+  - Upgrading to latest version of plugin factory
+  - Adding `destroy` method
+  - Removing `event` option in favour of internalizing a namespaced event
+4.1.2
+  - Moved gremlins.js dependency to devDependencies
+4.1.1
+  - Updated version of Velocity to fix queuing issues
+4.1.0
+  - Added ability to disable bellows items
+4.0.1
+  - Updated bellows to use new mobify-velocity fork
+4.0.0
+  - Fixed breaking issue with plugin factory
+3.0.0
+  - Refactored to use new plugin factory
+2.0.3
+  - Implemented event delegation instead of direct bellows item binding
+  - Allow inclusion of navigable anchors inside header items
+  - Added linter to ensure correct code standards
+  - Added new `add` method to dynamically add/replace bellows items
+  - Refactored CSS class constants into object
+  - Added some comments for clarity
+2.0.2
+  - Velocity had a 1.0 release. This brings Bellows into line with the latest version of Velocity.
+2.0.1
+  - Fix for issue #34 - aria-hidden attributes behavior is reversed
+2.0.0
+  - Complete rewrite of Bellows. Everything is new. Everything is better.

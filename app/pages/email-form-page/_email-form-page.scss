@@ -1,0 +1,177 @@
+// Email Form Page
+//==============
+.t-email-form-wrapper {
+    padding: 0 $unit;
+
+
+    select {
+        border: 0;
+
+        background-color: transparent;
+        outline: 0;
+    }
+
+    .errortxt + textarea {
+        border: 1px solid $red-10;
+
+        background: $red-20;
+    }
+
+    .c-box-row {
+        margin-bottom: -1px;
+    }
+
+    #quest_or_comm.errortxt {
+        color: $error-color;
+    }
+
+    .c-box__label {
+        display: flex;
+        width: 88px;
+        margin-left: $unit;
+
+        &[for*=bill_mibox],
+        &[for*=ship_mibox] {
+            display: none;
+        }
+    }
+
+    label[for='bill_fnbox'],
+    label[for='ship_fnbox'] {
+        width: 88px;
+    }
+
+    .c-continue-button:after {
+        content: '>';
+    }
+
+    .u-text-error {
+        position: absolute;
+        left: 0;
+    }
+
+    .required {
+        padding: 0 3px;
+    }
+
+    .c-field.c-box.c-arrange.c--align-middle {
+        position: relative;
+    }
+
+    .c-box-row.c--error-row {
+        background: $red-20;
+    }
+
+    .c-box-row.c--error-row input {
+        background: $red-20;
+    }
+
+    .c--error-row {
+        border: 1px solid $red-10;
+    }
+
+    .c--error-row label {
+        width: 88px;
+        margin-left: $unit;
+
+        color: $error-color;
+    }
+
+
+
+    .c-box {
+        .auxLabel.c-field__label.c-box__label {
+            display: none;
+        }
+    }
+
+    .c-aux-text {
+        width: 100%;
+        margin-top: $sub-unit;
+        margin-bottom: $unit;
+        margin-left: 0;
+
+        color: $neutral-200;
+        font-size: $smaller-font-size;
+    }
+
+    #zip_code {
+        .u-text-error {
+            position: absolute;
+            left: 14px;
+        }
+    }
+
+    .spot.opt {
+        align-items: stretch;
+        margin-top: $sub-unit+3;
+        padding: $unit;
+        border: 1px solid $neutral-50;
+
+        font-weight: bold;
+
+        input {
+            margin-right: 0;
+            border: 0;
+
+            background: $white;
+        }
+    }
+
+    .countrySpot {
+        .c-select {
+            width: 100%;
+        }
+    }
+
+    #quest_or_comm {
+        margin-top: $unit;
+        margin-bottom: $sub-unit/2;
+        .required {
+            position: relative;
+        }
+    }
+
+    .firstName {
+        display: flex;
+        align-items: center;
+    }
+
+    .mInitial {
+        width: 44px;
+        margin-left: 0;
+        border-left: 1px solid $neutral-50;
+    }
+
+    .countrySpot .c-select {
+        display: block;
+        flex: 1;
+        width: 100%;
+
+        select {
+            text-transform: capitalize;
+        }
+    }
+
+
+    #recieveBrandEmail {
+        background: $white;
+    }
+
+    #email_address,
+    #phone_number {
+        .u-text-error {
+            position: absolute;
+            left: $unit+4;
+        }
+    }
+}
+
+// IOS Specific Issue for email form page
+.ios {
+    .t-email-form-wrapper {
+        #recieve_brand_email {
+            padding-left: $unit;
+        }
+    }
+}

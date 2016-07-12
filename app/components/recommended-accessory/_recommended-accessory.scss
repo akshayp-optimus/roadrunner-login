@@ -1,0 +1,13 @@
+// Recommended accessory
+// ==========
+.c-recommended-accessory-content {
+    padding: $sub-unit;
+    border: 1px solid $neutral-50;
+
+    img {
+        display: block;
+    }
+    .c-recommended-accessory-product-heading {
+        font-size: $large-font-size;
+    }
+}

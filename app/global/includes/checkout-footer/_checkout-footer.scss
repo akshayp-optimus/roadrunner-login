@@ -1,0 +1,52 @@
+//
+.c-footer-credentials {
+    text-align: center;
+    .bbb,
+    .mcafee,
+    .verisign {
+        display: inline-block;
+        width: 24%;
+        margin: 0 $sub-unit;
+
+        vertical-align: top;
+    }
+
+    .verisign {
+        position: relative;
+
+        margin-top: -$sub-unit;
+    }
+
+    img {
+        width: 64px;
+    }
+
+    .credentials {
+        margin-bottom: $sub-unit;
+    }
+}
+
+.c-footer-links {
+    span {
+        margin-right: $sub-unit/2;
+    }
+
+    .c-footer-copyright {
+        margin-left: 0;
+    }
+
+    .c-footer-separator {
+        margin-left: 0;
+    }
+}
+
+.c-footer-bellows-phone-number {
+    padding: $unit;
+    border: 1px solid $black;
+
+    border-radius: 2px;
+
+    color: $black;
+    font-weight: bold;
+    text-align: center;
+}

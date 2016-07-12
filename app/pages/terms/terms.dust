@@ -1,0 +1,23 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-terms-page">
+        {>"components/breadcrumb/breadcrumb" breadcrumbClass="u-margin-top-sm u--bold"/}
+        <h2 class="c-title u-no-top-padding u-no-left-padding u-padding-top-sm"><small>{pageTitle}</small></h2>
+        {block}
+    </div>
+    {>"components/back-to-top/back-to-top" class="c--sticky" icon="top" /}
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/terms/ui.js
+    (function(require) {
+        require(["global/ui", "pages/terms/terms-ui"], function(globalUI, termsUI) {
+            globalUI();
+            termsUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

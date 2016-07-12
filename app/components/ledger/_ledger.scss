@@ -1,0 +1,29 @@
+// Ledger
+// ===
+//
+
+.c-ledger__entry {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 0;
+
+    &.js-add-promo-code,
+    &.js-enter-zip {
+        .c-ledger__number {
+            color: $black;
+        }
+    }
+
+    &.c--total {
+        border-top: 1px solid $neutral-50;
+    }
+}
+
+.c-ledger__number {
+    font-weight: bold;
+    font-size: $large-font-size;
+}
+
+.c-ledger__description {
+    width: 77%;
+}

@@ -1,0 +1,29 @@
+// CLP Sale Page
+// ===
+
+.t-clp-sale-wrapper {
+    padding-top: $sub-unit;
+}
+
+.t-product-list__related-search {
+    list-style-type: none;
+    .c-related-searches-products {
+        margin-bottom: $unit;
+    }
+}
+
+.t-clp-sale__related-search {
+    padding: $sub-unit*3 $unit 0;
+    border-top: 1px solid $neutral-120;
+
+    list-style-type: none;
+
+
+    .c-related-searches-products {
+        margin-bottom: 0;
+
+        .c-search-suggestions__title {
+            font-size: $font-size;
+        }
+    }
+}

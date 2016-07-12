@@ -1,0 +1,22 @@
+// Question Tile
+// ===
+
+.c-question-tile__question {
+    font-weight: bold;
+    font-size: $font-size;
+}
+
+.c-question-tile__answer {
+    padding-left: $unit;
+    border-left: 4px solid $neutral-40;
+
+    &+& {
+        margin-top: $unit*2;
+    }
+}
+
+.c-question-tile__answer-count,
+.c-question-tile__date {
+    color: $neutral-50;
+    font-size: $smaller-font-size;
+}

@@ -1,0 +1,17 @@
+<table class="c-table js-order-list-container">
+    <thead class="c-table__header">
+        <tr class="c-table__body">
+            <th class="c-table__header-order-num">{@translate key="order_number" /}</th>
+            <th>{@translate key="date" /}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {#orderList}
+            <tr class="js-order-list">
+                <td>{.orderNumber}</td>
+                <td>{.orderDate}</td>
+                <td class="c-order-list__view-link"><a href="{href}">{@translate key="view" /}</a></td>
+            </tr>
+        {/orderList}
+    </tbody>
+</table>

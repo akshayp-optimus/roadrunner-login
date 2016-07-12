@@ -1,0 +1,130 @@
+// Desktop Overrides
+// ====
+
+
+// Hide the desktop content popup
+// ---
+//
+// Note: We pull the content we need from this into a pinny
+
+// scss-lint:disable SelectorFormat
+[class*='gwt-DecoratedPopupPanel'],
+[class*='granify-widget-container'], // 2
+[class*='cin-sticky'], // 3
+.gwtCountryChangerModalGlass, // 4
+.nodisplay,
+.tabs-button-panel,
+// .BVRRHeader,
+.BVDILink,
+.BVQASearchForm,
+.BVQAQuestionHeaderBullet,
+.BVQAContextDataValueContainer,
+.BVQAPhotoSectionThumbnail,
+.BVQAAnswerQuestion,
+.BVDI_FVCounts,
+.BVDI_FV,
+.BVQAAnswerLabel,
+.BVQAQuestionAnswersCount,
+.BVQAHeaderTitle,
+.BVQASubTitle,
+.BVVIVideoThumbnail,
+a.BVQAUserProfile,
+.BVRRQuickTakeContent,
+.BVRRReviewDisplayStyle5Footer,
+#gwt-international-country-changer,
+#tinymask,
+.gwt_flag_image_header,
+#gwt-personalization-modal-V2:not(.js-transformed) {
+    display: none !important;
+}
+// scss-lint:enable SelectorFormat
+
+// Global error style
+// ---
+
+[class*='gwt-csb-error-panel'] {
+    margin-bottom: $unit;
+
+    color: $error-color;
+}
+
+
+// Modals that are to be hidden such that animation listener does not break
+.gwt_addtocart_div {
+    position: absolute !important;
+    overflow: hidden !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+// Global Password Reset Style
+// --
+#passwordReset {
+    left: 0px !important;
+    top: 0px !important;
+}
+
+// Desktop Houzz social share modal
+// ---
+//
+// 1. Override desktop ID selector specificity
+
+// Modal iframe
+// ---
+
+// scss-lint:disable SelectorFormat
+#hzShim {
+    // scss-lint:enable SelectorFormat
+    display: none !important;
+}
+
+
+// Modal Overlay
+// ---
+
+// scss-lint:disable SelectorFormat
+#hzBG {
+    // scss-lint:enable SelectorFormat
+    position: fixed;
+
+    height: 100% !important; // 1
+}
+
+
+// Modal window
+// ---
+
+// scss-lint:disable SelectorFormat
+#hzPickerNew {
+    // scss-lint:enable SelectorFormat
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0 !important; // 1
+
+    display: flex;
+    flex-direction: column;
+    width: 100% !important; // 1
+    height: 100% !important; // 1
+    margin: 0 !important; // 1
+}
+
+// scss-lint:disable SelectorFormat
+#hzPickerHeader {
+    // scss-lint:enable SelectorFormat
+    flex: 0 0 auto;
+}
+
+// scss-lint:disable SelectorFormat
+#hzPickerImageContainer {
+    // scss-lint:enable SelectorFormat
+    overflow-y: auto !important; // 1
+    flex: 1 1 auto;
+    height: auto !important; // 1
+
+    -webkit-overflow-scrolling: touch;
+}

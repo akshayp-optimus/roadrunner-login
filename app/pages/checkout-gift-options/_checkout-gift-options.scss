@@ -1,0 +1,74 @@
+// Chaeckout gift optiins style
+// =====
+
+.c-checkout-gift-options {
+    $border: 1px solid $neutral-50;
+
+    padding: $sub-unit $unit;
+
+    .c-title {
+        padding: $sub-unit 0;
+
+        line-height: 20px;
+    }
+
+    .js-product-image {
+        img {
+            display: block;
+            width: 66px;
+        }
+    }
+
+    .c-gift__text {
+        border: $border;
+
+        border-radius: $border-radius;
+    }
+
+    .c-qty__wrapper {
+        display: none;
+    }
+
+    textarea {
+        height: 46px;
+
+        resize: none;
+    }
+
+    .c-arrange__item {
+        a {
+            color: $neutral-70;
+            font-size: $large-font-size;
+        }
+    }
+
+    .js-gift-wrap-personalize-option {
+        div {
+            display: inline;
+        }
+    }
+}
+
+.c-gift-wrap-choice {
+    display: flex;
+
+    border-radius: $border-radius;
+
+    .c-gift-wrap__choice {
+        display: flex;
+        align-items: center;
+        width: 50%;
+        padding: $sub-unit+3 $unit;
+        border: 1px solid $neutral-50;
+
+        &:first-child {
+            border-radius: 2px 0 0 2px;
+        }
+
+        &:last-child {
+            border-left: 0;
+
+            border-radius: 0 2px 2px 0;
+        }
+    }
+}

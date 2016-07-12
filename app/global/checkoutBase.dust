@@ -1,0 +1,10 @@
+{>"global/base"/}
+
+{<header}
+    {>"global/includes/checkout-header/checkout-header"/}
+{/header}
+
+
+{<footer}
+    {>"global/includes/checkout-footer/checkout-footer"/}
+{/footer}

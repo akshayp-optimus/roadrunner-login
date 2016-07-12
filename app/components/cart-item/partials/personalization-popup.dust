@@ -1,0 +1,19 @@
+<div class="js-personalization-content" hidden>
+    <div class="js-img"></div>
+
+    <div class="js-details"></div> 
+
+    {#personalizationRow}
+        <table class="u-visually-hidden">
+            <tbody>
+                <tr id="{id}" class="js-personalization">
+                    {#content}
+                        <td id="{id}" class="{class}">
+                            {cellContent|s}
+                        </td>
+                    {/content}
+                </tr>
+            </tbody>
+        </table>
+    {/personalizationRow}
+</div>

@@ -1,0 +1,247 @@
+// Cart
+// ===
+
+.t-cart {
+    // Promo Code
+    .js-applied-promo {
+        .c-ledger__number {
+            color: $error-color;
+        }
+    }
+    .c-title {
+        padding-top: $sub-unit*3;
+    }
+
+    .c-price__discounted {
+        font-weight: normal;
+    }
+
+    .c-products-scroller,
+    .js-carousel-container {
+        border-top: 1px solid $neutral-120;
+    }
+
+    .c-button.c--primary {
+        margin: 0 auto;
+    }
+
+    .c-field__label {
+        margin-bottom: 0;
+    }
+
+    .c-chechout-button {
+        padding: $sub-unit 0 $sub-unit*3;
+    }
+
+    .c-continue-shopping {
+        color: $black;
+    }
+
+    .c-recommended-accessory {
+        position: relative;
+        .c-arrange {
+            margin-bottom: $sub-unit/2;
+        }
+
+        .c-expand-svg {
+            position: absolute;
+            top: 43%;
+            right: 8px;
+            bottom: 0;
+            z-index: 1;
+
+            width: 38px;
+            height: 38px;
+            padding: 11px;
+
+            border-radius: 38px;
+            background: $brand-color;
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.20);
+
+            color: $white;
+            &:active {
+                background: $neutral-230;
+            }
+        }
+    }
+
+    .js-tooltip-button {
+        min-height: 30px;
+        padding: $sub-unit/2;
+
+        .c-icon {
+            position: relative;
+            top: -1px;
+
+            width: 12px;
+            height: 12px;
+
+            vertical-align: middle;
+
+            fill: $neutral-70;
+        }
+    }
+
+    .c-cart-checkbox {
+        input {
+            margin: 0;
+        }
+    }
+
+    .c-cart-detail {
+        margin: 0 $unit 0 !important;
+        padding: $unit 0 !important;
+    }
+
+    //TODO: To be move in stepper component
+    .t-cart__stepper {
+        justify-content: space-between;
+
+        .c-qty {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            align-self: stretch;
+
+            color: $neutral-200;
+            font-weight: bold;
+            font-size: $smaller-font-size;
+
+            select {
+                position: absolute;
+                top: 0;
+
+                height: auto;
+                padding: 0;
+
+                opacity: 0;
+            }
+        }
+
+        .js-stepper-count {
+            font-size: $smaller-font-size;
+        }
+
+        .c-icon-svg {
+            position: relative;
+            top: 2px;
+
+            fill: $neutral-70;
+        }
+
+        .c--disabled {
+            opacity: .2;
+        }
+
+        .c-stepper__action-decrease {
+            margin-left: 0;
+        }
+
+        .c-stepper__count.js-val {
+            display: none;
+        }
+    }
+    [id="checkout-with-paypal-button"] {
+        display: none;
+    }
+    .c-slideshow__slide {
+        width: 132px;
+        margin-top: 0;
+        margin-right: $sub-unit/2;
+
+        + .c-slideshow__slide {
+            margin-left: $sub-unit;
+        }
+    }
+
+    .c-slideshow__slide:last-child {
+        margin-right: $unit;
+    }
+
+    .c-product-tile__title,
+    .c-price,
+    .c-price__original {
+        font-size: $font-size;
+    }
+
+    .c-suggested-products-title {
+        font-size: $largest-font-size;
+    }
+
+    .c-slideshow {
+        .c-product-tile__title {
+            padding-left: 0;
+
+            line-height: 20px;
+            text-align: left;
+        }
+        li:nth-child(n+4) {
+            display: none;
+        }
+    }
+
+    .c-cart-sub-total .c-input-field-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        float: right;
+
+        width: 70px;
+        height: 39px;
+        min-height: 39px;
+        margin-top: $sub-unit/2;
+        margin-right: $sub-unit/2;
+        padding-top: $sub-unit+2;
+        border: 1px solid $black;
+
+        border-radius: 2px;
+
+        color: $black;
+        font-family: $default-sans;
+        font-weight: bold;
+
+        &:active {
+            background: $neutral-230;
+
+            color: $white;
+        }
+    }
+
+    .js-promo-container,
+    .js-shipping-container {
+        .c-box-row {
+            min-height: 46px;
+        }
+    }
+
+    div[id='checkout-with-paypal-button'] {
+        display: none;
+    }
+
+    .error,
+    #gwt-error-placement-div {
+        padding: 0 $unit;
+    }
+
+    .avail_hdr {
+        display: none;
+    }
+}
+
+// Empty Cart
+.c-empty-cart {
+    .c-icon-label {
+        display: inline-block;
+        min-width: 54px;
+        min-height: 54px;
+        padding: $sub-unit;
+
+        font-size: $smallest-font-size;
+        text-align: center;
+    }
+
+    .c-icon-label__label {
+        display: block;
+    }
+}

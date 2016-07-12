@@ -1,0 +1,73 @@
+// Edit address pinny
+// ===
+.c-edit-address-pinny {
+    .c-sheet__title {
+        padding-bottom: $sub-unit;
+    }
+
+    .c-textbox-placeholder {
+        border-left: 1px solid $neutral-50;
+    }
+
+    .c-box-row .c-box:first-child {
+        width: 70%;
+
+        & label {
+            width: 88px;
+            margin-right: 12px;
+        }
+
+        & + .c-box {
+            flex: 0;
+
+            label {
+                display: none;
+            }
+
+            input {
+                flex: 0;
+                width: 42px;
+                padding: $unit $sub-unit;
+
+                text-align: center;
+            }
+        }
+    }
+
+
+    .c-box__label {
+        padding-left: $unit;
+
+        text-transform: lowercase;
+
+        .c-box > & {
+            width: 32%;
+        }
+
+        &:first-letter {
+            text-transform: uppercase;
+        }
+
+        .u-text-error {
+            position: absolute;
+
+            margin: 2px 0 0 -8px;
+        }
+
+        & ~ input {
+            background: $white;
+
+            color: $black;
+        }
+
+        & ~ input::-webkit-input-placeholder {
+            color: $neutral-50;
+            font-size: $font-size;
+            line-height: $line-height;
+        }
+    }
+
+    select ~ svg {
+        display: none;
+    }
+}

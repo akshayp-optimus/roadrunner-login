@@ -1,0 +1,45 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-clp-wrapper">
+
+        <h2 class="c-title">{heading}</h2>
+
+        {responsiveContent}
+
+        {#heroImage}
+            {>"components/category-hero/category-hero"/}
+        {/heroImage}
+
+
+        {#categories}
+            <h4 class="u-margin-start-md u-padding-top-bottom-lg u-text-capitalize">{title}</h4>
+            {>"components/secondary-hero-card/secondary-hero-card" /}
+
+            {#allBedding}
+                {>"components/button-tile/button-tile" class="u-text-align-center" /}
+            {/allBedding}
+        {/categories}
+
+        {#moreCategories}
+            <h4 class="u-margin-start-md u-padding-top-bottom-lg u-text-capitalize u-margin-top-negative-extra-lg">{title}</h4>
+            {>"components/secondary-hero-card/secondary-hero-card" /}
+        {/moreCategories}
+
+        {! You May Also Like Products are displayed in carousel components !}
+        {! Refer global/ui/carousel-ui.js !}
+        {>"components/carousel/carousel" /}
+        <div hidden>{mayAlsoLike}</div>
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    (function(require) {
+        require(["global/ui", "pages/clp/clp-ui"], function(globalUI, clpUI) {
+            globalUI();
+            clpUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

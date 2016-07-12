@@ -1,0 +1,311 @@
+// Sheet
+// ===
+
+$header__tap-size: 46px;
+
+
+// The root
+// ---
+//
+
+.c-sheet {
+    @extend %c-sheet;
+}
+
+
+// Sheet: header
+// ---
+//
+
+.c-sheet__header {
+    @extend %c-sheet__header;
+}
+
+
+// Sheet: title
+// ---
+//
+
+.c-sheet__title {
+    @extend %c-sheet__title;
+}
+
+
+// Sheet: header close
+// ---
+//
+
+.c-sheet__header-close {
+    @extend %c-sheet__header-close;
+}
+
+
+// Body
+// ---
+//
+
+.c-sheet__body {
+    @extend %c-sheet__body;
+}
+
+
+// Footer
+// ---
+
+.c-sheet__footer {
+    @extend %c-sheet__footer;
+}
+
+
+// Modifier: Dialog
+// ---
+//
+// 1. We want the content to dictate the background coverage, not the pinny section.
+// 2. We want the empty area under the dialog content to be clickable to dismiss the pinny.
+// 3. We need to re-attach the pointer-events to pinny wrapper so we can interact with its contents.
+// 4. Vertically center the dialog to the screen
+// 5. Remove default box shadow from piny section.
+
+.c-sheet.c--dialog {
+    right: $unit !important;
+    left: $unit !important;
+
+    background: none; // 1
+    box-shadow: none; // 5
+
+    pointer-events: none; // 2
+
+    .pinny__wrapper {
+        position: absolute; // 4
+        top: 50%; // 4
+
+        width: 100%;
+        height: auto; // 1
+        max-height: 100%; // 1
+
+        background: $white; // 1
+
+        transform: translateY(-50%); // 4
+
+        pointer-events: auto; // 3
+    }
+
+
+    // Sheet Dialog Content Container
+    // ---
+
+    .pinny__content {
+        flex: 0 1 auto;
+    }
+}
+
+
+// Extends
+// ---
+//
+// Will need to use extend so we can apply to pinny that we cannot add classes
+//
+
+
+// Sheet
+// ---
+//
+// 1. Ensure that the sheet appears above everything!
+// 2. Remove transform
+%c-sheet {
+    position: relative; // 1
+    z-index: $z4-depth; // 1
+
+    background-color: $white;
+    box-shadow: 0 -1px 4px 0 rgba(0, 0, 0, 0.25);
+
+    &.c--remove-transform {
+        transform: inherit !important; // 2
+    }
+
+    &.c--dark {
+        background-color: $neutral-80;
+
+        .pinny__title {
+            color: $white;
+        }
+
+        .pinny__close {
+            &:active {
+                background-color: $neutral-240;
+            }
+
+            .c-icon {
+                fill: $black;
+            }
+        }
+    }
+
+    &.c--white-transparent {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    &.c--no-padding {
+        .pinny__content {
+            padding: 0;
+        }
+    }
+
+    &.c--link-list {
+        .pinny__content {
+            padding: $sub-unit $unit*1.5;
+        }
+    }
+}
+
+// Sheet header
+// ---
+//
+// 1. Position cancel button
+
+%c-sheet__header {
+    position: relative; // 1
+
+    border-bottom: $border;
+
+    .c--dark & {
+        border-color: $neutral-240;
+    }
+}
+
+
+// Sheet title
+// ---
+
+%c-sheet__title {
+    display: block;
+    min-height: $header__tap-size;
+    padding: $unit;
+
+    color: $black;
+    font-weight: 600;
+    font-size: $font-size;
+    line-height: $line-height + 2;
+    text-transform: uppercase;
+}
+
+
+// Sheet close
+// ---
+//
+// 1. less width to match design
+// 2. position in header
+
+%c-sheet__header-close {
+    position: absolute; // 2
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    min-width: 36px; // 1
+    min-height: $header__tap-size;
+    padding: 0;
+    border: 0;
+
+    border-radius: 0;
+    background: transparent;
+
+    color: $black;
+
+    &:active {
+        background-color: $neutral-210;
+    }
+
+    .c-icon {
+        width: 18px;
+        height: 18px;
+        padding: 4px;
+
+        border-radius: 2px;
+        background: $neutral-200;
+
+        fill: $neutral-30;
+    }
+}
+
+
+// Sheet body
+// ---
+// 1. Used to absolute position the iframe inside Pinny
+// 2. Force iframe to be the height of pinny content
+
+%c-sheet__body {
+    padding: $unit;
+
+    &.c--bleed {
+        padding: 0;
+    }
+
+    &.c--iframe {
+        position: relative; // 1
+
+        iframe {
+            position: absolute; // 2
+            top: 0;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+            padding: $unit $unit 0;
+        }
+    }
+}
+
+
+// Sheet footer
+// ---
+
+%c-sheet__footer {
+    border-top: 0;
+}
+
+// Override theme css
+
+.pinny__close {
+    text-indent: 0;
+}
+
+.pinny__close::before,
+.pinny__close::after {
+    content: initial;
+}
+
+// Sheet Content Pop up
+//
+
+.c-content-pop-up {
+    .c-sheet__header {
+        border-bottom: 0;
+
+        box-shadow: none;
+    }
+
+    .pinny__content {
+        padding-top: $unit;
+        padding-bottom: $unit*2;
+    }
+
+    .c-sheet__title {
+        min-height: inherit;
+
+        box-shadow: none;
+    }
+
+    .c-content-popup-content {
+        margin-top: $sub-unit;
+    }
+}
+
+// For blank title
+.c-sheet__blank-header {
+    .c-sheet__title {
+        min-height: 18px;
+        padding: 0;
+    }
+}

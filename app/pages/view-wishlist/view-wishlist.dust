@@ -1,0 +1,95 @@
+{>"global/base"/}
+
+{<contentBlock}
+    {#breadcrumb}
+        {>"components/breadcrumb/breadcrumb"/}
+    {/breadcrumb}
+    <div class="u-padding-sides-md">
+        <h1 class="c-title c--upright"><small>{pageTitle}</small></h1>
+
+        {#chooseWislistForm}
+            <div class="c-wishlist-form">
+                <div class="c-create-wishlist">
+                    {label}
+                    {createWishlist}
+                </div>
+                {form|openTag|s}
+                    {hiddenInputs}
+                    {dropdown}
+                {form|closeTag|s}
+            </div>
+        {/chooseWislistForm}
+
+        {#wishlistItemsForm}
+            {form|openTag|s}
+                {hiddenInputs}
+                {label}
+                <div class="c-wrap-item">
+                    <span>{itemsInWishlist} Items</span>
+                    {sortBy}
+                </div>
+
+            {form|closeTag|s}
+        {/wishlistItemsForm}
+        {?isEmpty}
+            <div class="u-text-align-center">
+
+                {#emptyListMessage}
+                    {>"svg-icon" name="wishlist" class="c-empty-wishlist-icon"/}
+                    <div class="u-margin-top-sm u-text-light-grey c-empty-wishlist-msg u-text-medium">{infoText}</div>
+                {/emptyListMessage}
+
+                <div class="u-padding-bottom">
+                    <div class="u-margin-bottom-md">
+                        {addProductsButton|openTag|s}
+                            {>"components/icon/icon" name="expand" /}
+                        {addProductsButton|closeTag|s}
+                    </div>
+
+                </div>
+            </div>
+        {:else}
+            {#wishlistProducts}
+                {hiddenInputs}
+                {#products}
+                    {>"components/cart-item/cart-item" wishListClass="t-view-wishlist__buttons" /}
+                {/products}
+            {/wishlistProducts}
+
+            {addItemsToCart}
+
+        {/isEmpty}
+        {#socialButtons}
+            {>"components/bellows/bellows" bellowsHeaderClass="js-bellows-header" /}
+        {/socialButtons}
+
+        {deleteButton}
+
+        <div hidden>
+            {hiddenLabels}
+        </div>
+    </div>
+
+    {>"components/sheet/sheet" effect="modalCenter"  cssClass="c--dialog" class="js-delete-pinny" isHeader="true"/}
+
+    {>"components/sheet/sheet" effect="sheetBottom"  duration="400" bodyClass="u-padding-none" coverage="100%" class="t-view-wishlist__details js-details-pinny" isHeader="true" /}
+
+    {>"components/sheet/sheet" effect="sheetTop" coverage="100%" cssClass="t-view-wishlist__zoom" class="js-zoom-pinny"/}
+
+    {>"components/sheet/sheet" effect="modalCenter" cssClass="t-cart-tooltip-pinny c--no-header-text c--dialog" class="js-tooltip-pinny" bodyClass="js-tooltip-content"/}
+
+    {>"components/sheet/sheet" effect="modalCenter"  cssClass="c--dialog" class="js-wishlist-pinny" bodyClass="js-wishlist-pinny__body" isHeader="true" /}
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/view-wishlist/ui.js
+    (function(require) {
+        require(["global/ui", "pages/view-wishlist/view-wishlist-ui"], function(globalUI, viewWishlistUI) {
+            globalUI();
+            viewWishlistUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

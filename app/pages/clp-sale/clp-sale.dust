@@ -1,0 +1,47 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-clp-sale-wrapper">
+
+        <h2 class="c-title">{pageHeading}</h2>
+
+        {responsiveContent}
+
+        {#saleBanner}
+            {>"components/category-hero/category-hero" class="u-margin-top-sm u-margin-bottom-md"/}
+        {/saleBanner}
+
+        {#saleCategories}
+            {>"components/secondary-hero-card/secondary-hero-card" /}
+        {/saleCategories}
+
+        {! You May Also Like Products are displayed in carousel components !}
+        {! Refer global/ui/carousel-ui.js !}
+        <div class="js-carousel-container u--hide">
+            {>"components/carousel/carousel" /}
+        </div>
+        <div hidden>{mayAlsoLike}</div>
+
+        <div hidden class="js-related-products">
+            {#relatedProducts}
+                {>"components/carousel/partials/carousel__products" /}
+            {/relatedProducts}
+        </div>
+
+        <div class="t-clp-sale__related-search">
+            {>"components/search-suggestions/search-suggestions" /}
+        </div>
+
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    (function(require) {
+        require(["global/ui", "pages/clp-sale/clp-sale-ui"], function(globalUI, clpSaleUI) {
+            globalUI();
+            clpSaleUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

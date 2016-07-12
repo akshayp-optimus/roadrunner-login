@@ -1,0 +1,10 @@
+<div class="c-shipping-restriction c-callout" hidden>
+    {#shippingRestriction}
+        {messageContainer|openTag|s}
+            {>"svg-icon" name="error" class="c--large c--error" /}
+            {@translate key="shipping_restriction_message"/}
+            <span class="js-tooltip-button c-tooltip-button">{@translate key="learn_more"/}</span>
+            {tooltipDOM}
+        {messageContainer|closeTag|s}
+    {/shippingRestriction}
+</div>

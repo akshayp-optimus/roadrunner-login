@@ -1,0 +1,41 @@
+<ul class="c-pagination {class}">
+    {#pagination}
+        {#prev}
+            <li class="c-pagination__item c-pagination-prev-next {?isDisabled}u--disabled{/isDisabled}">
+                <a {?href}href="{href}"{/href} class="c-pagination__link js-pagination-link">
+                    {@translate key="prev"/}
+                </a>
+            </li>
+        {/prev}
+
+        {#pageOf}
+            <span class="c-pagination__count">
+                {currentPage}
+                {@translate key="of"/}
+                {totalPage}
+            </span>
+        {/pageOf}
+
+        {#pageNumbers}
+            <li class="c-pagination__item">
+                {?pageHref}
+                    <a href="{pageHref}" class="c-pagination__link">
+                        {pageNumber}
+                    </a>
+                {:else}
+                    <div class="{?isCurrent}c--current{/isCurrent}">{pageNumber}</div>
+                {/pageHref}
+
+            </li>
+        {/pageNumbers}
+
+        {#next}
+            <li class="c-pagination__item c-pagination-prev-next {?isDisabled}u--disabled{/isDisabled}">
+                <a {?href}href="{href}"{/href} class="c-pagination__link js-pagination-link">
+                    {@translate key="next"/}
+                </a>
+            </li>
+        {/next}
+
+    {/pagination}
+</ul>

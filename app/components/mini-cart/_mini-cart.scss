@@ -1,0 +1,136 @@
+// Mini Cart Items
+// ===
+//
+// Global drawer comes in from right
+
+.c-mini-cart-item {
+    display: flex;
+    margin: $sub-unit $sub-unit $unit;
+}
+
+.c-checkout-button.c-button.c--primary {
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+
+    border-radius: 0;
+}
+// Mini Cart Item Option
+// ---
+.c-mini-cart-item__name {
+    color: $neutral-70;
+    font-size: $large-font-size;
+}
+
+
+// Mini Cart Item Quantity
+// ---
+.c-mini-cart-item__quantity {
+    display: inline;
+
+    color: $neutral-200;
+    font-family: $default-sans;
+    font-size: $smaller-font-size;
+}
+
+.c-mini-cart-item-properties {
+    flex: 1;
+}
+// Mini Cart Item Option
+// ---
+
+.c-mini-cart-item__option {
+    display: inline;
+
+    color: $neutral-200;
+    font-size: $smaller-font-size;
+
+
+    &::after {
+        content: '|';
+
+        padding-left: $unit/3;
+    }
+}
+
+.c-mini-cart-item__image {
+    flex: 0  0 auto;
+    width: 66px;
+    height: 66px;
+    margin-right: $unit;
+
+    img:nth-child(n+2) {
+        display: none;
+    }
+}
+
+.c-icon-label {
+    margin-top: $sub-unit*3;
+
+    text-align: center;
+
+    .c-icon {
+        width: 84px;
+        height: 84px;
+        margin-top: $unit;
+
+        color: $neutral-50;
+    }
+}
+
+.c-icon-label__label {
+    color: $neutral-50;
+    font-size: $font-size-large-24;
+
+    span {
+        font-family: $default-sans;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+}
+
+.c-empty-cart-title {
+    font-family: $default-sans;
+}
+
+.c-empty-cart-text {
+    padding: 0 $unit*3;
+
+    color: $neutral-50;
+    font-family: $default-sans;
+    font-size: $font-size;
+    text-align: center;
+}
+
+.c-sheet__title {
+    padding: $unit $unit*3 $unit $unit;
+
+    color: $black;
+    font-family: $default-sans;
+    font-weight: bold;
+    font-size: $large-font-size;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.c-sheet__header {
+    border-bottom: 0;
+}
+
+.pinny__header {
+    border-bottom: 0;
+}
+
+.js-checkout-mini-cart {
+    .js-mini-cart-checkout-button {
+        display: block;
+        margin: $unit 0;
+
+        font-weight: bold;
+        font-size: $large-font-size;
+        text-align: center;
+        &:active {
+            color: $black;
+        }
+    }
+}

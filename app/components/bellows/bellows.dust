@@ -1,0 +1,9 @@
+<div class="c-bellows bellows {class}" {?id}id="{.}"{/id} {?role}role="{.}"{/role} data-adaptivejs-component="bellows">
+    {?.body}
+        {.body}
+    {:else}
+        {#items}
+            {>"components/bellows/bellows-item"/}
+        {/items}
+    {/.body}
+</div>

@@ -1,0 +1,27 @@
+// Products scroller
+// ===
+//
+// Add class to we may suggest or recently viewed blocks, this will apply
+// change to image width, font text and alignment.
+
+.c-products-scroller {
+
+    .c-slideshow__slide {
+        width: 144px;
+
+        + .c-slideshow__slide {
+            margin-left: $sub-unit;
+        }
+    }
+
+    .c-product-tile__title,
+    .c-price,
+    .c-price__original {
+        font-size: $font-size;
+    }
+
+    .c-scroller,
+    .c-product-tile__description {
+        text-align: center;
+    }
+}

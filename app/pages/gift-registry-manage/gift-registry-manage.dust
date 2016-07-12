@@ -1,0 +1,103 @@
+{>"global/base"/}
+
+{<contentBlock}
+
+    <div class="t-gift-registry-manage-page {^isManageRegistryPage}t-view-registry{/isManageRegistryPage}">
+        {?registryNotFoundError}
+            {registryNotFoundError}
+        {:else}
+            <div class="u-padding-sides-md">
+                <h1 class="c-title u-margin-top-sm u-padding-bottom-md"><small>{pageTitle}</small></h1>
+                {#chooseRegistry}
+                    <div class="c-service-selection">
+                        <div class="js-service-select">
+                            <div class="c-field">
+                                {label}
+                                {>"components/select/select"/}
+                            </div>
+                        </div>
+                    </div>
+                {/chooseRegistry}
+
+                {?selectedRegistry}
+                    <h4 class="c-title u-margin-top-sm u-no-bottom-padding">{selectedRegistry}</h4>
+                {/selectedRegistry}
+
+                {^isManageRegistryPage}
+                    <div class="u-text-align-center u-text-orange u--bold c-time-remaining">
+                        {#countdown}
+                            {label}
+                            {value}
+                        {/countdown}
+                    </div>
+                {/isManageRegistryPage}
+
+                <div class="c-tabs">
+                    <div class="c-tabs__body" aria-controls="c-tab-controls">
+                        <section  class="c-tabs__content c--current" role="tabpanel" aria-labelledby="tab-1">
+                             {>"global/partials/gift-registry/manage-registry"/}
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            {?addItemsStatement}{addItemsStatement}{/addItemsStatement}
+            {?addItemsButton}{addItemsButton}{/addItemsButton}
+
+            {#socialButtons}
+                {>"components/bellows/bellows" class="js-bellows-header"/}
+            {/socialButtons}
+
+            <div class="">
+                {>"global/partials/gift-registry/gift-card-purchase"/}
+            </div>
+
+            <div class="c-arrange c-view-delete-link">
+                {#viewAsGuest}
+                    {?text}
+
+                        <div class="c-arrange__item u--bold u-text-black u-text-align-center">
+                                <a class="u--bold u-text-black" href="{href}"><span>{text}</span></a>
+                        </div>
+                    {/text}
+                {/viewAsGuest}
+
+                {?deleteRegistryLink}<div class="c-arrange__item u--bold u-text-black u-text-align-center">{deleteRegistryLink}</div>{/deleteRegistryLink}
+                {?manageRegistryLink}<div class="c-arrange__item u--bold u-text-black u-text-align-center">{manageRegistryLink}</div>{/manageRegistryLink}
+            </div>
+
+        {/registryNotFoundError}
+
+        <div hidden>
+            {noDisplayElement}
+            {noDisplayElementForConfirmation}
+            {toolTipData}
+        </div>
+        <div hidden class="js-gift-card-data"></div>
+        {>"components/need-help/need-help"/}
+    </div>
+    {>"components/sheet/sheet" effect="modalCenter" class="js-confirmation-pinny" cssClass="c--dialog c-confirmation-pinny" bodyClass="js-confirmation-pinny__body" isHeader="true" /}
+    {>"components/sheet/sheet" effect="sheetBottom" class="js-edit-reg-pinny" cssClass="c--dialog c-edit-reg-pinny" bodyClass="js-edit-reg-pinny__body" isHeader="true" /}
+    {>"components/sheet/sheet" effect="sheetBottom" class="js-edit-registrant-pinny" cssClass="c--dialog c-edit-registrant-pinny" bodyClass="js-edit-registrant-pinny__body" isHeader="true" /}
+    {>"components/sheet/sheet" effect="modalCenter" class="js-edit-selected-address-pinny" cssClass="c--dialog c-edit-selected-address-pinny" bodyClass="js-edit-selected-address-pinny__body" isHeader="true" /}
+    {>"components/sheet/sheet" effect="modalCenter" class="js-edit-co-reg-pinny" cssClass="c--dialog c-edit-co-reg-pinny" bodyClass="js-edit-co-reg-pinny__body" isHeader="true" /}
+    {>"components/sheet/sheet" effect="modalCenter" class="js-delete-registry-confirmation-pinny" cssClass="c--dialog c-delete-registry-confirmation-pinny" bodyClass="js-delete-registry-confirmation-pinny__body" isHeader="true" /}
+    {>"components/sheet/sheet" effect="modalCenter" class="js-tool-tip-pinny" cssClass="c--dialog c-tool-tip-pinny" bodyClass="js-tool-tip-pinny__body" isHeader="true" /}
+    {>"components/sheet/sheet" effect="sheetBottom" cssClass="t-personalization-pinny" class="js-personalization-pinny" bodyContent=personalizationContainer coverage="100%" isHeader="true" /}
+    {>"components/sheet/sheet" effect="sheetBottom" class="js-more-information-pinny" bodyContent=moreInformationContainer  isHeader="true"/}
+    {>"components/sheet/sheet" effect="sheetBottom"  duration="400" bodyClass="u-padding-none" coverage="100%" class="t-view-wishlist__details js-details-pinny" isHeader="true" /}
+
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/gift-registry-manage/ui.js
+    (function(require) {
+        require(["global/ui", "pages/gift-registry-manage/gift-registry-manage-ui"], function(globalUI, giftRegistryManageUI) {
+            globalUI();
+            giftRegistryManageUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

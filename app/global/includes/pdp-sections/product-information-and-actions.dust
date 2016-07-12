@@ -1,0 +1,79 @@
+{#breadcrumbs}
+    {>"components/breadcrumb/breadcrumb" /}
+{/breadcrumbs}
+
+{#productInfo}
+    <div class="c-product-info">
+
+        {?.title}
+            <h3 class="c-title">{.title|s}
+                {?skuId}
+                    <span class="c-product-part-number u--normal">{skuId}</span>
+                {/skuId}
+            </h3>
+        {/.title}
+
+        <div class="c-pdp-price-star-description u-margin-start-md c-pdp-price">
+            <div class="c-arrange">
+                <div class="c-arrange__item">
+                    <div class="js-pdp-price u-margin-bottom-sm"></div>
+                </div>
+
+                {!TODO: Check if this is required in another scenario!}
+                {?shortDesciption}
+                    <div class="c-arrange__item c--shrink">
+                        <div class="c-price-short-description">{shortDesciption}</div>
+                    </div>
+                {/shortDesciption}
+            </div>
+
+            <div class="c--center c-star-ratings-container u-margin-start-ng-md">
+                <div class="c-star-ratings  c--center js-overview-rating">
+                </div>
+                <span class="c-star-ratings__reviews js-total-reviews js-star-ratings__reviews">
+                </span>
+            </div>
+        </div>
+
+        <div class="c-arrange c--align-middle c--justify-center c-tag-text-heading">
+            <div class="c-tag c--blue-outline c--small js-tag c-tag-text" hidden>
+                {! Tag component placeholder!}
+            </div>
+        </div>
+    </div>
+
+{/productInfo}
+
+<div class="u-margin-bottom-md js-product-hero-carousel c-main-image">
+    {?productImage}
+        {#productImage}
+            <div class="c-product-image-wrapper">
+                {>"components/hide-reveal/hide-reveal" revealIconName="chevron-large-down"/}
+            </div>
+        {/productImage}
+    {:else}
+        {! Placeholder for product image, parsed in ui.js !}
+        {>"components/loading/loading"/}
+    {/productImage}
+</div>
+
+{#detailsContent}
+    {>"components/hide-reveal/hide-reveal" revealIconName="expand" hideIconName="collapse"  /}
+{/detailsContent}
+
+<div class="js-international-shipping-msg c-international-shipping-msg" hidden></div>
+
+<div class="js-product-options-container"></div>
+
+<div class="js-shipping-text u-text-align-center u-padding-all u--tight u--less" hidden></div>
+
+<div class="u-margin-top-md u-padding-sides-md u-padding-bottom-lg js-cta-container">
+    <div class="js-cta c-cta">
+        <div class="c-add-to-cart-wrapper">
+            <button class="c-button c--primary u-margin-bottom-sm c-lg-width-button js-add-to-cart c-add-to-cart-button needsclick c--is-disabled">
+                {atcBtnText}
+            </button>
+        </div>
+        <button class="c-button c--outline u-margin-top-md c--full-width js-add-to-wishlist c-add-to-wishlist needsclick">{@translate key="wishlist_button" /}</button>
+    </div>
+</div>

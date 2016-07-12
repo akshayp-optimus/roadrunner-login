@@ -1,0 +1,67 @@
+{>"global/checkoutBase"/}
+
+{<contentBlock}
+
+    <div class="t-confirmation-details-wrapper u-margin-bottom-mg u-padding u--tight">
+        <h2 class="c-title">{@translate key="order_details_title"/}</h2>
+
+        {?orderInfo}
+            <div class="c-order-summary">
+                {#orderInfo}
+                    <div class="c-order-summary__entry">
+                        <div class="c-order-summary__description">
+                            {label}
+                        </div>
+
+                        <div class="c-order-summary__number">
+                            {value}
+                        </div>
+                    </div>
+                {/orderInfo}
+            </div>
+        {/orderInfo}
+
+        {#billingAddress}
+            <div class="t-confirmation-details__billing-address">
+                <div class="u-margin-bottom-sm">{sectionTitle}</div>
+                {>"components/address-button/address-button"/}
+            </div>
+        {/billingAddress}
+
+        {#paymentDetails}
+            <div class="t-confirmation-details__payment">
+                <div>{sectionTitle}</div>
+                {#cards}
+                    <span class="t-card__confirmation {?isPLCCType}c--plcc{/isPLCCType}">{cardName}</span>
+                    <span>{cardInfo}</span>
+                {/cards}
+            </div>
+        {/paymentDetails}
+
+        {#orderItems}
+            {>"pages/confirmation-details/partials/items-shipping"/}
+        {/orderItems}
+
+        {#totals}
+            {>"components/ledger/ledger"/}
+        {/totals}
+
+        {! Removed you may also like section GRRD-693 !}
+    </div>
+
+    {>"components/sheet/sheet" effect="modalCenter" isHeader="true" cssClass="c--dialog c--no-header-text" class="js-tooltip-pinny" bodyClass="t-cart-tooltip-pinny js-tooltip-content"/}
+
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/confirmation-details/ui.js
+    (function(require) {
+        require(["global/ui", "pages/confirmation-details/confirmation-details-ui"], function(globalUI, confirmationDetailsUI) {
+            globalUI();
+            confirmationDetailsUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

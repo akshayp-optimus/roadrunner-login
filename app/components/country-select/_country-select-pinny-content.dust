@@ -1,0 +1,40 @@
+<div class="c-tabs c-country-select">
+<div class="c-country-selections-tabs">
+    <ul id="c-tab-controls" class="c-tabs__controls c--fade" role="tablist">
+        <li class="c-tabs__controls-item" role="presentation">
+            <button class="c-tabs__button" role="tab" type="button">
+                <div class="c-tabs__title">{@translate key="ship_to_label"/}</div>
+
+                <div class="c-tabs__subtitle js-shipping-subtitle">{shipLocation}</div>
+            </button>
+        </li>
+
+        <li class="c-tabs__controls-item" role="presentation">
+            <button class="c-tabs__button" role="tab" type="button">
+                <div class="c-tabs__title">{@translate key="currency_label"/}</div>
+
+                <div class="c-tabs__subtitle js-currency-subtitle">{selectedCurrency}</div>
+            </button>
+        </li>
+    </ul>
+
+</div>
+
+    <div class="c-tabs__body" aria-controls="c-tab-controls">
+        <section class="c-tabs__content c-country-select__list js-shipping-location tozee js-tozee" role="tabpanel">
+            <div class="tozee__list js-country-links"></div>
+        </section>
+
+        <section class="c-tabs__content c-country-select__currency u-padding-all-md js-currency" role="tabpanel">
+            <div class="c-field-row u-margin-bottom-lg">
+                <div class="c-field">
+                    <label for="currencyListBox">{currencySelectLabel}</label>
+
+                    {>"components/select/select" class="js-currency-select" select=""/}
+                </div>
+            </div>
+
+            <div class="js-fine-print"></div>
+        </section>
+    </div>
+</div>

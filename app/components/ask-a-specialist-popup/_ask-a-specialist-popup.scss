@@ -1,0 +1,141 @@
+
+//Ask a Specialist popup
+//---
+
+.c-ask-a-specialist-pinny {
+    .c-cancel-button {
+        position: absolute;
+        top: $unit*4;
+
+        display: block;
+        width: 100%;
+        padding: 0;
+        border: 0;
+
+        background: 0;
+        outline: 0;
+
+        color: $black;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .c-feedback-comments {
+        background: none !important;
+    }
+
+    .c-require-field-label-text {
+        display: none;
+    }
+
+    .c-td-field {
+        padding: 0;
+        border: 0;
+    }
+
+    .c-feedback-listbox {
+        padding-right: $sub-unit*7;
+        border: 0;
+    }
+
+    .c-box-row {
+        margin-bottom: -1px;
+    }
+
+    .c-feedback-label {
+        display: none;
+    }
+
+    .c-feedback-middle-textbox {
+        position: absolute;
+        right: 0;
+
+        width: 45px;
+        margin-left: -$unit;
+        padding: $unit;
+        border-left: 1px solid $neutral-50;
+
+        border-radius: 2px 2px 0 0;
+    }
+
+    .c-main-feedback-panel {
+        border: 0;
+    }
+
+    .c-box-row:last-child {
+        border: 0;
+    }
+
+    .c-feedback-main-panel {
+        margin-top: -$sub-unit*5;
+        padding-left: 0;
+    }
+
+    .c-box-row {
+        display: block;
+        width: 100%;
+    }
+
+    .c-field__label {
+        width: 88px;
+        padding-left: $unit;
+
+        font-weight: bold;
+    }
+
+    .c-feedback-instructions-heading {
+        width: 100%;
+        padding-top: $sub-unit*2;
+        padding-left: 0;
+    }
+
+    .c-feedback-textarea {
+        display: block;
+        width: 100%;
+        textarea {
+            overflow: hidden;
+            width: 100%;
+            max-height: 44px;
+
+            outline: 0;
+
+            &:focus {
+                border-color: $neutral-50;
+            }
+        }
+    }
+
+    .c-feedback-comments-label {
+        width: 100%;
+        margin-bottom: 3px;
+        padding-top: $unit;
+        padding-left: 0;
+    }
+
+    .c-first-name-label {
+        position: relative;
+    }
+
+    .c-field.c--error textarea {
+        border-color: $neutral-270;
+    }
+
+    .c-feedback-txtbox {
+        width: 100%;
+    }
+
+    .c-feedback-topic-listbox {
+        width: 100%;
+    }
+
+    .c-feedback-comments.c--error.c-field {
+        // overriding error field css
+        border: 0 !important;
+    }
+
+    .c-cancel-panel {
+        position: relative;
+
+        margin-top: -$unit;
+    }
+}

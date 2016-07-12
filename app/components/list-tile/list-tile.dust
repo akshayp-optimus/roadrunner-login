@@ -1,0 +1,51 @@
+<div class="c-list-tile {class}">
+    <{?href}a href="{href}" {?target}target="{target}"{/target}{:else}div{/href} class="c-list-tile__primary-tile {primaryClass}">
+        {?primaryAction}
+            <div class="c-list-tile__primary-action">
+                {?primaryIconName}
+                    {>"svg-icon" name=primaryIconName class=primaryIconClass/}
+                {:else}
+                    {primaryAction}
+                {/primaryIconName}
+            </div>
+        {/primaryAction}
+
+        {?primaryContent}
+            <div class="c-list-tile__primary-content">
+                <div class="{primaryContentClass}">
+                    {primaryContent}
+
+                    {?primarySubtext}
+                        <span class="c-list-tile__primary-subtext">{primarySubtext}</span>
+                    {/primarySubtext}
+                </div>
+            </div>
+        {/primaryContent}
+    </{?href}a{:else}div{/href}>
+
+    {?secondaryAction}
+        <div class="c-list-tile__secondary-tile {secondaryClass}">
+            {?secondaryAction}
+                <div class="c-list-tile__secondary-action">
+                    {?secondaryIconName}
+                        {>"svg-icon" name=secondaryIconName class=secondaryIconClass/}
+                    {:else}
+                        {secondaryAction}
+                    {/secondaryIconName}
+                </div>
+            {/secondaryAction}
+
+        {?secondaryContent}
+            <div class="c-list-tile__secondary-content">
+                <div>
+                    {secondaryContent}
+
+                    {?secondarySubtext}
+                        <span class="c-list-tile__secondary-subtext">{secondarySubtext}</span>
+                    {/secondarySubtext}
+                </div>
+            </div>
+        {/secondaryContent}
+        </div>
+    {/secondaryAction}
+</div>

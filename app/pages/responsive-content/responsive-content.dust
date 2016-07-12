@@ -1,0 +1,22 @@
+{>"global/base"/}
+
+{<contentBlock}
+    {! GRRD-685: Removed u-padding-all u--tight wrapper per GRs request !}
+    {pageContent}
+
+    <div hidden>{recomendationContainer}</div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/responsive-content/ui.js
+    (function(require) {
+        require(["global/ui", "pages/responsive-content/responsive-content-ui"], function(globalUI, responsiveContentUI) {
+            globalUI();
+            responsiveContentUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}
+

@@ -1,0 +1,219 @@
+// Checkout Steps
+// ===
+//
+// sass-lint:disable nesting-depth
+
+$checkout-step__size: 31px;
+$checkout-step__z-1: $z2-depth;
+$checkout-step__z-2: $z2-depth+1;
+$checkout-step__z-3: $z2-depth+2;
+
+// Root
+// ---
+//
+// 1. Divider
+
+.c-checkout-steps {
+    display: flex;
+    padding: 0 $unit*4;
+}
+
+
+// Item
+// ---
+//
+// 1. Position items on top of divier and success check
+// 2. Center Icon middle
+
+.c-checkout-steps__item {
+    position: relative; // 1
+    z-index: $checkout-step__z-2;
+
+    flex: 1 1 auto;
+    align-self: center;
+
+    // Complete
+    // ---
+    &.c--complete {
+        border-color: $neutral-70;
+
+        &::before {
+            background-color: $brand-color;
+        }
+
+        .c-checkout-steps__circle {
+            width: 16px;
+            height: 16px;
+            border-color: $white;
+
+            background-image: url(../icons/svg/orange-tick.svg);
+            background-size: 12px;
+
+            .c-icon-svg {
+                fill: $neutral-70;
+            }
+        }
+
+        .c-checkout-steps__check {
+            display: block;
+        }
+    }
+
+
+    // Active
+    // ---
+    &.c--active {
+        .c-checkout-steps__circle {
+            border-color: $brand-color;
+
+            background-color: $brand-color;
+        }
+
+        .c-icon-svg {
+            fill: $white;
+        }
+    }
+
+
+    // Steps
+    // ---
+
+    &.c--shipping {
+        .c-checkout-steps__circle {
+            .c-icon-svg {
+                width: 18px;
+                height: 18px;
+                margin-top: $sub-unit;
+            }
+        }
+    }
+
+    &.c--gift {
+        .c-checkout-steps__circle {
+            .c-icon-svg {
+                width: 28px;
+                height: 28px;
+                margin-top: 0;
+            }
+        }
+    }
+
+    &.c--payment {
+        .c-checkout-steps__circle {
+            .c-icon-svg {
+                width: 18px;
+                height: 18px;
+                margin-top: $sub-unit;
+            }
+        }
+    }
+
+    &.c--review {
+        .c-checkout-steps__circle {
+            .c-icon-svg {
+                width: 16px;
+                height: 16px;
+                margin-top: $sub-unit+1;
+                margin-right: -1px;
+            }
+        }
+    }
+
+    &:last-child {
+        flex: 0 0 auto;
+    }
+
+    &::before {
+        content: ''; // 1
+
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        z-index: $checkout-step__z-1;
+
+        height: 2px;
+
+        background-color: $neutral-50;
+    }
+
+    .c-icon-svg {
+        fill: $neutral-40;
+    }
+}
+
+
+// Circle
+// ---
+//
+// 1. Increase tap size
+
+.c-checkout-steps__circle {
+    position: relative;
+    z-index: $checkout-step__z-2;
+
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid $neutral-50;
+
+    border-radius: 50%;
+    background-color: $white;
+
+    text-align: center;
+}
+
+// sass-lint:disable no-qualifying-elements
+a.c-checkout-steps__circle {
+    &::after {
+        // 1
+        content: '';
+
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        bottom: -8px;
+        left: -8px;
+    }
+}
+
+
+// Success Check
+// ---
+//
+// 1. Position check in circle
+.c-checkout-steps__check {
+    position: absolute;
+    top: -17px;
+    left: -35px;
+
+    width: 82px;
+
+    color: $neutral-50;
+    font-weight: 700;
+    font-size: $smallest-font-size;
+    text-align: center;
+    text-transform: uppercase;
+
+    .c-icon-svg {
+        width: 18px;
+        height: 18px;
+        margin-top: -8px; // 1
+        margin-left: -3px; // 1
+
+        fill: $white;
+    }
+}
+
+.c--active,
+.c--complete {
+    .c-checkout-steps__check {
+        color: $brand-color;
+    }
+}
+
+.c--complete {
+    .c-checkout-steps__check {
+        top: -14px;
+    }
+}

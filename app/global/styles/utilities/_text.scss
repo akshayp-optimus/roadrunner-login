@@ -1,0 +1,228 @@
+// Text Utilities
+// ===
+
+// Accent-style text
+// ---
+//
+// Ideally use $dark-accent-color but that has an alpha value
+// of 0.5 which is way too light for text to render. Setting it to 100% alpha here
+
+.u-text-dark-accent {
+    color: hsla(45, 89%, 39%, 1) !important;
+
+    fill: hsla(45, 89%, 39%, 1) !important;
+}
+
+
+// Error-style text
+// ---
+
+.u-text-error {
+    color: $error-color !important;
+
+    fill: $error-color !important;
+}
+
+
+// Link-style text
+// ---
+
+.u-text-link {
+    color: $link-color !important;
+
+    fill: $link-color !important;
+}
+
+
+// Text White
+// ---
+
+.u-text-white {
+    color: $white !important;
+
+    fill: $white !important;
+}
+
+
+// Text Gray
+// ---
+
+.u-text-grey {
+    color: $neutral-200 !important;
+
+    fill: $neutral-200 !important;
+}
+
+.u-text-light-grey {
+    color: $neutral-60 !important;
+
+    fill: $neutral-60 !important;
+}
+
+.u-text-dark-grey {
+    color: $neutral-70 !important;
+
+    fill: $neutral-70 !important;
+}
+
+.u-text-black {
+    color: $black !important;
+
+    fill: $black !important;
+}
+
+.u-text-blue {
+    color: $neutral-220 !important;
+
+    fill: $neutral-220 !important;
+}
+
+.u-text-orange {
+    color: $brand-color !important;
+
+    fill: $brand-color !important;
+}
+
+
+// Alignment
+// ---
+
+.u-text-align-center {
+    text-align: center !important;
+}
+
+.u-text-align-end {
+    text-align: right !important;
+}
+
+.u-text-align-start {
+    text-align: left !important;
+}
+
+
+// Caption-size text
+// ---
+
+.u-text-size-caption {
+    font-size: $smaller-font-size !important;
+    line-height: 1.4 !important;
+}
+
+
+// Text break
+// ---
+//
+// Could be used to wrap long email addresses
+
+.u-text-break {
+    word-break: break-word !important;
+}
+
+
+// Text transforms
+// ---
+
+.u-text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.u-text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.u-text-lowercase {
+    text-transform: lowercase !important;
+}
+
+.u-text-initial {
+    text-transform: initial !important;
+}
+
+.u-text-truncate {
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+// Text decorations
+// ---
+
+.u-text-underline {
+    text-decoration: underline !important;
+}
+
+// Text Transformations
+// ---
+
+.u--bold {
+    font-weight: bold;
+}
+
+.u--normal {
+    font-weight: normal !important;
+}
+
+.u-pale-hoyster {
+    color: $neutral-130 !important;
+}
+
+.u--disabled {
+    opacity: 0.2;
+
+    pointer-events: none;
+}
+
+
+.u-align-image-center {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.u-small-font-size {
+    font-size: $smaller-font-size !important;
+}
+
+.u-font-size-16 {
+    font-size: $large-font-size !important;
+}
+
+.u-font-size-13 {
+    font-size: $font-size !important;
+}
+
+.u-required-star {
+    color: $error-color;
+}
+
+.u-clear-both {
+    clear: both !important;
+}
+
+.u-text-success {
+    color: $success-color !important;
+}
+
+.u-default-font-size {
+    font-size: $font-size !important;
+}
+
+// For Page title
+
+.u-page-title {
+    font-size: $font-size-large-24;
+}
+
+.u-page-title-color {
+    color: $neutral-220 !important;
+}
+
+.u-text-large {
+    font-size: $large-font-size;
+}
+
+.u-no-background {
+    background: 0 !important;
+}

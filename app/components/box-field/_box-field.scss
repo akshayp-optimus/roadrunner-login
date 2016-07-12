@@ -1,0 +1,346 @@
+// box
+// ===
+//
+// Variables and Extends
+// ---
+//
+// 1. Fix outline issue on android (GH-202)
+// scss-lint:disable all
+
+%c-field__input-defaults {
+    display: block;
+    width: 100%;
+    min-height: $small-tap-size;
+    padding: $input-padding;
+    border: $border;
+
+    border-radius: 2px;
+    background-color: $input-background-color;
+
+    color: $black;
+    line-height: $line-height;
+
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &::-webkit-input-placeholder {
+        color: $neutral-50;
+    }
+
+    &:active {
+        border-color: darken($border-color, 10%);
+    }
+
+    &:focus {
+        border-color: $focus-color;
+    }
+}
+
+%c-field__small-input-defaults {
+    position: relative;
+
+    display: inline-block;
+    width: $small-tap-size;
+    height: $small-tap-size;
+    border: 0;
+
+    outline: 0; // 1
+
+    vertical-align: middle;
+
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &:before {
+        content: '';
+
+        position: absolute;
+        top: 50%;
+
+        display: block;
+        box-sizing: border-box;
+        width: $unit + 8;
+        height: $unit + 8;
+        border: 1px solid darken($border-color, 0.25);
+
+        border-radius: $border-radius;
+
+        transform: translateY(-50%);
+    }
+
+    &:checked {
+        &::after {
+            content: '';
+
+            position: absolute;
+
+            display: block;
+        }
+    }
+}
+
+
+%c-field__label {
+    display: inline-block;
+}
+
+// Root Element
+// ---
+// 1. Fix for iOS6
+// 2. Apply spacing when two boxs are inline with each other
+
+.c-box {
+    flex: 1;
+    width: 100%; // 1
+
+    + .c-box {
+        margin-left: $unit;
+    }
+
+
+    // Sizing
+    // ---
+    &.c--shrink {
+        flex: 0 0 auto;
+    }
+
+    &.c--quarter-width {
+        width: 25%;
+    }
+
+
+    // Disabled State
+    // ---
+    &.c--is-disabled {
+        opacity: 0.4;
+    }
+
+
+    // Error State
+    // ---
+    &.c--error {
+        .c-box__label {
+            color: $error-color;
+        }
+
+        .c-input {
+            border-color: $border-error-color;
+        }
+
+        .c-select {
+            border-color: $border-error-color;
+        }
+    }
+}
+
+
+// box top
+// ---
+//
+// Wrap c-box__top div around label and info if need to add info section
+
+.c-box__top {
+    display: flex;
+
+    .c-box__label {
+        flex: 1 1 auto;
+    }
+
+    .c-box__info {
+        flex: initial;
+        width: auto;
+        margin-bottom: $sub-unit/2;
+    }
+}
+
+
+// Labels
+// ---
+//
+// 1. Fix alignment issues
+
+.c-box__label {
+    display: inline-block;
+
+    color: $neutral-70;
+    font-family: $default-sans;
+    font-weight: bold;
+    font-size: $font-size;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    label {
+        display: inline-block;
+        padding-left: $unit;
+
+        color: $neutral-70;
+        font-family: $default-sans;
+        font-weight: bold;
+        font-size: $font-size;
+
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    input[type='checkbox'] + &,
+    input[type='radio'] + & {
+        position: relative; // 1
+        top: 2px; // 1
+    }
+
+    .c--box-label-required {
+        padding: $sub-unit;
+
+        color: $error-color;
+    }
+
+    .c--box-label-required + label {
+        padding-left: 0;
+    }
+}
+
+.c-box__label ~ input {
+    display: block;
+    flex: 1;
+    width: 100%;
+}
+
+
+// Caption
+// ---
+
+.c-box__caption {
+    display: inline-block;
+    margin-top: $sub-unit;
+
+    color: $neutral-230;
+    font-size: $smaller-font-size;
+}
+
+
+// Small Inputs
+// ---
+//
+// 1. Centers checkmark in box
+// 2. Size checkbox to container
+
+.c-box__checkbox,
+%c-field__checkbox {
+    @extend %c-field__small-input-defaults;
+
+    border-radius: $border-radius;
+    background-color: transparent;
+
+    &:after {
+        top: -($sub-unit); // 1
+        left: -($unit); // 1
+
+        width: 45px; // 2
+        height: 45px; // 2
+    }
+
+    &:not(.c--dark) {
+        &:checked,
+        &:active {
+            &:before {
+                border-color: $brand-color;
+
+                background-color: $brand-color;
+            }
+
+            &:after {
+                content: url('../icons/svg/check-white.svg');
+            }
+        }
+    }
+}
+
+
+.c-box__radio,
+%c-field__radio {
+    @extend %c-field__small-input-defaults;
+
+    &:before {
+        border-radius: 100%;
+    }
+
+    &:checked {
+        &:after {
+            top: 11px;
+            left: 4px;
+
+            width: $unit;
+            height: $unit;
+
+            border-radius: 100%;
+            background-color: $neutral-240;
+        }
+    }
+}
+
+.c-form-group {
+    .c-box-row.c--error-row + .c-box-row {
+        border: 1px solid $red-10;
+    }
+
+    .c-box {
+        position: relative;
+
+        > .c-box__label {
+            width: 30%;
+
+            font-weight: bold;
+            word-break: break-word;
+        }
+
+        select {
+            border: 0;
+
+            background-color: transparent;
+            outline: 0;
+        }
+
+        .errortxt {
+            color: $error-color;
+        }
+    }
+
+    .c-box-row {
+        // Use -1px for hiding border-bottom
+        margin-bottom: -1px;
+    }
+
+    .c-box-row.c--error-row {
+        border: 1px solid $red-10;
+
+        background: $red-20;
+
+        input {
+            background: $red-20;
+        }
+    }
+
+    .c-box-row.c--error-row + .c-box-row {
+        border: 1px solid $red-10;
+    }
+}
+
+.c-box-row.c-check-me {
+    border-radius: 2px;
+
+    input[type="checkbox"] {
+        margin-top: -$sub-unit;
+    }
+
+    .c-icon {
+        position: relative;
+        top: -1px;
+
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        margin-left: $sub-unit;
+
+        color: $neutral-70;
+        vertical-align: middle;
+    }
+}

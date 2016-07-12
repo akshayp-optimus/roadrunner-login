@@ -1,0 +1,10 @@
+{! Product options !}
+{#.productOptions}
+    {?.select}
+        <li class="c-box-row">
+            <label class="u-margin-bottom-tn c-amount-label"> {.label}</label>
+
+            {>"components/select/select":.select/}
+        </li>
+    {/.select}
+{/.productOptions}

@@ -1,0 +1,11 @@
+{?selectField}
+    <select class="{selectClass}">
+        {?defaultOptions}
+            <option>{defaultOptions}</option>
+        {/defaultOptions}
+
+        {#options}
+            <option data-href="{value}" {?selected}selected{/selected}>{text}</option>
+        {/options}
+    </select>
+{/selectField}

@@ -1,0 +1,3 @@
+<div class="c-divider c--full-width c--text {dividerClass}">
+    <span class="c-divider__text">{@translate key="or_text" /}</span>
+</div>

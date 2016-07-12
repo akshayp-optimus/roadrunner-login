@@ -1,0 +1,86 @@
+// Review Voting
+// ===
+//
+// 1. Override default BV styling
+
+.c-review-voter {
+	margin: $unit 0;
+}
+
+.c-review-voter__vote {
+    width: 100%;
+    padding: 0;
+    border: 0;
+
+    background: none;
+
+    color: $neutral-60;
+
+    &:not(.c--helpful) {
+        border-left: $border-light;
+    }
+
+    &.c--selected {
+        &.c--helpful {
+            color: $success-color;
+        }
+
+        &.c--not-helpful {
+            color: $error-color;
+        }
+    }
+
+    &.c--offensive.c--active {
+        margin: (-$unit) 0;
+
+        background-color: $neutral-40;
+        border: none;
+
+        color: $black;
+    }
+}
+
+.c-review-voter__vote-icon {
+	.c--helpful & {
+		color: $success-color;
+	}
+
+	.c--not-helpful & {
+		transform: rotate(45deg);
+
+		color: $error-color;
+	}
+
+	.c--offensive & {
+		color: $black;
+	}
+
+	.c--disabled & {
+		color: $neutral-60;
+	}
+}
+
+.c-review-voter__vote-label {
+    display: block;
+    margin-top: $sub-unit;
+
+    font-size: $smaller-font-size;
+    line-height: 1;
+    white-space: nowrap;
+    text-transform: capitalize;
+}
+
+
+// Report Offensive Review or Question Form
+// ---
+
+.c-review-voter__form {
+    padding: $unit;
+
+    background-color: $neutral-40;
+}
+
+
+.c-review-voter__input {
+    width: 100%; // 1
+}

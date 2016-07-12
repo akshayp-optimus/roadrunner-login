@@ -1,0 +1,51 @@
+{>"global/base"/}
+
+{<contentBlock}
+    <div class="t-clp-david-bromstad">
+
+        {#davidBromstadIntro}
+            {image}
+
+            <h2 class="c-title u-pale-hoyster">{heading|s}</div>
+
+            {responsiveContent}
+
+            {#description}
+                {>"components/hide-reveal/hide-reveal" revealIconName="expand" hideIconName="collapse" /}
+            {/description}
+
+            {! TODO: Add class below for filling the color !}
+            {#shopAllButton}
+                {>"components/button-tile-variation/button-tile-variation" class="u-text-align-center"/}
+            {/shopAllButton}
+        {/davidBromstadIntro}
+
+        {#heroImages}
+            {>"components/category-hero/category-hero" /}
+        {/heroImages}
+
+
+        {#bromstadProducts}
+            <h4 class="u-margin-start-md u-padding-bottom-lg u-padding-top u--tight">{heading}</h4>
+
+            {>"components/category-card/category-card" /}
+        {/bromstadProducts}
+
+        {#shopEntireCollection}
+            {>"components/button-tile/button-tile" class="u-text-align-center c-shop-entire-collection" /}
+        {/shopEntireCollection}
+    </div>
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/clp-david-bromstad/ui.js
+    (function(require) {
+        require(["global/ui", "pages/clp-david-bromstad/clp-david-bromstad-ui"], function(globalUI, clpDavidBromstadUI) {
+            globalUI();
+            clpDavidBromstadUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}

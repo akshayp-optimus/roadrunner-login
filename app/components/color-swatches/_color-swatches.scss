@@ -1,0 +1,36 @@
+.c-color-swatches {
+    @include clearfix();
+
+    overflow: visible;
+
+    > div {
+        float: left;
+
+        margin-top: $unit;
+        margin-right: $unit;
+
+        &.gwt-no-available-combination {
+            outline: $border-light;
+
+            &.c-updated-swatch-color-to-thumb {
+                outline-color: $brand-color;
+                outline-width: 2px;
+            }
+
+            img {
+                opacity: 0.4;
+            }
+        }
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+
+        vertical-align: top;
+    }
+
+    div[color="WHI"]:not(.c--is-selected) > * {
+        outline: 1px solid $neutral-50;
+    }
+}

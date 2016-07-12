@@ -1,0 +1,81 @@
+{#creditCardPaymentOption}
+
+    <div class="paymentOption creditCard form js-cc-payment-card-type {?cardType}c--{cardType}{/cardType}">
+        {paymentType}
+
+        {creditCardLogoOptions}
+
+        {creditCardOption|openTag|s}
+            <div class="js-card-type c-box-row" hidden>
+                <div class="c-box c-arrange c--align-middle">
+                    {#paymentMethod}
+                        {label}
+                        <div class="c-select c-arrange__item">
+                            {select}
+                        </div>
+                    {/paymentMethod}
+                </div>
+            </div>
+
+            {#ccNumber}
+                <div class="c-box-row">
+                    <div class="c-box c-arrange c--align-middle">
+                        {label}
+                        <div class="c-field__credit-card js-cc-input-container c-input c-arrange__item">
+                            <div class="js-cc-input">
+                                {@icon name="payment" class="" /}
+
+                                {inputScript}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {/ccNumber}
+
+            {#cardID}
+                <div class="c-box-row">
+                    <div class="c-box c-arrange c--align-middle">
+                        <div class="c-arrange c--align-middle">
+                            {label}
+
+                            <span class="c-field__info-button">
+                                <button class="c-button c--link c--info js-tooltip-button" data-target=".js-ccID-tooltip">{>"svg-icon" name="question"/}</button>
+
+                                <div class="js-ccID-tooltip" hidden>{tooltip}</div>
+                            </span>
+                        </div>
+
+                        <div class="c-input c-arrange__item">
+                            {input}
+                            {cvvInput}
+                            {inputScript}
+                        </div>
+                    </div>
+                </div>
+            {/cardID}
+
+            {#expiry}
+                <div class="c-box-row">
+                    <div class="c-box c-arrange c--align-middle">
+
+                        {label}
+
+                        <div class="c-arrange c--gutters">
+                            <div class="c-arrange__item">
+                                {>"components/select/select" select=month/}
+                            </div>
+
+                            <div class="c-arrange__item">
+                                <div hidden>{yearLabel}</div>
+
+                                {>"components/select/select" select=year/}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {/expiry}
+
+        {creditCardOption|closeTag|s}
+    </div>
+{/creditCardPaymentOption}

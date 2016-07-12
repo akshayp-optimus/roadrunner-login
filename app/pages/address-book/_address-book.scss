@@ -1,0 +1,196 @@
+// TODO: Add comments and segregate the complete css file into sections
+
+.t-address-book {
+    .c-sheet.c--dialog {
+        right: 0 !important;
+        left: 0 !important;
+    }
+
+    .c-box-row.c--3-4 {
+        margin-top: $unit;
+    }
+    .c-no-adddress-defined {
+        color: $neutral-60;
+        text-align: center;
+    }
+
+    .c-address-pinny .c-box > .c-box__label {
+        width: 88px;
+    }
+
+    .c-box__label {
+        position: relative;
+        span {
+            position: absolute;
+            left: 0;
+        }
+    }
+
+    .c-box-row.addrEditErrorPanel,
+    .c-box-row.c--error-row input {
+        background: $red-20;
+    }
+
+    .c-box-row.addrEditErrorPanel {
+        border: 1px solid $red-10;
+    }
+
+    .addrEditErrorPanel label {
+        color: $error-color;
+    }
+
+    button.js-close-modal,
+    .js-close-modal[type="submit"] {
+        min-height: 0;
+        margin: 0 auto $unit;
+        padding: 0;
+        border: none;
+
+        background: $white;
+
+        color: $black;
+        font-weight: bold;
+        font-size: $font-size;
+        line-height: $line-height;
+        text-transform: capitalize;
+    }
+
+
+    .c-button.c--dark:disabled,
+    .c-button.c--dark.c--is-disabled,
+    input [type="checkbox"] disabled:checked {
+        background-color: none;
+    }
+
+    input[type="checkbox"] {
+        background: $white;
+    }
+
+    .gwt-CheckBox.gwt-CheckBox-disabled {
+        opacity: 0.5;
+    }
+
+    .c-address-panel {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .gwt-addrbk-billshipind:after,
+    .gwt-addrbk-billshipind-on-end-tn:after {
+        content: ':';
+    }
+
+    .c-edit-and-remove-links,
+    .c-shipping-and-billing-tag {
+        display: inline-block;
+    }
+
+    .c-edit-and-remove-links {
+        float: right;
+
+        width: 47%;
+
+        text-align: right;
+        button {
+            min-height: 15px;
+        }
+    }
+
+    .c-shipping-and-billing-tag {
+        width: 50%;
+    }
+
+    .c-button.c--link.c--edit-link {
+        color: $black;
+    }
+
+    .c--edit-link:first-of-type {
+        &:after {
+            content: ' |';
+        }
+    }
+
+    [id="editAddressModal"],
+    [id="gwt-removeConfirmDlog-content_modal"] {
+        overflow: hidden !important;
+        width: 1px;
+        height: 1px;
+    }
+
+    .pinny__content.pinny--is-scrollable.c-sheet__body.needsclick.js-address-pinny__body {
+        max-height: 100% !important;
+    }
+
+    .ios {
+        .pinny__content.pinny--is-scrollable.c-sheet__body.needsclick.js-address-pinny__body {
+            max-height: 100% !important;
+        }
+    }
+
+
+    .c-add-new-address-button span:after {
+        content: ' >';
+    }
+
+    .c--edit-link {
+        font-weight: bold;
+        font-size: $smaller-font-size;
+        text-transform: capitalize;
+    }
+
+    .c-tag span {
+        font-weight: bold;
+    }
+
+    .c-sheet.c--dialog .pinny__wrapper {
+        top: 0;
+        bottom: 0;
+
+        transform: initial;
+
+        .c-box-row:nth-child(-n+2) {
+            padding: $unit;
+        }
+
+        [disabled] {
+            opacity: 0.5;
+            background: none !important;
+        }
+    }
+}
+//  To overrides the pinny styling
+.js-remove-address-pinny {
+    top: 35% !important;
+
+    width: 93% !important;
+    margin: 0 $unit;
+
+    background: 0 !important;
+
+    .js-remove-address-pinny__body {
+        padding: 0 12px;
+    }
+
+    .c-button.c--primary {
+        width: 100%;
+    }
+
+    .pinny__content {
+        background: $white;
+    }
+
+    .c-form-group .c-box select {
+        padding-left: $unit;
+    }
+
+    .c-button span:after {
+        content: ' >';
+    }
+
+    .c-button.c--secondary {
+        padding: $unit;
+        border: 1px solid $black;
+
+        text-transform: lowercase;
+    }
+}

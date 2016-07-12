@@ -1,0 +1,36 @@
+{
+  "name": "scooch",
+  "version": "0.6.1",
+  "homepage": "https://github.com/mobify/scooch",
+  "authors": [
+    "Mobify <jobs@mobify.com>"
+  ],
+  "description": "A mobile-first content and image carousel.",
+  "main": "build/scooch.min.js",
+  "keywords": [
+    "carousel",
+    "slider",
+    "mobile first",
+    "mobile",
+    "mobify",
+    "swipe",
+    "image",
+    "gallery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "_release": "0.6.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.6.1",
+    "commit": "a371118eb9205c8ee4e5fc6c7ab221497998ace6"
+  },
+  "_source": "git://github.com/mobify/scooch.git",
+  "_target": "^0.6.1",
+  "_originalSource": "scooch",
+  "_direct": true
+}

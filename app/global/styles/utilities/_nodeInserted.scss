@@ -1,0 +1,424 @@
+// Node Inserted
+// ===
+
+// These animations are used by our scripts to watch for certain elements being added to the page
+// 1. Used for error messages in Notification component
+// 2. Set width/height to 1px to "hide" initial flash of content
+@keyframes shippingToPopup {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#tinycontent #modal {
+    // 2
+    height: 1px;
+    width: 1px;
+
+    animation-name: shippingToPopup;
+    animation-duration: 0.001s;
+}
+
+@keyframes welcomeMatAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// scss-lint:disable SelectorFormat
+#gwt_welcome_window {
+    // scss-lint:enable SelectorFormat
+    animation-name: welcomeMatAdded;
+    animation-duration: 0.001s;
+}
+
+@keyframes errorAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+// scss-lint:disable SelectorFormat
+#gwt-error-placement-div .gwt-csb-error-panel,
+.gwt-csb-error-panel,
+#mainContent .gwt-csb-error-panel {
+    animation-name: errorAdded;
+    animation-duration: 0.001s;
+}
+// scss-lint:enable SelectorFormat
+// Shopping cart: see app/global/ui.js
+@keyframes shoppingCartAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// scss-lint:disable SelectorFormat
+#gwt_minicart_div a {
+    // scss-lint:enable SelectorFormat
+    animation-name: shoppingCartAdded;
+    animation-duration: 0.001s;
+}
+
+
+.c-form-group input {
+    animation-name: inputAdded;
+    animation-duration: 0.001s;
+}
+
+@keyframes inputAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes refinePinny {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// scss-lint:disable SelectorFormat
+.cin-sidebox.cin-type-search,
+.sli-range-slider-track {
+    // scss-lint:enable SelectorFormat
+    animation-name: refinePinny;
+    animation-duration: 0.001s;
+}
+
+// This is used on PDP for detection of price update
+@keyframes priceUpdated {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+// scss-lint:disable SelectorFormat
+.gwt-product-option-panel-chosen-selection,
+.js-color-text,
+.gwt-product-detail-widget-top-total-price-amount,
+.gwt-product-detail-widget-top-total-price-holder,
+.gwt-call-to-action-panel,
+.gwt-product-right-content-panel {
+    // scss-lint:enable SelectorFormat
+    animation-name: priceUpdated;
+    animation-duration: 0.001s;
+}
+
+@keyframes modalAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// sass-lint:disable class-name-format
+.gwt-DialogBox,
+.gwt-PopupPanelGlass {
+    animation-name: modalAdded;
+    animation-duration: 0.001s;
+}
+
+@keyframes modalAddedForOrderConfirmation {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// sass-lint:disable class-name-format
+.t-checkout-multi-address .gwt-PopupPanelGlass + .gwt-DialogBox,
+.t-order-review-and-payment .gwt-PopupPanelGlass + .gwt-DialogBox,
+.t-order-confirmation .gwt-PopupPanelGlass + .gwt-DialogBox {
+    animation-name: modalAddedForOrderConfirmation;
+    animation-duration: 0.001s;
+}
+
+@keyframes productOptionReset {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gwt-product-option-panel,
+.gwt-image-picker-with-dialog-option-holder {
+    animation-name: productOptionReset;
+    animation-duration: 0.001s;
+}
+
+@keyframes interactiveImageAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gwt-video-object {
+    animation-name: interactiveImageAdded;
+    animation-duration: 0.001s;
+}
+
+@keyframes internationalShippingMsg {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gwt-product-item-detail-international-product-restriction-panel {
+    animation-name: internationalShippingMsg;
+    animation-duration: 0.001s;
+}
+
+@keyframes moreInformationPopup {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#colorbox {
+    position: absolute !important;
+    top: -100%;
+    left: -100%;
+
+    overflow: hidden !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    border: 0 !important;
+
+    visibility: hidden !important;
+
+    iframe {
+        animation-name: moreInformationPopup;
+        animation-duration: 0.001s;
+    }
+}
+
+@keyframes checkoutMultiAddress {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#gwt_order_item_product_json .gwt-multiple-address-container {
+    animation-name: checkoutMultiAddress;
+    animation-duration: 0.001s;
+}
+
+@keyframes specialDeliveryAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.termsCondModal {
+    animation-name: specialDeliveryAdded;
+    animation-duration: 0.001s;
+}
+
+@keyframes editAddress {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#editAddressModal {
+    animation-name: editAddress;
+    animation-duration: 0.001s;
+}
+
+@keyframes personalizationData {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.js-desktop-cart-item .perzdesc {
+    animation-name: personalizationData;
+    animation-duration: 0.001s;
+}
+
+@keyframes pleaseWaitLoader {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gwt-payment-selection-please-wait-panel,
+#pleaseWait {
+    animation-name: pleaseWaitLoader;
+    animation-duration: 0.001s;
+}
+
+@keyframes breadCrumbAdded {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#sideBox #sideBoxHeader {
+    animation-name: breadCrumbAdded;
+    animation-duration: 0.001s;
+}
+
+@keyframes pleaseWaitLoader {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gwt-payment-selection-please-wait-panel,
+#pleaseWait {
+    animation-name: pleaseWaitLoader;
+    animation-duration: 0.001s;
+}
+
+@keyframes orderHistoryData {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#orderHistory .gwt-order-history-widget-orderHeader {
+    animation-name: orderHistoryData;
+    animation-duration: 0.001s;
+}
+
+@keyframes createGiftRegistryContent {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.gwt-GR-Create-Panel {
+    animation-name: createGiftRegistryContent;
+    animation-duration: 0.001s;
+}
+
+@keyframes step1 {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.GR_creat_step1 {
+    animation-name: step1;
+    animation-duration: 0.001s;
+}
+
+@keyframes step2 {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.GR_creat_step2 {
+    animation-name: step2;
+    animation-duration: 0.001s;
+}
+@keyframes progressBar {
+    from {
+        opacity: 0.99;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+[class^="GR_create_progressBar_Step"] {
+    animation-name: progressBar;
+    animation-duration: 0.001s;
+}

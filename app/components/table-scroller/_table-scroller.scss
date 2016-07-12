@@ -1,0 +1,19 @@
+// Table Scroller
+// ===
+
+.c-table-scroller {
+    overflow: hidden;
+    margin: $unit 0;
+    border: $border;
+
+    background-color: $neutral-30;
+
+    .c-table {
+        margin: 0;
+        border: 0;
+
+        &.c--static {
+            border-right: $border;
+        }
+    }
+}

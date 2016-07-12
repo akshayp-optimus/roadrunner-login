@@ -1,0 +1,67 @@
+{>"global/checkoutBase"/}
+
+{<contentBlock}
+
+    <div class="u-margin-bottom-lg u-padding u--tight">
+        <h4 class="c-order-confirmation-title u-margin-bottom-sm c--upright">{@translate key="order_confirmation"/}</h4>
+
+        {successMessage}
+
+        {?orderInfo}
+            <div class="c-order-summary u-border-radius">
+                {#orderInfo}
+                    <div class="c-order-summary__entry">
+                        <div class="c-order-summary__description">
+                            {label}
+                        </div>
+
+                        <div class="c-order-summary__number">
+                            {value}
+                        </div>
+                    </div>
+                {/orderInfo}
+            </div>
+        {/orderInfo}
+
+        <div class="u-text-align-center u--bold u-margin-top-md">{viewOrderLink}</div>
+
+        <h4 class=" u-margin-top-md c-faster-checkout-title"> {@translate key="checkout_faster_title"/}</h4>
+        <div class="u-margin-top-sm c-faster-checkout-content">{@translate key="checkout_faster_content"/}</div>
+
+        <div class="u-margin-top-md u-margin-bottom-md c-form-group js-registration-container c-registration-container">
+
+        </div>
+
+        <div class="t-order-confirmation__fine-print">
+            {finePrint}
+        </div>
+
+        {! You May Also Like Products are displayed in carousel components !}
+        {! Refer global/ui/carousel-ui.js !}
+        {>"components/carousel/carousel" class="u-shift-start u-shift-end" /}
+        <div hidden>{customersAlsoBought}</div>
+
+        <div class="u--bold u-text-center">{moreRecommendation}</div>
+
+        {continueShopping}
+
+    </div>
+
+    {hiddenForms}
+    {hiddenInputs}
+    {analyticsContainer}
+    {guestRegistrationContainer}
+{/contentBlock}
+
+{<uiScripts}
+    <script>
+    // Note: Add any JavaScript that should be run on this page into
+    // app/pages/order-confirmation/ui.js
+    (function(require) {
+        require(["global/ui", "pages/order-confirmation/order-confirmation-ui"], function(globalUI, orderConfirmationUI) {
+            globalUI();
+            orderConfirmationUI();
+        });
+    })(Adaptive.AMD.require);
+    </script>
+{/uiScripts}
