@@ -20,20 +20,37 @@ function($, baseView, template) {
                 return $('span.regform');
             },
             editProfile: function() {
-                var $container =  $('.container_nh').last().find('table').parent('td[class*="regform"]')
-                .find('> table:nth-child(1)').find('tbody tr:nth-of-type(2)');
-                $container.find('img').remove();
-                return $container.map(function(_, item) {
-                    var $item = $(item);
-                    return {
-                        fitness: $item.find('td:nth-of-type(2)')
-                    };
-                });
-            },
-            unsubscribeEmail: function() {
+                var $edit = $('.regform_indent').find('.orangetext').parents('.user_cell');
                 var $newsletter = $('#unsubscribeform');
                 $newsletter.find('#newsletterSignupBtn').remove();
-                return $newsletter;
+                $newsletter.addClass('c-unsubscribe');
+                $edit.find('img').remove();
+                $edit.find('br').remove();
+                $edit.html($edit.html().replace(/&gt;/g, ''));
+                $newsletter.html($newsletter.html().replace(/&gt;/g, ''));
+                $edit.html($edit.html().replace(/&nbsp;/g, ''));
+                $edit.contents().filter(function() {
+                    return this.nodeType === 3 && this.textContent.trim() !== '';
+                }).first().remove();
+                $edit.find('a:not(:first):not(:last)').append(' >');
+                $newsletter.insertAfter($edit.find('a:contains(Join now and save!)'));
+                $newsletter.find('br').remove();
+                $newsletter.find('a').append('>');
+                return  $edit;
+            },
+            fitnessProfile: function() {
+                var $profile = $('table').find('b:contains(Fitness Profile)').parents('.user_cell');
+                $profile.contents().filter(function() {
+                    return this.nodeType === 3;
+                }).wrap('<span class="c-boldText"></span>');
+                $profile.find('br').remove();
+                $profile.find('img').remove();
+                return $profile;
+            },
+            shoppingHistory: function() {
+                var $shopping = $('table').find('b:contains(Shopping History)').parents('.user_cell');
+                $shopping.find('img').remove();
+                return $shopping;
             }
         }
     };

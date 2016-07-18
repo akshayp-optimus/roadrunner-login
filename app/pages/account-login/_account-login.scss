@@ -1,0 +1,143 @@
+.t-account-login {
+    .c-guest-login {
+        box-shadow: 0 3px 3px 0 $neutral-380;
+    }
+    input {
+        margin-bottom: 12px;
+
+        }
+    .login-button {
+        margin-bottom: 0;
+        width: 105px;
+        box-shadow: 0px 3px 0px 0px #cc6a0e;
+        background: $neutral-330;
+        color: $white;
+        width: 84px;
+        height: 37px;
+        border: 0;
+        font-weight: bold;
+        border-radius: 4px 4px;
+        text-align: center;
+        text-shadow: 1px 1px 0px #a05580;
+        font-size: $font-size +2;
+        padding: $unit - 1;
+        min-height: 0px;
+    }
+    .c-login-details {
+        background: $neutral-320;
+        h1{
+            font-size: 18px;
+            color: $neutral-340;
+            font-weight: bold;
+            text-align: left;
+            text-shadow: 1px 1px 0px $white;
+            line-height: 1.2;
+            margin-bottom: $unit;
+            text-transform: capitalize;
+        }
+        h2 {
+            margin-bottom: $unit;
+            color: $white;
+        }
+        h3 {
+            color: $neutral-340;
+        }
+        .form {
+            padding: 0 12px 4px;
+            background: #f8f8f8;
+            box-shadow: 0 3px 3px 0 $neutral-380;
+            div[id="yes_button"],
+            div[id="no_button"] {
+                > span{
+                    color: $neutral-340;
+                }
+                br{
+                    display: none;
+
+                }
+            }
+            h2 {
+                background: $neutral-330;
+                font-size: $font-size +2;
+                padding: $unit - 1;
+                margin-left: -$unit;
+                margin-right: -$unit;
+                text-transform: capitalize;
+                font-weight: bold;
+                text-align: left;
+                text-shadow: 1px 1px 0px #a05580;
+                box-shadow: 0px 2px 0px 0px #dd8500;
+                margin-bottom: $unit*2;
+                }
+            }
+
+            .cta {
+                background: $white;
+                margin-bottom: $unit*2;
+                background: #f8f8f8;
+                padding: 12px;
+
+                a {
+                    color: $neutral-360;
+                    line-height: 1.1;
+                    display: inline-block;
+                    border-bottom: 1px solid;
+                    font-weight: bold;
+                }
+            }
+
+
+        .c-create-account{
+            background: $white;
+            form {
+                    input {
+                        margin-bottom: 12px;
+                    }
+
+                [type="radio"]:before {
+                    border-radius: 0;
+
+                }
+
+                [type="radio"] {
+                        margin-right: -3px;
+                         top:6px;
+                         width: 28px;
+                         height: 28px;
+                    &:after {
+                    content: '';
+                    width: 14px;
+                    height: 5px;
+                    position: absolute;
+                    top: 6px;
+                    left: 4px;
+                    border: 2px solid #333333;
+                    border-top: none;
+                    border-right: none;
+                    background: transparent;
+                    opacity: 0;
+                    transform: rotate(-45deg);
+                    border-radius: 0;
+                    }
+                    &:before{
+                        background-image: linear-gradient(90deg, rgb(218,216,216)0%, rgb(255,255,255) 100%);
+                        width: 23px;
+                        height: 23px;
+                    }
+                }
+
+                [type="radio"]:checked::after {
+                    opacity: 1;
+                }
+                [type="radio"]:checked::before {
+                    border: 1px solid #ccc;
+                 background-color: transparent;
+                }
+
+                .squaredThree {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

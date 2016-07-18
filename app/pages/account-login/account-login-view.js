@@ -16,10 +16,23 @@ function($, baseView, template) {
         context: {
             templateName: 'account-login',
             loginBox: function() {
-                return $('#login_box');
+                var $buttonName = $('#login_box');
+                $buttonName.find('#loginEmail1').attr('type', 'email');
+                // $buttonName.find('.login-button').attr('value', 'Continue');
+                return $buttonName;
             },
-            signInModule: function() {
-                return $('#signin');
+            signInMessage: function() {
+                return $('#main_message').find('h1');
+            },
+            form: function() {
+                var $changeButtonName = $('form[name="register"]');
+                $changeButtonName.find('#guestEmailId').attr('type', 'email');
+                // $changeButtonName.find('.login-button').attr('value', 'Continue');
+                $changeButtonName.find('.login-button').parent().addClass('u-padding-bottom u--tight');
+                return $changeButtonName;
+            },
+            vipImage: function() {
+                return $('#vip_callout');
             }
         }
     };

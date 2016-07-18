@@ -1,14 +1,17 @@
 {>"global/base"/}
 
 {<contentBlock}
-    <div class="t-account-login u-padding-all">
-        <div class="c-login-heading"><h2>Sign In</h2></div>
-        <div class="c-guest-login">
-            {loginBox}
+    <div class="t-account-login">
+        <div class="c-login-details u-padding-all u--tight">
+            <div class="c-login-heading">{signInMessage}</div>
+            <div class="c-guest-login">
+                {loginBox}
+            </div>
+            <div class="c-create-account">
+                {form}
+            </div>
         </div>
-        <div class="c-sign-in">
-            {signInModule}
-        </div>
+            <div>{vipImage}</div>
     </div>
 {/contentBlock}
 
