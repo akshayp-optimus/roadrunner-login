@@ -30,7 +30,8 @@ function($, baseView, template) {
                 return $changeButtonName;
             },
             vipImage: function() {
-                return $('#vip_callout');
+                var $vipDiv = $('#vip_callout').addClass('c-vip');
+                return $vipDiv;
             }
         }
     };
