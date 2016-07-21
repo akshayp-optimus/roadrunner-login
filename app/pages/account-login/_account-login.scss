@@ -49,9 +49,10 @@
             box-shadow: 0 3px 5px 0 #d4cfcf;
             div[id="yes_button"],
             div[id="no_button"] {
-                > span{
+                > span {
                     color: $neutral-340;
                 }
+
                 br{
                     display: none;
 
