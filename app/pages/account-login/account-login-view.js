@@ -18,7 +18,6 @@ function($, baseView, template) {
             loginBox: function() {
                 var $buttonName = $('#login_box');
                 $buttonName.find('#loginEmail1').attr('type', 'email');
-                // $buttonName.find('.login-button').attr('value', 'Continue');
                 return $buttonName;
             },
             signInMessage: function() {
@@ -27,7 +26,6 @@ function($, baseView, template) {
             form: function() {
                 var $changeButtonName = $('form[name="register"]');
                 $changeButtonName.find('#guestEmailId').attr('type', 'email');
-                // $changeButtonName.find('.login-button').attr('value', 'Continue');
                 $changeButtonName.find('.login-button').parent().addClass('u-padding-bottom u--tight');
                 return $changeButtonName;
             },

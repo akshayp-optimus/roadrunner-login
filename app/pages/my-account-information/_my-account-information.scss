@@ -1,78 +1,85 @@
+// My Account Information Page
+// ===
+//
+// scss-lint:disable all
+
 .t-my-account-information {
-        background: $neutral-320;
-        a{
-            color: #005cae;
-            text-decoration: underline;
-            display: block;
-            line-height: 1;
-        }
+    background: $neutral-320;
+    a {
+        color: #005cae;
+        text-decoration: underline;
+        display: block;
+        line-height: 1;
+    }
     .c-account-heading {
-            font-size: 18px;
-            color: #464749;
+            font-size: $larger-font-size;
+            color: $neutral-340;
             font-weight: bold;
             text-align: left;
-            text-shadow: 1px 1px 0px #fff;
+            text-shadow: 1px 1px 0px $white;
             line-height: 1.2;
-            margin-bottom: -7px;
+            margin-bottom: -$sub-unit;
             text-transform: capitalize;
     }
-    .c-profile, .c-fitness, .c-shopping {
-        background: #f8f8f8;
+    .c-profile,
+    .c-fitness,
+    .c-shopping {
+        background: $neutral-390;
     }
     .c-fitness {
-        padding-left: 12px;
-        margin-bottom: 22px;
-        padding-bottom: 12px;
+        padding-left: $unit;
+        margin-bottom: $font-size-large-22;
+        padding-bottom: $unit;
         b {
-            font-size: 16px;
+            font-size: $large-font-size;
         }
         tr {
-            background-color: #eae8e8;
+            background-color: $neutral-35; //#eae8e8
             height: 40px;
             display: block;
-            margin: 0px 0px 0px -12px;
-            padding: 0 12px;
-            box-shadow: 0px 3px 0px 0px #dedcdc;
-            td{
+            margin: 0px 0px 0px (-$unit);
+            padding: 0 $unit;
+            box-shadow: 0px 3px 0px 0px $neutral-320;
+            td {
                 border-bottom: none;
             }
-            > td{
+            > td {
                 float: left;
             }
             td[align="right"] {
                 float: right;
-                color: #005cae;
+                color: $neutral-400;
                 text-transform: capitalize;
             }
         }
         > b {
-            color: #FF9900;
-            border-bottom: 1px solid #dddddd;
+            color: $neutral-330;
+            border-bottom: 1px solid $neutral-410;
             display: block;
-            margin-right: 12px;
-            padding-bottom: 4px;
-            font-size: 15px;
-            margin-bottom: 12px;
+            margin-right: $unit;
+            padding-bottom: $sub-unit;
+            font-size: $font-size-large-15;
+            margin-bottom: $unit;
         }
-        .c-boldText {
+        .c-fitness__text-bold {
             font-weight: bold;
             display: block;
             padding-bottom: 4px;
         }
-        & > .c-boldText:nth-of-type(1) {
+        & > .c-fitness__text-bold:nth-of-type(1) {
             display: none;
         }
     }
     .c-profile {
-        padding-left: 12px;
-        padding-bottom: 24px;
-        padding-right: 12px;
+        padding-left: $unit;
+        padding-bottom: $font-size-large-24;
+        padding-right: $unit;
         b {
-            background-color: #eae8e8;
+            background-color: $neutral-35; //eae8e8
             height: 40px;
             display: block;
-            margin: 0px -12px 0px -12px;
-            box-shadow: 0px 3px 0px 0px #dedcdc;
+            margin: 0px (-$unit);
+            box-shadow: 0px 3px 0px 0px $neutral-420;
         }
         a {
             padding-bottom: $sub-unit * 3;
@@ -82,31 +89,32 @@
 
             }
         }
-        .orangetext{
+        //desktop class orangetext
+        .orangetext {
             display: inline-block;
             font-weight: bold;
             padding-top: $unit * 2;
             padding-bottom: $sub-unit * 3;
             text-decoration: underline;
             & + a {
-        float: right;
-        text-transform: capitalize;
-        padding-top: $unit * 2;
+                float: right;
+                text-transform: capitalize;
+                padding-top: $unit * 2;
+            }
         }
     }
-    }
     .c-shopping {
-        padding-left: 12px;
-        padding-bottom: 24px;
+        padding-left: $unit;
+        padding-bottom: $font-size-large-24;
         b {
-            background-color: #eae8e8;
+            background-color: $neutral-35;
             height: 40px;
             display: block;
-            margin: 0px 0px 0px -12px;
-            padding: 12px 12px;
+            margin: 0px 0px 0px (-$unit);
+            padding: $unit;
             box-shadow: 0px 3px 0px 0px #dedcdc;
-            margin-bottom: 24px;
-            font-size: 15px;
+            margin-bottom: $font-size-large-24;
+            font-size: $font-size-large-15;
         }
         a {
             display: inline-block;
@@ -115,7 +123,7 @@
 
     }
     .c-unsubscribe {
-        background-color: #f8f8f8;
+        background-color: $neutral-390;
 
     }
 }

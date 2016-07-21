@@ -2,16 +2,24 @@
 
 {<contentBlock}
     <div class="t-account-login">
+
         <div class="c-login-details u-padding-all u--tight">
-            <div class="c-login-heading">{signInMessage}</div>
+            <div class="c-login-heading">
+                {signInMessage}
+            </div>
+
             <div class="c-guest-login">
                 {loginBox}
             </div>
+
             <div class="c-create-account">
                 {form}
             </div>
+
         </div>
-            <div>{vipImage}</div>
+
+        <div>{vipImage}</div>
+
     </div>
 {/contentBlock}
 

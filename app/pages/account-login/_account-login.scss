@@ -3,7 +3,7 @@
         box-shadow: 0 3px 3px 0 $neutral-380;
     }
     input {
-        margin-bottom: 12px;
+        margin-bottom: $unit;
 
         }
     .login-button {
@@ -26,7 +26,7 @@
     .c-login-details {
         background: $neutral-320;
         h1{
-            font-size: 18px;
+            font-size: $larger-font-size;
             color: $neutral-340;
             font-weight: bold;
             text-align: left;
@@ -43,8 +43,8 @@
             color: $neutral-340;
         }
         .form {
-            padding: 0 12px 4px;
-            background: #f8f8f8;
+            padding: 0 $unit 4px;
+            background: $neutral-390;
             box-shadow: 0 3px 3px 0 $neutral-380;
             div[id="yes_button"],
             div[id="no_button"] {
@@ -74,7 +74,7 @@
             .cta {
                 background: $white;
                 margin-bottom: $unit*2;
-                background: #f8f8f8;
+                background: $neutral-390;
                 padding: 12px;
 
                 a {
@@ -91,7 +91,7 @@
             background: $white;
             form {
                     input {
-                        margin-bottom: 12px;
+                        margin-bottom: $unit;
                     }
 
                 [type="radio"]:before {

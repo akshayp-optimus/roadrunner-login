@@ -3,18 +3,23 @@
 {<contentBlock}
     <div class="t-my-account-information  u-padding-all u--tight">
         <h2 class="c-account-heading">{accountHeading}</h2>
-        <div class="c-page-hint ">{pageHint}</div>
 
-    <div class="c-profile">
-        {editProfile}
-    </div>
-    <!--<div class="c-email">{unsubscribeEmail}</div>-->
-    <div class="c-fitness">
-    {fitnessProfile}
-    </div>
-    <div class="c-shopping">
-    {shoppingHistory}
-    </div>
+        <div class="c-page-hint">
+            {pageHint}
+        </div>
+
+        <div class="c-profile">
+            {editProfile}
+        </div>
+
+        <div class="c-fitness">
+            {fitnessProfile}
+        </div>
+
+        <div class="c-shopping">
+            {shoppingHistory}
+        </div>
+
     </div>
 {/contentBlock}
 
