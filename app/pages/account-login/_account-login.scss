@@ -2,10 +2,11 @@
     .c-guest-login {
         box-shadow: 0 3px 3px 0 $neutral-380;
     }
+
     input {
         margin-bottom: $unit;
+    }
 
-        }
     .login-button {
         margin-bottom: 0;
         width: 105px;
@@ -23,8 +24,8 @@
         padding: $unit - 1;
         min-height: 0px;
     }
+
     .c-login-details {
-        padding-bottom: 24px !important;
         background: $neutral-320;
         h1{
             font-size: $larger-font-size;
@@ -46,18 +47,18 @@
         .form {
             padding: 0 $unit 4px;
             background: $neutral-390;
-            box-shadow: 0 3px 5px 0 #d4cfcf;
+            box-shadow: 0 3px 3px 0 $neutral-380;
             div[id="yes_button"],
             div[id="no_button"] {
                 > span {
                     color: $neutral-340;
                 }
 
-                br{
+                br {
                     display: none;
-
                 }
             }
+
             h2 {
                 background: $neutral-330;
                 font-size: $font-size +2;
@@ -70,36 +71,34 @@
                 text-shadow: 1px 1px 0px #a05580;
                 box-shadow: 0px 2px 0px 0px #dd8500;
                 margin-bottom: $unit*2;
-                }
             }
+        }
 
-            .cta {
-                background: $white;
-                margin-bottom: $unit*2;
-                background: $neutral-390;
-                padding: 12px;
-                box-shadow: 0 3px 5px 0 #d4cfcf;
+        .cta {
+            background: $white;
+            margin-bottom: $unit*2;
+            background: $neutral-390;
+            padding: 12px;
 
-                a {
-                    color: $neutral-360;
-                    line-height: 1.1;
-                    display: inline-block;
-                    border-bottom: 1px solid;
-                    font-weight: bold;
-                }
+            a {
+                color: $neutral-360;
+                line-height: 1.1;
+                display: inline-block;
+                border-bottom: 1px solid;
+                font-weight: bold;
             }
+        }
 
 
         .c-create-account{
             background: $white;
             form {
-                    input {
-                        margin-bottom: $unit;
-                    }
+                input {
+                    margin-bottom: $unit;
+                }
 
                 [type="radio"]:before {
                     border-radius: 0;
-
                 }
 
                 [type="radio"] {
@@ -142,8 +141,5 @@
                 }
             }
         }
-    }
-    .c-vip {
-        padding: 0 $unit;
     }
 }
