@@ -139,7 +139,10 @@ function($, Router, Home, ResponsiveContent, EmailSubscription, EmailSubscriptio
         .add(Router.selectorMatch('#gwt_gift_registry_create'), GiftRegistryCreate)
         .add(Router.selectorMatch('.view-GiftRegistrySearchView'), GiftRegistryFind)
         .add(Router.selectorMatch('#login_container'), accountLogin)
-        .add(Router.urlMatch('/my-account'), myAccountInformation);
+        // .add(Router.urlMatch('/my-account'), myAccountInformation);
+
+        .add(Router.selectorMatch('.regform_indent'), myAccountInformation);
+
         // .add(Router.selectorMatch('.view-GiftRegistryVisitView'), GiftRegistryView);
 
     return router;

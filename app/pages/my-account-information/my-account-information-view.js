@@ -11,7 +11,7 @@ function($, baseView, template) {
     var profile = function() {
         var $edit = $('.regform_indent').find('.orangetext').parents('.user_cell');
         var $newsletter = $('#unsubscribeform');
-        $newsletter.find('#newsletterSignupBtn').remove();
+        $newsletter.find('#newsletterSignupBtn').addClass('u--hide');
         $newsletter.addClass('c-unsubscribe');
         $edit.find('img').remove();
         $edit.find('br').remove();
