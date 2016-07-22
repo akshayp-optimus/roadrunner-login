@@ -46,6 +46,17 @@ function($, baseView, template) {
                 $profile.contents().filter(function() {
                     return this.nodeType === 3;
                 }).wrap('<span class="c-fitness__text-bold"></span>');
+
+                // $profile.find('.c-fitness__text-bold').map(function(i, item) {
+                //     var $item = $(item);
+                //
+                //     var $n = $item.text().split(':')[1];
+                //     if ($n !== undefined) {
+                //         var $wrapper = '<div class="c-text-light">' + $n + '</div>';
+                //         $item.append($wrapper);
+                //     }
+                // });
+
                 $profile.find('br').remove();
                 $profile.find('img').remove();
                 return $profile;
